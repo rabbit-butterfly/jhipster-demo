@@ -1,0 +1,82 @@
+<section class="content-header">
+	<ol class="breadcrumb" id="title" >
+      <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
+      <li class="active" translate="tuxAdminApp.news.home.title">News Management</li>
+    </ol>
+</section>
+	<h3 class="box-title"></h3>
+
+<section class="content">
+<div>
+    <jh-alert></jh-alert>
+    <div>
+        <div class="row">
+          <div class="col-md-4">
+              <button class="btn btn-primary" ui-sref="news-management.new">
+                  <span class="glyphicon glyphicon-flash"></span> <span translate="tuxAdminApp.news.home.createLabel">Create a new News</span>
+              </button>
+          </div>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="tuxAdminApp.news.id">Id</th>
+                <th translate="tuxAdminApp.news.firstName">First Name</th>
+                <th translate="tuxAdminApp.news.secondName">Second Name</th>
+                <th translate="tuxAdminApp.news.title">Title</th>
+                <th translate="tuxAdminApp.news.picPath">Pic Path</th>
+                <th translate="tuxAdminApp.news.summary">Summary</th>
+                <th translate="tuxAdminApp.news.status">Status</th>
+                <th translate="tuxAdminApp.news.contentUrl">Content Url</th>
+                <th translate="tuxAdminApp.news.createdTime">Created Time</th>
+                <th translate="tuxAdminApp.news.modifyTime">Modify Time</th>
+                <th translate="tuxAdminApp.news.action">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="new in news track by new.id">
+                <td>{{new.id}}</a></td>
+                <td>{{new.firstName}}</td>
+                <td>{{new.secondName}}</td>
+                <td>{{new.title}}</td>
+                <td><a href="/api/front/news/image/{{new.picPath}}">{{new.picPath}}</a></td>
+                <td>{{new.summary}}</td>
+                <td>
+                	<span class="label label-danger" ng-show="new.status == 0"
+                          translate="tuxAdminApp.news.unReleased" style="cursor: pointer;">UnReleased</span>
+                    <span class="label label-success" ng-show="new.status == 1"
+                          translate="tuxAdminApp.news.released" style="cursor: pointer;">Released</span>
+                </td>
+                <td><a href="{{new.contentUrl}}">{{new.contentUrl}}</a></td>
+                <td>{{new.createdTime | date:'yyyy-MM-dd HH:mm:ss'}}</a></td>
+                <td>{{new.modifyTime | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+                <td>
+                	<button type="submit"
+                            ui-sref="news-management.edit({id:new.id})"
+                            class="btn btn-primary btn-sm">
+                        <span class="glyphicon glyphicon-pencil" translate="tuxAdminApp.news.edit">edit</span>
+                    </button>
+                    <button type="submit"
+                            ng-click="setRelease(new,1)"
+                            class="btn btn-primary btn-sm"
+                            ng-if="new.status == 0">
+                        <span translate="tuxAdminApp.news.release">Release</span>
+                    </button>
+                    <button type="submit"
+                            ng-click="setRelease(new,0)"
+                            class="btn btn-primary btn-sm"
+                            ng-if="new.status == 1">
+                        <span translate="tuxAdminApp.news.cancelRelease">Cancel Release</span>
+                    </button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <uib-pagination class="pagination-sm" total-items="totalItems" ng-model="page" ng-change="loadAll()"></uib-pagination>
+    </div>
+</div>
+</section>

@@ -1,0 +1,40 @@
+<section class="content-header">
+	<ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
+      <li class="active" translate="feedback-record.home.title">FeedbackRecord</li>
+    </ol>
+</section>
+	<h3 class="box-title"></h3>
+
+<section class="content">
+<div>
+    <jh-alert></jh-alert>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="feedback-record.number">Number</th>
+                <th translate="feedback-record.wechatNumber">WechatNumber</th>
+                <th translate="feedback-record.nameOrFahao">NameOrFahao</th>
+                <th translate="feedback-record.phoneNumber">PhoneNumber</th>
+                <th translate="feedback-record.releaseTime">ReleaseTime</th>
+                <th translate="feedback-record.feedbackContent">FeedbackContent</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="feedback in feedbacks track by feedback.id">
+                <td>{{feedback.id}}</td>
+                <td>{{feedback.wxNo}}</td>
+                <td>{{feedback.personName}}</td>
+                <td> {{feedback.personMobile}}</td>
+                <td>{{feedback.createdTime | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+                <td>{{feedback.content}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <uib-pagination class="pagination-sm" total-items="totalItems" ng-model="page" ng-change="loadAll()"></uib-pagination>
+    </div>
+</div>
+</section>

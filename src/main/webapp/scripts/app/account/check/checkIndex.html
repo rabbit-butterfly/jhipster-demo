@@ -1,0 +1,98 @@
+<div class="box box-info">
+	<div class="box-header with-border">
+		<h3 class="box-title">自动签到配置</h3>
+	</div>
+	<!-- /.box-header -->
+	<!-- form start -->
+	<form class="form-horizontal" ng-submit="save()" >
+		<!--  <div class="alert alert-success" ng-show="success" translate="settings.messages.success">
+                <strong>Settings saved!</strong>
+          </div> -->
+        <jh-alert></jh-alert>
+		<div class="box-body">
+			<div class="form-group">
+				<label for="inputEmail3" class="col-sm-2 control-label">账号</label>
+
+				<div class="col-sm-10">
+					<input type="text" class="form-control" ng-model="checkConfig.oaAcc"
+						placeholder="账号" ng-disabled="initStatus">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="inputPassword3" class="col-sm-2 control-label">密码</label>
+
+				<div class="col-sm-10">
+					<input type="password" class="form-control"
+						ng-model="checkConfig.newPwd" placeholder="密码" ng-disabled="initStatus">
+					<input type="hidden" class="form-control"
+						ng-model="checkConfig.oaPwd" placeholder="密码" ng-disabled="initStatus">
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label for="inputEmail3" class="col-sm-2 control-label">OA系统</label>
+
+				<div class="col-sm-10">
+					<select class="form-control ng-pristine ng-valid ng-touched" 
+					ng-model="checkConfig.oaPlatform" 
+					aria-invalid="false" ng-disabled="initStatus">
+						<option selected="selected"></option>
+						<option label="老OA" value="yumwei">老OA</option>
+						<option label="新OA" value="jumoreoa">新OA</option>
+					</select>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label for="inputEmail3" class="col-sm-2 control-label">上次签到时间</label>
+				<div class="col-sm-10">
+					<input type="email" class="form-control" disabled ng-model="checkConfig.lastModifyTime"
+						placeholder="">
+				</div>
+			</div>
+			
+			
+			<div class="form-group">
+				<label for="inputEmail3" class="col-sm-2 control-label">备注</label>
+
+				<div class="col-sm-10">
+					<input type="text" class="form-control" placeholder="备注" ng-model="checkConfig.remark"
+						placeholder="" disabled>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<div class="checkbox">
+						<label> <input type="checkbox" ng-model="checkConfig.receiveEmail" ng-disabled="initStatus"/> 是否接收邮件通知
+						</label>
+					</div>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label for="inputEmail3" class="col-sm-2 control-label">状态</label>
+
+				<div class="col-sm-10">
+					<div class="radio">
+                      <label>
+                      <input type="radio" ng-model="checkConfig.status"  value="enabled" ng-disabled="initStatus"/>启用
+                      </label>
+                    
+                      <label>
+                      <input type="radio" ng-model="checkConfig.status" value="disabled"ng-disabled="initStatus" />停用
+                      </label>
+				</div>
+			</div>
+			
+			
+			
+		</div>
+		<!-- /.box-body -->
+		<div class="box-footer" ng-switch on="btnSave">
+			<button type="submit" ng-switch-when="active" class="btn btn-info pull-right">保存</button>
+			<button type="button" ng-mode="all" ng-click="activeSave()"ng-switch-when="quiet" class="btn btn-info pull-right">编缉</button>
+		</div>
+		<!-- /.box-footer -->
+	</form>
+</div>

@@ -1,0 +1,31 @@
+{
+	"tuxAdminApp": {
+        "event" : {
+            "home": {
+                "title": "Events",
+                "createLabel": "Create a new Event",
+                "createOrEditLabel": "Create or edit a Event",
+                "search": "Search for Event"
+            },
+            "error": "活动标题已经被使用了！",
+            "created": "新的共修活动已经创建，活动Id为{{ param }}",
+            "updated": "共修活动的信息已经更新，活动Id为{{ param }}",
+            "deleted": "A Event is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Event {{ id }}?"
+            },
+            "detail": {
+                "title": "Event"
+            },
+            
+            "title": "Title",
+            "startDate": "Start Date",
+            "endDate": "End Date",
+            "status": "Status",
+            "picPath": "Pic Path",
+            "summary": "Summary",
+            "content": "Content",
+            "createTime": "Create Time"
+        }
+    }
+}

@@ -1,0 +1,96 @@
+<section class="content-header">
+      <h2><span translate="oa-takeVacationDetail.detail.title">TakeVacationDetail</span> "{{takeVacationDetail.createdBy}}"</h2>
+      <!-- <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">Tables</a></li>
+        <li class="active">Data tables</li>
+      </ol> -->
+</section> 
+   
+<section class="content">
+<div>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="entity.detail.field">Field</th>
+                    <th translate="entity.detail.value">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="oa-takeVacationDetail.createdBy">createdBy</span>
+                </td>
+                <td>
+                    <input type="text" class="input-sm form-control" value="{{takeVacationDetail.createdBy}}" readonly>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="oa-takeVacationDetail.createdDate">createdDate</span>
+                </td>
+                <td>
+                    <input type="text" class="input-sm form-control"
+                           value="{{takeVacationDetail.createdDate | date:'dd/MM/yy HH:mm' }}" readonly>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="oa-takeVacationDetail.startDate">startDate</span>
+                </td>
+                <td>
+                    <input type="text" class="input-sm form-control"
+                           value="{{takeVacationDetail.startDate | date:'dd/MM/yy HH:mm' }}" readonly>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="oa-takeVacationDetail.endDate">endDate</span>
+                </td>
+                <td>
+                    <input type="text" class="input-sm form-control"
+                           value="{{takeVacationDetail.endDate | date:'dd/MM/yy HH:mm' }}" readonly>
+                </td>
+            </tr>
+            <tr>
+               <td>
+                    <span translate="oa-takeVacationDetail.timeLength">timeLength</span>
+                </td>
+                <td>
+                    <input type="text" class="input-sm form-control" value="{{takeVacationDetail.timeLength}}" readonly>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="oa-takeVacationDetail.status">status</span>
+                </td>
+                <!-- <td>
+                    <input type="text" class="input-sm form-control" value="{{takeVacationDetail.status}}" readonly>
+                </td> -->
+                
+                <td>
+                	<span ng-if="takeVacationDetail.status==0" class="label bg-yellow" translate="oa-takeVacationDetail.approval">approval</span>
+                	<span ng-if="takeVacationDetail.status==1" class="label bg-green" translate="oa-takeVacationDetail.pass">pass</span>
+                	<span ng-if="takeVacationDetail.status==2" class="label bg-red" translate="oa-takeVacationDetail.reject">reject</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="oa-takeVacationDetail.remark">remark</span>
+                </td>
+                <td>
+                    <input type="text" class="input-sm form-control" value="{{takeVacationDetail.remark}}" readonly>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            ui-sref="oa-takeVacationDetail"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>
+</section>

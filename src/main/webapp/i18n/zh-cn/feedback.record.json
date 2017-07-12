@@ -1,0 +1,13 @@
+{
+    "feedback-record": {
+        "home": {
+            "title": "回向记录"
+        },
+        "number": "编号",
+        "wechatNumber": "微信号",
+        "nameOrFahao": "姓名/法号",
+        "phoneNumber": "手机号",
+        "releaseTime": "发布时间",
+        "feedbackContent": "回向内容"
+    }
+}

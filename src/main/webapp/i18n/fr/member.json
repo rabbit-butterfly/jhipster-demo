@@ -1,0 +1,31 @@
+{
+    "tuxAdminApp": {
+        "member" : {
+            "home": {
+                "title": "Members",
+                "createLabel": "Créer un nouveau Member",
+                "createOrEditLabel": "Créer ou éditer un Member",
+                "search": "Recherche pour Member"
+            },
+            "created": "Un nouveau Member a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Member avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Member avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Member {{ id }} ?"
+            },
+            "detail": {
+                "title": "Member"
+            },
+            "wxNo": "Wx No",
+            "personName": "Person Name",
+            "alias": "Alias",
+            "persionMobile": "Persion Mobile",
+            "gender": "Gender",
+            "nature": "Nature",
+            "provinceCode": "Province Code",
+            "cityCode": "City Code",
+            "areaCode": "Area Code",
+            "address": "Address"
+        }
+    }
+}

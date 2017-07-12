@@ -1,0 +1,38 @@
+{
+    "tuxAdminApp": {
+        "news" : {
+            "home": {
+                "title": "资讯管理",
+            	"createLabel": "新增资讯",
+            	"createOrEditLabel": "新增/编辑",
+                "search": "Search for News"
+            },
+            "created": "新的资讯创建成功，资讯的Id为{{ param }}",
+            "updated": "资讯的信息更新成功，资讯的Id为{{ param }}",
+            "deleted": "A News is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete News {{ id }}?"
+            },
+            "detail": {
+                "title": "News"
+            },
+            "id": "编号",
+	        "title": "资讯标题",
+	        "picPath": "配图",
+	        "summary": "资讯摘要",
+	        "status": "状态",
+	        "contentUrl": "正文链接",
+	        "firstName": "一级类目",
+	        "secondName": "二级类目",
+	        "createdTime": "创建时间",
+	        "modifyTime": "修改时间",
+	        "action": "操作",
+	        "edit": "编辑",
+	        "release": "发布",
+	        "cancelRelease":"取消发布",
+	        "released": "已发布",
+	        "unReleased": "未发布",
+	        "import": "导入"
+        }
+    }
+}

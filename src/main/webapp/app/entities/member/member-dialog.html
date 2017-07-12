@@ -1,0 +1,86 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myMemberLabel" data-translate="tuxAdminApp.member.home.createOrEditLabel">Create or edit a Member</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.member.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.member.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.member.wxNo" for="field_wxNo">Wx No</label>
+            <input type="text" class="form-control" name="wxNo" id="field_wxNo"
+                    ng-model="vm.member.wxNo"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.member.personName" for="field_personName">Person Name</label>
+            <input type="text" class="form-control" name="personName" id="field_personName"
+                    ng-model="vm.member.personName"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.member.alias" for="field_alias">Alias</label>
+            <input type="text" class="form-control" name="alias" id="field_alias"
+                    ng-model="vm.member.alias"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.member.persionMobile" for="field_persionMobile">Persion Mobile</label>
+            <input type="text" class="form-control" name="persionMobile" id="field_persionMobile"
+                    ng-model="vm.member.persionMobile"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.member.gender" for="field_gender">Gender</label>
+            <input type="number" class="form-control" name="gender" id="field_gender"
+                    ng-model="vm.member.gender"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.member.nature" for="field_nature">Nature</label>
+            <input type="number" class="form-control" name="nature" id="field_nature"
+                    ng-model="vm.member.nature"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.member.provinceCode" for="field_provinceCode">Province Code</label>
+            <input type="text" class="form-control" name="provinceCode" id="field_provinceCode"
+                    ng-model="vm.member.provinceCode"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.member.cityCode" for="field_cityCode">City Code</label>
+            <input type="text" class="form-control" name="cityCode" id="field_cityCode"
+                    ng-model="vm.member.cityCode"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.member.areaCode" for="field_areaCode">Area Code</label>
+            <input type="text" class="form-control" name="areaCode" id="field_areaCode"
+                    ng-model="vm.member.areaCode"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.member.address" for="field_address">Address</label>
+            <input type="text" class="form-control" name="address" id="field_address"
+                    ng-model="vm.member.address"
+                     />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

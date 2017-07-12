@@ -1,0 +1,31 @@
+{
+    "tuxAdminApp": {
+        "category" : {
+            "home": {
+                "title": "类目维护",
+                "createLabel": "新增类目",
+                "createOrEditLabel": "新增/编辑",
+                "search": "Search for Category"
+            },
+            "created": "新的类目创建成功，类目Id为{{ param }}",
+        	"updated": "类目的信息编辑成功，类目Id为 {{ param }}",
+            "deleted": "A Category is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Category {{ id }}?"
+            },
+            "detail": {
+                "title": "Category"
+            },
+            "Id": "编号",
+            "firstName": "一级类目",
+            "secondName": "二级类目",
+            "remark": "简介",
+            "status": "类目状态",
+            "action": "操作",
+            "edit": "编辑",
+            "release": "发布",
+            "cancelRelease":"取消发布",
+            "detail":"查看二级类目"
+        }
+    }
+}

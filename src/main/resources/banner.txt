@@ -1,0 +1,11 @@
+${AnsiColor.GREEN} _______ ${AnsiColor.RED}                   _______ 
+${AnsiColor.GREEN}/ ___   )${AnsiColor.RED}|\     /||\     /|(  ____ \
+${AnsiColor.GREEN}\/   )  |${AnsiColor.RED}| )   ( |( \   / )| (    \/
+${AnsiColor.GREEN}    /   )${AnsiColor.RED}| (___) | \ (_) / | (__    
+${AnsiColor.GREEN}   /   / ${AnsiColor.RED}|  ___  |  ) _ (  |  __)   
+${AnsiColor.GREEN}  /   /  ${AnsiColor.RED}| (   ) | / ( ) \ | (      
+${AnsiColor.GREEN} /   (_/\${AnsiColor.RED}| )   ( |( /   \ )| )      
+${AnsiColor.GREEN}(_______/${AnsiColor.RED}|/     \||/     \||/       
+    
+${AnsiColor.BRIGHT_BLUE}:: JHipster 🤓  :: Running Spring Boot ${spring-boot.version} ::
+:: http://jhipster.github.io ::${AnsiColor.DEFAULT}

@@ -1,0 +1,29 @@
+{
+    "tuxAdminApp": {
+        "reportCount" : {
+            "home": {
+                "title": "Report Counts",
+                "createLabel": "Create a new Report Count",
+                "createOrEditLabel": "Create or edit a Report Count",
+                "search": "Search for Report Count"
+            },
+            "created": "A new Report Count is created with identifier {{ param }}",
+            "updated": "A Report Count is updated with identifier {{ param }}",
+            "deleted": "A Report Count is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Report Count {{ id }}?"
+            },
+            "detail": {
+                "title": "Report Count"
+            },
+            "userId": "User Id",
+            "personName": "Person Name",
+            "personMobile": "Person Mobile",
+            "eventId": "Event Id",
+            "completeNum": "Complete Num",
+            "remark": "Remark",
+            "createTime": "Create Time",
+            "modifyTime": "Modify Time"
+        }
+    }
+}

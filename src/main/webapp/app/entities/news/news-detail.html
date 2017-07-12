@@ -1,0 +1,51 @@
+
+<div>
+    <h2><span data-translate="tuxAdminApp.news.detail.title">News</span> {{vm.news.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="tuxAdminApp.news.categoryId">Category Id</span></dt>
+        <dd>
+            <span>{{vm.news.categoryId}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.news.title">Title</span></dt>
+        <dd>
+            <span>{{vm.news.title}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.news.picPath">Pic Path</span></dt>
+        <dd>
+            <span>{{vm.news.picPath}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.news.summary">Summary</span></dt>
+        <dd>
+            <span>{{vm.news.summary}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.news.status">Status</span></dt>
+        <dd>
+            <span>{{vm.news.status}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.news.contentUrl">Content Url</span></dt>
+        <dd>
+            <span>{{vm.news.contentUrl}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.news.createTime">Create Time</span></dt>
+        <dd>
+            <span>{{vm.news.createTime | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.news.modifyTime">Modify Time</span></dt>
+        <dd>
+            <span>{{vm.news.modifyTime | date:'medium'}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="news-detail.edit({id:vm.news.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

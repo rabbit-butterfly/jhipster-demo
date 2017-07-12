@@ -1,0 +1,59 @@
+
+<div>
+    <h2><span data-translate="tuxAdminApp.member.detail.title">Member</span> {{vm.member.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="tuxAdminApp.member.wxNo">Wx No</span></dt>
+        <dd>
+            <span>{{vm.member.wxNo}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.member.personName">Person Name</span></dt>
+        <dd>
+            <span>{{vm.member.personName}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.member.alias">Alias</span></dt>
+        <dd>
+            <span>{{vm.member.alias}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.member.persionMobile">Persion Mobile</span></dt>
+        <dd>
+            <span>{{vm.member.persionMobile}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.member.gender">Gender</span></dt>
+        <dd>
+            <span>{{vm.member.gender}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.member.nature">Nature</span></dt>
+        <dd>
+            <span>{{vm.member.nature}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.member.provinceCode">Province Code</span></dt>
+        <dd>
+            <span>{{vm.member.provinceCode}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.member.cityCode">City Code</span></dt>
+        <dd>
+            <span>{{vm.member.cityCode}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.member.areaCode">Area Code</span></dt>
+        <dd>
+            <span>{{vm.member.areaCode}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.member.address">Address</span></dt>
+        <dd>
+            <span>{{vm.member.address}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="member-detail.edit({id:vm.member.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

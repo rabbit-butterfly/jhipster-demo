@@ -1,0 +1,51 @@
+
+<div>
+    <h2><span data-translate="tuxAdminApp.regist.detail.title">Regist</span> {{vm.regist.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="tuxAdminApp.regist.userId">User Id</span></dt>
+        <dd>
+            <span>{{vm.regist.userId}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.regist.persionName">Persion Name</span></dt>
+        <dd>
+            <span>{{vm.regist.persionName}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.regist.personMobile">Person Mobile</span></dt>
+        <dd>
+            <span>{{vm.regist.personMobile}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.regist.eventId">Event Id</span></dt>
+        <dd>
+            <span>{{vm.regist.eventId}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.regist.targetNum">Target Num</span></dt>
+        <dd>
+            <span>{{vm.regist.targetNum}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.regist.remark">Remark</span></dt>
+        <dd>
+            <span>{{vm.regist.remark}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.regist.createTime">Create Time</span></dt>
+        <dd>
+            <span>{{vm.regist.createTime | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.regist.modifyTime">Modify Time</span></dt>
+        <dd>
+            <span>{{vm.regist.modifyTime | date:'medium'}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="regist-detail.edit({id:vm.regist.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,35 @@
+<section class="content-header">
+      <h2>{{event.title}}<span>报名总人数：{{event.personCount}}</span></h2>
+</section> 
+<section class="content">
+<div>  
+    <jh-alert></jh-alert>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>编号</th>
+                <th>姓名/法号</th>
+                <th>发愿数量</th>
+                <th>手机号</th>
+                <th>备注</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="x in regist track by x.id">
+                <td>{{x.id}}</a></td>
+                <td>{{x.personName}}</td>
+                <td>{{x.targetNum}}</td>
+                <td>{{x.personMobile}}</td>
+                <td>{{x.remark}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <button type="submit"
+            ui-sref="event"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span>返回</span>
+    </button>
+</div>
+</section>

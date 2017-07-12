@@ -1,0 +1,136 @@
+<div class="box box-info">
+	<div class="box-header with-border">
+		 <section class="content-header" >
+		      <ol class="breadcrumb" float="left">
+		        <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
+		        <li class="active" translate="tuxAdminApp.news.home.title">News Management</li>
+		        <li class="active" translate="tuxAdminApp.news.home.createOrEditLabel">Create or edit a News</li>
+		      </ol>
+    	</section>
+		<h3 class="box-title"></h3>
+	</div>
+	<jh-alert></jh-alert>
+	
+	<form name="editForm"  role="form" ng-submit="save()">
+	<div class="box-body">
+		<div class="form-group" ng-if="news.id == null">
+            <label class="col-sm-1 control-label" translate="tuxAdminApp.news.firstName">FirstName</label>
+            <div class="col-sm-11">
+            	<select class="form-control"  name="parentId" required ng-model="parentId"
+                    ng-options="category.id as category.name for category in parentCategories"
+                    ng-change="searchCategory(this)">
+                    <option value="">请选择</option>
+            	</select>
+            </div>
+            <div ng-show="editForm.parentId.$invalid">
+                <!-- <p class="help-block" style="color:red"
+                   ng-show="editForm.parentId.$error.required">
+                    This field is required.
+                </p> -->
+             </div>
+        </div>
+        
+        <div class="form-group" ng-if="news.id == null">
+            <label class="col-sm-1 control-label" translate="tuxAdminApp.news.secondName">Second Name</label>
+            <div class="col-sm-11">
+            	<select class="form-control" name="categoryId" required ng-model="news.categoryId"
+                    ng-options="category.id as category.name for category in categories">
+                    <option value="">请选择</option>
+            	</select>
+            </div>
+            <div ng-show="editForm.categoryId.$invalid">
+                <!-- <p class="help-block" style="color:red"
+                   ng-show="editForm.categoryId.$error.required">
+                    This field is required.
+                </p> -->
+             </div>
+        </div>
+        
+        <div class="form-group">
+            <label class="col-sm-1 control-label" class="control-label" translate="tuxAdminApp.news.title">Title</label>
+            <div class="col-sm-11">
+            	<input type="text" class="form-control" name="title" required
+                   ng-model="news.title" ng-maxlength="30"/>
+                <span>（* 30汉字内）</span>   
+            </div>
+            <div ng-show="editForm.title.$invalid">
+                <!-- <p class="help-block" style="color:red"
+                   ng-show="editForm.title.$error.required">
+                    This field is required.
+                </p> -->
+                <p class="help-block" style="color:red"
+                   ng-show="editForm.title.$error.maxlength" translate="entity.validation.maxlength"
+                   translate-value-max="30">
+                    This field cannot be longer than 30 characters.
+                </p>
+             </div>
+        </div>
+        
+        <div class="form-group">
+            <label class="col-sm-1 control-label" translate="tuxAdminApp.news.picPath">Pic Path</label>
+             <div class="col-sm-11">
+             	<div class="box-body">
+					<form>
+				        <input type="file" id="exampleInputFile" ngf-select ng-model="file" name="file" accept=".jpg"/>
+				       <!-- <input type="file" id="exampleInputFile" ngf-select ng-model="file" name="file" accept=".jpg" ng-if="news.id != null"/>  -->
+				        <img ng-src="/api/front/news/image/{{news.picPath}}" height="100px" width="200px" ng-if="news.id != null"/><span>图片请不要大于528K</span>
+				    </form> 
+			  	</div>
+             </div>
+           	<div ng-show="editForm.file.$invalid">
+               <!-- <p class="help-block" style="color:red"
+                  ng-show="editForm.file.$error.required">
+                   This field is required.
+               </p> -->
+            </div>          
+        </div>   
+
+        <div class="form-group">
+            <label class="col-sm-1 control-label" translate="tuxAdminApp.news.summary">Summary</label></br>
+            <div class="col-sm-11">
+            	<textarea  class="form-control" ng-model="news.summary" name="summary" required rows="6" cols="70" maxlength="200"></textarea>
+            	<span>（* 200汉字内）</span>
+            </div>
+            <div ng-show="editForm.summary.$invalid">
+                <!-- <p class="help-block" style="color:red"
+                   ng-show="editForm.summary.$error.required">
+                    This field is required.
+                </p> -->
+                <p class="help-block" style="color:red"
+                   ng-show="editForm.summary.$error.maxlength" translate="entity.validation.maxlength"
+                   translate-value-max="200">
+                    This field cannot be longer than 200 characters.
+                </p>
+             </div> 
+        </div>
+        
+        <div class="form-group">
+           <label class="col-sm-1 control-label" translate="tuxAdminApp.news.contentUrl">Content Url</label>
+           <div class="col-sm-11">
+           <input type="text" class="form-control" name="contentUrl" required
+                   ng-model="news.contentUrl" ng-maxlength="255"/>
+           <span>（* 255字符内）</span>
+           </div>
+           <div ng-show="editForm.contentUrl.$invalid">
+              <!--  <p class="help-block" style="color:red"
+                  ng-show="editForm.contentUrl.$error.required">
+                   This field is required.
+               </p> -->
+               <p class="help-block" style="color:red"
+                   ng-show="editForm.contentUrl.$error.maxlength" translate="entity.validation.maxlengthUrl"
+                   translate-value-max="255">
+                    This field cannot be longer than 255 characters.
+                </p>
+            </div> 
+        </div>
+	
+		<button type="submit" class="btn btn-info" ui-sref="news-management">
+            <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;
+            <span translate="entity.action.back">Back</span>
+        </button>
+        <button type="submit"  class="btn btn-primary">
+            <span class="glyphicon glyphicon-save" class="btn btn-info pull-right"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+	</div>	
+	</form>
+</div>

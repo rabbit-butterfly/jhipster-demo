@@ -1,0 +1,237 @@
+<section class="content-header">
+      <h2 translate="oa-takeVacationDetail.home.title">
+      TakeVacationDetail
+      </h2>
+      <!-- <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">Tables</a></li>
+        <li class="active">Data tables</li>
+      </ol> -->
+</section> 
+
+<section class="content">
+<div>  
+ 
+    <div>
+          <div class="box box-default  collapsed-box" has-authority="ROLE_ADMIN">
+            <div class="box-header with-border">
+              <h3 class="box-title" translate="oa-takeVacationDetail.searchWorkOvertime">Search  WorkOvertime</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse""><i class="fa fa-plus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="box-body">
+            	<form name="searchForm" role="form" novalidate ng-submit="search()" show-validation>
+		           <!--  <label translate="global.field.id">ID</label>
+		            <input type="text" name="id"  ng-model="workOvertime.id" > -->
+		            
+		            &nbsp; &nbsp; &nbsp;
+		             <label translate="oa-takeVacationDetail.createdBy">createdBy</label>
+		            <input type="text" name="createdBy"  ng-model="formData.createdBy" >
+		            
+		           <!--  &nbsp; &nbsp; &nbsp;
+		            
+		            <label translate="oa-takeVacationDetail.timeLength">timeLength(H)</label>
+		            <input type="text"  name="timeLength" 
+		                     ng-model="workOvertime.timeLength" ng-maxlength="2"> -->
+		            &nbsp; &nbsp; &nbsp;
+		            <label translate="oa-takeVacationDetail.status">status</label>
+	            	<select name="status" ng-model="formData.status">
+	            		<option value="">ALL</option>
+	                    <option value="1" translate="oa-takeVacationDetail.pass">PASS</option>
+	                    <option value="0" translate="oa-takeVacationDetail.approval">APPLY</option>
+	                    <option value="2" translate="oa-takeVacationDetail.reject">DISABLED</option>
+	            	</select>
+            		 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            		<button type="submit"  class="btn btn-primary">
+			            <span class="glyphicon glyphicon-search"></span>&nbsp;<span translate="oa-takeVacationDetail.search">Search</span>
+			        </button>
+			        
+		        <div class="form-group">
+		            <label translate="oa-takeVacationDetail.startDate">startDate</label>
+					<div class="input-group date">
+	            		<div class="input-group-addon">
+	            			<i class="fa fa-calendar"></i>
+	            		</div>
+            			<input type="text" class="form-control pull-right" name="startDate" id="begin_time"
+                   			ng-model="formData.startDate">
+            		</div>
+       			</div>
+		  		<div class="form-group">
+		            <label class="control-label" translate="oa-takeVacationDetail.endDate">endDate</label>
+		            <div class="input-group date">
+		            	<div class=input-group-addon>
+		            		<i class="fa fa-calendar"></i>
+		            	</div>
+		            	<input type="text" class="form-control pull-right" name="endDate" id="end_time"
+		                    ng-model="formData.endDate">
+		            </div>
+		       </div> 
+		       
+              </form>
+            </div>
+          </div>
+   </div>
+   
+   
+   <div>
+          <div class="box box-warning">
+            <div class="box-header with-border">
+              <h3 class="box-title" translate="oa-takeVacationDetail.vacationRecord">vacationRecord</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="box-body">
+             	<div class="col-md-4">
+             	<span translate="oa-takeVacationDetail.totalWorkOvertimeTime">totalWorkOvertimeTime:</span><small class="label bg-red">{{takeVacation.totalHour /60 | number:2}}</small> &nbsp;&nbsp; 
+             	</div>
+             	<div class="col-md-4">
+             	<span translate="oa-takeVacationDetail.takeVacationTime">takeVacationTime:</span><small class="label bg-yellow">{{takeVacation.usable /60 | number:2}}</small>&nbsp;&nbsp;
+             	</div>
+             	<div class="col-md-4">
+             	<span translate="oa-takeVacationDetail.takenVacationTime">takenVacationTime:</span><small class="label bg-green">{{takeVacation.used /60 | number:2}}</small>
+			    </div>
+            </div>
+          </div>
+    </div>
+        
+    <jh-alert></jh-alert>
+    <div>
+        <div class="row">
+          <div class="col-md-4">
+              <button class="btn btn-primary" ui-sref="oa-takeVacationDetail.new">
+                  <span class="glyphicon glyphicon-flash"></span> <span translate="oa-takeVacationDetail.home.createLabel">Create a new vacation</span>
+              </button>
+          </div>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="global.field.id">ID</th>
+
+                <th translate="oa-takeVacationDetail.createdBy">createdBy</th>
+                <th translate="oa-takeVacationDetail.createdDate">createdDate</th>
+                <th translate="oa-takeVacationDetail.startDate">startDate</th>
+                <th translate="oa-takeVacationDetail.endDate">endDate</th>
+                <th translate="oa-takeVacationDetail.timeLength">timeLength</th>
+                <th translate="oa-takeVacationDetail.status">status</th>
+                <th translate="oa-takeVacationDetail.remark">remark</th>
+                
+                <th has-authority="ROLE_USER" translate="oa-takeVacationDetail.action"></th>
+
+                
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="x in takeVacationDetails track by x.id">
+                <td>{{x.id}}</a></td>
+                <td>{{x.createdBy}}</td>
+                <td>{{x.createdDate | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+               
+                <td>{{x.startDate}}</td>
+                <td>{{x.endDate}}</td>
+                <td>{{x.timeLength}}</td>
+                <td ng-if="x.status==0" translate="oa-takeVacationDetail.approval">approval</td>
+                <td ng-if="x.status==1" translate="oa-takeVacationDetail.pass">pass</td>
+                <td ng-if="x.status==2" translate="oa-takeVacationDetail.reject">reject</td>
+                <td>{{x.remark}}</td>
+                <td>
+                    <button has-authority="ROLE_ADMIN" type="submit" ng-click="pass({'id':x.id,'status':1})" ng-show="x.status == 0"
+                            class="btn btn-info btn-sm">
+                        <span class="glyphicon" translate="oa-takeVacationDetail.pass">Pass</span>
+                    </button>
+                    <button has-authority="ROLE_ADMIN" type="submit" ui-sref="oa-takeVacationDetail.noPass({id:x.id})" ng-show="x.status == 0"
+                            class="btn btn-primary btn-sm">
+                        <span class="glyphicon" translate="oa-takeVacationDetail.notPass">Not Pass</span>
+                    </button>
+                    
+                    <button type="submit"
+                            ui-sref="oa-takeVacationDetail-detail({id:x.id})"
+                            class="btn btn-info btn-sm">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </button>
+                    <button type="submit" ng-show="x.status != 1"
+                            ui-sref="oa-takeVacationDetail.edit({id:x.id})"
+                            class="btn btn-primary btn-sm">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </button>
+                    <button type="submit" ng-show="x.status != 1"
+                            ui-sref="oa-takeVacationDetail.delete({id:x.id})"
+                            class="btn btn-danger btn-sm">
+                        <span class="glyphicon glyphicon-remove-circle"></span>
+                    </button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="text-center">
+        <uib-pagination class="pagination-sm" total-items="totalItems" ng-model="page" ng-change="search()"></uib-pagination>
+    </div>
+    
+</div>
+</section>
+<script>
+
+$('#begin_time').datetimepicker({
+    format:'yyyy-mm-dd hh:ii:ss',
+    language:  'zh-CN',
+    autoclose: 1,
+    todayHighlight: 1,
+    startView: 2,
+    forceParse: 0,
+}).on("changeDate",function(ev){
+    var transferdate=transferDate($("#begin_time").val());//转时间日期
+    $('#end_time').datetimepicker('remove');
+    $('#end_time').datetimepicker({
+        format:'yyyy-mm-dd hh:ii:ss',
+        language:  'zh-CN',
+        autoclose: 1,
+        'startDate':transferdate
+    }).on("changeDate",function(ev){
+        var enddate=$("#end_time").val();
+        setEndTime(enddate);
+    });
+});
+$('#end_time').datetimepicker({
+    format:'yyyy-mm-dd hh:ii:ss',
+    language:  'zh-CN',
+    minView:2,
+    autoclose: 1
+}).on("changeDate",function(ev){
+    var enddate=$("#end_time").val();
+    setEndTime(enddate);
+});
+function setEndTime(enddate){
+    $('#begin_time').datetimepicker('remove');
+        $('#begin_time').datetimepicker({
+            format:'yyyy-mm-dd hh:ii:ss',
+            language:  'zh-CN',
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            forceParse: 0,
+            'endDate':transferDate(enddate)
+    });
+}
+//将时间字符串转为date
+function transferDate(data){
+    var start_time=data;
+    var newTime= start_time.replace(/-/g,"-");
+    var transferdate = new Date(newTime);
+    return transferdate;
+}
+function transferTime(str){
+    var newstr=str.replace(/-/g,'-');
+    var newdate=new Date(newstr);
+    var time=newdate.getTime();
+    return time;
+}
+</script>

@@ -1,0 +1,26 @@
+{
+    "news.management" : {
+        "home": {
+            "title": "资讯管理",
+            "createLabel": "新增资讯",
+            "createOrEditLabel": "新增/编辑"
+        },
+        "id": "编号",
+        "title": "资讯标题",
+        "picPath": "配图",
+        "summary": "资讯摘要",
+        "status": "状态",
+        "contentUrl": "正文链接",
+        "firstName": "一级类目",
+        "secondName": "二级类目",
+        "createdTime": "创建时间",
+        "modifyTime": "修改时间",
+        "action": "操作",
+        "edit": "编辑",
+        "release": "发布",
+        "cancelRelease":"取消发布",
+        "released": "已发布",
+        "unReleased": "未发布",
+        "import": "导入"
+    }   
+}

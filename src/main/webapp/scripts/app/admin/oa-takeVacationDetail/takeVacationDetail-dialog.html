@@ -1,0 +1,145 @@
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myUserLabel" translate="oa-takeVacationDetail.home.createOrEditLabel">
+            Create or edit a vacation</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label translate="global.field.id">ID</label>
+            <input type="text" class="form-control" name="id"
+                   ng-model="takeVacationDetail.id" readonly>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" translate="oa-takeVacationDetail.createdBy">createdBy</label>
+            <input type="text" class="form-control" name="createdBy"
+                   ng-model="takeVacationDetail.createdBy"  ng-maxlength="50" readonly>
+
+           <!--  <div ng-show="editForm.createdBy.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.createdBy.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+
+                <p class="help-block"
+                   ng-show="editForm.createdBy.$error.maxlength" translate="entity.validation.maxlength"
+                   translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div> -->
+        </div>
+        <div class="form-group">
+            <label translate="oa-takeVacationDetail.startDate">startDate</label>
+			<div class="input-group date">
+            	<div class=input-group-addon>
+            	<i class="fa fa-calendar"></i>
+            	</div>
+            	<input type="text" class="form-control pull-right" name="startDate" 
+            	ng-model="takeVacationDetail.startDate" id="begin_time">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="oa-takeVacationDetail.endDate">endDate</label>
+            <div class="input-group date">
+            	<div class=input-group-addon>
+            	<i class="fa fa-calendar"></i>
+            	</div>
+            	<input type="text" class="form-control pull-right" name="endDate" id="end_time" 
+                     ng-model="takeVacationDetail.endDate">
+            </div>
+        </div>
+        
+
+        <div class="form-group">
+            <label translate="oa-takeVacationDetail.timeLength">timeLength(H)</label>
+            <input type="text" class="form-control" name="timeLength" 
+                     ng-model="takeVacationDetail.timeLength"   ng-maxlength="2">
+        </div>
+
+        <div class="form-group">
+        	<label ng-if="takeVacationDetail.status !=null" translate="oa-takeVacationDetail.status">status</label>
+            <br/>
+            <span ng-if="takeVacationDetail.status==0" class="label bg-yellow" translate="oa-takeVacationDetail.approval">approval</span>
+            <span ng-if="takeVacationDetail.status==1" class="label bg-green" translate="oa-takeVacationDetail.pass">pass</span>
+            <span ng-if="takeVacationDetail.status==2" class="label bg-red" translate="oa-takeVacationDetail.reject">reject</span>
+        </div>
+        <div class="form-group">
+            <label translate="oa-takeVacationDetail.remark">remark</label>
+            <input type="text" class="form-control" name="remark"
+                   ng-model="takeVacationDetail.remark" ng-maxlength="50">
+
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span
+            translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit"  class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
+<script>
+
+$('#begin_time').datetimepicker({
+    format:'yyyy-mm-dd hh:ii:ss',
+    language:  'zh-CN',
+    autoclose: 1,
+    todayHighlight: 1,
+    startView: 2,
+    forceParse: 0,
+}).on("changeDate",function(ev){
+    var transferdate=transferDate($("#begin_time").val());//转时间日期
+    $('#end_time').datetimepicker('remove');
+    $('#end_time').datetimepicker({
+        format:'yyyy-mm-dd hh:ii:ss',
+        language:  'zh-CN',
+        autoclose: 1,
+        'startDate':transferdate
+    }).on("changeDate",function(ev){
+        var enddate=$("#end_time").val();
+        setEndTime(enddate);
+    });
+});
+$('#end_time').datetimepicker({
+    format:'yyyy-mm-dd hh:ii:ss',
+    language:  'zh-CN',
+    minView:2,
+    autoclose: 1
+}).on("changeDate",function(ev){
+    var enddate=$("#end_time").val();
+    setEndTime(enddate);
+});
+function setEndTime(enddate){
+    $('#begin_time').datetimepicker('remove');
+        $('#begin_time').datetimepicker({
+            format:'yyyy-mm-dd hh:ii:ss',
+            language:  'zh-CN',
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            forceParse: 0,
+            'endDate':transferDate(enddate)
+    });
+}
+//将时间字符串转为date
+function transferDate(data){
+    var start_time=data;
+    var newTime= start_time.replace(/-/g,"-");
+    var transferdate = new Date(newTime);
+    return transferdate;
+}
+function transferTime(str){
+    var newstr=str.replace(/-/g,'-');
+    var newdate=new Date(newstr);
+    var time=newdate.getTime();
+    return time;
+}
+</script>
+
+

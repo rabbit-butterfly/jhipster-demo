@@ -1,0 +1,35 @@
+{
+    "oa-workOvertime": {
+        "home": {
+            "title": "WorkOvertime Time",
+            "createLabel": "Create a WorkOvertime",
+            "createOrEditLabel": "Create or edit a WorkOvertime"
+        },
+        "created": "A new WorkOvertime is created with identifier {{ param }}",
+        "updated": "An WorkOvertime is updated with identifier {{ param }}",
+        "deleted": "An WorkOvertime is deleted with identifier {{ param }}",
+        "patch": "An WorkOvertime is action with identifier {{ param }}",
+        "delete": {
+            "question": "Are you sure you want to delete WorkOvertime {{ id }}?"
+        },
+        "upload":"import data success",
+        "import":"import",
+        "detail": {
+            "title": "WorkOvertime Identifier"
+        },
+        "createdBy": "Created by",
+        "createdDate": "Created date",
+        "startDate": "Start date",
+        "endDate": "End date",
+        "timeLength": "Time length(H)",
+        "status": "Status",
+        "remark": "Remark",
+        "action": "Action",
+        "pass": "PASS",
+        "notPass": "NOT PASS",
+        "reject": "REJECT",
+        "approval": "APPROVAL",
+        "search": "Search",
+        "searchWorkOvertime": "Search WorkOvertime"
+    }
+}

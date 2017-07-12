@@ -1,0 +1,65 @@
+<section class="content-header">
+	<ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
+      <li class="active" translate="tuxAdminApp.category.home.title">Category Maintenance</li>
+    </ol>
+</section>
+	<h3 class="box-title"></h3>
+
+<section class="content">
+<div>
+    <jh-alert></jh-alert>
+    <div>
+        <div class="row">
+          <div class="col-md-4">
+              <button class="btn btn-primary" ui-sref="category-maintenance.new-two">
+                  <span class="glyphicon glyphicon-flash"></span> <span translate="tuxAdminApp.category.home.createLabel">Create a new Category</span>
+              </button>
+          </div>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="tuxAdminApp.category.Id">Id</th>
+                <th translate="tuxAdminApp.category.secondName">Second Name</th>
+                <th translate="tuxAdminApp.category.remark">Remark</th>
+                <th translate="tuxAdminApp.category.action">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="category in categories track by category.id">
+                <td>{{category.id}}</td>
+                <td>{{category.name}}</td>
+                <td>{{category.remark}}</td>
+                <td>
+                	<button type="submit"
+                            ui-sref="category-maintenance.editTwo({id:category.id})"
+                            class="btn btn-primary btn-sm">
+                        <span class="glyphicon glyphicon-pencil" translate="tuxAdminApp.category.edit">edit</span>
+                    </button>
+                    <!-- 0:未发布 -->
+                   	<button type="submit"
+                           ng-click="setRelease(category,1)"
+                           class="btn btn-primary btn-sm"
+                           ng-if="category.status == 0"> 
+                       	<span translate="tuxAdminApp.category.release">Release</span>
+                   	</button>
+                   
+                   	<button type="submit"
+                           ng-click="setRelease(category,0)"
+                           class="btn btn-primary btn-sm"
+                           ng-if="category.status == 1">
+                        <span translate="tuxAdminApp.category.cancelRelease">Cancel Release</span>
+                    </button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <uib-pagination class="pagination-sm" total-items="totalItems" ng-model="page" ng-change="loadAll()"></uib-pagination>
+    </div>
+</div>
+</section>

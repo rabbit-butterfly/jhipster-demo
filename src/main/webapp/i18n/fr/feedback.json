@@ -1,0 +1,24 @@
+{
+    "tuxAdminApp": {
+        "feedback" : {
+            "home": {
+                "title": "Feedbacks",
+                "createLabel": "Créer un nouveau Feedback",
+                "createOrEditLabel": "Créer ou éditer un Feedback",
+                "search": "Recherche pour Feedback"
+            },
+            "created": "Un nouveau Feedback a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Feedback avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Feedback avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Feedback {{ id }} ?"
+            },
+            "detail": {
+                "title": "Feedback"
+            },
+            "userId": "User Id",
+            "createTime": "Create Time",
+            "content": "Content"
+        }
+    }
+}

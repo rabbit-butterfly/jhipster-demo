@@ -1,0 +1,37 @@
+<section class="content-header">
+      <h3>{{event.title}}<span>当前总报数：{{event.completedCount}}</span></h3>
+</section> 
+<section class="content">
+<div>  
+    <jh-alert></jh-alert>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>编号</th>
+                <th>姓名/法号</th>
+                <th>手机号</th>
+                <th>报数</th>
+                <th>报数时间</th>
+                <th>备注</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="x in reportCount track by x.id">
+                <td>{{x.id}}</a></td>
+                <td>{{x.personName}}</td>
+                <td>{{x.personMobile}}</td>
+                <td>{{x.completedNum}}</td>
+                <td>{{x.createdTime}}</td>
+                <td>{{x.remark}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <button type="submit"
+            ui-sref="event"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span>返回</span>
+    </button>
+</div>
+</section>

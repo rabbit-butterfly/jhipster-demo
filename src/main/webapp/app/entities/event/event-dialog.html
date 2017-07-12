@@ -1,0 +1,178 @@
+<div class="box box-info">
+	<div class="box-header with-border">
+		<!-- <h3 class="box-title">新增/编辑</h3> -->
+		<section class="content-header" >
+	    	<ol class="breadcrumb" float="left">
+		        <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
+		        <li class="active">共修管理</li>
+		        <li class="active">新增/编辑</li>
+	    	</ol>
+    	</section>
+		<h3 class="box-title"></h3>
+	</div>
+	<jh-alert></jh-alert>
+	
+	<form name="editForm" novalidate  role="form" ng-submit="save()" show-validation>
+	<div class="box-body">
+		<div class="form-group">
+				<br/>
+	          <label class="col-sm-1 control-label">活动标题</label>
+	          <div class="col-sm-11">
+            	<input type="hidden" class="form-control" name="id"
+                   ng-model="event.id">
+	       	    <input type="text" name="title" required  class="form-control" ng-maxlength="30" ng-model="event.title">
+	       	    <span>（* 30汉字内）</span>
+		          <div ng-show="editForm.title.$invalid">
+	                <p class="help-block" style="color:red"
+	                   ng-show="editForm.title.$error.required">
+	                    	*该字段必填。
+	                </p>
+	                <p class="help-block" style="color:red"
+                   		ng-show="editForm.title.$error.maxlength" translate="entity.validation.maxlength"
+                   		translate-value-max="30">
+                    	This field cannot be longer than 30 characters.
+                	</p>
+	             </div>
+	          </div>
+		</div>
+		
+		<div class="form-group">
+				<label for="inputEmail3" class="col-sm-1 control-label">活动状态</label>
+				<div class="col-sm-11">
+					<div class="radio">
+                      <label>
+                      <input type="radio" ng-model="event.status"  name="status"  value="1"/>启用
+                      </label>
+                    
+                      <label>
+                      <input type="radio" ng-model="event.status" name="status"  value="0"/>停用
+                      </label>
+				</div>
+			</div>
+		
+		<div class="form-group">
+	    	<label class="col-sm-1 control-label">活动时间</label>
+	    	<div  class="col-sm-11">
+				<div class="input-group date">
+		          	<div class=input-group-addon>
+		          		<i class="fa fa-calendar"></i>
+		          	</div>
+		          	<input type="text" required name="startDate" id="begin_time" 
+		                 value="{{event.startDate | date:'yyyy-MM-ddThh:mm:ss'}}">
+		           	<span class=""> 至</span>	
+		            <div class=input-group-addon>
+		          		<i class="fa fa-calendar"></i>
+		          	</div>
+		          	<input type="text"  required name="endDate" id="end_time" 
+		                   value="{{event.endDate | date:'yyyy-MM-ddThh:mm:ss'}}">
+		        </div>
+		        <div ng-show="editForm.startDate.$invalid">
+                	<p class="help-block" style="color:red"
+                   		ng-show="editForm.startDate.$error.required">
+                    	*该字段必填。
+                	</p>
+             	 </div>
+	    	</div>
+	    </div>
+	    
+	    <!-- <div class="form-group">
+	          <label class="col-sm-1 control-label" readonly  disabled="true"> 配图</label>
+	          <div class="col-sm-11">
+		          <input type="text" name="title" class="form-control"  ng-model="workOvertime.id">
+		          
+		          <input type="text" id="exampleInputFile" name="picPath"  readonly  disabled="true" ng-model="event.picPath" >
+	          </div>
+		</div> -->
+		<div class="form-group">
+	          <label  class="col-sm-1 control-label">活动摘要</label>
+	          <div class="col-sm-11">
+	          <textarea  calss="form-control" ng-model="event.summary" required name="summary" rows="6" cols="70" ng-maxlength="200"></textarea>
+	          </br><span>（* 200汉字内）</span>
+	          <div ng-show="editForm.summary.$invalid">
+                <p class="help-block" style="color:red"
+                   ng-show="editForm.summary.$error.required">
+                   	* 该字段必填。
+                </p>
+                <p class="help-block" style="color:red"
+                   ng-show="editForm.summary.$error.maxlength" translate="entity.validation.maxlength"
+                   translate-value-max="200">
+                    This field cannot be longer than 200 characters.
+                </p>
+             </div>
+	          </div>
+		</div>
+		
+		<div class="form-group">
+            <label>正文介绍</label>
+            <textarea ng-model="event.content" name="content" rows="10"  cols="80" maxlength="10000" ></textarea>
+            <span>（* 10000汉字内）</span>
+            <div ng-show="editForm.content.$invalid">
+                <p class="help-block" style="color:red"
+                   ng-show="editForm.content.$error.required">
+                   	* 该字段必填。
+                </p>
+             </div>
+		</div>
+		
+	<button type="submit" ui-sref="event"  class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span>返回</span>
+    </button>
+    <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save" class="btn btn-info pull-right">保存</span>
+    </button>
+	</div>	
+	</form>
+</div>
+<script>
+	$('#begin_time').datetimepicker({
+		format : 'yyyy-mm-ddThh:ii:ss',
+		language : 'zh-CN',
+		//minView : 2,
+		autoclose : 1
+	}).on("changeDate", function(ev) {
+		var transferdate = transferDate($("#begin_time").val());//转时间日期
+		$('#end_time').datetimepicker('remove');
+		$('#end_time').datetimepicker({
+			format : 'yyyy-mm-ddThh:ii:ss',
+			language : 'zh-CN',
+			autoclose : 1,
+			'startDate' : transferdate
+		}).on("changeDate", function(ev) {
+			var enddate = $("#end_time").val();
+			//setEndTime(enddate);
+		}); 
+	});
+	$('#end_time').datetimepicker({
+		format : 'yyyy-mm-ddThh:ii:ss',
+		language : 'zh-CN',
+		minView : 2,
+		autoclose : 1
+	}).on("changeDate", function(ev) {
+		var enddate = $("#end_time").val();
+		//setEndTime(enddate);
+	});
+	function setEndTime(enddate) {
+		$('#begin_time').datetimepicker('remove');
+		$('#begin_time').datetimepicker({
+			format : 'yyyy-mm-ddThh:ii:ss',
+			language : 'zh-CN',
+			autoclose : 1,
+			todayHighlight : 1,
+			startView : 2,
+			forceParse : 0
+		});
+	}
+	//将时间字符串转为date
+	function transferDate(data) {
+		var start_time = data;
+		var newTime = start_time.replace(/-/g, "-");
+		var transferdate = new Date(newTime);
+		return transferdate;
+	}
+	function transferTime(str) {
+		var newstr = str.replace(/-/g, '-');
+		var newdate = new Date(newstr);
+		var time = newdate.getTime();
+		return time;
+	}
+</script>

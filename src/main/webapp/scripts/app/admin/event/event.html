@@ -1,0 +1,130 @@
+<section class="content-header">
+      <!-- <h2>共修活动</h2> -->
+	<ol class="breadcrumb" id="title" >
+		<li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
+		<li class="active">共修活动</li>
+	</ol>
+</section> 
+	<h3 class="box-title"></h3>
+
+<section class="content">
+<div>  
+    <jh-alert></jh-alert>
+    <div>
+        <div class="row">
+          <div class="col-md-4">
+              <button class="btn btn-primary" ui-sref="event-new">
+                  <span class="glyphicon glyphicon-flash"></span> <span>新增</span>
+              </button>
+          </div>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>编号</th>
+                <th>活动名称</th>
+                <th>活动时间</th>
+                <th>活动状态</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="x in events track by x.id">
+                <td>{{x.id}}</a></td>
+                <td>{{x.title}}</td>
+                <td>{{x.startDate | date:'yyyy-MM-dd HH:mm:ss'}} - {{x.endDate | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+                <td ng-show="x.status == 0" >未发布</td>
+                <td ng-show="x.status == 1" >已发布</td>
+                <td>
+                    <button type="submit"
+                            ui-sref="eventRegist-detail({id:x.id})"
+                            class="btn btn-info btn-sm">
+                        <span class="glyphicon glyphicon-eye-open"> 查看已报名</span>
+                    </button>
+                    <button type="submit"
+                            ui-sref="eventReportCount-detail({id:x.id})"
+                            class="btn btn-info btn-sm">
+                        <span class="glyphicon glyphicon-eye-open">报数统计</span>
+                    </button>
+                    <button type="submit" 
+                            ui-sref="event-edit({id:x.id})"
+                            class="btn btn-primary btn-sm">
+                        <span class="glyphicon glyphicon-pencil">编辑</span>
+                    </button>
+                    <button has-authority="ROLE_ADMIN" type="submit" ng-click="pass({'id':x.id,'status':1})" ng-show="x.status == 0"
+                            class="btn btn-info btn-sm">
+                        <span class="glyphicon">发布</span>
+                    </button>
+                    <button has-authority="ROLE_ADMIN" type="submit" ng-click="pass({'id':x.id,'status':0})" ng-show="x.status == 1"
+                            class="btn btn-primary btn-sm">
+                        <span class="glyphicon">取消发布</span>
+                    </button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <uib-pagination class="pagination-sm" total-items="totalItems" ng-model="page" ng-change="loadAll()"></uib-pagination>
+    </div>
+</div>
+</section>
+<script>
+
+$('#begin_time').datetimepicker({
+    format:'yyyy-mm-dd hh:ii:ss',
+    language:  'zh-CN',
+    autoclose: 1,
+    todayHighlight: 1,
+    startView: 2,
+    forceParse: 0,
+}).on("changeDate",function(ev){
+    var transferdate=transferDate($("#begin_time").val());//转时间日期
+    $('#end_time').datetimepicker('remove');
+    $('#end_time').datetimepicker({
+        format:'yyyy-mm-dd hh:ii:ss',
+        language:  'zh-CN',
+        autoclose: 1,
+        'startDate':transferdate
+    }).on("changeDate",function(ev){
+        var enddate=$("#end_time").val();
+        setEndTime(enddate);
+    });
+});
+$('#end_time').datetimepicker({
+    format:'yyyy-mm-dd hh:ii:ss',
+    language:  'zh-CN',
+    minView:2,
+    autoclose: 1
+}).on("changeDate",function(ev){
+    var enddate=$("#end_time").val();
+    setEndTime(enddate);
+});
+function setEndTime(enddate){
+    $('#begin_time').datetimepicker('remove');
+        $('#begin_time').datetimepicker({
+            format:'yyyy-mm-dd hh:ii:ss',
+            language:  'zh-CN',
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            forceParse: 0,
+            'endDate':transferDate(enddate)
+    });
+}
+//将时间字符串转为date
+function transferDate(data){
+    var start_time=data;
+    var newTime= start_time.replace(/-/g,"-");
+    var transferdate = new Date(newTime);
+    return transferdate;
+}
+function transferTime(str){
+    var newstr=str.replace(/-/g,'-');
+    var newdate=new Date(newstr);
+    var time=newdate.getTime();
+    return time;
+}
+</script>

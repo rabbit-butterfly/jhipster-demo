@@ -1,0 +1,87 @@
+<div class="box box-info">
+	<div class="box-header with-border">
+		<section class="content-header" >
+		      <ol class="breadcrumb" float="left">
+		        <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
+		        <li class="active" translate="tuxAdminApp.category.home.title">Category Maintenance</li>
+		        <li class="active" translate="tuxAdminApp.category.home.createOrEditLabel">Create or edit a Category</li>
+		      </ol>
+    	</section>
+		<h3 class="box-title"></h3>
+	</div>
+	<jh-alert></jh-alert>
+	
+	<form name="editForm"  role="form" ng-submit="save()">
+	<div class="box-body">
+		<div class="form-group" ng-if="category.id == null">
+            <label class="col-sm-1 control-label" translate="tuxAdminApp.category.firstName">FirstName</label>
+            <div class="col-sm-11">
+            	<select class="form-control" name="parentId" required ng-model="category.parentId"
+                    ng-options="category.id as category.name for category in categories">
+                    <option value="">请选择</option>
+            	</select>
+            </div>
+            <div ng-show="editForm.parentId.$invalid">
+                <!-- <p class="help-block" style="color:red"
+                   ng-show="editForm.parentId.$error.required">
+                    This field is required.
+                </p> -->
+             </div>
+        </div>
+        
+        <div class="form-group">
+            <label class="col-sm-1 control-label" translate="tuxAdminApp.category.secondName">Second Name</label>
+            <div class="col-sm-11">
+            	<input type="text" class="form-control" name="name" required ng-model="category.name" ng-maxlength="30"/>
+                <span>（* 30汉字内）</span>
+            </div>
+            <div ng-show="editForm.name.$invalid">
+                <!-- <p class="help-block" style="color:red"
+                   ng-show="editForm.name.$error.required">
+                    This field is required.
+                </p> -->
+                <p class="help-block" style="color:red"
+                   ng-show="editForm.name.$error.maxlength" translate="entity.validation.maxlength"
+                   translate-value-max="30">
+                    This field cannot be longer than 30 characters.
+                </p>
+             </div>
+        </div>
+        
+        <div class="form-group">
+			<label class="col-sm-1 control-label" translate="tuxAdminApp.category.status">Status</label>
+			<div>
+			    <input type="radio" name="status" ng-model="category.status" value="1">已发布
+			    <input type="radio" name="status" ng-model="category.status" value="0">未发布
+			</div>
+		</div>
+        
+         <div class="form-group">
+            <label class="col-sm-1 control-label" translate="tuxAdminApp.category.remark">Remark</label></br>
+            <div class="col-sm-11">
+            	<textarea  class="form-control" ng-model="category.remark" name="remark" required rows="6" cols="70" maxlength="200"></textarea>
+            	<span>（* 200汉字内）</span>
+            </div>
+            <div ng-show="editForm.remark.$invalid">
+                <!-- <p class="help-block" style="color:red"
+                   ng-show="editForm.remark.$error.required">
+                    This field is required.
+                </p> -->
+                <p class="help-block" style="color:red"
+                   ng-show="editForm.remark.$error.maxlength" translate="entity.validation.maxlength"
+                   translate-value-max="200">
+                    This field cannot be longer than 200 characters.
+                </p>
+             </div>
+        </div>
+	
+		<button type="submit" class="btn btn-info" ui-sref="category-maintenance">
+            <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;
+            <span translate="entity.action.back">Back</span>
+        </button>
+        <button type="submit"  class="btn btn-primary">
+            <span class="glyphicon glyphicon-save" class="btn btn-info pull-right"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+	</div>	
+	</form>
+</div>

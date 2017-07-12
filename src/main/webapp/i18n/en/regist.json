@@ -1,0 +1,29 @@
+{
+    "tuxAdminApp": {
+        "regist" : {
+            "home": {
+                "title": "Regists",
+                "createLabel": "Create a new Regist",
+                "createOrEditLabel": "Create or edit a Regist",
+                "search": "Search for Regist"
+            },
+            "created": "A new Regist is created with identifier {{ param }}",
+            "updated": "A Regist is updated with identifier {{ param }}",
+            "deleted": "A Regist is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Regist {{ id }}?"
+            },
+            "detail": {
+                "title": "Regist"
+            },
+            "userId": "User Id",
+            "persionName": "Persion Name",
+            "personMobile": "Person Mobile",
+            "eventId": "Event Id",
+            "targetNum": "Target Num",
+            "remark": "Remark",
+            "createTime": "Create Time",
+            "modifyTime": "Modify Time"
+        }
+    }
+}
