@@ -1,0 +1,38 @@
+{
+    "tuxAdminApp": {
+        "project" : {
+            "home": {
+                "title": "Projects",
+                "createLabel": "Créer un nouveau Project",
+                "createOrEditLabel": "Créer ou éditer un Project",
+                "search": "Recherche pour Project"
+            },
+            "created": "Un nouveau Project a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Project avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Project avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Project {{ id }} ?"
+            },
+            "detail": {
+                "title": "Project"
+            },
+            "projectCompId": "Project Comp Id",
+            "projectCompName": "Project Comp Name",
+            "projectBame": "Project Bame",
+            "projectDesc": "Project Desc",
+            "projectStatus": "Project Status",
+            "supervisorCompId": "Supervisor Comp Id",
+            "supervisorCompName": "Supervisor Comp Name",
+            "contractorCompId": "Contractor Comp Id",
+            "contractorCompName": "Contractor Comp Name",
+            "startDate": "Start Date",
+            "endDate": "End Date",
+            "createdBy": "Created By",
+            "createdTime": "Created Time",
+            "modifyBy": "Modify By",
+            "modifyTime": "Modify Time",
+            "delFlag": "Del Flag",
+            "remark": "Remark"
+        }
+    }
+}

@@ -56,8 +56,8 @@ jhipster:
             # security key (this key should be unique for your application, and kept secret)
             key: e76a2e5365e9ea616e84ffed412c6e8ec99e68d8
     swagger:
-        title: 增慧学佛前端 API
-        description: zhxf API documentation
+        title: xxxx API
+        description: xxx API documentation
         version: 0.0.1
         termsOfServiceUrl:
         contact:

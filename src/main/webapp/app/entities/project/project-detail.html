@@ -1,0 +1,87 @@
+
+<div>
+    <h2><span data-translate="tuxAdminApp.project.detail.title">Project</span> {{vm.project.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="tuxAdminApp.project.projectCompId">Project Comp Id</span></dt>
+        <dd>
+            <span>{{vm.project.projectCompId}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.project.projectCompName">Project Comp Name</span></dt>
+        <dd>
+            <span>{{vm.project.projectCompName}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.project.projectBame">Project Bame</span></dt>
+        <dd>
+            <span>{{vm.project.projectBame}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.project.projectDesc">Project Desc</span></dt>
+        <dd>
+            <span>{{vm.project.projectDesc}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.project.projectStatus">Project Status</span></dt>
+        <dd>
+            <span>{{vm.project.projectStatus}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.project.supervisorCompId">Supervisor Comp Id</span></dt>
+        <dd>
+            <span>{{vm.project.supervisorCompId}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.project.supervisorCompName">Supervisor Comp Name</span></dt>
+        <dd>
+            <span>{{vm.project.supervisorCompName}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.project.contractorCompId">Contractor Comp Id</span></dt>
+        <dd>
+            <span>{{vm.project.contractorCompId}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.project.contractorCompName">Contractor Comp Name</span></dt>
+        <dd>
+            <span>{{vm.project.contractorCompName}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.project.startDate">Start Date</span></dt>
+        <dd>
+            <span>{{vm.project.startDate | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.project.endDate">End Date</span></dt>
+        <dd>
+            <span>{{vm.project.endDate | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.project.createdBy">Created By</span></dt>
+        <dd>
+            <span>{{vm.project.createdBy}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.project.createdTime">Created Time</span></dt>
+        <dd>
+            <span>{{vm.project.createdTime | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.project.modifyBy">Modify By</span></dt>
+        <dd>
+            <span>{{vm.project.modifyBy}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.project.modifyTime">Modify Time</span></dt>
+        <dd>
+            <span>{{vm.project.modifyTime | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.project.delFlag">Del Flag</span></dt>
+        <dd>
+            <span>{{vm.project.delFlag}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.project.remark">Remark</span></dt>
+        <dd>
+            <span>{{vm.project.remark}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="project-detail.edit({id:vm.project.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

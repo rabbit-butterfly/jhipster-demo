@@ -1,0 +1,99 @@
+<div>
+    <h2 data-translate="tuxAdminApp.company.home.title">Companies</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="company.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs-down"  data-translate="tuxAdminApp.company.home.createLabel">
+                        Create new Company
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'tuxAdminApp.company.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="tuxAdminApp.company.name">Name</span></th>
+                    <th><span data-translate="tuxAdminApp.company.category">Category</span></th>
+                    <th><span data-translate="tuxAdminApp.company.legalPerson">Legal Person</span></th>
+                    <th><span data-translate="tuxAdminApp.company.address">Address</span></th>
+                    <th><span data-translate="tuxAdminApp.company.province">Province</span></th>
+                    <th><span data-translate="tuxAdminApp.company.city">City</span></th>
+                    <th><span data-translate="tuxAdminApp.company.area">Area</span></th>
+                    <th><span data-translate="tuxAdminApp.company.mobile">Mobile</span></th>
+                    <th><span data-translate="tuxAdminApp.company.status">Status</span></th>
+                    <th><span data-translate="tuxAdminApp.company.delFlag">Del Flag</span></th>
+                    <th><span data-translate="tuxAdminApp.company.createdTime">Created Time</span></th>
+                    <th><span data-translate="tuxAdminApp.company.createdBy">Created By</span></th>
+                    <th><span data-translate="tuxAdminApp.company.updateTime">Update Time</span></th>
+                    <th><span data-translate="tuxAdminApp.company.remark">Remark</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="company in vm.companies track by company.id">
+                    <td><a ui-sref="company-detail({id:company.id})">{{company.id}}</a></td>
+                    <td>{{company.name}}</td>
+                    <td>{{company.category}}</td>
+                    <td>{{company.legalPerson}}</td>
+                    <td>{{company.address}}</td>
+                    <td>{{company.province}}</td>
+                    <td>{{company.city}}</td>
+                    <td>{{company.area}}</td>
+                    <td>{{company.mobile}}</td>
+                    <td>{{company.status}}</td>
+                    <td>{{company.delFlag}}</td>
+                    <td>{{company.createdTime | date:'medium'}}</td>
+                    <td>{{company.createdBy}}</td>
+                    <td>{{company.updateTime | date:'medium'}}</td>
+                    <td>{{company.remark}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="company-detail({id:company.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="company.edit({id:company.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="company.delete({id:company.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

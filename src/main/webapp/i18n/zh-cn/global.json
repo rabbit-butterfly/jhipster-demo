@@ -1,12 +1,17 @@
 {
     "global": {
-        "title": "增慧学佛",
+        "title": "xxxx",
+        "softwareName":"pcms",
+        "simpleSoftwareName":"pcms",
+        "co":"xx company",
         "browsehappy": "您正在使用一个  <strong>过时的</strong> 浏览器. 请 <a href=\"http://browsehappy.com/?locale=fr\">升级一下您的浏览器</a>来改善您的体验效果。",
         "menu": {
             "home": "首页",
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "实体",
+                "company": "Company",
+                "project": "Project",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

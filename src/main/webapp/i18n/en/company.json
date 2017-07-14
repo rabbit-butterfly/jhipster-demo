@@ -1,0 +1,35 @@
+{
+    "tuxAdminApp": {
+        "company" : {
+            "home": {
+                "title": "Companies",
+                "createLabel": "Create a new Company",
+                "createOrEditLabel": "Create or edit a Company",
+                "search": "Search for Company"
+            },
+            "created": "A new Company is created with identifier {{ param }}",
+            "updated": "A Company is updated with identifier {{ param }}",
+            "deleted": "A Company is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Company {{ id }}?"
+            },
+            "detail": {
+                "title": "Company"
+            },
+            "name": "Name",
+            "category": "Category",
+            "legalPerson": "Legal Person",
+            "address": "Address",
+            "province": "Province",
+            "city": "City",
+            "area": "Area",
+            "mobile": "Mobile",
+            "status": "Status",
+            "delFlag": "Del Flag",
+            "createdTime": "Created Time",
+            "createdBy": "Created By",
+            "updateTime": "Update Time",
+            "remark": "Remark"
+        }
+    }
+}

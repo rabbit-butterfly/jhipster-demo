@@ -1,0 +1,144 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myProjectLabel" data-translate="tuxAdminApp.project.home.createOrEditLabel">Create or edit a Project</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.project.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.project.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.project.projectCompId" for="field_projectCompId">Project Comp Id</label>
+            <input type="text" class="form-control" name="projectCompId" id="field_projectCompId"
+                    ng-model="vm.project.projectCompId"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.project.projectCompName" for="field_projectCompName">Project Comp Name</label>
+            <input type="text" class="form-control" name="projectCompName" id="field_projectCompName"
+                    ng-model="vm.project.projectCompName"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.project.projectBame" for="field_projectBame">Project Bame</label>
+            <input type="text" class="form-control" name="projectBame" id="field_projectBame"
+                    ng-model="vm.project.projectBame"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.project.projectDesc" for="field_projectDesc">Project Desc</label>
+            <input type="text" class="form-control" name="projectDesc" id="field_projectDesc"
+                    ng-model="vm.project.projectDesc"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.project.projectStatus" for="field_projectStatus">Project Status</label>
+            <input type="number" class="form-control" name="projectStatus" id="field_projectStatus"
+                    ng-model="vm.project.projectStatus"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.project.supervisorCompId" for="field_supervisorCompId">Supervisor Comp Id</label>
+            <input type="number" class="form-control" name="supervisorCompId" id="field_supervisorCompId"
+                    ng-model="vm.project.supervisorCompId"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.project.supervisorCompName" for="field_supervisorCompName">Supervisor Comp Name</label>
+            <input type="text" class="form-control" name="supervisorCompName" id="field_supervisorCompName"
+                    ng-model="vm.project.supervisorCompName"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.project.contractorCompId" for="field_contractorCompId">Contractor Comp Id</label>
+            <input type="number" class="form-control" name="contractorCompId" id="field_contractorCompId"
+                    ng-model="vm.project.contractorCompId"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.project.contractorCompName" for="field_contractorCompName">Contractor Comp Name</label>
+            <input type="text" class="form-control" name="contractorCompName" id="field_contractorCompName"
+                    ng-model="vm.project.contractorCompName"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.project.startDate" for="field_startDate">Start Date</label>
+                <div class="input-group">
+                    <input id="field_startDate" type="text" class="form-control" name="startDate" datetime-picker="{{dateformat}}" ng-model="vm.project.startDate" is-open="vm.datePickerOpenStatus.startDate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('startDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.project.endDate" for="field_endDate">End Date</label>
+                <div class="input-group">
+                    <input id="field_endDate" type="text" class="form-control" name="endDate" datetime-picker="{{dateformat}}" ng-model="vm.project.endDate" is-open="vm.datePickerOpenStatus.endDate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('endDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.project.createdBy" for="field_createdBy">Created By</label>
+            <input type="number" class="form-control" name="createdBy" id="field_createdBy"
+                    ng-model="vm.project.createdBy"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.project.createdTime" for="field_createdTime">Created Time</label>
+                <div class="input-group">
+                    <input id="field_createdTime" type="text" class="form-control" name="createdTime" datetime-picker="{{dateformat}}" ng-model="vm.project.createdTime" is-open="vm.datePickerOpenStatus.createdTime"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('createdTime')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.project.modifyBy" for="field_modifyBy">Modify By</label>
+            <input type="number" class="form-control" name="modifyBy" id="field_modifyBy"
+                    ng-model="vm.project.modifyBy"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.project.modifyTime" for="field_modifyTime">Modify Time</label>
+                <div class="input-group">
+                    <input id="field_modifyTime" type="text" class="form-control" name="modifyTime" datetime-picker="{{dateformat}}" ng-model="vm.project.modifyTime" is-open="vm.datePickerOpenStatus.modifyTime"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('modifyTime')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.project.delFlag" for="field_delFlag">Del Flag</label>
+            <input type="text" class="form-control" name="delFlag" id="field_delFlag"
+                    ng-model="vm.project.delFlag"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.project.remark" for="field_remark">Remark</label>
+            <input type="text" class="form-control" name="remark" id="field_remark"
+                    ng-model="vm.project.remark"
+                    />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

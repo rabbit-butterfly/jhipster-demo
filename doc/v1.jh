@@ -1,0 +1,38 @@
+entity Company {
+	name String,
+    category String,
+    legalPerson String,
+    address String,
+    province String,
+    city String,
+    area String ,
+    mobile String ,
+    status Integer,
+    delFlag String,
+    createdTime Instant,
+    createdBy  Long,
+    updateTime Instant,
+    remark String
+}
+
+entity Project {
+	projectCompId String,
+    projectCompName String,
+    projectBame String,
+    projectDesc String,
+    projectStatus Integer,
+    supervisorCompId Long,
+    supervisorCompName String
+    contractorCompId Long,
+    contractorCompName String,
+    startDate Instant
+    endDate Instant,
+    createdBy  Long,
+    createdTime Instant,
+    modifyBy  Long,
+    modifyTime Instant,
+    delFlag String,
+    remark String
+}
+
+

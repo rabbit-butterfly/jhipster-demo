@@ -1,0 +1,79 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "projectCompId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "projectCompName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "projectBame",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "projectDesc",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "projectStatus",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "supervisorCompId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "supervisorCompName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contractorCompId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "contractorCompName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "startDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "endDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "createdBy",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "createdTime",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "modifyBy",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "modifyTime",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "delFlag",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "remark",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170712103801",
+    "entityTableName": "project",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}
