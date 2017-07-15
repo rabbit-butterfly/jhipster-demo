@@ -1,8 +1,8 @@
 {
   "generator-jhipster": {
-    "baseName": "tuxAdmin",
-    "packageName": "local.tux.app",
-    "packageFolder": "local/tux/app",
+    "baseName": "pcms",
+    "packageName": "com.jumore.zhxf",
+    "packageFolder": "com/jumore/zhxf",
     "authenticationType": "session",
     "hibernateCache": "hazelcast",
     "clusteredHttpSession": "hazelcast",

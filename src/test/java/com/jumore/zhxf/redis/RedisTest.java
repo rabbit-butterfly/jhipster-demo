@@ -12,17 +12,13 @@ import org.junit.runner.RunWith;
 import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.IntegrationTest;
 import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.redis.core.ListOperations;
 import org.springframework.data.redis.support.atomic.RedisAtomicLong;
 import org.springframework.data.web.PageableHandlerMethodArgumentResolver;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 import com.jumore.zhxf.Application;
-import com.jumore.zhxf.service.dto.EventDTO;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
@@ -41,8 +37,8 @@ public class RedisTest {
 
 	    @Resource(name = "redisCountingTemplate")
 	    private RedisAtomicLong longCounter;
-	    
-		
+
+
 	    @Before
 	    public void setup() {
 	        MockitoAnnotations.initMocks(this);
@@ -53,8 +49,8 @@ public class RedisTest {
 	    @Test
 	    public void createCategoryWithExistingId() throws Exception {
 	    }
-	    
-	    
+
+
 		@Test // DATAREDIS-469
 		public void testGetAndIncrement() {
 
@@ -63,5 +59,5 @@ public class RedisTest {
 			assertEquals(2, longCounter.get());
 		}
 
-	    
+
 }
