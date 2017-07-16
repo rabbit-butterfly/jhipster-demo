@@ -73,9 +73,9 @@
     <dependencies>
         <!-- 依赖dubbox aip end -->
 
-        <!-- <dependency> 765facbabe17cf4c94d017da300aef7ef3dbe7ce <groupId>com.alibaba</groupId> 
-			<artifactId>dubbo</artifactId> <version>2.8.4</version> <exclusions> <exclusion> 
-			<artifactId>spring</artifactId> <groupId>org.springframework</groupId> </exclusion> 
+        <!-- <dependency> 765facbabe17cf4c94d017da300aef7ef3dbe7ce <groupId>com.alibaba</groupId>
+			<artifactId>dubbo</artifactId> <version>2.8.4</version> <exclusions> <exclusion>
+			<artifactId>spring</artifactId> <groupId>org.springframework</groupId> </exclusion>
 			</exclusions> </dependency> -->
 
         <dependency>
@@ -155,13 +155,13 @@
         </dependency>
 
         <!-- 依赖dubbox aip -->
-        <!-- <dependency> <groupId>com.jumore.b2b.daren</groupId> <artifactId>daren-business</artifactId> 
-			<version>0.0.1-SNAPSHOT</version> </dependency> <dependency> <groupId>com.jumore.b2b.daren</groupId> 
-			<artifactId>daren-comm-test</artifactId> <version>0.0.1-SNAPSHOT</version> 
-			</dependency> <dependency> <groupId>com.jumore.b2b.daren</groupId> <artifactId>daren-core-test</artifactId> 
-			<version>0.0.1-SNAPSHOT</version> </dependency> <dependency> <groupId>com.jumore.b2b.daren</groupId> 
-			<artifactId>daren-io-test</artifactId> <version>0.0.1-SNAPSHOT</version> 
-			</dependency> <dependency> <groupId>com.jumore.b2b.daren</groupId> <artifactId>daren-service-basic-api-test</artifactId> 
+        <!-- <dependency> <groupId>com.jumore.b2b.daren</groupId> <artifactId>daren-business</artifactId>
+			<version>0.0.1-SNAPSHOT</version> </dependency> <dependency> <groupId>com.jumore.b2b.daren</groupId>
+			<artifactId>daren-comm-test</artifactId> <version>0.0.1-SNAPSHOT</version>
+			</dependency> <dependency> <groupId>com.jumore.b2b.daren</groupId> <artifactId>daren-core-test</artifactId>
+			<version>0.0.1-SNAPSHOT</version> </dependency> <dependency> <groupId>com.jumore.b2b.daren</groupId>
+			<artifactId>daren-io-test</artifactId> <version>0.0.1-SNAPSHOT</version>
+			</dependency> <dependency> <groupId>com.jumore.b2b.daren</groupId> <artifactId>daren-service-basic-api-test</artifactId>
 			<version>0.0.1-SNAPSHOT</version> </dependency> -->
 
         <!-- 依赖dubbox aip -->
@@ -214,8 +214,8 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        <!-- The HikariCP Java Agent is disabled by default, as it is experimental 
-			<dependency> <groupId>com.zaxxer</groupId> <artifactId>HikariCP-agent</artifactId> 
+        <!-- The HikariCP Java Agent is disabled by default, as it is experimental
+			<dependency> <groupId>com.zaxxer</groupId> <artifactId>HikariCP-agent</artifactId>
 			<version>${HikariCP.version}</version> </dependency> -->
         <dependency>
             <groupId>commons-io</groupId>
@@ -549,8 +549,8 @@
         </resources>
         <pluginManagement>
             <plugins>
-                <!-- This plugin's configuration is used to store Eclipse m2e settings 
-					only. It has no influence on the Maven build itself. Remove when the m2e 
+                <!-- This plugin's configuration is used to store Eclipse m2e settings
+					only. It has no influence on the Maven build itself. Remove when the m2e
 					plugin can correctly bind to Maven lifecycle -->
                 <plugin>
                     <groupId>org.eclipse.m2e</groupId>
@@ -572,7 +572,7 @@
                                         <ignore />
                                     </action>
                                 </pluginExecution>
-                                <pluginExecution>
+                                <!-- <pluginExecution>
                                     <pluginExecutionFilter>
                                         <groupId>com.github.trecloux</groupId>
                                         <artifactId>yeoman-maven-plugin</artifactId>
@@ -584,7 +584,7 @@
                                     <action>
                                         <ignore />
                                     </action>
-                                </pluginExecution>
+                                </pluginExecution>-->
                             </pluginExecutions>
                         </lifecycleMappingMetadata>
                     </configuration>
@@ -643,7 +643,7 @@
                     <resultsFolder>target/gatling/results</resultsFolder>
                     <bodiesFolder>src/test/gatling/bodies</bodiesFolder>
                     <simulationsFolder>src/test/gatling/simulations</simulationsFolder>
-                    <!-- This will force Gatling to ask which simulation to run This is 
+                    <!-- This will force Gatling to ask which simulation to run This is
 						useful when you have multiple simulations -->
                     <simulationClass>*</simulationClass>
                 </configuration>
@@ -757,12 +757,12 @@
                         <configuration>
                             <!-- Sets the path to the file which contains the execution data. -->
                             <destFile>${project.testresult.directory}/coverage/jacoco/jacoco.exec</destFile>
-                            <!-- Sets the name of the property containing the settings for JaCoCo 
+                            <!-- Sets the name of the property containing the settings for JaCoCo
 								runtime agent. -->
                             <propertyName>surefireArgLine</propertyName>
                         </configuration>
                     </execution>
-                    <!-- Ensures that the code coverage report for unit tests is created 
+                    <!-- Ensures that the code coverage report for unit tests is created
 						after unit tests have been run -->
                     <execution>
                         <id>post-unit-test</id>
@@ -844,7 +844,7 @@
             </activation>
             <build>
                 <plugins>
-                    <plugin>
+                    <!--<plugin>
                         <groupId>com.github.trecloux</groupId>
                         <artifactId>yeoman-maven-plugin</artifactId>
                         <version>0.4</version>
@@ -858,14 +858,14 @@
                                 <configuration>
                                     <skipTests>true</skipTests>
                                     <buildTool>grunt</buildTool>
-                                    <buildArgs>sass:server --force</buildArgs>
+                                    <buildArgs>sass:server &#45;&#45;force</buildArgs>
                                 </configuration>
                             </execution>
                         </executions>
                         <configuration>
                             <yeomanProjectDirectory>${project.basedir}</yeomanProjectDirectory>
                         </configuration>
-                    </plugin>
+                    </plugin>-->
                 </plugins>
             </build>
             <properties>
@@ -920,7 +920,7 @@
             <id>prod</id>
             <build>
                 <plugins>
-                    <plugin>
+                    <!--<plugin>
                         <groupId>com.github.trecloux</groupId>
                         <artifactId>yeoman-maven-plugin</artifactId>
                         <version>0.4</version>
@@ -934,14 +934,14 @@
                                 <configuration>
                                     <skipTests>true</skipTests>
                                     <buildTool>grunt</buildTool>
-                                    <buildArgs>sass:server --force</buildArgs>
+                                    <buildArgs>sass:server &#45;&#45;force</buildArgs>
                                 </configuration>
                             </execution>
                         </executions>
                         <configuration>
                             <yeomanProjectDirectory>${project.basedir}</yeomanProjectDirectory>
                         </configuration>
-                    </plugin>
+                    </plugin>-->
                     <plugin>
                         <artifactId>maven-clean-plugin</artifactId>
                         <version>2.5</version>
