@@ -2,19 +2,16 @@
     'use strict';
 
     angular
-        .module('tuxAdminApp')
+        .module('pcmsApp')
         .controller('CompanyController', CompanyController);
 
-    CompanyController.$inject = ['Company', 'CompanySearch'];
+    CompanyController.$inject = ['Company'];
 
-    function CompanyController(Company, CompanySearch) {
+    function CompanyController(Company) {
 
         var vm = this;
 
         vm.companies = [];
-        vm.clear = clear;
-        vm.search = search;
-        vm.loadAll = loadAll;
 
         loadAll();
 
@@ -24,19 +21,5 @@
                 vm.searchQuery = null;
             });
         }
-
-        function search() {
-            if (!vm.searchQuery) {
-                return vm.loadAll();
-            }
-            CompanySearch.query({query: vm.searchQuery}, function(result) {
-                vm.companies = result;
-                vm.currentSearch = vm.searchQuery;
-            });
-        }
-
-        function clear() {
-            vm.searchQuery = null;
-            loadAll();
-        }    }
+    }
 })();

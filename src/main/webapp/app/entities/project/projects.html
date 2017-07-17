@@ -1,32 +1,15 @@
 <div>
-    <h2 data-translate="tuxAdminApp.project.home.title">Projects</h2>
+    <h2 data-translate="pcmsApp.project.home.title">Projects</h2>
     <jhi-alert></jhi-alert>
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-4 no-padding-left">
                 <button class="btn btn-primary" ui-sref="project.new" >
                     <span class="glyphicon glyphicon-plus"></span>
-                    <span class="hidden-xs-down"  data-translate="tuxAdminApp.project.home.createLabel">
+                    <span  data-translate="pcmsApp.project.home.createLabel">
                         Create new Project
                     </span>
                 </button>
-            </div>
-            <div class="col-xs-8 no-padding-right">
-                <form name="searchForm" class="form-inline">
-                    <div class="input-group pull-right" >
-                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'tuxAdminApp.project.home.search' | translate }}">
-                        <span  class="input-group-btn width-min" >
-                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
-                                <span class="glyphicon glyphicon-search"></span>
-                            </button>
-                        </span>
-                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
-                            <button class="btn btn-info" ng-click="vm.clear()">
-                                <span class="glyphicon glyphicon-trash"></span>
-                            </button>
-                        </span>
-                    </div>
-                </form>
             </div>
         </div>
     </div>
@@ -36,23 +19,23 @@
             <thead>
                 <tr>
                     <th><span data-translate="global.field.id">ID</span></th>
-                    <th><span data-translate="tuxAdminApp.project.projectCompId">Project Comp Id</span></th>
-                    <th><span data-translate="tuxAdminApp.project.projectCompName">Project Comp Name</span></th>
-                    <th><span data-translate="tuxAdminApp.project.projectBame">Project Bame</span></th>
-                    <th><span data-translate="tuxAdminApp.project.projectDesc">Project Desc</span></th>
-                    <th><span data-translate="tuxAdminApp.project.projectStatus">Project Status</span></th>
-                    <th><span data-translate="tuxAdminApp.project.supervisorCompId">Supervisor Comp Id</span></th>
-                    <th><span data-translate="tuxAdminApp.project.supervisorCompName">Supervisor Comp Name</span></th>
-                    <th><span data-translate="tuxAdminApp.project.contractorCompId">Contractor Comp Id</span></th>
-                    <th><span data-translate="tuxAdminApp.project.contractorCompName">Contractor Comp Name</span></th>
-                    <th><span data-translate="tuxAdminApp.project.startDate">Start Date</span></th>
-                    <th><span data-translate="tuxAdminApp.project.endDate">End Date</span></th>
-                    <th><span data-translate="tuxAdminApp.project.createdBy">Created By</span></th>
-                    <th><span data-translate="tuxAdminApp.project.createdTime">Created Time</span></th>
-                    <th><span data-translate="tuxAdminApp.project.modifyBy">Modify By</span></th>
-                    <th><span data-translate="tuxAdminApp.project.modifyTime">Modify Time</span></th>
-                    <th><span data-translate="tuxAdminApp.project.delFlag">Del Flag</span></th>
-                    <th><span data-translate="tuxAdminApp.project.remark">Remark</span></th>
+                    <th><span data-translate="pcmsApp.project.projectCompId">Project Comp Id</span></th>
+                    <th><span data-translate="pcmsApp.project.projectCompName">Project Comp Name</span></th>
+                    <th><span data-translate="pcmsApp.project.projectBame">Project Bame</span></th>
+                    <th><span data-translate="pcmsApp.project.projectDesc">Project Desc</span></th>
+                    <th><span data-translate="pcmsApp.project.projectStatus">Project Status</span></th>
+                    <th><span data-translate="pcmsApp.project.supervisorCompId">Supervisor Comp Id</span></th>
+                    <th><span data-translate="pcmsApp.project.supervisorCompName">Supervisor Comp Name</span></th>
+                    <th><span data-translate="pcmsApp.project.contractorCompId">Contractor Comp Id</span></th>
+                    <th><span data-translate="pcmsApp.project.contractorCompName">Contractor Comp Name</span></th>
+                    <th><span data-translate="pcmsApp.project.startDate">Start Date</span></th>
+                    <th><span data-translate="pcmsApp.project.endDate">End Date</span></th>
+                    <th><span data-translate="pcmsApp.project.createdBy">Created By</span></th>
+                    <th><span data-translate="pcmsApp.project.createdTime">Created Time</span></th>
+                    <th><span data-translate="pcmsApp.project.modifyBy">Modify By</span></th>
+                    <th><span data-translate="pcmsApp.project.modifyTime">Modify Time</span></th>
+                    <th><span data-translate="pcmsApp.project.delFlag">Del Flag</span></th>
+                    <th><span data-translate="pcmsApp.project.remark">Remark</span></th>
                     <th></th>
                 </tr>
             </thead>

@@ -1,64 +1,60 @@
 
 <div>
-    <h2><span data-translate="tuxAdminApp.company.detail.title">Company</span> {{vm.company.id}}</h2>
+    <h2><span data-translate="pcmsApp.company.detail.title">Company</span> {{vm.company.id}}</h2>
     <hr>
     <jhi-alert-error></jhi-alert-error>
     <dl class="dl-horizontal jh-entity-details">
-        <dt><span data-translate="tuxAdminApp.company.name">Name</span></dt>
+        <dt><span data-translate="pcmsApp.company.name">Name</span></dt>
         <dd>
             <span>{{vm.company.name}}</span>
         </dd>
-        <dt><span data-translate="tuxAdminApp.company.category">Category</span></dt>
+        <dt><span data-translate="pcmsApp.company.corporator">Corporator</span></dt>
         <dd>
-            <span>{{vm.company.category}}</span>
+            <span>{{vm.company.corporator}}</span>
         </dd>
-        <dt><span data-translate="tuxAdminApp.company.legalPerson">Legal Person</span></dt>
-        <dd>
-            <span>{{vm.company.legalPerson}}</span>
-        </dd>
-        <dt><span data-translate="tuxAdminApp.company.address">Address</span></dt>
+        <dt><span data-translate="pcmsApp.company.address">Address</span></dt>
         <dd>
             <span>{{vm.company.address}}</span>
         </dd>
-        <dt><span data-translate="tuxAdminApp.company.province">Province</span></dt>
+        <dt><span data-translate="pcmsApp.company.province">Province</span></dt>
         <dd>
             <span>{{vm.company.province}}</span>
         </dd>
-        <dt><span data-translate="tuxAdminApp.company.city">City</span></dt>
+        <dt><span data-translate="pcmsApp.company.city">City</span></dt>
         <dd>
             <span>{{vm.company.city}}</span>
         </dd>
-        <dt><span data-translate="tuxAdminApp.company.area">Area</span></dt>
+        <dt><span data-translate="pcmsApp.company.area">Area</span></dt>
         <dd>
             <span>{{vm.company.area}}</span>
         </dd>
-        <dt><span data-translate="tuxAdminApp.company.mobile">Mobile</span></dt>
+        <dt><span data-translate="pcmsApp.company.remark">Remark</span></dt>
+        <dd>
+            <span>{{vm.company.remark}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.company.mobile">Mobile</span></dt>
         <dd>
             <span>{{vm.company.mobile}}</span>
         </dd>
-        <dt><span data-translate="tuxAdminApp.company.status">Status</span></dt>
+        <dt><span data-translate="pcmsApp.company.status">Status</span></dt>
         <dd>
             <span>{{vm.company.status}}</span>
         </dd>
-        <dt><span data-translate="tuxAdminApp.company.delFlag">Del Flag</span></dt>
+        <dt><span data-translate="pcmsApp.company.delFlag">Del Flag</span></dt>
         <dd>
             <span>{{vm.company.delFlag}}</span>
         </dd>
-        <dt><span data-translate="tuxAdminApp.company.createdTime">Created Time</span></dt>
+        <dt><span data-translate="pcmsApp.company.createTime">Create Time</span></dt>
         <dd>
-            <span>{{vm.company.createdTime | date:'medium'}}</span>
+            <span>{{vm.company.createTime | date:'medium'}}</span>
         </dd>
-        <dt><span data-translate="tuxAdminApp.company.createdBy">Created By</span></dt>
+        <dt><span data-translate="pcmsApp.company.creator">Creator</span></dt>
         <dd>
-            <span>{{vm.company.createdBy}}</span>
+            <span>{{vm.company.creator}}</span>
         </dd>
-        <dt><span data-translate="tuxAdminApp.company.updateTime">Update Time</span></dt>
+        <dt><span data-translate="pcmsApp.company.updateTime">Update Time</span></dt>
         <dd>
             <span>{{vm.company.updateTime | date:'medium'}}</span>
-        </dd>
-        <dt><span data-translate="tuxAdminApp.company.remark">Remark</span></dt>
-        <dd>
-            <span>{{vm.company.remark}}</span>
         </dd>
     </dl>
 

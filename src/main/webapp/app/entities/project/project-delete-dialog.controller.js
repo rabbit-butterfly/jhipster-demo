@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('tuxAdminApp')
+        .module('pcmsApp')
         .controller('ProjectDeleteController',ProjectDeleteController);
 
     ProjectDeleteController.$inject = ['$uibModalInstance', 'entity', 'Project'];

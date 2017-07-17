@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('tuxAdminApp')
+        .module('pcmsApp')
         .controller('CompanyDialogController', CompanyDialogController);
 
     CompanyDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Company'];
@@ -34,7 +34,7 @@
         }
 
         function onSaveSuccess (result) {
-            $scope.$emit('tuxAdminApp:companyUpdate', result);
+            $scope.$emit('pcmsApp:companyUpdate', result);
             $uibModalInstance.close(result);
             vm.isSaving = false;
         }
@@ -43,7 +43,7 @@
             vm.isSaving = false;
         }
 
-        vm.datePickerOpenStatus.createdTime = false;
+        vm.datePickerOpenStatus.createTime = false;
         vm.datePickerOpenStatus.updateTime = false;
 
         function openCalendar (date) {

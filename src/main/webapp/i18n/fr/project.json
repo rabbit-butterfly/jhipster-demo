@@ -1,11 +1,10 @@
 {
-    "tuxAdminApp": {
+    "pcmsApp": {
         "project" : {
             "home": {
                 "title": "Projects",
                 "createLabel": "Créer un nouveau Project",
-                "createOrEditLabel": "Créer ou éditer un Project",
-                "search": "Recherche pour Project"
+                "createOrEditLabel": "Créer ou éditer un Project"
             },
             "created": "Un nouveau Project a été créé avec l'identifiant {{ param }}",
             "updated": "Le Project avec l'identifiant {{ param }} a été mis à jour",

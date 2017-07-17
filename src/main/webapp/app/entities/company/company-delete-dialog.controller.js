@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('tuxAdminApp')
+        .module('pcmsApp')
         .controller('CompanyDeleteController',CompanyDeleteController);
 
     CompanyDeleteController.$inject = ['$uibModalInstance', 'entity', 'Company'];

@@ -1,7 +1,7 @@
 (function() {
     'use strict';
     angular
-        .module('tuxAdminApp')
+        .module('pcmsApp')
         .factory('Company', Company);
 
     Company.$inject = ['$resource', 'DateUtils'];
@@ -16,7 +16,7 @@
                 transformResponse: function (data) {
                     if (data) {
                         data = angular.fromJson(data);
-                        data.createdTime = DateUtils.convertDateTimeFromServer(data.createdTime);
+                        data.createTime = DateUtils.convertDateTimeFromServer(data.createTime);
                         data.updateTime = DateUtils.convertDateTimeFromServer(data.updateTime);
                     }
                     return data;

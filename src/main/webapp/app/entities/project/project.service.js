@@ -1,7 +1,7 @@
 (function() {
     'use strict';
     angular
-        .module('tuxAdminApp')
+        .module('pcmsApp')
         .factory('Project', Project);
 
     Project.$inject = ['$resource', 'DateUtils'];

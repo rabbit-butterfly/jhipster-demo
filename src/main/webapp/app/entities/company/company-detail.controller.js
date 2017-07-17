@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('tuxAdminApp')
+        .module('pcmsApp')
         .controller('CompanyDetailController', CompanyDetailController);
 
     CompanyDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Company'];
@@ -13,7 +13,7 @@
         vm.company = entity;
         vm.previousState = previousState.name;
 
-        var unsubscribe = $rootScope.$on('tuxAdminApp:companyUpdate', function(event, result) {
+        var unsubscribe = $rootScope.$on('pcmsApp:companyUpdate', function(event, result) {
             vm.company = result;
         });
         $scope.$on('$destroy', unsubscribe);

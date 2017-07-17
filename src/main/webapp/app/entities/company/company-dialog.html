@@ -1,10 +1,10 @@
 
-<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
 
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
                 ng-click="vm.clear()">&times;</button>
-        <h4 class="modal-title" id="myCompanyLabel" data-translate="tuxAdminApp.company.home.createOrEditLabel">Create or edit a Company</h4>
+        <h4 class="modal-title" id="myCompanyLabel" data-translate="pcmsApp.company.home.createOrEditLabel">Create or edit a Company</h4>
     </div>
     <div class="modal-body">
         <jhi-alert-error></jhi-alert-error>
@@ -14,96 +14,240 @@
                     ng-model="vm.company.id" readonly />
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="tuxAdminApp.company.name" for="field_name">Name</label>
+            <label class="control-label" data-translate="pcmsApp.company.name" for="field_name">Name</label>
             <input type="text" class="form-control" name="name" id="field_name"
                     ng-model="vm.company.name"
-                    />
+                    required ng-minlength="0" ng-maxlength="50"/>
+            <div ng-show="editForm.name.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.name.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.name.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.name.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="tuxAdminApp.company.category" for="field_category">Category</label>
-            <input type="text" class="form-control" name="category" id="field_category"
-                    ng-model="vm.company.category"
-                    />
+            <label class="control-label" data-translate="pcmsApp.company.corporator" for="field_corporator">Corporator</label>
+            <input type="text" class="form-control" name="corporator" id="field_corporator"
+                    ng-model="vm.company.corporator"
+                    ng-minlength="0" ng-maxlength="10"/>
+            <div ng-show="editForm.corporator.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.corporator.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.corporator.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="10">
+                    This field cannot be longer than 10 characters.
+                </p>
+            </div>
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="tuxAdminApp.company.legalPerson" for="field_legalPerson">Legal Person</label>
-            <input type="text" class="form-control" name="legalPerson" id="field_legalPerson"
-                    ng-model="vm.company.legalPerson"
-                    />
-        </div>
-        <div class="form-group">
-            <label class="control-label" data-translate="tuxAdminApp.company.address" for="field_address">Address</label>
+            <label class="control-label" data-translate="pcmsApp.company.address" for="field_address">Address</label>
             <input type="text" class="form-control" name="address" id="field_address"
                     ng-model="vm.company.address"
-                    />
+                    required ng-minlength="0" ng-maxlength="100"/>
+            <div ng-show="editForm.address.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.address.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.address.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.address.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="100">
+                    This field cannot be longer than 100 characters.
+                </p>
+            </div>
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="tuxAdminApp.company.province" for="field_province">Province</label>
+            <label class="control-label" data-translate="pcmsApp.company.province" for="field_province">Province</label>
             <input type="text" class="form-control" name="province" id="field_province"
                     ng-model="vm.company.province"
-                    />
+                    ng-minlength="0" ng-maxlength="10"/>
+            <div ng-show="editForm.province.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.province.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.province.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="10">
+                    This field cannot be longer than 10 characters.
+                </p>
+            </div>
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="tuxAdminApp.company.city" for="field_city">City</label>
+            <label class="control-label" data-translate="pcmsApp.company.city" for="field_city">City</label>
             <input type="text" class="form-control" name="city" id="field_city"
                     ng-model="vm.company.city"
-                    />
+                    ng-minlength="0" ng-maxlength="10"/>
+            <div ng-show="editForm.city.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.city.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.city.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="10">
+                    This field cannot be longer than 10 characters.
+                </p>
+            </div>
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="tuxAdminApp.company.area" for="field_area">Area</label>
+            <label class="control-label" data-translate="pcmsApp.company.area" for="field_area">Area</label>
             <input type="text" class="form-control" name="area" id="field_area"
                     ng-model="vm.company.area"
-                    />
+                    ng-minlength="0" ng-maxlength="10"/>
+            <div ng-show="editForm.area.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.area.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.area.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="10">
+                    This field cannot be longer than 10 characters.
+                </p>
+            </div>
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="tuxAdminApp.company.mobile" for="field_mobile">Mobile</label>
+            <label class="control-label" data-translate="pcmsApp.company.remark" for="field_remark">Remark</label>
+            <input type="text" class="form-control" name="remark" id="field_remark"
+                    ng-model="vm.company.remark"
+                    ng-minlength="0" ng-maxlength="500"/>
+            <div ng-show="editForm.remark.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.remark.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.remark.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="500">
+                    This field cannot be longer than 500 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="pcmsApp.company.mobile" for="field_mobile">Mobile</label>
             <input type="text" class="form-control" name="mobile" id="field_mobile"
                     ng-model="vm.company.mobile"
-                    />
+                    required ng-minlength="0" ng-maxlength="11"/>
+            <div ng-show="editForm.mobile.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.mobile.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.mobile.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.mobile.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="11">
+                    This field cannot be longer than 11 characters.
+                </p>
+            </div>
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="tuxAdminApp.company.status" for="field_status">Status</label>
+            <label class="control-label" data-translate="pcmsApp.company.status" for="field_status">Status</label>
             <input type="number" class="form-control" name="status" id="field_status"
                     ng-model="vm.company.status"
-                    />
+                    min="0" max="10"/>
+            <div ng-show="editForm.status.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.status.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.status.$error.max" data-translate="entity.validation.max" translate-value-max="10">
+                    This field cannot be more than 10.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.status.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="tuxAdminApp.company.delFlag" for="field_delFlag">Del Flag</label>
-            <input type="text" class="form-control" name="delFlag" id="field_delFlag"
+            <label class="control-label" data-translate="pcmsApp.company.delFlag" for="field_delFlag">Del Flag</label>
+            <input type="number" class="form-control" name="delFlag" id="field_delFlag"
                     ng-model="vm.company.delFlag"
-                    />
+                    min="0" max="10"/>
+            <div ng-show="editForm.delFlag.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.delFlag.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.delFlag.$error.max" data-translate="entity.validation.max" translate-value-max="10">
+                    This field cannot be more than 10.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.delFlag.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="tuxAdminApp.company.createdTime" for="field_createdTime">Created Time</label>
+            <label class="control-label" data-translate="pcmsApp.company.createTime" for="field_createTime">Create Time</label>
                 <div class="input-group">
-                    <input id="field_createdTime" type="text" class="form-control" name="createdTime" datetime-picker="{{dateformat}}" ng-model="vm.company.createdTime" is-open="vm.datePickerOpenStatus.createdTime"
-                    />
+                    <input id="field_createTime" type="text" class="form-control" name="createTime" datetime-picker="{{dateformat}}" ng-model="vm.company.createTime" is-open="vm.datePickerOpenStatus.createTime"
+                    required/>
                     <span class="input-group-btn">
-                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('createdTime')"><i class="glyphicon glyphicon-calendar"></i></button>
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('createTime')"><i class="glyphicon glyphicon-calendar"></i></button>
                     </span>
                 </div>
+            <div ng-show="editForm.createTime.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.createTime.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.createTime.$error.ZonedDateTimelocal" data-translate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </p>
+            </div>
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="tuxAdminApp.company.createdBy" for="field_createdBy">Created By</label>
-            <input type="number" class="form-control" name="createdBy" id="field_createdBy"
-                    ng-model="vm.company.createdBy"
-                    />
+            <label class="control-label" data-translate="pcmsApp.company.creator" for="field_creator">Creator</label>
+            <input type="text" class="form-control" name="creator" id="field_creator"
+                    ng-model="vm.company.creator"
+                    ng-minlength="0" ng-maxlength="10"/>
+            <div ng-show="editForm.creator.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.creator.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.creator.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="10">
+                    This field cannot be longer than 10 characters.
+                </p>
+            </div>
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="tuxAdminApp.company.updateTime" for="field_updateTime">Update Time</label>
+            <label class="control-label" data-translate="pcmsApp.company.updateTime" for="field_updateTime">Update Time</label>
                 <div class="input-group">
                     <input id="field_updateTime" type="text" class="form-control" name="updateTime" datetime-picker="{{dateformat}}" ng-model="vm.company.updateTime" is-open="vm.datePickerOpenStatus.updateTime"
-                    />
+                    required/>
                     <span class="input-group-btn">
                         <button type="button" class="btn btn-default" ng-click="vm.openCalendar('updateTime')"><i class="glyphicon glyphicon-calendar"></i></button>
                     </span>
                 </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label" data-translate="tuxAdminApp.company.remark" for="field_remark">Remark</label>
-            <input type="text" class="form-control" name="remark" id="field_remark"
-                    ng-model="vm.company.remark"
-                    />
+            <div ng-show="editForm.updateTime.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.updateTime.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.updateTime.$error.ZonedDateTimelocal" data-translate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </p>
+            </div>
         </div>
 
     </div>

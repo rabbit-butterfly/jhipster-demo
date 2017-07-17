@@ -67,7 +67,7 @@ class CompanyGatlingTest extends Simulation {
             .exec(http("Create new company")
             .post("/api/companies")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "name":"SAMPLE_TEXT", "category":"SAMPLE_TEXT", "legalPerson":"SAMPLE_TEXT", "address":"SAMPLE_TEXT", "province":"SAMPLE_TEXT", "city":"SAMPLE_TEXT", "area":"SAMPLE_TEXT", "mobile":"SAMPLE_TEXT", "status":"0", "delFlag":"SAMPLE_TEXT", "createdTime":"2020-01-01T00:00:00.000Z", "createdBy":null, "updateTime":"2020-01-01T00:00:00.000Z", "remark":"SAMPLE_TEXT"}""")).asJSON
+            .body(StringBody("""{"id":null, "name":"SAMPLE_TEXT", "corporator":"SAMPLE_TEXT", "address":"SAMPLE_TEXT", "province":"SAMPLE_TEXT", "city":"SAMPLE_TEXT", "area":"SAMPLE_TEXT", "remark":"SAMPLE_TEXT", "mobile":"SAMPLE_TEXT", "status":"0", "delFlag":"0", "createTime":"2020-01-01T00:00:00.000Z", "creator":"SAMPLE_TEXT", "updateTime":"2020-01-01T00:00:00.000Z"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_company_url"))).exitHereIfFailed
             .pause(10)
