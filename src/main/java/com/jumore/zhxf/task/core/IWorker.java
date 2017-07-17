@@ -1,8 +1,5 @@
 package com.jumore.zhxf.task.core;
 
-import org.json.JSONException;
-
-import com.jumore.zhxf.domain.oa.CheckConfig;
 
 /**
  * 资讯信息获取总接口

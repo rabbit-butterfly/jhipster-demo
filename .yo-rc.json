@@ -1,8 +1,14 @@
 {
   "generator-jhipster": {
+<<<<<<< HEAD
     "baseName": "tuxAdmin",
     "packageName": "com.rd.pcms",
     "packageFolder": "com/rd/pcms",
+=======
+    "baseName": "pcms",
+    "packageName": "com.jumore.zhxf",
+    "packageFolder": "com/jumore/zhxf",
+>>>>>>> ebe937f801ac6a950bc94d781cefb950ab74f161
     "authenticationType": "session",
     "hibernateCache": "hazelcast",
     "clusteredHttpSession": "hazelcast",
