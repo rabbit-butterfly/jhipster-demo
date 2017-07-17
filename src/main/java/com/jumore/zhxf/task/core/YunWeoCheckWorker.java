@@ -1,34 +1,10 @@
 package com.jumore.zhxf.task.core;
 
-import java.util.Date;
-import java.util.List;
-
-import javax.inject.Inject;
-
-import org.apache.commons.lang3.RandomStringUtils;
-import org.apache.commons.lang3.RandomUtils;
-import org.joda.time.DateTime;
-import org.json.JSONException;
+import com.jumore.zhxf.task.IAttendanceHelpper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.web.client.RestTemplateBuilder;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestOperations;
-
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-import com.jumore.zhxf.domain.oa.CheckConfig;
-import com.jumore.zhxf.service.oa.CheckConfigService;
-import com.jumore.zhxf.task.IAttendanceHelpper;
-import com.jumore.zhxf.web.rest.dto.oa.CheckConfigDTO;
-import com.jumore.zhxf.web.rest.dto.oa.CheckConfigDTO.EStatus;
 
 public class YunWeoCheckWorker implements IWorker {
 
@@ -49,10 +25,15 @@ public class YunWeoCheckWorker implements IWorker {
 		this.restOperations = restTemplateBuilder.build();
 	}
 
-	@Inject
-	private CheckConfigService checkConfigService;
+    @Override
+    public void excute() {
 
-	public void excute() {
+    }
+
+/*	@Inject
+	private CheckConfigService checkConfigService;*/
+
+	/*public void excute() {
 
 		log.info("auto check start..");
 		List<CheckConfig> list = checkConfigService.findByStatus(CheckConfigDTO.EStatus.enabled);
@@ -63,19 +44,19 @@ public class YunWeoCheckWorker implements IWorker {
 			singBack(sid, checkConfig);
 
 		}
-	}
+	}*/
 
-	private String login(CheckConfig checkConfig) {
+	/*private String login(CheckConfig checkConfig) {
 		MultiValueMap<String, Object> mvm = new LinkedMultiValueMap<String, Object>();
-	
-		/*try {
+
+		*//*try {
 			CryptoTools des = new CryptoTools();
 			mvm.add("userId", "fanwengang");
 			mvm.add("pwd", des.decode(checkConfig.getOaPwd()));
 		} catch (Exception e) {
 			throw new RuntimeException(e.getMessage());
-		}*/
-		
+		}*//*
+
 		ResponseEntity<String> resp = restOperations.postForEntity(LOGIN, mvm, String.class);
 
 		if (resp.getStatusCode() == HttpStatus.OK) {
@@ -160,11 +141,11 @@ public class YunWeoCheckWorker implements IWorker {
 
 	}
 
-	/**
+	*//**
 	 * 随机获取一个下班时间
-	 * 
+	 *
 	 * @return
-	 */
+	 *//*
 	private String getCheckTime() {
 		// 随机取个下班时间
 		// 前后半小时
@@ -202,5 +183,5 @@ public class YunWeoCheckWorker implements IWorker {
 
 		}
 		return sid;
-	}
+	}*/
 }

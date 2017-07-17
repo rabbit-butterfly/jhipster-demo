@@ -1,0 +1,29 @@
+
+/**
+* @auther:fan
+* @date:Mon Jul 17 16:35:13 CST 2017
+* table:company
+*/
+entity Company (company)
+{
+	name String  required  minlength(0) maxlength(50), /** 公司名称 */
+	corporator String    minlength(0) maxlength(10), /** CORPORATOR */
+	address String  required  minlength(0) maxlength(100), /** ADDRESS */
+	province String    minlength(0) maxlength(10), /** PROVINCE */
+	city String    minlength(0) maxlength(10), /** CITY */
+	area String    minlength(0) maxlength(10), /** AREA */
+	remark String    minlength(0) maxlength(500), /** REMARK */
+	mobile String  required  minlength(0) maxlength(11), /** MOBILE */
+	status Integer   min(0) max(10), /** 0：冻结 1：有效 */
+	delFlag Integer   min(0) max(10), /** 0：有效 1：逻辑删除 */
+	createTime Instant required , /** CREATE_TIME */
+	creator String    minlength(0) maxlength(10), /** CREATOR */
+	updateTime Instant required  /** UPDATE_TIME */
+}
+dto * with mapstruct except Company
+service Company with serviceClass
+service Company with serviceImpl
+
+
+
+

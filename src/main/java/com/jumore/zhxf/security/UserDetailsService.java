@@ -10,7 +10,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.jumore.zhxf.domain.User;
-import com.jumore.zhxf.repository.MemberRepository;
 import com.jumore.zhxf.repository.UserRepository;
 
 import javax.inject.Inject;
@@ -26,9 +25,9 @@ public class UserDetailsService implements org.springframework.security.core.use
 
     @Inject
     private UserRepository userRepository;
-    
-    @Inject
-    private MemberRepository memberRepository;
+
+   /* @Inject
+    private MemberRepository memberRepository;*/
 
 /*    @Transactional
     public UserDetails loadUserByUsername(final String wxNo) {
@@ -38,7 +37,7 @@ public class UserDetailsService implements org.springframework.security.core.use
 		return new org.springframework.security.core.userdetails.User(wxNo,
         		member.get(0).getId().toString(),grantedAuthorities
         		);
-        
+
         return member.map(user -> {
             if (!user.getActivated()) {
                 throw new UserNotActivatedException("User " + lowercaseLogin + " was not activated");
