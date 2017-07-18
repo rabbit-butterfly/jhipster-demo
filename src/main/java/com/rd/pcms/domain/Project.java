@@ -1,16 +1,23 @@
 package com.rd.pcms.domain;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
+import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.time.Instant;
 import java.util.Objects;
 
 /**
- * A Project.
+ * 存放项目的基本信息:开始时间，结束时间，是否停工等
+ * @auther:renntrabbit@foxmail.com
+ * @date:Tue Jul 18 17:06:29 CST 2017
+ * table:project
  */
+@ApiModel(description = "存放项目的基本信息:开始时间，结束时间，是否停工等 @auther:renntrabbit@foxmail.com @date:Tue Jul 18 17:06:29 CST 2017 table:project")
 @Entity
 @Table(name = "project")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -22,56 +29,98 @@ public class Project implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "project_comp_id")
-    private String projectCompId;
+    @NotNull
+    @Size(min = 0, max = 20)
+    @Column(name = "code", length = 20, nullable = false)
+    private String code;
 
-    @Column(name = "project_comp_name")
-    private String projectCompName;
+    /**
+     * CODE
+     */
+    @Size(min = 0, max = 80)
+    @ApiModelProperty(value = "CODE")
+    @Column(name = "name", length = 80)
+    private String name;
 
-    @Column(name = "project_bame")
-    private String projectBame;
+    /**
+     * NAME
+     */
+    @Size(min = 0, max = 30)
+    @ApiModelProperty(value = "NAME")
+    @Column(name = "en_name", length = 30)
+    private String enName;
 
-    @Column(name = "project_desc")
-    private String projectDesc;
+    /**
+     * EN_NAME
+     */
+    @Size(min = 0, max = 100)
+    @ApiModelProperty(value = "EN_NAME")
+    @Column(name = "supervisor", length = 100)
+    private String supervisor;
 
-    @Column(name = "project_status")
-    private Integer projectStatus;
+    /**
+     * SUPERVISOR
+     */
+    @Size(min = 0, max = 100)
+    @ApiModelProperty(value = "SUPERVISOR")
+    @Column(name = "o_contractor", length = 100)
+    private String oContractor;
 
-    @Column(name = "supervisor_comp_id")
-    private Long supervisorCompId;
+    /**
+     * O_CONTRACTOR
+     */
+    @Size(min = 0, max = 100)
+    @ApiModelProperty(value = "O_CONTRACTOR")
+    @Column(name = "h_contractor", length = 100)
+    private String hContractor;
 
-    @Column(name = "supervisor_comp_name")
-    private String supervisorCompName;
-
-    @Column(name = "contractor_comp_id")
-    private Long contractorCompId;
-
-    @Column(name = "contractor_comp_name")
-    private String contractorCompName;
-
+    /**
+     * H_CONTRACTOR
+     */
+    @ApiModelProperty(value = "H_CONTRACTOR")
     @Column(name = "start_date")
     private Instant startDate;
 
+    /**
+     * START_DATE
+     */
+    @ApiModelProperty(value = "START_DATE")
     @Column(name = "end_date")
     private Instant endDate;
 
-    @Column(name = "created_by")
-    private Long createdBy;
+    /**
+     * END_DATE
+     */
+    @Min(value = 0)
+    @Max(value = 10)
+    @ApiModelProperty(value = "END_DATE")
+    @Column(name = "status")
+    private Integer status;
 
-    @Column(name = "created_time")
-    private Instant createdTime;
-
-    @Column(name = "modify_by")
-    private Long modifyBy;
-
-    @Column(name = "modify_time")
-    private Instant modifyTime;
-
+    /**
+     * 0：待审核 1：审核通过 2：审核失败 3：终结
+     */
+    @Min(value = 0)
+    @Max(value = 10)
+    @ApiModelProperty(value = "0：待审核 1：审核通过 2：审核失败 3：终结")
     @Column(name = "del_flag")
-    private String delFlag;
+    private Integer delFlag;
 
-    @Column(name = "remark")
+    /**
+     * DEL_FLAG
+     */
+    @Size(min = 0, max = 500)
+    @ApiModelProperty(value = "DEL_FLAG")
+    @Column(name = "remark", length = 500)
     private String remark;
+
+    /**
+     * REMARK
+     */
+    @Size(min = 0, max = 50)
+    @ApiModelProperty(value = "REMARK")
+    @Column(name = "extend_attr", length = 50)
+    private String extendAttr;
 
     public Long getId() {
         return id;
@@ -81,121 +130,82 @@ public class Project implements Serializable {
         this.id = id;
     }
 
-    public String getProjectCompId() {
-        return projectCompId;
+    public String getCode() {
+        return code;
     }
 
-    public Project projectCompId(String projectCompId) {
-        this.projectCompId = projectCompId;
+    public Project code(String code) {
+        this.code = code;
         return this;
     }
 
-    public void setProjectCompId(String projectCompId) {
-        this.projectCompId = projectCompId;
+    public void setCode(String code) {
+        this.code = code;
     }
 
-    public String getProjectCompName() {
-        return projectCompName;
+    public String getName() {
+        return name;
     }
 
-    public Project projectCompName(String projectCompName) {
-        this.projectCompName = projectCompName;
+    public Project name(String name) {
+        this.name = name;
         return this;
     }
 
-    public void setProjectCompName(String projectCompName) {
-        this.projectCompName = projectCompName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getProjectBame() {
-        return projectBame;
+    public String getEnName() {
+        return enName;
     }
 
-    public Project projectBame(String projectBame) {
-        this.projectBame = projectBame;
+    public Project enName(String enName) {
+        this.enName = enName;
         return this;
     }
 
-    public void setProjectBame(String projectBame) {
-        this.projectBame = projectBame;
+    public void setEnName(String enName) {
+        this.enName = enName;
     }
 
-    public String getProjectDesc() {
-        return projectDesc;
+    public String getSupervisor() {
+        return supervisor;
     }
 
-    public Project projectDesc(String projectDesc) {
-        this.projectDesc = projectDesc;
+    public Project supervisor(String supervisor) {
+        this.supervisor = supervisor;
         return this;
     }
 
-    public void setProjectDesc(String projectDesc) {
-        this.projectDesc = projectDesc;
+    public void setSupervisor(String supervisor) {
+        this.supervisor = supervisor;
     }
 
-    public Integer getProjectStatus() {
-        return projectStatus;
+    public String getoContractor() {
+        return oContractor;
     }
 
-    public Project projectStatus(Integer projectStatus) {
-        this.projectStatus = projectStatus;
+    public Project oContractor(String oContractor) {
+        this.oContractor = oContractor;
         return this;
     }
 
-    public void setProjectStatus(Integer projectStatus) {
-        this.projectStatus = projectStatus;
+    public void setoContractor(String oContractor) {
+        this.oContractor = oContractor;
     }
 
-    public Long getSupervisorCompId() {
-        return supervisorCompId;
+    public String gethContractor() {
+        return hContractor;
     }
 
-    public Project supervisorCompId(Long supervisorCompId) {
-        this.supervisorCompId = supervisorCompId;
+    public Project hContractor(String hContractor) {
+        this.hContractor = hContractor;
         return this;
     }
 
-    public void setSupervisorCompId(Long supervisorCompId) {
-        this.supervisorCompId = supervisorCompId;
-    }
-
-    public String getSupervisorCompName() {
-        return supervisorCompName;
-    }
-
-    public Project supervisorCompName(String supervisorCompName) {
-        this.supervisorCompName = supervisorCompName;
-        return this;
-    }
-
-    public void setSupervisorCompName(String supervisorCompName) {
-        this.supervisorCompName = supervisorCompName;
-    }
-
-    public Long getContractorCompId() {
-        return contractorCompId;
-    }
-
-    public Project contractorCompId(Long contractorCompId) {
-        this.contractorCompId = contractorCompId;
-        return this;
-    }
-
-    public void setContractorCompId(Long contractorCompId) {
-        this.contractorCompId = contractorCompId;
-    }
-
-    public String getContractorCompName() {
-        return contractorCompName;
-    }
-
-    public Project contractorCompName(String contractorCompName) {
-        this.contractorCompName = contractorCompName;
-        return this;
-    }
-
-    public void setContractorCompName(String contractorCompName) {
-        this.contractorCompName = contractorCompName;
+    public void sethContractor(String hContractor) {
+        this.hContractor = hContractor;
     }
 
     public Instant getStartDate() {
@@ -224,68 +234,29 @@ public class Project implements Serializable {
         this.endDate = endDate;
     }
 
-    public Long getCreatedBy() {
-        return createdBy;
+    public Integer getStatus() {
+        return status;
     }
 
-    public Project createdBy(Long createdBy) {
-        this.createdBy = createdBy;
+    public Project status(Integer status) {
+        this.status = status;
         return this;
     }
 
-    public void setCreatedBy(Long createdBy) {
-        this.createdBy = createdBy;
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 
-    public Instant getCreatedTime() {
-        return createdTime;
-    }
-
-    public Project createdTime(Instant createdTime) {
-        this.createdTime = createdTime;
-        return this;
-    }
-
-    public void setCreatedTime(Instant createdTime) {
-        this.createdTime = createdTime;
-    }
-
-    public Long getModifyBy() {
-        return modifyBy;
-    }
-
-    public Project modifyBy(Long modifyBy) {
-        this.modifyBy = modifyBy;
-        return this;
-    }
-
-    public void setModifyBy(Long modifyBy) {
-        this.modifyBy = modifyBy;
-    }
-
-    public Instant getModifyTime() {
-        return modifyTime;
-    }
-
-    public Project modifyTime(Instant modifyTime) {
-        this.modifyTime = modifyTime;
-        return this;
-    }
-
-    public void setModifyTime(Instant modifyTime) {
-        this.modifyTime = modifyTime;
-    }
-
-    public String getDelFlag() {
+    public Integer getDelFlag() {
         return delFlag;
     }
 
-    public Project delFlag(String delFlag) {
+    public Project delFlag(Integer delFlag) {
         this.delFlag = delFlag;
         return this;
     }
 
-    public void setDelFlag(String delFlag) {
+    public void setDelFlag(Integer delFlag) {
         this.delFlag = delFlag;
     }
 
@@ -300,6 +271,19 @@ public class Project implements Serializable {
 
     public void setRemark(String remark) {
         this.remark = remark;
+    }
+
+    public String getExtendAttr() {
+        return extendAttr;
+    }
+
+    public Project extendAttr(String extendAttr) {
+        this.extendAttr = extendAttr;
+        return this;
+    }
+
+    public void setExtendAttr(String extendAttr) {
+        this.extendAttr = extendAttr;
     }
 
     @Override
@@ -326,23 +310,18 @@ public class Project implements Serializable {
     public String toString() {
         return "Project{" +
             "id=" + getId() +
-            ", projectCompId='" + getProjectCompId() + "'" +
-            ", projectCompName='" + getProjectCompName() + "'" +
-            ", projectBame='" + getProjectBame() + "'" +
-            ", projectDesc='" + getProjectDesc() + "'" +
-            ", projectStatus='" + getProjectStatus() + "'" +
-            ", supervisorCompId='" + getSupervisorCompId() + "'" +
-            ", supervisorCompName='" + getSupervisorCompName() + "'" +
-            ", contractorCompId='" + getContractorCompId() + "'" +
-            ", contractorCompName='" + getContractorCompName() + "'" +
+            ", code='" + getCode() + "'" +
+            ", name='" + getName() + "'" +
+            ", enName='" + getEnName() + "'" +
+            ", supervisor='" + getSupervisor() + "'" +
+            ", oContractor='" + getoContractor() + "'" +
+            ", hContractor='" + gethContractor() + "'" +
             ", startDate='" + getStartDate() + "'" +
             ", endDate='" + getEndDate() + "'" +
-            ", createdBy='" + getCreatedBy() + "'" +
-            ", createdTime='" + getCreatedTime() + "'" +
-            ", modifyBy='" + getModifyBy() + "'" +
-            ", modifyTime='" + getModifyTime() + "'" +
+            ", status='" + getStatus() + "'" +
             ", delFlag='" + getDelFlag() + "'" +
             ", remark='" + getRemark() + "'" +
+            ", extendAttr='" + getExtendAttr() + "'" +
             "}";
     }
 }

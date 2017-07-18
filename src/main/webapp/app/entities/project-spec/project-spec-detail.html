@@ -1,0 +1,47 @@
+
+<div>
+    <h2><span data-translate="pcmsApp.projectSpec.detail.title">Project Spec</span> {{vm.projectSpec.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="pcmsApp.projectSpec.projId">Proj Id</span></dt>
+        <dd>
+            <span>{{vm.projectSpec.projId}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.projectSpec.name">Name</span></dt>
+        <dd>
+            <span>{{vm.projectSpec.name}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.projectSpec.size">Size</span></dt>
+        <dd>
+            <span>{{vm.projectSpec.size}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.projectSpec.unit">Unit</span></dt>
+        <dd>
+            <span>{{vm.projectSpec.unit}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.projectSpec.remark">Remark</span></dt>
+        <dd>
+            <span>{{vm.projectSpec.remark}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.projectSpec.createTime">Create Time</span></dt>
+        <dd>
+            <span>{{vm.projectSpec.createTime | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.projectSpec.delFlag">Del Flag</span></dt>
+        <dd>
+            <span>{{vm.projectSpec.delFlag}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="project-spec-detail.edit({id:vm.projectSpec.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

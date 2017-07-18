@@ -1,6 +1,8 @@
 package com.rd.pcms.service;
 
-import com.rd.pcms.domain.Company;
+import com.rd.pcms.service.dto.CompanyDTO;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import java.util.List;
 
 /**
@@ -11,17 +13,18 @@ public interface CompanyService {
     /**
      * Save a company.
      *
-     * @param company the entity to save
+     * @param companyDTO the entity to save
      * @return the persisted entity
      */
-    Company save(Company company);
+    CompanyDTO save(CompanyDTO companyDTO);
 
     /**
      *  Get all the companies.
      *  
+     *  @param pageable the pagination information
      *  @return the list of entities
      */
-    List<Company> findAll();
+    Page<CompanyDTO> findAll(Pageable pageable);
 
     /**
      *  Get the "id" company.
@@ -29,7 +32,7 @@ public interface CompanyService {
      *  @param id the id of the entity
      *  @return the entity
      */
-    Company findOne(Long id);
+    CompanyDTO findOne(Long id);
 
     /**
      *  Delete the "id" company.

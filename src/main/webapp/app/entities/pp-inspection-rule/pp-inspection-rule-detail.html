@@ -1,0 +1,51 @@
+
+<div>
+    <h2><span data-translate="pcmsApp.ppInspectionRule.detail.title">Pp Inspection Rule</span> {{vm.ppInspectionRule.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="pcmsApp.ppInspectionRule.compId">Comp Id</span></dt>
+        <dd>
+            <span>{{vm.ppInspectionRule.compId}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.ppInspectionRule.projId">Proj Id</span></dt>
+        <dd>
+            <span>{{vm.ppInspectionRule.projId}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.ppInspectionRule.material">Material</span></dt>
+        <dd>
+            <span>{{vm.ppInspectionRule.material}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.ppInspectionRule.ppClass">Pp Class</span></dt>
+        <dd>
+            <span>{{vm.ppInspectionRule.ppClass}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.ppInspectionRule.jacketedPipe">Jacketed Pipe</span></dt>
+        <dd>
+            <span>{{vm.ppInspectionRule.jacketedPipe}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.ppInspectionRule.inspectionCode">Inspection Code</span></dt>
+        <dd>
+            <span>{{vm.ppInspectionRule.inspectionCode}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.ppInspectionRule.createTime">Create Time</span></dt>
+        <dd>
+            <span>{{vm.ppInspectionRule.createTime | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.ppInspectionRule.delFlag">Del Flag</span></dt>
+        <dd>
+            <span>{{vm.ppInspectionRule.delFlag}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="pp-inspection-rule-detail.edit({id:vm.ppInspectionRule.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

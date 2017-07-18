@@ -3,77 +3,130 @@
     "relationships": [],
     "fields": [
         {
-            "fieldName": "projectCompId",
-            "fieldType": "String"
+            "fieldName": "code",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 20
         },
         {
-            "fieldName": "projectCompName",
-            "fieldType": "String"
+            "fieldName": "name",
+            "javadoc": "CODE",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 80
         },
         {
-            "fieldName": "projectBame",
-            "fieldType": "String"
+            "fieldName": "enName",
+            "javadoc": "NAME",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 30
         },
         {
-            "fieldName": "projectDesc",
-            "fieldType": "String"
+            "fieldName": "supervisor",
+            "javadoc": "EN_NAME",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 100
         },
         {
-            "fieldName": "projectStatus",
-            "fieldType": "Integer"
+            "fieldName": "oContractor",
+            "javadoc": "SUPERVISOR",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 100
         },
         {
-            "fieldName": "supervisorCompId",
-            "fieldType": "Long"
-        },
-        {
-            "fieldName": "supervisorCompName",
-            "fieldType": "String"
-        },
-        {
-            "fieldName": "contractorCompId",
-            "fieldType": "Long"
-        },
-        {
-            "fieldName": "contractorCompName",
-            "fieldType": "String"
+            "fieldName": "hContractor",
+            "javadoc": "O_CONTRACTOR",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 100
         },
         {
             "fieldName": "startDate",
+            "javadoc": "H_CONTRACTOR",
             "fieldType": "Instant"
         },
         {
             "fieldName": "endDate",
+            "javadoc": "START_DATE",
             "fieldType": "Instant"
         },
         {
-            "fieldName": "createdBy",
-            "fieldType": "Long"
-        },
-        {
-            "fieldName": "createdTime",
-            "fieldType": "Instant"
-        },
-        {
-            "fieldName": "modifyBy",
-            "fieldType": "Long"
-        },
-        {
-            "fieldName": "modifyTime",
-            "fieldType": "Instant"
+            "fieldName": "status",
+            "javadoc": "END_DATE",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 0,
+            "fieldValidateRulesMax": 10
         },
         {
             "fieldName": "delFlag",
-            "fieldType": "String"
+            "javadoc": "0：待审核 1：审核通过 2：审核失败 3：终结",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 0,
+            "fieldValidateRulesMax": 10
         },
         {
             "fieldName": "remark",
-            "fieldType": "String"
+            "javadoc": "DEL_FLAG",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 500
+        },
+        {
+            "fieldName": "extendAttr",
+            "javadoc": "REMARK",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 50
         }
     ],
     "changelogDate": "20170712103801",
+    "javadoc": "存放项目的基本信息:开始时间，结束时间，是否停工等\n@auther:renntrabbit@foxmail.com\n@date:Tue Jul 18 17:06:29 CST 2017\ntable:project",
     "entityTableName": "project",
-    "dto": "no",
-    "pagination": "no",
-    "service": "no"
+    "dto": "mapstruct",
+    "pagination": "pager",
+    "service": "serviceImpl"
 }

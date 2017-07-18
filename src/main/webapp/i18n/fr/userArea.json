@@ -1,0 +1,22 @@
+{
+    "pcmsApp": {
+        "userArea" : {
+            "home": {
+                "title": "UserAreas",
+                "createLabel": "Créer un nouveau User Area",
+                "createOrEditLabel": "Créer ou éditer un User Area"
+            },
+            "created": "Un nouveau User Area a été créé avec l'identifiant {{ param }}",
+            "updated": "Le User Area avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le User Area avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le User Area {{ id }} ?"
+            },
+            "detail": {
+                "title": "User Area"
+            },
+            "userId": "User Id",
+            "areaId": "Area Id"
+        }
+    }
+}

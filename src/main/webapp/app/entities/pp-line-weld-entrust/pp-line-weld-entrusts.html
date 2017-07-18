@@ -1,0 +1,82 @@
+<div>
+    <h2 data-translate="pcmsApp.ppLineWeldEntrust.home.title">Pp Line Weld Entrusts</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="pp-line-weld-entrust.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="pcmsApp.ppLineWeldEntrust.home.createLabel">
+                        Create new Pp Line Weld Entrust
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="projId"><span data-translate="pcmsApp.ppLineWeldEntrust.projId">Proj Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="pipelineId"><span data-translate="pcmsApp.ppLineWeldEntrust.pipelineId">Pipeline Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="weldId"><span data-translate="pcmsApp.ppLineWeldEntrust.weldId">Weld Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="flowNum"><span data-translate="pcmsApp.ppLineWeldEntrust.flowNum">Flow Num</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="code"><span data-translate="pcmsApp.ppLineWeldEntrust.code">Code</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="expandCount"><span data-translate="pcmsApp.ppLineWeldEntrust.expandCount">Expand Count</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="repareCount"><span data-translate="pcmsApp.ppLineWeldEntrust.repareCount">Repare Count</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="entrustType"><span data-translate="pcmsApp.ppLineWeldEntrust.entrustType">Entrust Type</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="entrustDate"><span data-translate="pcmsApp.ppLineWeldEntrust.entrustDate">Entrust Date</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="remark"><span data-translate="pcmsApp.ppLineWeldEntrust.remark">Remark</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="createTime"><span data-translate="pcmsApp.ppLineWeldEntrust.createTime">Create Time</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="delFlag"><span data-translate="pcmsApp.ppLineWeldEntrust.delFlag">Del Flag</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="ppLineWeldEntrust in vm.ppLineWeldEntrusts track by ppLineWeldEntrust.id">
+                    <td><a ui-sref="pp-line-weld-entrust-detail({id:ppLineWeldEntrust.id})">{{ppLineWeldEntrust.id}}</a></td>
+                    <td>{{ppLineWeldEntrust.projId}}</td>
+                    <td>{{ppLineWeldEntrust.pipelineId}}</td>
+                    <td>{{ppLineWeldEntrust.weldId}}</td>
+                    <td>{{ppLineWeldEntrust.flowNum}}</td>
+                    <td>{{ppLineWeldEntrust.code}}</td>
+                    <td>{{ppLineWeldEntrust.expandCount}}</td>
+                    <td>{{ppLineWeldEntrust.repareCount}}</td>
+                    <td>{{ppLineWeldEntrust.entrustType}}</td>
+                    <td>{{ppLineWeldEntrust.entrustDate | date:'medium'}}</td>
+                    <td>{{ppLineWeldEntrust.remark}}</td>
+                    <td>{{ppLineWeldEntrust.createTime | date:'medium'}}</td>
+                    <td>{{ppLineWeldEntrust.delFlag}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="pp-line-weld-entrust-detail({id:ppLineWeldEntrust.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="pp-line-weld-entrust.edit({id:ppLineWeldEntrust.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="pp-line-weld-entrust.delete({id:ppLineWeldEntrust.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+    </div>
+    <uib-pager total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pager>
+</div>

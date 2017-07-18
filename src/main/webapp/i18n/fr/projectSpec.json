@@ -1,0 +1,27 @@
+{
+    "pcmsApp": {
+        "projectSpec" : {
+            "home": {
+                "title": "ProjectSpecs",
+                "createLabel": "Créer un nouveau Project Spec",
+                "createOrEditLabel": "Créer ou éditer un Project Spec"
+            },
+            "created": "Un nouveau Project Spec a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Project Spec avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Project Spec avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Project Spec {{ id }} ?"
+            },
+            "detail": {
+                "title": "Project Spec"
+            },
+            "projId": "Proj Id",
+            "name": "Name",
+            "size": "Size",
+            "unit": "Unit",
+            "remark": "Remark",
+            "createTime": "Create Time",
+            "delFlag": "Del Flag"
+        }
+    }
+}

@@ -1,0 +1,21 @@
+
+/**
+*项目物资规格明细表
+* @auther:renntrabbit@foxmail.com
+* @date:Tue Jul 18 17:06:29 CST 2017
+* table:project_spec
+*/
+entity ProjectSpec (project_spec)
+{
+	projId String    minlength(0) maxlength(19), /** PROJ_ID */
+	name String    minlength(0) maxlength(80), /** 规格名称 */
+	size String    minlength(0) maxlength(10), /** 大小 */
+	unit String    minlength(0) maxlength(50), /** 场地 */
+	remark String    minlength(0) maxlength(500), /** REMARK */
+	createTime Instant required , /** CREATE_TIME */
+	delFlag Integer   min(0) max(10) /** DEL_FLAG */
+}
+service  ProjectSpec with serviceClass
+service  ProjectSpec with serviceImpl
+paginate ProjectSpec with pager
+dto      ProjectSpec with mapstruct

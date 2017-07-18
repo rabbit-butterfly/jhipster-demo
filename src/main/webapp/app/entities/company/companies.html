@@ -17,21 +17,21 @@
     <div class="table-responsive">
         <table class="jh-table table table-striped">
             <thead>
-                <tr>
-                    <th><span data-translate="global.field.id">ID</span></th>
-                    <th><span data-translate="pcmsApp.company.name">Name</span></th>
-                    <th><span data-translate="pcmsApp.company.corporator">Corporator</span></th>
-                    <th><span data-translate="pcmsApp.company.address">Address</span></th>
-                    <th><span data-translate="pcmsApp.company.province">Province</span></th>
-                    <th><span data-translate="pcmsApp.company.city">City</span></th>
-                    <th><span data-translate="pcmsApp.company.area">Area</span></th>
-                    <th><span data-translate="pcmsApp.company.remark">Remark</span></th>
-                    <th><span data-translate="pcmsApp.company.mobile">Mobile</span></th>
-                    <th><span data-translate="pcmsApp.company.status">Status</span></th>
-                    <th><span data-translate="pcmsApp.company.delFlag">Del Flag</span></th>
-                    <th><span data-translate="pcmsApp.company.createTime">Create Time</span></th>
-                    <th><span data-translate="pcmsApp.company.creator">Creator</span></th>
-                    <th><span data-translate="pcmsApp.company.updateTime">Update Time</span></th>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="name"><span data-translate="pcmsApp.company.name">Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="corporator"><span data-translate="pcmsApp.company.corporator">Corporator</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="address"><span data-translate="pcmsApp.company.address">Address</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="province"><span data-translate="pcmsApp.company.province">Province</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="city"><span data-translate="pcmsApp.company.city">City</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="area"><span data-translate="pcmsApp.company.area">Area</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="remark"><span data-translate="pcmsApp.company.remark">Remark</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="mobile"><span data-translate="pcmsApp.company.mobile">Mobile</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="status"><span data-translate="pcmsApp.company.status">Status</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="delFlag"><span data-translate="pcmsApp.company.delFlag">Del Flag</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="createTime"><span data-translate="pcmsApp.company.createTime">Create Time</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="creator"><span data-translate="pcmsApp.company.creator">Creator</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="updateTime"><span data-translate="pcmsApp.company.updateTime">Update Time</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th></th>
                 </tr>
             </thead>
@@ -77,4 +77,8 @@
             </tbody>
         </table>
     </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+    </div>
+    <uib-pager total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pager>
 </div>

@@ -1,0 +1,36 @@
+{
+    "pcmsApp": {
+        "ppLineWeldCheck" : {
+            "home": {
+                "title": "PpLineWeldChecks",
+                "createLabel": "Créer un nouveau Pp Line Weld Check",
+                "createOrEditLabel": "Créer ou éditer un Pp Line Weld Check"
+            },
+            "created": "Un nouveau Pp Line Weld Check a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Pp Line Weld Check avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Pp Line Weld Check avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Pp Line Weld Check {{ id }} ?"
+            },
+            "detail": {
+                "title": "Pp Line Weld Check"
+            },
+            "projId": "Proj Id",
+            "pipeId": "Pipe Id",
+            "jointId": "Joint Id",
+            "rtfilmTotal": "Rtfilm Total",
+            "rtfilmPassTotal": "Rtfilm Pass Total",
+            "reportCode": "Report Code",
+            "checkDate": "Check Date",
+            "checkResult": "Check Result",
+            "reworkCode": "Rework Code",
+            "reworkWelder": "Rework Welder",
+            "reworkDate": "Rework Date",
+            "reworkResult": "Rework Result",
+            "repairReport": "Repair Report",
+            "remark": "Remark",
+            "createTime": "Create Time",
+            "delFlag": "Del Flag"
+        }
+    }
+}

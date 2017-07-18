@@ -1,0 +1,131 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "compId",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 19
+        },
+        {
+            "fieldName": "projId",
+            "javadoc": "COMP_ID",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 19
+        },
+        {
+            "fieldName": "material",
+            "javadoc": "PROJ_ID",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "ppClass",
+            "javadoc": "MATERIAL",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "jsizeMin",
+            "javadoc": "PP_CLASS",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "jsizeMax",
+            "javadoc": "JSIZE_MIN",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "wallThickCode",
+            "javadoc": "@ 来源抽检比例表 中的代号",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 64
+        },
+        {
+            "fieldName": "materialType",
+            "javadoc": "WALL_THICK_CODE",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 64
+        },
+        {
+            "fieldName": "materialCategory",
+            "javadoc": "@ CS SS PE",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "createTime",
+            "javadoc": "@ 常量",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "delFlag",
+            "javadoc": "CREATE_TIME",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 0,
+            "fieldValidateRulesMax": 10
+        }
+    ],
+    "changelogDate": "20170718090737",
+    "javadoc": "等级材质对照表\n@auther:renntrabbit@foxmail.com\n@date:Tue Jul 18 17:06:29 CST 2017\ntable:pp_grade_materail",
+    "entityTableName": "pp_grade_materail",
+    "dto": "mapstruct",
+    "pagination": "pager",
+    "service": "serviceImpl"
+}

@@ -1,0 +1,146 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myUserInfoLabel" data-translate="pcmsApp.userInfo.home.createOrEditLabel">Create or edit a User Info</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.userInfo.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.userInfo.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="pcmsApp.userInfo.compId" for="field_compId">Comp Id</label>
+            <input type="text" class="form-control" name="compId" id="field_compId"
+                    ng-model="vm.userInfo.compId"
+                    required ng-minlength="0" ng-maxlength="19"/>
+            <div ng-show="editForm.compId.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.compId.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.compId.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.compId.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="19">
+                    This field cannot be longer than 19 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="pcmsApp.userInfo.code" for="field_code">Code</label>
+            <input type="text" class="form-control" name="code" id="field_code"
+                    ng-model="vm.userInfo.code"
+                    ng-minlength="0" ng-maxlength="19"/>
+            <div ng-show="editForm.code.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.code.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.code.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="19">
+                    This field cannot be longer than 19 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="pcmsApp.userInfo.mobile" for="field_mobile">Mobile</label>
+            <input type="text" class="form-control" name="mobile" id="field_mobile"
+                    ng-model="vm.userInfo.mobile"
+                    ng-minlength="0" ng-maxlength="16"/>
+            <div ng-show="editForm.mobile.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.mobile.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.mobile.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="16">
+                    This field cannot be longer than 16 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="pcmsApp.userInfo.status" for="field_status">Status</label>
+            <input type="text" class="form-control" name="status" id="field_status"
+                    ng-model="vm.userInfo.status"
+                    ng-minlength="0" ng-maxlength="5"/>
+            <div ng-show="editForm.status.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.status.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.status.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="5">
+                    This field cannot be longer than 5 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="pcmsApp.userInfo.jobTitle" for="field_jobTitle">Job Title</label>
+            <input type="text" class="form-control" name="jobTitle" id="field_jobTitle"
+                    ng-model="vm.userInfo.jobTitle"
+                    ng-minlength="0" ng-maxlength="16"/>
+            <div ng-show="editForm.jobTitle.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.jobTitle.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.jobTitle.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="16">
+                    This field cannot be longer than 16 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="pcmsApp.userInfo.major" for="field_major">Major</label>
+            <input type="text" class="form-control" name="major" id="field_major"
+                    ng-model="vm.userInfo.major"
+                    ng-minlength="0" ng-maxlength="16"/>
+            <div ng-show="editForm.major.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.major.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.major.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="16">
+                    This field cannot be longer than 16 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="pcmsApp.userInfo.jhUserId" for="field_jhUserId">Jh User Id</label>
+            <input type="text" class="form-control" name="jhUserId" id="field_jhUserId"
+                    ng-model="vm.userInfo.jhUserId"
+                    required ng-minlength="0" ng-maxlength="19"/>
+            <div ng-show="editForm.jhUserId.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.jhUserId.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.jhUserId.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.jhUserId.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="19">
+                    This field cannot be longer than 19 characters.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

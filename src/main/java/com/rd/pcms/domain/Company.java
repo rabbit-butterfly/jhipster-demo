@@ -12,11 +12,12 @@ import java.time.Instant;
 import java.util.Objects;
 
 /**
- * @auther:fan
- * @date:Mon Jul 17 19:09:02 CST 2017
+ * 公司表：存放公司的基本信息
+ * @auther:renntrabbit@foxmail.com
+ * @date:Tue Jul 18 17:06:29 CST 2017
  * table:company
  */
-@ApiModel(description = "@auther:fan @date:Mon Jul 17 19:09:02 CST 2017 table:company")
+@ApiModel(description = "公司表：存放公司的基本信息 @auther:renntrabbit@foxmail.com @date:Tue Jul 18 17:06:29 CST 2017 table:company")
 @Entity
 @Table(name = "company")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)

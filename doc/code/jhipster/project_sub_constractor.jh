@@ -1,0 +1,19 @@
+
+/**
+*项目分包商基本信息表
+* @auther:renntrabbit@foxmail.com
+* @date:Tue Jul 18 17:06:29 CST 2017
+* table:project_sub_constractor
+*/
+entity ProjectSubConstractor (project_sub_constractor)
+{
+	projId String  required  minlength(0) maxlength(19), /** PROJ_ID */
+	name String  required  minlength(0) maxlength(80), /** NAME */
+	remark String    minlength(0) maxlength(500), /** REMARK */
+	createTime Instant required , /** CREATE_TIME */
+	delFlag Integer   min(0) max(10) /** DEL_FLAG */
+}
+service  ProjectSubConstractor with serviceClass
+service  ProjectSubConstractor with serviceImpl
+paginate ProjectSubConstractor with pager
+dto      ProjectSubConstractor with mapstruct

@@ -3,12 +3,18 @@ package com.rd.pcms.service.impl;
 import com.rd.pcms.service.CompanyService;
 import com.rd.pcms.domain.Company;
 import com.rd.pcms.repository.CompanyRepository;
+import com.rd.pcms.service.dto.CompanyDTO;
+import com.rd.pcms.service.mapper.CompanyMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
 
+import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Service Implementation for managing Company.
@@ -21,35 +27,40 @@ public class CompanyServiceImpl implements CompanyService{
     
     private final CompanyRepository companyRepository;
 
-    public CompanyServiceImpl(CompanyRepository companyRepository) {
+    private final CompanyMapper companyMapper;
+
+    public CompanyServiceImpl(CompanyRepository companyRepository, CompanyMapper companyMapper) {
         this.companyRepository = companyRepository;
+        this.companyMapper = companyMapper;
     }
 
     /**
      * Save a company.
      *
-     * @param company the entity to save
+     * @param companyDTO the entity to save
      * @return the persisted entity
      */
     @Override
-    public Company save(Company company) {
-        log.debug("Request to save Company : {}", company);
-        Company result = companyRepository.save(company);
+    public CompanyDTO save(CompanyDTO companyDTO) {
+        log.debug("Request to save Company : {}", companyDTO);
+        Company company = companyMapper.toEntity(companyDTO);
+        company = companyRepository.save(company);
+        CompanyDTO result = companyMapper.toDto(company);
         return result;
     }
 
     /**
      *  Get all the companies.
      *  
+     *  @param pageable the pagination information
      *  @return the list of entities
      */
     @Override
     @Transactional(readOnly = true)
-    public List<Company> findAll() {
+    public Page<CompanyDTO> findAll(Pageable pageable) {
         log.debug("Request to get all Companies");
-        List<Company> result = companyRepository.findAll();
-
-        return result;
+        Page<Company> result = companyRepository.findAll(pageable);
+        return result.map(company -> companyMapper.toDto(company));
     }
 
     /**
@@ -60,10 +71,11 @@ public class CompanyServiceImpl implements CompanyService{
      */
     @Override
     @Transactional(readOnly = true)
-    public Company findOne(Long id) {
+    public CompanyDTO findOne(Long id) {
         log.debug("Request to get Company : {}", id);
         Company company = companyRepository.findOne(id);
-        return company;
+        CompanyDTO companyDTO = companyMapper.toDto(company);
+        return companyDTO;
     }
 
     /**

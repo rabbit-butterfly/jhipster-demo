@@ -1,0 +1,26 @@
+{
+    "pcmsApp": {
+        "projectArea" : {
+            "home": {
+                "title": "ProjectAreas",
+                "createLabel": "Créer un nouveau Project Area",
+                "createOrEditLabel": "Créer ou éditer un Project Area"
+            },
+            "created": "Un nouveau Project Area a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Project Area avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Project Area avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Project Area {{ id }} ?"
+            },
+            "detail": {
+                "title": "Project Area"
+            },
+            "compId": "Comp Id",
+            "projId": "Proj Id",
+            "name": "Name",
+            "enName": "En Name",
+            "unitCode": "Unit Code",
+            "subConstractor": "Sub Constractor"
+        }
+    }
+}

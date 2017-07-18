@@ -1,0 +1,74 @@
+<div>
+    <h2 data-translate="pcmsApp.ppInspectionRule.home.title">Pp Inspection Rules</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="pp-inspection-rule.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="pcmsApp.ppInspectionRule.home.createLabel">
+                        Create new Pp Inspection Rule
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="compId"><span data-translate="pcmsApp.ppInspectionRule.compId">Comp Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="projId"><span data-translate="pcmsApp.ppInspectionRule.projId">Proj Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="material"><span data-translate="pcmsApp.ppInspectionRule.material">Material</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="ppClass"><span data-translate="pcmsApp.ppInspectionRule.ppClass">Pp Class</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="jacketedPipe"><span data-translate="pcmsApp.ppInspectionRule.jacketedPipe">Jacketed Pipe</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="inspectionCode"><span data-translate="pcmsApp.ppInspectionRule.inspectionCode">Inspection Code</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="createTime"><span data-translate="pcmsApp.ppInspectionRule.createTime">Create Time</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="delFlag"><span data-translate="pcmsApp.ppInspectionRule.delFlag">Del Flag</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="ppInspectionRule in vm.ppInspectionRules track by ppInspectionRule.id">
+                    <td><a ui-sref="pp-inspection-rule-detail({id:ppInspectionRule.id})">{{ppInspectionRule.id}}</a></td>
+                    <td>{{ppInspectionRule.compId}}</td>
+                    <td>{{ppInspectionRule.projId}}</td>
+                    <td>{{ppInspectionRule.material}}</td>
+                    <td>{{ppInspectionRule.ppClass}}</td>
+                    <td>{{ppInspectionRule.jacketedPipe}}</td>
+                    <td>{{ppInspectionRule.inspectionCode}}</td>
+                    <td>{{ppInspectionRule.createTime | date:'medium'}}</td>
+                    <td>{{ppInspectionRule.delFlag}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="pp-inspection-rule-detail({id:ppInspectionRule.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="pp-inspection-rule.edit({id:ppInspectionRule.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="pp-inspection-rule.delete({id:ppInspectionRule.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+    </div>
+    <uib-pager total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pager>
+</div>

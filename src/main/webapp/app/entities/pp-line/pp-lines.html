@@ -1,0 +1,114 @@
+<div>
+    <h2 data-translate="pcmsApp.ppLine.home.title">Pp Lines</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="pp-line.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="pcmsApp.ppLine.home.createLabel">
+                        Create new Pp Line
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="compId"><span data-translate="pcmsApp.ppLine.compId">Comp Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="projId"><span data-translate="pcmsApp.ppLine.projId">Proj Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="areaId"><span data-translate="pcmsApp.ppLine.areaId">Area Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="lineNum"><span data-translate="pcmsApp.ppLine.lineNum">Line Num</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="lineVersion"><span data-translate="pcmsApp.ppLine.lineVersion">Line Version</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="size"><span data-translate="pcmsApp.ppLine.size">Size</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="serv"><span data-translate="pcmsApp.ppLine.serv">Serv</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="classSpec"><span data-translate="pcmsApp.ppLine.classSpec">Class Spec</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="lineFrom"><span data-translate="pcmsApp.ppLine.lineFrom">Line From</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="lineTo"><span data-translate="pcmsApp.ppLine.lineTo">Line To</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="operatePressure"><span data-translate="pcmsApp.ppLine.operatePressure">Operate Pressure</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="operateTemperature"><span data-translate="pcmsApp.ppLine.operateTemperature">Operate Temperature</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="lineLevel"><span data-translate="pcmsApp.ppLine.lineLevel">Line Level</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="lineCode"><span data-translate="pcmsApp.ppLine.lineCode">Line Code</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="designPressure"><span data-translate="pcmsApp.ppLine.designPressure">Design Pressure</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="designTemperature"><span data-translate="pcmsApp.ppLine.designTemperature">Design Temperature</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="kindLevel"><span data-translate="pcmsApp.ppLine.kindLevel">Kind Level</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="inspectionCode"><span data-translate="pcmsApp.ppLine.inspectionCode">Inspection Code</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="insulationCode"><span data-translate="pcmsApp.ppLine.insulationCode">Insulation Code</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="insulationHigh"><span data-translate="pcmsApp.ppLine.insulationHigh">Insulation High</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="paintCode"><span data-translate="pcmsApp.ppLine.paintCode">Paint Code</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="pIDiagram"><span data-translate="pcmsApp.ppLine.pIDiagram">P I Diagram</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="testPressure"><span data-translate="pcmsApp.ppLine.testPressure">Test Pressure</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="testMaterial"><span data-translate="pcmsApp.ppLine.testMaterial">Test Material</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="jacketedPipe"><span data-translate="pcmsApp.ppLine.jacketedPipe">Jacketed Pipe</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="remark"><span data-translate="pcmsApp.ppLine.remark">Remark</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="createTime"><span data-translate="pcmsApp.ppLine.createTime">Create Time</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="delFlag"><span data-translate="pcmsApp.ppLine.delFlag">Del Flag</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="ppLine in vm.ppLines track by ppLine.id">
+                    <td><a ui-sref="pp-line-detail({id:ppLine.id})">{{ppLine.id}}</a></td>
+                    <td>{{ppLine.compId}}</td>
+                    <td>{{ppLine.projId}}</td>
+                    <td>{{ppLine.areaId}}</td>
+                    <td>{{ppLine.lineNum}}</td>
+                    <td>{{ppLine.lineVersion}}</td>
+                    <td>{{ppLine.size}}</td>
+                    <td>{{ppLine.serv}}</td>
+                    <td>{{ppLine.classSpec}}</td>
+                    <td>{{ppLine.lineFrom}}</td>
+                    <td>{{ppLine.lineTo}}</td>
+                    <td>{{ppLine.operatePressure}}</td>
+                    <td>{{ppLine.operateTemperature}}</td>
+                    <td>{{ppLine.lineLevel}}</td>
+                    <td>{{ppLine.lineCode}}</td>
+                    <td>{{ppLine.designPressure}}</td>
+                    <td>{{ppLine.designTemperature}}</td>
+                    <td>{{ppLine.kindLevel}}</td>
+                    <td>{{ppLine.inspectionCode}}</td>
+                    <td>{{ppLine.insulationCode}}</td>
+                    <td>{{ppLine.insulationHigh}}</td>
+                    <td>{{ppLine.paintCode}}</td>
+                    <td>{{ppLine.pIDiagram}}</td>
+                    <td>{{ppLine.testPressure}}</td>
+                    <td>{{ppLine.testMaterial}}</td>
+                    <td>{{ppLine.jacketedPipe}}</td>
+                    <td>{{ppLine.remark}}</td>
+                    <td>{{ppLine.createTime | date:'medium'}}</td>
+                    <td>{{ppLine.delFlag}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="pp-line-detail({id:ppLine.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="pp-line.edit({id:ppLine.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="pp-line.delete({id:ppLine.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+    </div>
+    <uib-pager total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pager>
+</div>

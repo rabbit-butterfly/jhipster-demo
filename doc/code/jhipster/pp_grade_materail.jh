@@ -1,0 +1,25 @@
+
+/**
+*等级材质对照表
+* @auther:renntrabbit@foxmail.com
+* @date:Tue Jul 18 17:06:29 CST 2017
+* table:pp_grade_materail
+*/
+entity PpGradeMaterail (pp_grade_materail)
+{
+	compId String  required  minlength(0) maxlength(19), /** COMP_ID */
+	projId String  required  minlength(0) maxlength(19), /** PROJ_ID */
+	material String    minlength(0) maxlength(50), /** MATERIAL */
+	ppClass String    minlength(0) maxlength(50), /** PP_CLASS */
+	jsizeMin String    minlength(0) maxlength(50), /** JSIZE_MIN */
+	jsizeMax String    minlength(0) maxlength(50), /** @ 来源抽检比例表 中的代号 */
+	wallThickCode String    minlength(0) maxlength(64), /** WALL_THICK_CODE */
+	materialType String    minlength(0) maxlength(64), /** @ CS SS PE */
+	materialCategory String    minlength(0) maxlength(50), /** @ 常量 */
+	createTime Instant required , /** CREATE_TIME */
+	delFlag Integer   min(0) max(10) /** DEL_FLAG */
+}
+service  PpGradeMaterail with serviceClass
+service  PpGradeMaterail with serviceImpl
+paginate PpGradeMaterail with pager
+dto      PpGradeMaterail with mapstruct

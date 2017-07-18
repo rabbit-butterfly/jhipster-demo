@@ -1,10 +1,10 @@
 /**
- * 
+ * 存放项目的基本信息:开始时间，结束时间，是否停工等
  * ProjectMapper.java
  * Copyright(C) 2015-2015 xxxxxx公司
  * All rights reserved.
  * -----------------------------------------------
- * 2017-07-17 Created
+ * 2017-07-18 Created
  */
 package java;
 

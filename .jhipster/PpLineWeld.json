@@ -1,0 +1,344 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "pipeId",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 19
+        },
+        {
+            "fieldName": "pageCode",
+            "javadoc": "PIPE_ID",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 20
+        },
+        {
+            "fieldName": "jiont",
+            "javadoc": "PAGE_CODE",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "wpsno",
+            "javadoc": "JIONT",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 32
+        },
+        {
+            "fieldName": "jlocation",
+            "javadoc": "WPSNO",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "jclass",
+            "javadoc": "JLOCATION",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "finishDate",
+            "javadoc": "JCLASS",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "jsize",
+            "javadoc": "FINISH_DATE",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 5
+        },
+        {
+            "fieldName": "thickness",
+            "javadoc": "JSIZE",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "jtype",
+            "javadoc": "管道壁厚设置表@",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 20
+        },
+        {
+            "fieldName": "weldingProcess",
+            "javadoc": "数据字典@",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "fixedRotat",
+            "javadoc": "数据字典@",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "rootWelder",
+            "javadoc": "数据字典@",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "examitem",
+            "javadoc": "焊工代号@",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 32
+        },
+        {
+            "fieldName": "coverWelder",
+            "javadoc": "EXAMITEM",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "visual",
+            "javadoc": "焊工代号@",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 19
+        },
+        {
+            "fieldName": "pieceNo1",
+            "javadoc": "数据字典@",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "weldingMatial",
+            "javadoc": "PIECE_NO1",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "pieceNo2",
+            "javadoc": "WELDING_MATIAL",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "heatNo1",
+            "javadoc": "PIECE_NO2",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 64
+        },
+        {
+            "fieldName": "heatNo2",
+            "javadoc": "HEAT_NO1",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 64
+        },
+        {
+            "fieldName": "alterCode",
+            "javadoc": "HEAT_NO2",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 64
+        },
+        {
+            "fieldName": "alterType",
+            "javadoc": "ALTER_CODE",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 64
+        },
+        {
+            "fieldName": "dailyNo",
+            "javadoc": "数据字典@",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 20
+        },
+        {
+            "fieldName": "hardessRec",
+            "javadoc": "DAILY_NO",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "heatRec",
+            "javadoc": "HARDESS_REC",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 64
+        },
+        {
+            "fieldName": "rtLot",
+            "javadoc": "HEAT_REC",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "rtSample",
+            "javadoc": "RT_LOT",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "remark",
+            "javadoc": "RT_SAMPLE",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 500
+        },
+        {
+            "fieldName": "createTime",
+            "javadoc": "REMARK",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "delFlag",
+            "javadoc": "CREATE_TIME",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 0,
+            "fieldValidateRulesMax": 10
+        }
+    ],
+    "changelogDate": "20170718090742",
+    "javadoc": "焊接记录表\n@auther:renntrabbit@foxmail.com\n@date:Tue Jul 18 17:06:29 CST 2017\ntable:pp_line_weld",
+    "entityTableName": "pp_line_weld",
+    "dto": "mapstruct",
+    "pagination": "pager",
+    "service": "serviceImpl"
+}

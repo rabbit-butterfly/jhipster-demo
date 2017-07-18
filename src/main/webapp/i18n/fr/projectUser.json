@@ -1,0 +1,25 @@
+{
+    "pcmsApp": {
+        "projectUser" : {
+            "home": {
+                "title": "ProjectUsers",
+                "createLabel": "Créer un nouveau Project User",
+                "createOrEditLabel": "Créer ou éditer un Project User"
+            },
+            "created": "Un nouveau Project User a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Project User avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Project User avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Project User {{ id }} ?"
+            },
+            "detail": {
+                "title": "Project User"
+            },
+            "compId": "Comp Id",
+            "projId": "Proj Id",
+            "userId": "User Id",
+            "createTime": "Create Time",
+            "delFlag": "Del Flag"
+        }
+    }
+}

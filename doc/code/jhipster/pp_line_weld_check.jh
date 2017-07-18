@@ -1,0 +1,30 @@
+
+/**
+*焊接记录质量检查记录
+* @auther:renntrabbit@foxmail.com
+* @date:Tue Jul 18 17:06:29 CST 2017
+* table:pp_line_weld_check
+*/
+entity PpLineWeldCheck (pp_line_weld_check)
+{
+	projId String  required  minlength(0) maxlength(19), /** PROJ_ID */
+	pipeId String  required  minlength(0) maxlength(19), /** PIPE_ID */
+	jointId String    minlength(0) maxlength(19), /** JOINT_ID */
+	rtfilmTotal Integer   min(0) max(10), /** @rt */
+	rtfilmPassTotal Integer   min(0) max(10), /** @rt */
+	reportCode String    minlength(0) maxlength(16), /** @rt */
+	checkDate String    minlength(0) maxlength(16), /** @rt */
+	checkResult String    minlength(0) maxlength(16), /** CHECK_RESULT */
+	reworkCode String    minlength(0) maxlength(50), /** REWORK_CODE */
+	reworkWelder String    minlength(0) maxlength(50), /** REWORK_WELDER */
+	reworkDate Instant  , /** REWORK_DATE */
+	reworkResult String    minlength(0) maxlength(50), /** REWORK_RESULT */
+	repairReport String    minlength(0) maxlength(50), /** REPAIR_REPORT */
+	remark String    minlength(0) maxlength(500), /** REMARK */
+	createTime Instant required , /** CREATE_TIME */
+	delFlag Integer   min(0) max(10) /** DEL_FLAG */
+}
+service  PpLineWeldCheck with serviceClass
+service  PpLineWeldCheck with serviceImpl
+paginate PpLineWeldCheck with pager
+dto      PpLineWeldCheck with mapstruct

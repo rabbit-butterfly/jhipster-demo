@@ -1,0 +1,319 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "compId",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 19
+        },
+        {
+            "fieldName": "projId",
+            "javadoc": "comp_ID",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 19
+        },
+        {
+            "fieldName": "areaId",
+            "javadoc": "PROJ_ID",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 19
+        },
+        {
+            "fieldName": "lineNum",
+            "javadoc": "AREA_ID",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "lineVersion",
+            "javadoc": "LINE_NUM",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 20
+        },
+        {
+            "fieldName": "size",
+            "javadoc": "LINE_VERSION",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 10
+        },
+        {
+            "fieldName": "serv",
+            "javadoc": "SIZE",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "classSpec",
+            "javadoc": "SERV",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "lineFrom",
+            "javadoc": "@",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "lineTo",
+            "javadoc": "LINE_FROM",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "operatePressure",
+            "javadoc": "LINE_TO",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 20
+        },
+        {
+            "fieldName": "operateTemperature",
+            "javadoc": "OPERATE_PRESSURE",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "lineLevel",
+            "javadoc": "OPERATE_TEMPERATURE",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 10
+        },
+        {
+            "fieldName": "lineCode",
+            "javadoc": "LINE_LEVEL",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "designPressure",
+            "javadoc": "LINE_CODE",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "designTemperature",
+            "javadoc": "DESIGN_PRESSURE",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "kindLevel",
+            "javadoc": "DESIGN_TEMPERATURE",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "inspectionCode",
+            "javadoc": "KIND_LEVEL",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "insulationCode",
+            "javadoc": "INSPECTION_CODE",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "insulationHigh",
+            "javadoc": "INSULATION_CODE",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "paintCode",
+            "javadoc": "INSULATION_HIGH",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "pIDiagram",
+            "javadoc": "PAINT_CODE",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "testPressure",
+            "javadoc": "P_I_DIAGRAM",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "testMaterial",
+            "javadoc": "TEST_PRESSURE",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "jacketedPipe",
+            "javadoc": "TEST_MATERIAL",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "remark",
+            "javadoc": "JACKETED_PIPE",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 500
+        },
+        {
+            "fieldName": "createTime",
+            "javadoc": "REMARK",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "delFlag",
+            "javadoc": "CREATE_TIME",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 0,
+            "fieldValidateRulesMax": 10
+        }
+    ],
+    "changelogDate": "20170718090740",
+    "javadoc": "管道特性表\n@auther:renntrabbit@foxmail.com\n@date:Tue Jul 18 17:06:29 CST 2017\ntable:pp_line",
+    "entityTableName": "pp_line",
+    "dto": "mapstruct",
+    "pagination": "pager",
+    "service": "serviceImpl"
+}

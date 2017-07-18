@@ -1,0 +1,29 @@
+{
+    "pcmsApp": {
+        "ppLineDrawing" : {
+            "home": {
+                "title": "PpLineDrawings",
+                "createLabel": "Créer un nouveau Pp Line Drawing",
+                "createOrEditLabel": "Créer ou éditer un Pp Line Drawing"
+            },
+            "created": "Un nouveau Pp Line Drawing a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Pp Line Drawing avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Pp Line Drawing avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Pp Line Drawing {{ id }} ?"
+            },
+            "detail": {
+                "title": "Pp Line Drawing"
+            },
+            "pipeId": "Pipe Id",
+            "pageCode": "Page Code",
+            "versionCode": "Version Code",
+            "alterationCode": "Alteration Code",
+            "name": "Name",
+            "filePath": "File Path",
+            "remark": "Remark",
+            "createTime": "Create Time",
+            "delFlag": "Del Flag"
+        }
+    }
+}

@@ -1,0 +1,43 @@
+
+<div>
+    <h2><span data-translate="pcmsApp.projectArea.detail.title">Project Area</span> {{vm.projectArea.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="pcmsApp.projectArea.compId">Comp Id</span></dt>
+        <dd>
+            <span>{{vm.projectArea.compId}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.projectArea.projId">Proj Id</span></dt>
+        <dd>
+            <span>{{vm.projectArea.projId}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.projectArea.name">Name</span></dt>
+        <dd>
+            <span>{{vm.projectArea.name}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.projectArea.enName">En Name</span></dt>
+        <dd>
+            <span>{{vm.projectArea.enName}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.projectArea.unitCode">Unit Code</span></dt>
+        <dd>
+            <span>{{vm.projectArea.unitCode}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.projectArea.subConstractor">Sub Constractor</span></dt>
+        <dd>
+            <span>{{vm.projectArea.subConstractor}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="project-area-detail.edit({id:vm.projectArea.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

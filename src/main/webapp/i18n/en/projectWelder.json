@@ -1,0 +1,30 @@
+{
+    "pcmsApp": {
+        "projectWelder" : {
+            "home": {
+                "title": "Project Welders",
+                "createLabel": "Create a new Project Welder",
+                "createOrEditLabel": "Create or edit a Project Welder"
+            },
+            "created": "A new Project Welder is created with identifier {{ param }}",
+            "updated": "A Project Welder is updated with identifier {{ param }}",
+            "deleted": "A Project Welder is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Project Welder {{ id }}?"
+            },
+            "detail": {
+                "title": "Project Welder"
+            },
+            "compId": "Comp Id",
+            "code": "Code",
+            "name": "Name",
+            "mobille": "Mobille",
+            "identityCard": "Identity Card",
+            "workTerm": "Work Term",
+            "unitName": "Unit Name",
+            "createTime": "Create Time",
+            "delFlag": "Del Flag",
+            "remark": "Remark"
+        }
+    }
+}

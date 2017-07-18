@@ -1,7 +1,8 @@
 
 /**
-* @auther:fan
-* @date:Mon Jul 17 19:09:02 CST 2017
+*公司表：存放公司的基本信息
+* @auther:renntrabbit@foxmail.com
+* @date:Tue Jul 18 17:06:29 CST 2017
 * table:company
 */
 entity Company (company)
@@ -20,5 +21,548 @@ entity Company (company)
 	creator String    minlength(0) maxlength(10), /** CREATOR */
 	updateTime Instant required  /** UPDATE_TIME */
 }
-service Company with serviceClass
-service Company with serviceImpl
+service  Company with serviceClass
+service  Company with serviceImpl
+paginate Company with pager
+dto      Company with mapstruct
+
+/**
+*等级材质对照表
+* @auther:renntrabbit@foxmail.com
+* @date:Tue Jul 18 17:06:29 CST 2017
+* table:pp_grade_materail
+*/
+entity PpGradeMaterail (pp_grade_materail)
+{
+	compId String  required  minlength(0) maxlength(19), /** COMP_ID */
+	projId String  required  minlength(0) maxlength(19), /** PROJ_ID */
+	material String    minlength(0) maxlength(50), /** MATERIAL */
+	ppClass String    minlength(0) maxlength(50), /** PP_CLASS */
+	jsizeMin String    minlength(0) maxlength(50), /** JSIZE_MIN */
+	jsizeMax String    minlength(0) maxlength(50), /** @ 来源抽检比例表 中的代号 */
+	wallThickCode String    minlength(0) maxlength(64), /** WALL_THICK_CODE */
+	materialType String    minlength(0) maxlength(64), /** @ CS SS PE */
+	materialCategory String    minlength(0) maxlength(50), /** @ 常量 */
+	createTime Instant required , /** CREATE_TIME */
+	delFlag Integer   min(0) max(10) /** DEL_FLAG */
+}
+service  PpGradeMaterail with serviceClass
+service  PpGradeMaterail with serviceImpl
+paginate PpGradeMaterail with pager
+dto      PpGradeMaterail with mapstruct
+
+/**
+*抽检比例设置表
+* @auther:renntrabbit@foxmail.com
+* @date:Tue Jul 18 17:06:29 CST 2017
+* table:pp_inspection_ratio
+*/
+entity PpIinspectionTatio (pp_inspection_ratio)
+{
+	compId String  required  minlength(0) maxlength(19), /** COMP_ID */
+	projId String  required  minlength(0) maxlength(19), /** PROJ_ID */
+	inspectionCode String    minlength(0) maxlength(50), /** I III IV */
+	rtRate String    minlength(0) maxlength(19), /** RT_RATE */
+	rtRateGd String    minlength(0) maxlength(19), /** RT_RATE_GD */
+	rtStandard String    minlength(0) maxlength(50), /** RT_STANDARD */
+	rtGrade String    minlength(0) maxlength(50), /** @ I III IV */
+	ptRate String    minlength(0) maxlength(19), /** PT_RATE */
+	ptStandard String    minlength(0) maxlength(50), /** PT_STANDARD */
+	ptGrade String    minlength(0) maxlength(50), /** PT_GRADE */
+	utRate String    minlength(0) maxlength(19), /** UT_RATE */
+	utStandard String    minlength(0) maxlength(50), /** UT_STANDARD */
+	utGrade String    minlength(0) maxlength(50), /** UT_GRADE */
+	mtRate String    minlength(0) maxlength(19), /** MT_RATE */
+	mtStandard String    minlength(0) maxlength(50), /** MT_STANDARD */
+	mtGrade String    minlength(0) maxlength(50), /** MT_GRADE */
+	createTime Instant required , /** CREATE_TIME */
+	delFlag Integer   min(0) max(10) /** DEL_FLAG */
+}
+service  PpIinspectionTatio with serviceClass
+service  PpIinspectionTatio with serviceImpl
+paginate PpIinspectionTatio with pager
+dto      PpIinspectionTatio with mapstruct
+
+/**
+*抽检规则设置表
+* @auther:renntrabbit@foxmail.com
+* @date:Tue Jul 18 17:06:29 CST 2017
+* table:pp_inspection_rule
+*/
+entity PpInspectionRule (pp_inspection_rule)
+{
+	compId String  required  minlength(0) maxlength(19), /** COMP_ID */
+	projId String  required  minlength(0) maxlength(19), /** PROJ_ID */
+	material String    minlength(0) maxlength(50), /** MATERIAL */
+	ppClass String    minlength(0) maxlength(50), /** PP_CLASS */
+	jacketedPipe String    minlength(0) maxlength(50), /** JACKETED_PIPE */
+	inspectionCode String    minlength(0) maxlength(50), /** @ 来源抽检比例表 中的代号 */
+	createTime Instant required , /** CREATE_TIME */
+	delFlag Integer   min(0) max(10) /** DEL_FLAG */
+}
+service  PpInspectionRule with serviceClass
+service  PpInspectionRule with serviceImpl
+paginate PpInspectionRule with pager
+dto      PpInspectionRule with mapstruct
+
+/**
+*管道特性表
+* @auther:renntrabbit@foxmail.com
+* @date:Tue Jul 18 17:06:29 CST 2017
+* table:pp_line
+*/
+entity PpLine (pp_line)
+{
+	compId String  required  minlength(0) maxlength(19), /** comp_ID */
+	projId String  required  minlength(0) maxlength(19), /** PROJ_ID */
+	areaId String  required  minlength(0) maxlength(19), /** AREA_ID */
+	lineNum String    minlength(0) maxlength(50), /** LINE_NUM */
+	lineVersion String    minlength(0) maxlength(20), /** LINE_VERSION */
+	size String    minlength(0) maxlength(10), /** SIZE */
+	serv String    minlength(0) maxlength(50), /** SERV */
+	classSpec String    minlength(0) maxlength(50), /** @ */
+	lineFrom String    minlength(0) maxlength(50), /** LINE_FROM */
+	lineTo String    minlength(0) maxlength(50), /** LINE_TO */
+	operatePressure String    minlength(0) maxlength(20), /** OPERATE_PRESSURE */
+	operateTemperature String    minlength(0) maxlength(50), /** OPERATE_TEMPERATURE */
+	lineLevel String    minlength(0) maxlength(10), /** LINE_LEVEL */
+	lineCode String    minlength(0) maxlength(50), /** LINE_CODE */
+	designPressure String    minlength(0) maxlength(50), /** DESIGN_PRESSURE */
+	designTemperature String    minlength(0) maxlength(50), /** DESIGN_TEMPERATURE */
+	kindLevel String    minlength(0) maxlength(50), /** KIND_LEVEL */
+	inspectionCode String    minlength(0) maxlength(50), /** INSPECTION_CODE */
+	insulationCode String    minlength(0) maxlength(50), /** INSULATION_CODE */
+	insulationHigh String    minlength(0) maxlength(50), /** INSULATION_HIGH */
+	paintCode String    minlength(0) maxlength(50), /** PAINT_CODE */
+	pIDiagram String    minlength(0) maxlength(50), /** P_I_DIAGRAM */
+	testPressure String    minlength(0) maxlength(50), /** TEST_PRESSURE */
+	testMaterial String    minlength(0) maxlength(50), /** TEST_MATERIAL */
+	jacketedPipe String    minlength(0) maxlength(50), /** JACKETED_PIPE */
+	remark String    minlength(0) maxlength(500), /** REMARK */
+	createTime Instant required , /** CREATE_TIME */
+	delFlag Integer   min(0) max(10) /** DEL_FLAG */
+}
+service  PpLine with serviceClass
+service  PpLine with serviceImpl
+paginate PpLine with pager
+dto      PpLine with mapstruct
+
+/**
+*管线-图片
+* @auther:renntrabbit@foxmail.com
+* @date:Tue Jul 18 17:06:29 CST 2017
+* table:pp_line_drawing
+*/
+entity PpLineDrawing (pp_line_drawing)
+{
+	pipeId String  required  minlength(0) maxlength(19), /** PIPE_ID */
+	pageCode Integer   min(0) max(10), /** PAGE_CODE */
+	versionCode String    minlength(0) maxlength(50), /** VERSION_CODE */
+	alterationCode String    minlength(0) maxlength(50), /** ALTERATION_CODE */
+	name String    minlength(0) maxlength(50), /** NAME */
+	filePath String    minlength(0) maxlength(200), /** FILE_PATH */
+	remark String    minlength(0) maxlength(500), /** REMARK */
+	createTime Instant required , /** CREATE_TIME */
+	delFlag Integer   min(0) max(10) /** DEL_FLAG */
+}
+service  PpLineDrawing with serviceClass
+service  PpLineDrawing with serviceImpl
+paginate PpLineDrawing with pager
+dto      PpLineDrawing with mapstruct
+
+/**
+*焊接记录表
+* @auther:renntrabbit@foxmail.com
+* @date:Tue Jul 18 17:06:29 CST 2017
+* table:pp_line_weld
+*/
+entity PpLineWeld (pp_line_weld)
+{
+	pipeId String  required  minlength(0) maxlength(19), /** PIPE_ID */
+	pageCode String    minlength(0) maxlength(20), /** PAGE_CODE */
+	jiont String    minlength(0) maxlength(50), /** JIONT */
+	wpsno String    minlength(0) maxlength(32), /** WPSNO */
+	jlocation String    minlength(0) maxlength(50), /** JLOCATION */
+	jclass String    minlength(0) maxlength(50), /** JCLASS */
+	finishDate Instant  , /** FINISH_DATE */
+	jsize String    minlength(0) maxlength(5), /** JSIZE */
+	thickness String    minlength(0) maxlength(50), /** 管道壁厚设置表@ */
+	jtype String    minlength(0) maxlength(20), /** 数据字典@ */
+	weldingProcess String    minlength(0) maxlength(50), /** 数据字典@ */
+	fixedRotat String    minlength(0) maxlength(50), /** 数据字典@ */
+	rootWelder String    minlength(0) maxlength(50), /** 焊工代号@ */
+	examitem String    minlength(0) maxlength(32), /** EXAMITEM */
+	coverWelder String    minlength(0) maxlength(50), /** 焊工代号@ */
+	visual String    minlength(0) maxlength(19), /** 数据字典@ */
+	pieceNo1 String    minlength(0) maxlength(50), /** PIECE_NO1 */
+	weldingMatial String    minlength(0) maxlength(50), /** WELDING_MATIAL */
+	pieceNo2 String    minlength(0) maxlength(50), /** PIECE_NO2 */
+	heatNo1 String    minlength(0) maxlength(64), /** HEAT_NO1 */
+	heatNo2 String    minlength(0) maxlength(64), /** HEAT_NO2 */
+	alterCode String    minlength(0) maxlength(64), /** ALTER_CODE */
+	alterType String    minlength(0) maxlength(64), /** 数据字典@ */
+	dailyNo String    minlength(0) maxlength(20), /** DAILY_NO */
+	hardessRec String    minlength(0) maxlength(50), /** HARDESS_REC */
+	heatRec String    minlength(0) maxlength(64), /** HEAT_REC */
+	rtLot String    minlength(0) maxlength(50), /** RT_LOT */
+	rtSample String    minlength(0) maxlength(50), /** RT_SAMPLE */
+	remark String    minlength(0) maxlength(500), /** REMARK */
+	createTime Instant required , /** CREATE_TIME */
+	delFlag Integer   min(0) max(10) /** DEL_FLAG */
+}
+service  PpLineWeld with serviceClass
+service  PpLineWeld with serviceImpl
+paginate PpLineWeld with pager
+dto      PpLineWeld with mapstruct
+
+/**
+*焊接记录质量检查记录
+* @auther:renntrabbit@foxmail.com
+* @date:Tue Jul 18 17:06:29 CST 2017
+* table:pp_line_weld_check
+*/
+entity PpLineWeldCheck (pp_line_weld_check)
+{
+	projId String  required  minlength(0) maxlength(19), /** PROJ_ID */
+	pipeId String  required  minlength(0) maxlength(19), /** PIPE_ID */
+	jointId String    minlength(0) maxlength(19), /** JOINT_ID */
+	rtfilmTotal Integer   min(0) max(10), /** @rt */
+	rtfilmPassTotal Integer   min(0) max(10), /** @rt */
+	reportCode String    minlength(0) maxlength(16), /** @rt */
+	checkDate String    minlength(0) maxlength(16), /** @rt */
+	checkResult String    minlength(0) maxlength(16), /** CHECK_RESULT */
+	reworkCode String    minlength(0) maxlength(50), /** REWORK_CODE */
+	reworkWelder String    minlength(0) maxlength(50), /** REWORK_WELDER */
+	reworkDate Instant  , /** REWORK_DATE */
+	reworkResult String    minlength(0) maxlength(50), /** REWORK_RESULT */
+	repairReport String    minlength(0) maxlength(50), /** REPAIR_REPORT */
+	remark String    minlength(0) maxlength(500), /** REMARK */
+	createTime Instant required , /** CREATE_TIME */
+	delFlag Integer   min(0) max(10) /** DEL_FLAG */
+}
+service  PpLineWeldCheck with serviceClass
+service  PpLineWeldCheck with serviceImpl
+paginate PpLineWeldCheck with pager
+dto      PpLineWeldCheck with mapstruct
+
+/**
+*管线-焊接委托记录表
+* @auther:renntrabbit@foxmail.com
+* @date:Tue Jul 18 17:06:29 CST 2017
+* table:pp_line_weld_entrust
+*/
+entity PpLineWeldEntrust (pp_line_weld_entrust)
+{
+	projId String  required  minlength(0) maxlength(19), /** PROJ_ID */
+	pipelineId String  required  minlength(0) maxlength(19), /** PIPELINE_ID */
+	weldId String    minlength(0) maxlength(19), /** WELD_ID */
+	flowNum String    minlength(0) maxlength(20), /** FLOW_NUM */
+	code String    minlength(0) maxlength(50), /** @分项号-委托类型-流水号 */
+	expandCount Integer   min(0) max(10), /** EXPAND_COUNT */
+	repareCount Integer   min(0) max(10), /** REPARE_COUNT */
+	entrustType String    minlength(0) maxlength(10), /** @RT PT UT MT PMI */
+	entrustDate Instant  , /** ENTRUST_DATE */
+	remark String    minlength(0) maxlength(500), /** REMARK */
+	createTime Instant required , /** CREATE_TIME */
+	delFlag Integer   min(0) max(10) /** DEL_FLAG */
+}
+service  PpLineWeldEntrust with serviceClass
+service  PpLineWeldEntrust with serviceImpl
+paginate PpLineWeldEntrust with pager
+dto      PpLineWeldEntrust with mapstruct
+
+/**
+*管线-焊接材料记录表
+* @auther:renntrabbit@foxmail.com
+* @date:Tue Jul 18 17:06:29 CST 2017
+* table:pp_line_weld_material
+*/
+entity PpLineWeldMaterial (pp_line_weld_material)
+{
+	pipelineId String  required  minlength(0) maxlength(19), /** PIPELINE_ID */
+	pageCode Integer   min(0) max(10), /** PAGE_CODE */
+	sequenceNumber Integer   min(0) max(10), /** SEQUENCE_NUMBER */
+	materialCode String    minlength(0) maxlength(50), /** MATERIAL_CODE */
+	name String    minlength(0) maxlength(50), /** NAME */
+	materialDesc String    minlength(0) maxlength(50), /** MATERIAL_DESC */
+	spec String    minlength(0) maxlength(50), /** SPEC */
+	unit String    minlength(0) maxlength(20), /** UNIT */
+	material String    minlength(0) maxlength(50), /** MATERIAL */
+	designQty String    minlength(0) maxlength(50), /** DESIGN_QTY */
+	remark String    minlength(0) maxlength(500), /** REMARK */
+	createTime Instant required , /** CREATE_TIME */
+	delFlag Integer   min(0) max(10) /** DEL_FLAG */
+}
+service  PpLineWeldMaterial with serviceClass
+service  PpLineWeldMaterial with serviceImpl
+paginate PpLineWeldMaterial with pager
+dto      PpLineWeldMaterial with mapstruct
+
+/**
+*管道壁厚设置表
+* @auther:renntrabbit@foxmail.com
+* @date:Tue Jul 18 17:06:29 CST 2017
+* table:pp_thickness
+*/
+entity PpThickness (pp_thickness)
+{
+	compId String  required  minlength(0) maxlength(19), /** COMP_ID */
+	projId String  required  minlength(0) maxlength(19), /** PROJ_ID */
+	jsize String    minlength(0) maxlength(5), /** JSIZE */
+	wallThickCode String    minlength(0) maxlength(50), /** WALL_THICK_CODE */
+	externalDiameter String    minlength(0) maxlength(19), /** EXTERNAL_DIAMETER */
+	thickness String    minlength(0) maxlength(19), /** THICKNESS */
+	createTime Instant required , /** CREATE_TIME */
+	delFlag Integer   min(0) max(10) /** DEL_FLAG */
+}
+service  PpThickness with serviceClass
+service  PpThickness with serviceImpl
+paginate PpThickness with pager
+dto      PpThickness with mapstruct
+
+/**
+*存放项目的基本信息:开始时间，结束时间，是否停工等
+* @auther:renntrabbit@foxmail.com
+* @date:Tue Jul 18 17:06:29 CST 2017
+* table:project
+*/
+entity Project (project)
+{
+	code String  required  minlength(0) maxlength(20), /** CODE */
+	name String    minlength(0) maxlength(80), /** NAME */
+	enName String    minlength(0) maxlength(30), /** EN_NAME */
+	supervisor String    minlength(0) maxlength(100), /** SUPERVISOR */
+	oContractor String    minlength(0) maxlength(100), /** O_CONTRACTOR */
+	hContractor String    minlength(0) maxlength(100), /** H_CONTRACTOR */
+	startDate Instant  , /** START_DATE */
+	endDate Instant  , /** END_DATE */
+	status Integer   min(0) max(10), /** 0：待审核 1：审核通过 2：审核失败 3：终结 */
+	delFlag Integer   min(0) max(10), /** DEL_FLAG */
+	remark String    minlength(0) maxlength(500), /** REMARK */
+	extendAttr String    minlength(0) maxlength(50) /** 扩展字段 */
+}
+service  Project with serviceClass
+service  Project with serviceImpl
+paginate Project with pager
+dto      Project with mapstruct
+
+/**
+*分包项目：项目的子表
+* @auther:renntrabbit@foxmail.com
+* @date:Tue Jul 18 17:06:29 CST 2017
+* table:project_area
+*/
+entity ProjectArea (project_area)
+{
+	compId String  required  minlength(0) maxlength(19), /** COMP_ID */
+	projId String  required  minlength(0) maxlength(19), /** PROJ_ID */
+	name String    minlength(0) maxlength(80), /** NAME */
+	enName String    minlength(0) maxlength(100), /** EN_NAME */
+	unitCode String    minlength(0) maxlength(50), /** UNIT_CODE */
+	subConstractor String    minlength(0) maxlength(80) /** SUB_CONSTRACTOR */
+}
+service  ProjectArea with serviceClass
+service  ProjectArea with serviceImpl
+paginate ProjectArea with pager
+dto      ProjectArea with mapstruct
+
+/**
+*项目物资类别表
+* @auther:renntrabbit@foxmail.com
+* @date:Tue Jul 18 17:06:29 CST 2017
+* table:project_material
+*/
+entity ProjectMaterial (project_material)
+{
+	projId String    minlength(0) maxlength(19), /** PROJ_ID */
+	name String    minlength(0) maxlength(80), /** NAME */
+	parentId String    minlength(0) maxlength(19), /** PARENT_ID */
+	remark String    minlength(0) maxlength(500), /** REMARK */
+	createTime Instant required , /** CREATE_TIME */
+	delFlag Integer   min(0) max(10) /** DEL_FLAG */
+}
+service  ProjectMaterial with serviceClass
+service  ProjectMaterial with serviceImpl
+paginate ProjectMaterial with pager
+dto      ProjectMaterial with mapstruct
+
+/**
+*项目物资规格明细表
+* @auther:renntrabbit@foxmail.com
+* @date:Tue Jul 18 17:06:29 CST 2017
+* table:project_spec
+*/
+entity ProjectSpec (project_spec)
+{
+	projId String    minlength(0) maxlength(19), /** PROJ_ID */
+	name String    minlength(0) maxlength(80), /** 规格名称 */
+	size String    minlength(0) maxlength(10), /** 大小 */
+	unit String    minlength(0) maxlength(50), /** 场地 */
+	remark String    minlength(0) maxlength(500), /** REMARK */
+	createTime Instant required , /** CREATE_TIME */
+	delFlag Integer   min(0) max(10) /** DEL_FLAG */
+}
+service  ProjectSpec with serviceClass
+service  ProjectSpec with serviceImpl
+paginate ProjectSpec with pager
+dto      ProjectSpec with mapstruct
+
+/**
+*项目分包商基本信息表
+* @auther:renntrabbit@foxmail.com
+* @date:Tue Jul 18 17:06:29 CST 2017
+* table:project_sub_constractor
+*/
+entity ProjectSubConstractor (project_sub_constractor)
+{
+	projId String  required  minlength(0) maxlength(19), /** PROJ_ID */
+	name String  required  minlength(0) maxlength(80), /** NAME */
+	remark String    minlength(0) maxlength(500), /** REMARK */
+	createTime Instant required , /** CREATE_TIME */
+	delFlag Integer   min(0) max(10) /** DEL_FLAG */
+}
+service  ProjectSubConstractor with serviceClass
+service  ProjectSubConstractor with serviceImpl
+paginate ProjectSubConstractor with pager
+dto      ProjectSubConstractor with mapstruct
+
+/**
+*项目用户关系表
+* @auther:renntrabbit@foxmail.com
+* @date:Tue Jul 18 17:06:29 CST 2017
+* table:project_user
+*/
+entity ProjectUser (project_user)
+{
+	compId String  required  minlength(0) maxlength(19), /** COMP_ID */
+	projId String  required  minlength(0) maxlength(19), /** PROJ_ID */
+	userId String    minlength(0) maxlength(19), /** USER_ID */
+	createTime Instant required , /** CREATE_TIME */
+	delFlag Integer   min(0) max(10) /** 0：未删除 1：删除 */
+}
+service  ProjectUser with serviceClass
+service  ProjectUser with serviceImpl
+paginate ProjectUser with pager
+dto      ProjectUser with mapstruct
+
+/**
+*项目 焊工 工人 关系表
+* @auther:renntrabbit@foxmail.com
+* @date:Tue Jul 18 17:06:29 CST 2017
+* table:project_welder
+*/
+entity ProjectWelder (project_welder)
+{
+	compId String  required  minlength(0) maxlength(19), /** COMP_ID */
+	code String    minlength(0) maxlength(20), /** CODE */
+	name String  required  minlength(0) maxlength(10), /** NAME */
+	mobille String    minlength(0) maxlength(16), /** MOBILLE */
+	identityCard String    minlength(0) maxlength(18), /** IDENTITY_CARD */
+	workTerm String    minlength(0) maxlength(10), /** WORK_TERM */
+	unitName String    minlength(0) maxlength(50), /** UNIT_NAME */
+	createTime Instant required , /** CREATE_TIME */
+	delFlag Integer   min(0) max(10), /** DEL_FLAG */
+	remark String    minlength(0) maxlength(500) /** REMARK */
+}
+service  ProjectWelder with serviceClass
+service  ProjectWelder with serviceImpl
+paginate ProjectWelder with pager
+dto      ProjectWelder with mapstruct
+
+/**
+*用户选中了项目中的哪几个分项
+* @auther:renntrabbit@foxmail.com
+* @date:Tue Jul 18 17:06:29 CST 2017
+* table:user_area
+*/
+entity UserArea (user_area)
+{
+	userId String  required  minlength(0) maxlength(19), /** USER_ID */
+	areaId String  required  minlength(0) maxlength(19) /** AREA_ID */
+}
+service  UserArea with serviceClass
+service  UserArea with serviceImpl
+paginate UserArea with pager
+dto      UserArea with mapstruct
+
+/**
+*公司成员表
+* @auther:renntrabbit@foxmail.com
+* @date:Tue Jul 18 17:06:29 CST 2017
+* table:user_info
+*/
+entity UserInfo (user_info)
+{
+	compId String  required  minlength(0) maxlength(19), /** 公司ID */
+	code String    minlength(0) maxlength(19), /** 用户工号 */
+	mobile String    minlength(0) maxlength(16), /** 手机号码 */
+	status String    minlength(0) maxlength(5), /** 0：无效 1：有效 */
+	jobTitle String    minlength(0) maxlength(16), /** 岗位@ */
+	major String    minlength(0) maxlength(16), /** 专业@ */
+	jhUserId String  required  minlength(0) maxlength(19) /** JH_USER_ID */
+}
+service  UserInfo with serviceClass
+service  UserInfo with serviceImpl
+paginate UserInfo with pager
+dto      UserInfo with mapstruct
+
+/**
+*用户菜单权限
+* @auther:renntrabbit@foxmail.com
+* @date:Tue Jul 18 17:06:29 CST 2017
+* table:user_power
+*/
+entity UserPower (user_power)
+{
+	userId String  required  minlength(0) maxlength(19), /** USER_ID */
+	parentCode String  required  minlength(0) maxlength(3), /** PARENT_CODE */
+	funcCode String  required  minlength(0) maxlength(8) /** FUNC_CODE */
+}
+service  UserPower with serviceClass
+service  UserPower with serviceImpl
+paginate UserPower with pager
+dto      UserPower with mapstruct
+
+/**
+*焊工工人表-包括：焊工姓名、手机号码、所在班组等
+* @auther:renntrabbit@foxmail.com
+* @date:Tue Jul 18 17:06:29 CST 2017
+* table:welder
+*/
+entity Welder (welder)
+{
+	compId String  required  minlength(0) maxlength(19), /** COMP_ID */
+	code String    minlength(0) maxlength(20), /** CODE */
+	name String  required  minlength(0) maxlength(10), /** NAME */
+	mobille String    minlength(0) maxlength(16), /** MOBILLE */
+	identityCard String    minlength(0) maxlength(20), /** IDENTITY_CARD */
+	workTerm String    minlength(0) maxlength(10), /** WORK_TERM */
+	unitName String    minlength(0) maxlength(50), /** UNIT_NAME */
+	createTime Instant required , /** CREATE_TIME */
+	delFlag Integer   min(0) max(10), /** DEL_FLAG */
+	remark String    minlength(0) maxlength(500) /** REMARK */
+}
+service  Welder with serviceClass
+service  Welder with serviceImpl
+paginate Welder with pager
+dto      Welder with mapstruct
+
+/**
+*焊工技能表
+* @auther:renntrabbit@foxmail.com
+* @date:Tue Jul 18 17:06:29 CST 2017
+* table:welder_skill
+*/
+entity WelderSkill (welder_skill)
+{
+	welderId String  required  minlength(0) maxlength(19), /** WELDER_ID */
+	name String  required  minlength(0) maxlength(80), /** NAME */
+	assessmentDate Instant  , /** ASSESSMENT_DATE */
+	effectiveDate Instant  , /** EFFECTIVE_DATE */
+	createTime Instant required , /** CREATE_TIME */
+	delFlag Integer   min(0) max(10) /** DEL_FLAG */
+}
+service  WelderSkill with serviceClass
+service  WelderSkill with serviceImpl
+paginate WelderSkill with pager
+dto      WelderSkill with mapstruct

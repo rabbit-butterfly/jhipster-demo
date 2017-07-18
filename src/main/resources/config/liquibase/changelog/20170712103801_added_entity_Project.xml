@@ -22,39 +22,27 @@
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="project_comp_id" type="varchar(255)">
+            <column name="code" type="varchar(20)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="name" type="varchar(80)">
                 <constraints nullable="true" />
             </column>
 
-            <column name="project_comp_name" type="varchar(255)">
+            <column name="en_name" type="varchar(30)">
                 <constraints nullable="true" />
             </column>
 
-            <column name="project_bame" type="varchar(255)">
+            <column name="supervisor" type="varchar(100)">
                 <constraints nullable="true" />
             </column>
 
-            <column name="project_desc" type="varchar(255)">
+            <column name="o_contractor" type="varchar(100)">
                 <constraints nullable="true" />
             </column>
 
-            <column name="project_status" type="integer">
-                <constraints nullable="true" />
-            </column>
-
-            <column name="supervisor_comp_id" type="bigint">
-                <constraints nullable="true" />
-            </column>
-
-            <column name="supervisor_comp_name" type="varchar(255)">
-                <constraints nullable="true" />
-            </column>
-
-            <column name="contractor_comp_id" type="bigint">
-                <constraints nullable="true" />
-            </column>
-
-            <column name="contractor_comp_name" type="varchar(255)">
+            <column name="h_contractor" type="varchar(100)">
                 <constraints nullable="true" />
             </column>
 
@@ -66,27 +54,19 @@
                 <constraints nullable="true" />
             </column>
 
-            <column name="created_by" type="bigint">
+            <column name="status" type="integer">
                 <constraints nullable="true" />
             </column>
 
-            <column name="created_time" type="timestamp">
+            <column name="del_flag" type="integer">
                 <constraints nullable="true" />
             </column>
 
-            <column name="modify_by" type="bigint">
+            <column name="remark" type="varchar(500)">
                 <constraints nullable="true" />
             </column>
 
-            <column name="modify_time" type="timestamp">
-                <constraints nullable="true" />
-            </column>
-
-            <column name="del_flag" type="varchar(255)">
-                <constraints nullable="true" />
-            </column>
-
-            <column name="remark" type="varchar(255)">
+            <column name="extend_attr" type="varchar(50)">
                 <constraints nullable="true" />
             </column>
 
@@ -94,8 +74,6 @@
         </createTable>
         <dropDefaultValue tableName="project" columnName="start_date" columnDataType="datetime"/>
         <dropDefaultValue tableName="project" columnName="end_date" columnDataType="datetime"/>
-        <dropDefaultValue tableName="project" columnName="created_time" columnDataType="datetime"/>
-        <dropDefaultValue tableName="project" columnName="modify_time" columnDataType="datetime"/>
         
     </changeSet>
 </databaseChangeLog>

@@ -1,0 +1,28 @@
+{
+    "pcmsApp": {
+        "ppInspectionRule" : {
+            "home": {
+                "title": "PpInspectionRules",
+                "createLabel": "Créer un nouveau Pp Inspection Rule",
+                "createOrEditLabel": "Créer ou éditer un Pp Inspection Rule"
+            },
+            "created": "Un nouveau Pp Inspection Rule a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Pp Inspection Rule avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Pp Inspection Rule avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Pp Inspection Rule {{ id }} ?"
+            },
+            "detail": {
+                "title": "Pp Inspection Rule"
+            },
+            "compId": "Comp Id",
+            "projId": "Proj Id",
+            "material": "Material",
+            "ppClass": "Pp Class",
+            "jacketedPipe": "Jacketed Pipe",
+            "inspectionCode": "Inspection Code",
+            "createTime": "Create Time",
+            "delFlag": "Del Flag"
+        }
+    }
+}

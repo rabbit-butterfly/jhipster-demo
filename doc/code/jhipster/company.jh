@@ -1,7 +1,8 @@
 
 /**
-* @auther:fan
-* @date:Mon Jul 17 19:09:02 CST 2017
+*公司表：存放公司的基本信息
+* @auther:renntrabbit@foxmail.com
+* @date:Tue Jul 18 17:06:29 CST 2017
 * table:company
 */
 entity Company (company)
@@ -20,6 +21,7 @@ entity Company (company)
 	creator String    minlength(0) maxlength(10), /** CREATOR */
 	updateTime Instant required  /** UPDATE_TIME */
 }
-service Company with serviceClass
-service Company with serviceImpl
-paginate Company, with pager
+service  Company with serviceClass
+service  Company with serviceImpl
+paginate Company with pager
+dto      Company with mapstruct

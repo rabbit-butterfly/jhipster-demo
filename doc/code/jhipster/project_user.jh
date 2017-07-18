@@ -1,0 +1,19 @@
+
+/**
+*项目用户关系表
+* @auther:renntrabbit@foxmail.com
+* @date:Tue Jul 18 17:06:29 CST 2017
+* table:project_user
+*/
+entity ProjectUser (project_user)
+{
+	compId String  required  minlength(0) maxlength(19), /** COMP_ID */
+	projId String  required  minlength(0) maxlength(19), /** PROJ_ID */
+	userId String    minlength(0) maxlength(19), /** USER_ID */
+	createTime Instant required , /** CREATE_TIME */
+	delFlag Integer   min(0) max(10) /** 0：未删除 1：删除 */
+}
+service  ProjectUser with serviceClass
+service  ProjectUser with serviceImpl
+paginate ProjectUser with pager
+dto      ProjectUser with mapstruct

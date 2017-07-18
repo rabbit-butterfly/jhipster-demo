@@ -1,0 +1,26 @@
+{
+    "pcmsApp": {
+        "projectMaterial" : {
+            "home": {
+                "title": "ProjectMaterials",
+                "createLabel": "Créer un nouveau Project Material",
+                "createOrEditLabel": "Créer ou éditer un Project Material"
+            },
+            "created": "Un nouveau Project Material a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Project Material avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Project Material avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Project Material {{ id }} ?"
+            },
+            "detail": {
+                "title": "Project Material"
+            },
+            "projId": "Proj Id",
+            "name": "Name",
+            "parentId": "Parent Id",
+            "remark": "Remark",
+            "createTime": "Create Time",
+            "delFlag": "Del Flag"
+        }
+    }
+}

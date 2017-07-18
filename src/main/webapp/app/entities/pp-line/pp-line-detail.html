@@ -1,0 +1,131 @@
+
+<div>
+    <h2><span data-translate="pcmsApp.ppLine.detail.title">Pp Line</span> {{vm.ppLine.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="pcmsApp.ppLine.compId">Comp Id</span></dt>
+        <dd>
+            <span>{{vm.ppLine.compId}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.ppLine.projId">Proj Id</span></dt>
+        <dd>
+            <span>{{vm.ppLine.projId}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.ppLine.areaId">Area Id</span></dt>
+        <dd>
+            <span>{{vm.ppLine.areaId}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.ppLine.lineNum">Line Num</span></dt>
+        <dd>
+            <span>{{vm.ppLine.lineNum}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.ppLine.lineVersion">Line Version</span></dt>
+        <dd>
+            <span>{{vm.ppLine.lineVersion}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.ppLine.size">Size</span></dt>
+        <dd>
+            <span>{{vm.ppLine.size}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.ppLine.serv">Serv</span></dt>
+        <dd>
+            <span>{{vm.ppLine.serv}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.ppLine.classSpec">Class Spec</span></dt>
+        <dd>
+            <span>{{vm.ppLine.classSpec}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.ppLine.lineFrom">Line From</span></dt>
+        <dd>
+            <span>{{vm.ppLine.lineFrom}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.ppLine.lineTo">Line To</span></dt>
+        <dd>
+            <span>{{vm.ppLine.lineTo}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.ppLine.operatePressure">Operate Pressure</span></dt>
+        <dd>
+            <span>{{vm.ppLine.operatePressure}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.ppLine.operateTemperature">Operate Temperature</span></dt>
+        <dd>
+            <span>{{vm.ppLine.operateTemperature}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.ppLine.lineLevel">Line Level</span></dt>
+        <dd>
+            <span>{{vm.ppLine.lineLevel}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.ppLine.lineCode">Line Code</span></dt>
+        <dd>
+            <span>{{vm.ppLine.lineCode}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.ppLine.designPressure">Design Pressure</span></dt>
+        <dd>
+            <span>{{vm.ppLine.designPressure}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.ppLine.designTemperature">Design Temperature</span></dt>
+        <dd>
+            <span>{{vm.ppLine.designTemperature}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.ppLine.kindLevel">Kind Level</span></dt>
+        <dd>
+            <span>{{vm.ppLine.kindLevel}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.ppLine.inspectionCode">Inspection Code</span></dt>
+        <dd>
+            <span>{{vm.ppLine.inspectionCode}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.ppLine.insulationCode">Insulation Code</span></dt>
+        <dd>
+            <span>{{vm.ppLine.insulationCode}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.ppLine.insulationHigh">Insulation High</span></dt>
+        <dd>
+            <span>{{vm.ppLine.insulationHigh}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.ppLine.paintCode">Paint Code</span></dt>
+        <dd>
+            <span>{{vm.ppLine.paintCode}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.ppLine.pIDiagram">P I Diagram</span></dt>
+        <dd>
+            <span>{{vm.ppLine.pIDiagram}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.ppLine.testPressure">Test Pressure</span></dt>
+        <dd>
+            <span>{{vm.ppLine.testPressure}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.ppLine.testMaterial">Test Material</span></dt>
+        <dd>
+            <span>{{vm.ppLine.testMaterial}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.ppLine.jacketedPipe">Jacketed Pipe</span></dt>
+        <dd>
+            <span>{{vm.ppLine.jacketedPipe}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.ppLine.remark">Remark</span></dt>
+        <dd>
+            <span>{{vm.ppLine.remark}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.ppLine.createTime">Create Time</span></dt>
+        <dd>
+            <span>{{vm.ppLine.createTime | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.ppLine.delFlag">Del Flag</span></dt>
+        <dd>
+            <span>{{vm.ppLine.delFlag}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="pp-line-detail.edit({id:vm.ppLine.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

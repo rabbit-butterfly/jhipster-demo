@@ -1,0 +1,76 @@
+<div>
+    <h2 data-translate="pcmsApp.ppLineDrawing.home.title">Pp Line Drawings</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="pp-line-drawing.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="pcmsApp.ppLineDrawing.home.createLabel">
+                        Create new Pp Line Drawing
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="pipeId"><span data-translate="pcmsApp.ppLineDrawing.pipeId">Pipe Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="pageCode"><span data-translate="pcmsApp.ppLineDrawing.pageCode">Page Code</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="versionCode"><span data-translate="pcmsApp.ppLineDrawing.versionCode">Version Code</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="alterationCode"><span data-translate="pcmsApp.ppLineDrawing.alterationCode">Alteration Code</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="name"><span data-translate="pcmsApp.ppLineDrawing.name">Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="filePath"><span data-translate="pcmsApp.ppLineDrawing.filePath">File Path</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="remark"><span data-translate="pcmsApp.ppLineDrawing.remark">Remark</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="createTime"><span data-translate="pcmsApp.ppLineDrawing.createTime">Create Time</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="delFlag"><span data-translate="pcmsApp.ppLineDrawing.delFlag">Del Flag</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="ppLineDrawing in vm.ppLineDrawings track by ppLineDrawing.id">
+                    <td><a ui-sref="pp-line-drawing-detail({id:ppLineDrawing.id})">{{ppLineDrawing.id}}</a></td>
+                    <td>{{ppLineDrawing.pipeId}}</td>
+                    <td>{{ppLineDrawing.pageCode}}</td>
+                    <td>{{ppLineDrawing.versionCode}}</td>
+                    <td>{{ppLineDrawing.alterationCode}}</td>
+                    <td>{{ppLineDrawing.name}}</td>
+                    <td>{{ppLineDrawing.filePath}}</td>
+                    <td>{{ppLineDrawing.remark}}</td>
+                    <td>{{ppLineDrawing.createTime | date:'medium'}}</td>
+                    <td>{{ppLineDrawing.delFlag}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="pp-line-drawing-detail({id:ppLineDrawing.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="pp-line-drawing.edit({id:ppLineDrawing.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="pp-line-drawing.delete({id:ppLineDrawing.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+    </div>
+    <uib-pager total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pager>
+</div>

@@ -1,0 +1,23 @@
+{
+    "pcmsApp": {
+        "userPower" : {
+            "home": {
+                "title": "UserPowers",
+                "createLabel": "Créer un nouveau User Power",
+                "createOrEditLabel": "Créer ou éditer un User Power"
+            },
+            "created": "Un nouveau User Power a été créé avec l'identifiant {{ param }}",
+            "updated": "Le User Power avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le User Power avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le User Power {{ id }} ?"
+            },
+            "detail": {
+                "title": "User Power"
+            },
+            "userId": "User Id",
+            "parentCode": "Parent Code",
+            "funcCode": "Func Code"
+        }
+    }
+}

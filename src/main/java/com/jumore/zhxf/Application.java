@@ -1,14 +1,8 @@
 package com.jumore.zhxf;
 
-import java.io.IOException;
-import java.net.InetAddress;
-import java.net.UnknownHostException;
-import java.util.Arrays;
-import java.util.Collection;
-
-import javax.annotation.PostConstruct;
-import javax.inject.Inject;
-
+import com.jumore.zhxf.config.AppSystemProperties;
+import com.jumore.zhxf.config.Constants;
+import com.jumore.zhxf.config.JHipsterProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -22,9 +16,13 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.env.Environment;
 import org.springframework.core.env.SimpleCommandLinePropertySource;
 
-import com.jumore.zhxf.config.AppSystemProperties;
-import com.jumore.zhxf.config.Constants;
-import com.jumore.zhxf.config.JHipsterProperties;
+import javax.annotation.PostConstruct;
+import javax.inject.Inject;
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.util.Arrays;
+import java.util.Collection;
 
 @ComponentScan
 @EnableAutoConfiguration(exclude = { MetricFilterAutoConfiguration.class, MetricRepositoryAutoConfiguration.class, HazelcastAutoConfiguration.class })
@@ -81,6 +79,8 @@ public class Application {
             env.getProperty("server.port"),
             InetAddress.getLocalHost().getHostAddress(),
             env.getProperty("server.port"));
+
+        //System.out.println(io.github.jhipster.web.util.ResponseUtil.wrapOrNotFound(null));
 
     }
 

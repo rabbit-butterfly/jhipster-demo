@@ -1,0 +1,16 @@
+
+/**
+*用户选中了项目中的哪几个分项
+* @auther:renntrabbit@foxmail.com
+* @date:Tue Jul 18 17:06:29 CST 2017
+* table:user_area
+*/
+entity UserArea (user_area)
+{
+	userId String  required  minlength(0) maxlength(19), /** USER_ID */
+	areaId String  required  minlength(0) maxlength(19) /** AREA_ID */
+}
+service  UserArea with serviceClass
+service  UserArea with serviceImpl
+paginate UserArea with pager
+dto      UserArea with mapstruct

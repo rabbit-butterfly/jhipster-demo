@@ -1,0 +1,78 @@
+<div>
+    <h2 data-translate="pcmsApp.projectWelder.home.title">Project Welders</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="project-welder.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="pcmsApp.projectWelder.home.createLabel">
+                        Create new Project Welder
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="compId"><span data-translate="pcmsApp.projectWelder.compId">Comp Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="code"><span data-translate="pcmsApp.projectWelder.code">Code</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="name"><span data-translate="pcmsApp.projectWelder.name">Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="mobille"><span data-translate="pcmsApp.projectWelder.mobille">Mobille</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="identityCard"><span data-translate="pcmsApp.projectWelder.identityCard">Identity Card</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="workTerm"><span data-translate="pcmsApp.projectWelder.workTerm">Work Term</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="unitName"><span data-translate="pcmsApp.projectWelder.unitName">Unit Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="createTime"><span data-translate="pcmsApp.projectWelder.createTime">Create Time</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="delFlag"><span data-translate="pcmsApp.projectWelder.delFlag">Del Flag</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="remark"><span data-translate="pcmsApp.projectWelder.remark">Remark</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="projectWelder in vm.projectWelders track by projectWelder.id">
+                    <td><a ui-sref="project-welder-detail({id:projectWelder.id})">{{projectWelder.id}}</a></td>
+                    <td>{{projectWelder.compId}}</td>
+                    <td>{{projectWelder.code}}</td>
+                    <td>{{projectWelder.name}}</td>
+                    <td>{{projectWelder.mobille}}</td>
+                    <td>{{projectWelder.identityCard}}</td>
+                    <td>{{projectWelder.workTerm}}</td>
+                    <td>{{projectWelder.unitName}}</td>
+                    <td>{{projectWelder.createTime | date:'medium'}}</td>
+                    <td>{{projectWelder.delFlag}}</td>
+                    <td>{{projectWelder.remark}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="project-welder-detail({id:projectWelder.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="project-welder.edit({id:projectWelder.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="project-welder.delete({id:projectWelder.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+    </div>
+    <uib-pager total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pager>
+</div>

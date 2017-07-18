@@ -143,9 +143,9 @@
         }
     ],
     "changelogDate": "20170712103800",
-    "javadoc": "@auther:fan\n@date:Mon Jul 17 19:09:02 CST 2017\ntable:company",
+    "javadoc": "公司表：存放公司的基本信息\n@auther:renntrabbit@foxmail.com\n@date:Tue Jul 18 17:06:29 CST 2017\ntable:company",
     "entityTableName": "company",
-    "dto": "no",
-    "pagination": "no",
+    "dto": "mapstruct",
+    "pagination": "pager",
     "service": "serviceImpl"
 }

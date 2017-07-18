@@ -1,0 +1,528 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myPpLineWeldLabel" data-translate="pcmsApp.ppLineWeld.home.createOrEditLabel">Create or edit a Pp Line Weld</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.ppLineWeld.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.ppLineWeld.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="pcmsApp.ppLineWeld.pipeId" for="field_pipeId">Pipe Id</label>
+            <input type="text" class="form-control" name="pipeId" id="field_pipeId"
+                    ng-model="vm.ppLineWeld.pipeId"
+                    required ng-minlength="0" ng-maxlength="19"/>
+            <div ng-show="editForm.pipeId.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.pipeId.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.pipeId.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.pipeId.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="19">
+                    This field cannot be longer than 19 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="pcmsApp.ppLineWeld.pageCode" for="field_pageCode">Page Code</label>
+            <input type="text" class="form-control" name="pageCode" id="field_pageCode"
+                    ng-model="vm.ppLineWeld.pageCode"
+                    ng-minlength="0" ng-maxlength="20"/>
+            <div ng-show="editForm.pageCode.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.pageCode.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.pageCode.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="20">
+                    This field cannot be longer than 20 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="pcmsApp.ppLineWeld.jiont" for="field_jiont">Jiont</label>
+            <input type="text" class="form-control" name="jiont" id="field_jiont"
+                    ng-model="vm.ppLineWeld.jiont"
+                    ng-minlength="0" ng-maxlength="50"/>
+            <div ng-show="editForm.jiont.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.jiont.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.jiont.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="pcmsApp.ppLineWeld.wpsno" for="field_wpsno">Wpsno</label>
+            <input type="text" class="form-control" name="wpsno" id="field_wpsno"
+                    ng-model="vm.ppLineWeld.wpsno"
+                    ng-minlength="0" ng-maxlength="32"/>
+            <div ng-show="editForm.wpsno.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.wpsno.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.wpsno.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="32">
+                    This field cannot be longer than 32 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="pcmsApp.ppLineWeld.jlocation" for="field_jlocation">Jlocation</label>
+            <input type="text" class="form-control" name="jlocation" id="field_jlocation"
+                    ng-model="vm.ppLineWeld.jlocation"
+                    ng-minlength="0" ng-maxlength="50"/>
+            <div ng-show="editForm.jlocation.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.jlocation.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.jlocation.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="pcmsApp.ppLineWeld.jclass" for="field_jclass">Jclass</label>
+            <input type="text" class="form-control" name="jclass" id="field_jclass"
+                    ng-model="vm.ppLineWeld.jclass"
+                    ng-minlength="0" ng-maxlength="50"/>
+            <div ng-show="editForm.jclass.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.jclass.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.jclass.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="pcmsApp.ppLineWeld.finishDate" for="field_finishDate">Finish Date</label>
+                <div class="input-group">
+                    <input id="field_finishDate" type="text" class="form-control" name="finishDate" datetime-picker="{{dateformat}}" ng-model="vm.ppLineWeld.finishDate" is-open="vm.datePickerOpenStatus.finishDate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('finishDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="pcmsApp.ppLineWeld.jsize" for="field_jsize">Jsize</label>
+            <input type="text" class="form-control" name="jsize" id="field_jsize"
+                    ng-model="vm.ppLineWeld.jsize"
+                    ng-minlength="0" ng-maxlength="5"/>
+            <div ng-show="editForm.jsize.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.jsize.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.jsize.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="5">
+                    This field cannot be longer than 5 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="pcmsApp.ppLineWeld.thickness" for="field_thickness">Thickness</label>
+            <input type="text" class="form-control" name="thickness" id="field_thickness"
+                    ng-model="vm.ppLineWeld.thickness"
+                    ng-minlength="0" ng-maxlength="50"/>
+            <div ng-show="editForm.thickness.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.thickness.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.thickness.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="pcmsApp.ppLineWeld.jtype" for="field_jtype">Jtype</label>
+            <input type="text" class="form-control" name="jtype" id="field_jtype"
+                    ng-model="vm.ppLineWeld.jtype"
+                    ng-minlength="0" ng-maxlength="20"/>
+            <div ng-show="editForm.jtype.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.jtype.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.jtype.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="20">
+                    This field cannot be longer than 20 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="pcmsApp.ppLineWeld.weldingProcess" for="field_weldingProcess">Welding Process</label>
+            <input type="text" class="form-control" name="weldingProcess" id="field_weldingProcess"
+                    ng-model="vm.ppLineWeld.weldingProcess"
+                    ng-minlength="0" ng-maxlength="50"/>
+            <div ng-show="editForm.weldingProcess.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.weldingProcess.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.weldingProcess.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="pcmsApp.ppLineWeld.fixedRotat" for="field_fixedRotat">Fixed Rotat</label>
+            <input type="text" class="form-control" name="fixedRotat" id="field_fixedRotat"
+                    ng-model="vm.ppLineWeld.fixedRotat"
+                    ng-minlength="0" ng-maxlength="50"/>
+            <div ng-show="editForm.fixedRotat.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.fixedRotat.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.fixedRotat.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="pcmsApp.ppLineWeld.rootWelder" for="field_rootWelder">Root Welder</label>
+            <input type="text" class="form-control" name="rootWelder" id="field_rootWelder"
+                    ng-model="vm.ppLineWeld.rootWelder"
+                    ng-minlength="0" ng-maxlength="50"/>
+            <div ng-show="editForm.rootWelder.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.rootWelder.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.rootWelder.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="pcmsApp.ppLineWeld.examitem" for="field_examitem">Examitem</label>
+            <input type="text" class="form-control" name="examitem" id="field_examitem"
+                    ng-model="vm.ppLineWeld.examitem"
+                    ng-minlength="0" ng-maxlength="32"/>
+            <div ng-show="editForm.examitem.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.examitem.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.examitem.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="32">
+                    This field cannot be longer than 32 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="pcmsApp.ppLineWeld.coverWelder" for="field_coverWelder">Cover Welder</label>
+            <input type="text" class="form-control" name="coverWelder" id="field_coverWelder"
+                    ng-model="vm.ppLineWeld.coverWelder"
+                    ng-minlength="0" ng-maxlength="50"/>
+            <div ng-show="editForm.coverWelder.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.coverWelder.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.coverWelder.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="pcmsApp.ppLineWeld.visual" for="field_visual">Visual</label>
+            <input type="text" class="form-control" name="visual" id="field_visual"
+                    ng-model="vm.ppLineWeld.visual"
+                    ng-minlength="0" ng-maxlength="19"/>
+            <div ng-show="editForm.visual.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.visual.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.visual.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="19">
+                    This field cannot be longer than 19 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="pcmsApp.ppLineWeld.pieceNo1" for="field_pieceNo1">Piece No 1</label>
+            <input type="text" class="form-control" name="pieceNo1" id="field_pieceNo1"
+                    ng-model="vm.ppLineWeld.pieceNo1"
+                    ng-minlength="0" ng-maxlength="50"/>
+            <div ng-show="editForm.pieceNo1.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.pieceNo1.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.pieceNo1.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="pcmsApp.ppLineWeld.weldingMatial" for="field_weldingMatial">Welding Matial</label>
+            <input type="text" class="form-control" name="weldingMatial" id="field_weldingMatial"
+                    ng-model="vm.ppLineWeld.weldingMatial"
+                    ng-minlength="0" ng-maxlength="50"/>
+            <div ng-show="editForm.weldingMatial.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.weldingMatial.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.weldingMatial.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="pcmsApp.ppLineWeld.pieceNo2" for="field_pieceNo2">Piece No 2</label>
+            <input type="text" class="form-control" name="pieceNo2" id="field_pieceNo2"
+                    ng-model="vm.ppLineWeld.pieceNo2"
+                    ng-minlength="0" ng-maxlength="50"/>
+            <div ng-show="editForm.pieceNo2.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.pieceNo2.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.pieceNo2.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="pcmsApp.ppLineWeld.heatNo1" for="field_heatNo1">Heat No 1</label>
+            <input type="text" class="form-control" name="heatNo1" id="field_heatNo1"
+                    ng-model="vm.ppLineWeld.heatNo1"
+                    ng-minlength="0" ng-maxlength="64"/>
+            <div ng-show="editForm.heatNo1.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.heatNo1.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.heatNo1.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="64">
+                    This field cannot be longer than 64 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="pcmsApp.ppLineWeld.heatNo2" for="field_heatNo2">Heat No 2</label>
+            <input type="text" class="form-control" name="heatNo2" id="field_heatNo2"
+                    ng-model="vm.ppLineWeld.heatNo2"
+                    ng-minlength="0" ng-maxlength="64"/>
+            <div ng-show="editForm.heatNo2.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.heatNo2.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.heatNo2.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="64">
+                    This field cannot be longer than 64 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="pcmsApp.ppLineWeld.alterCode" for="field_alterCode">Alter Code</label>
+            <input type="text" class="form-control" name="alterCode" id="field_alterCode"
+                    ng-model="vm.ppLineWeld.alterCode"
+                    ng-minlength="0" ng-maxlength="64"/>
+            <div ng-show="editForm.alterCode.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.alterCode.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.alterCode.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="64">
+                    This field cannot be longer than 64 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="pcmsApp.ppLineWeld.alterType" for="field_alterType">Alter Type</label>
+            <input type="text" class="form-control" name="alterType" id="field_alterType"
+                    ng-model="vm.ppLineWeld.alterType"
+                    ng-minlength="0" ng-maxlength="64"/>
+            <div ng-show="editForm.alterType.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.alterType.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.alterType.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="64">
+                    This field cannot be longer than 64 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="pcmsApp.ppLineWeld.dailyNo" for="field_dailyNo">Daily No</label>
+            <input type="text" class="form-control" name="dailyNo" id="field_dailyNo"
+                    ng-model="vm.ppLineWeld.dailyNo"
+                    ng-minlength="0" ng-maxlength="20"/>
+            <div ng-show="editForm.dailyNo.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.dailyNo.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.dailyNo.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="20">
+                    This field cannot be longer than 20 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="pcmsApp.ppLineWeld.hardessRec" for="field_hardessRec">Hardess Rec</label>
+            <input type="text" class="form-control" name="hardessRec" id="field_hardessRec"
+                    ng-model="vm.ppLineWeld.hardessRec"
+                    ng-minlength="0" ng-maxlength="50"/>
+            <div ng-show="editForm.hardessRec.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.hardessRec.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.hardessRec.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="pcmsApp.ppLineWeld.heatRec" for="field_heatRec">Heat Rec</label>
+            <input type="text" class="form-control" name="heatRec" id="field_heatRec"
+                    ng-model="vm.ppLineWeld.heatRec"
+                    ng-minlength="0" ng-maxlength="64"/>
+            <div ng-show="editForm.heatRec.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.heatRec.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.heatRec.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="64">
+                    This field cannot be longer than 64 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="pcmsApp.ppLineWeld.rtLot" for="field_rtLot">Rt Lot</label>
+            <input type="text" class="form-control" name="rtLot" id="field_rtLot"
+                    ng-model="vm.ppLineWeld.rtLot"
+                    ng-minlength="0" ng-maxlength="50"/>
+            <div ng-show="editForm.rtLot.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.rtLot.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.rtLot.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="pcmsApp.ppLineWeld.rtSample" for="field_rtSample">Rt Sample</label>
+            <input type="text" class="form-control" name="rtSample" id="field_rtSample"
+                    ng-model="vm.ppLineWeld.rtSample"
+                    ng-minlength="0" ng-maxlength="50"/>
+            <div ng-show="editForm.rtSample.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.rtSample.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.rtSample.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="pcmsApp.ppLineWeld.remark" for="field_remark">Remark</label>
+            <input type="text" class="form-control" name="remark" id="field_remark"
+                    ng-model="vm.ppLineWeld.remark"
+                    ng-minlength="0" ng-maxlength="500"/>
+            <div ng-show="editForm.remark.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.remark.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.remark.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="500">
+                    This field cannot be longer than 500 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="pcmsApp.ppLineWeld.createTime" for="field_createTime">Create Time</label>
+                <div class="input-group">
+                    <input id="field_createTime" type="text" class="form-control" name="createTime" datetime-picker="{{dateformat}}" ng-model="vm.ppLineWeld.createTime" is-open="vm.datePickerOpenStatus.createTime"
+                    required/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('createTime')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            <div ng-show="editForm.createTime.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.createTime.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.createTime.$error.ZonedDateTimelocal" data-translate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="pcmsApp.ppLineWeld.delFlag" for="field_delFlag">Del Flag</label>
+            <input type="number" class="form-control" name="delFlag" id="field_delFlag"
+                    ng-model="vm.ppLineWeld.delFlag"
+                    min="0" max="10"/>
+            <div ng-show="editForm.delFlag.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.delFlag.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.delFlag.$error.max" data-translate="entity.validation.max" translate-value-max="10">
+                    This field cannot be more than 10.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.delFlag.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,48 @@
+{
+    "pcmsApp": {
+        "ppLine" : {
+            "home": {
+                "title": "Pp Lines",
+                "createLabel": "Create a new Pp Line",
+                "createOrEditLabel": "Create or edit a Pp Line"
+            },
+            "created": "A new Pp Line is created with identifier {{ param }}",
+            "updated": "A Pp Line is updated with identifier {{ param }}",
+            "deleted": "A Pp Line is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Pp Line {{ id }}?"
+            },
+            "detail": {
+                "title": "Pp Line"
+            },
+            "compId": "Comp Id",
+            "projId": "Proj Id",
+            "areaId": "Area Id",
+            "lineNum": "Line Num",
+            "lineVersion": "Line Version",
+            "size": "Size",
+            "serv": "Serv",
+            "classSpec": "Class Spec",
+            "lineFrom": "Line From",
+            "lineTo": "Line To",
+            "operatePressure": "Operate Pressure",
+            "operateTemperature": "Operate Temperature",
+            "lineLevel": "Line Level",
+            "lineCode": "Line Code",
+            "designPressure": "Design Pressure",
+            "designTemperature": "Design Temperature",
+            "kindLevel": "Kind Level",
+            "inspectionCode": "Inspection Code",
+            "insulationCode": "Insulation Code",
+            "insulationHigh": "Insulation High",
+            "paintCode": "Paint Code",
+            "pIDiagram": "P I Diagram",
+            "testPressure": "Test Pressure",
+            "testMaterial": "Test Material",
+            "jacketedPipe": "Jacketed Pipe",
+            "remark": "Remark",
+            "createTime": "Create Time",
+            "delFlag": "Del Flag"
+        }
+    }
+}

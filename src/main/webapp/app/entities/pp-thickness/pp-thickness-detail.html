@@ -1,0 +1,51 @@
+
+<div>
+    <h2><span data-translate="pcmsApp.ppThickness.detail.title">Pp Thickness</span> {{vm.ppThickness.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="pcmsApp.ppThickness.compId">Comp Id</span></dt>
+        <dd>
+            <span>{{vm.ppThickness.compId}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.ppThickness.projId">Proj Id</span></dt>
+        <dd>
+            <span>{{vm.ppThickness.projId}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.ppThickness.jsize">Jsize</span></dt>
+        <dd>
+            <span>{{vm.ppThickness.jsize}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.ppThickness.wallThickCode">Wall Thick Code</span></dt>
+        <dd>
+            <span>{{vm.ppThickness.wallThickCode}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.ppThickness.externalDiameter">External Diameter</span></dt>
+        <dd>
+            <span>{{vm.ppThickness.externalDiameter}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.ppThickness.thickness">Thickness</span></dt>
+        <dd>
+            <span>{{vm.ppThickness.thickness}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.ppThickness.createTime">Create Time</span></dt>
+        <dd>
+            <span>{{vm.ppThickness.createTime | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="pcmsApp.ppThickness.delFlag">Del Flag</span></dt>
+        <dd>
+            <span>{{vm.ppThickness.delFlag}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="pp-thickness-detail.edit({id:vm.ppThickness.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,32 @@
+{
+    "pcmsApp": {
+        "ppLineWeldEntrust" : {
+            "home": {
+                "title": "PpLineWeldEntrusts",
+                "createLabel": "Créer un nouveau Pp Line Weld Entrust",
+                "createOrEditLabel": "Créer ou éditer un Pp Line Weld Entrust"
+            },
+            "created": "Un nouveau Pp Line Weld Entrust a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Pp Line Weld Entrust avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Pp Line Weld Entrust avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Pp Line Weld Entrust {{ id }} ?"
+            },
+            "detail": {
+                "title": "Pp Line Weld Entrust"
+            },
+            "projId": "Proj Id",
+            "pipelineId": "Pipeline Id",
+            "weldId": "Weld Id",
+            "flowNum": "Flow Num",
+            "code": "Code",
+            "expandCount": "Expand Count",
+            "repareCount": "Repare Count",
+            "entrustType": "Entrust Type",
+            "entrustDate": "Entrust Date",
+            "remark": "Remark",
+            "createTime": "Create Time",
+            "delFlag": "Del Flag"
+        }
+    }
+}

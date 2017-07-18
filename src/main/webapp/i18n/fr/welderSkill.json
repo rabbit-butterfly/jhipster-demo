@@ -1,0 +1,26 @@
+{
+    "pcmsApp": {
+        "welderSkill" : {
+            "home": {
+                "title": "WelderSkills",
+                "createLabel": "Créer un nouveau Welder Skill",
+                "createOrEditLabel": "Créer ou éditer un Welder Skill"
+            },
+            "created": "Un nouveau Welder Skill a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Welder Skill avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Welder Skill avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Welder Skill {{ id }} ?"
+            },
+            "detail": {
+                "title": "Welder Skill"
+            },
+            "welderId": "Welder Id",
+            "name": "Name",
+            "assessmentDate": "Assessment Date",
+            "effectiveDate": "Effective Date",
+            "createTime": "Create Time",
+            "delFlag": "Del Flag"
+        }
+    }
+}

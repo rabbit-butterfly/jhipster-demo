@@ -1,0 +1,130 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myProjectAreaLabel" data-translate="pcmsApp.projectArea.home.createOrEditLabel">Create or edit a Project Area</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.projectArea.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.projectArea.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="pcmsApp.projectArea.compId" for="field_compId">Comp Id</label>
+            <input type="text" class="form-control" name="compId" id="field_compId"
+                    ng-model="vm.projectArea.compId"
+                    required ng-minlength="0" ng-maxlength="19"/>
+            <div ng-show="editForm.compId.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.compId.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.compId.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.compId.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="19">
+                    This field cannot be longer than 19 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="pcmsApp.projectArea.projId" for="field_projId">Proj Id</label>
+            <input type="text" class="form-control" name="projId" id="field_projId"
+                    ng-model="vm.projectArea.projId"
+                    required ng-minlength="0" ng-maxlength="19"/>
+            <div ng-show="editForm.projId.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.projId.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.projId.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.projId.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="19">
+                    This field cannot be longer than 19 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="pcmsApp.projectArea.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="vm.projectArea.name"
+                    ng-minlength="0" ng-maxlength="80"/>
+            <div ng-show="editForm.name.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.name.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.name.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="80">
+                    This field cannot be longer than 80 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="pcmsApp.projectArea.enName" for="field_enName">En Name</label>
+            <input type="text" class="form-control" name="enName" id="field_enName"
+                    ng-model="vm.projectArea.enName"
+                    ng-minlength="0" ng-maxlength="100"/>
+            <div ng-show="editForm.enName.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.enName.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.enName.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="100">
+                    This field cannot be longer than 100 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="pcmsApp.projectArea.unitCode" for="field_unitCode">Unit Code</label>
+            <input type="text" class="form-control" name="unitCode" id="field_unitCode"
+                    ng-model="vm.projectArea.unitCode"
+                    ng-minlength="0" ng-maxlength="50"/>
+            <div ng-show="editForm.unitCode.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.unitCode.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.unitCode.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="pcmsApp.projectArea.subConstractor" for="field_subConstractor">Sub Constractor</label>
+            <input type="text" class="form-control" name="subConstractor" id="field_subConstractor"
+                    ng-model="vm.projectArea.subConstractor"
+                    ng-minlength="0" ng-maxlength="80"/>
+            <div ng-show="editForm.subConstractor.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.subConstractor.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.subConstractor.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="80">
+                    This field cannot be longer than 80 characters.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
