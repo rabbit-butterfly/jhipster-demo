@@ -1,0 +1,27 @@
+
+/**
+*管线-焊接材料记录表
+* @auther:renntrabbit@foxmail.com
+* @date:Tue Jul 18 17:06:29 CST 2017
+* table:pp_line_weld_material
+*/
+entity PpLineWeldMaterial (pp_line_weld_material)
+{
+	pipelineId String  required  minlength(0) maxlength(19), /** PIPELINE_ID */
+	pageCode Integer   min(0) max(10), /** PAGE_CODE */
+	sequenceNumber Integer   min(0) max(10), /** SEQUENCE_NUMBER */
+	materialCode String    minlength(0) maxlength(50), /** MATERIAL_CODE */
+	name String    minlength(0) maxlength(50), /** NAME */
+	materialDesc String    minlength(0) maxlength(50), /** MATERIAL_DESC */
+	spec String    minlength(0) maxlength(50), /** SPEC */
+	unit String    minlength(0) maxlength(20), /** UNIT */
+	material String    minlength(0) maxlength(50), /** MATERIAL */
+	designQty String    minlength(0) maxlength(50), /** DESIGN_QTY */
+	remark String    minlength(0) maxlength(500), /** REMARK */
+	createTime Instant required , /** CREATE_TIME */
+	delFlag Integer   min(0) max(10) /** DEL_FLAG */
+}
+service  PpLineWeldMaterial with serviceClass
+service  PpLineWeldMaterial with serviceImpl
+paginate PpLineWeldMaterial with pager
+dto      PpLineWeldMaterial with mapstruct

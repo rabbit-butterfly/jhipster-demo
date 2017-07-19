@@ -1,0 +1,26 @@
+
+/**
+*存放项目的基本信息:开始时间，结束时间，是否停工等
+* @auther:renntrabbit@foxmail.com
+* @date:Tue Jul 18 17:06:29 CST 2017
+* table:project
+*/
+entity Project (project)
+{
+	code String  required  minlength(0) maxlength(20), /** CODE */
+	name String    minlength(0) maxlength(80), /** NAME */
+	enName String    minlength(0) maxlength(30), /** EN_NAME */
+	supervisor String    minlength(0) maxlength(100), /** SUPERVISOR */
+	oContractor String    minlength(0) maxlength(100), /** O_CONTRACTOR */
+	hContractor String    minlength(0) maxlength(100), /** H_CONTRACTOR */
+	startDate Instant  , /** START_DATE */
+	endDate Instant  , /** END_DATE */
+	status Integer   min(0) max(10), /** 0：待审核 1：审核通过 2：审核失败 3：终结 */
+	delFlag Integer   min(0) max(10), /** DEL_FLAG */
+	remark String    minlength(0) maxlength(500), /** REMARK */
+	extendAttr String    minlength(0) maxlength(50) /** 扩展字段 */
+}
+service  Project with serviceClass
+service  Project with serviceImpl
+paginate Project with pager
+dto      Project with mapstruct

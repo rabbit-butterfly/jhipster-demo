@@ -1,0 +1,21 @@
+
+/**
+*公司成员表
+* @auther:renntrabbit@foxmail.com
+* @date:Tue Jul 18 17:06:29 CST 2017
+* table:user_info
+*/
+entity UserInfo (user_info)
+{
+	compId String  required  minlength(0) maxlength(19), /** 公司ID */
+	code String    minlength(0) maxlength(19), /** 用户工号 */
+	mobile String    minlength(0) maxlength(16), /** 手机号码 */
+	status String    minlength(0) maxlength(5), /** 0：无效 1：有效 */
+	jobTitle String    minlength(0) maxlength(16), /** 岗位@ */
+	major String    minlength(0) maxlength(16), /** 专业@ */
+	jhUserId String  required  minlength(0) maxlength(19) /** JH_USER_ID */
+}
+service  UserInfo with serviceClass
+service  UserInfo with serviceImpl
+paginate UserInfo with pager
+dto      UserInfo with mapstruct
