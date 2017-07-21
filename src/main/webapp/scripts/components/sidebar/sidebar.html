@@ -51,7 +51,7 @@
             </ul>
         </li>
     </ul>
-    
+
     <ul class="sidebar-menu" ng-switch="isAuthenticated()">
         <li class="treeview" id="account">
             <a href="#" ng-click="setActive('account')">
@@ -66,7 +66,7 @@
                -->
                <li ui-sref-active="active" ng-switch-when="true"><a ui-sref="sessions" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-cloud"></span>
                    &#xA0;<span translate="global.menu.account.sessions">Sessions</span></a></li>
-               <!-- 
+               <!--
                 <li ui-sref-active="active" ng-switch-when="true"><a href="" ng-click="logout()" id="logout" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-log-out"></span>
                    &#xA0;<span translate="global.menu.account.logout">Sign out</span></a></li>
                 -->
@@ -77,7 +77,7 @@
           </ul>
         </li>
     </ul>
-    
+
     <ul class="sidebar-menu">
         <li class="treeview" id="dashboard">
        		<a ng-click="setActive('dashboard')">
@@ -96,26 +96,34 @@
             <ul class="treeview-menu">
                 <li ><a ui-sref="feedback-record" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span>回向记录</span></a></li>
             </ul>
+
+            <ul class="treeview-menu">
+                <li ><a ui-sref="feedback-record" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span>回向记录</span></a></li>
+            </ul>
+
+        <li ui-sref-active="active"><a ui-sref="tracker" data-toggle="collapse" ng-click="setMenuToActive()" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-eye-open"></span>
+            &nbsp;<span translate="global.menu.admin.tracker">User tracker</span></a></li>
         </li>
 
     </ul>
-    
+
     <ul class="sidebar-menu" ng-switch="isAuthenticated()">
         <li class="treeview" id="newsManagement">
             <a  ng-click="setActive('newsManagement')">
-                <i class="fa fa-dashboard"></i> <span>资讯管理</span> <i class="fa fa-angle-left pull-right"></i>
+                <i class="fa-dashboard"></i> <span>test</span> <i class="fa fa-angle-left pull-right"></i>
             </a>
-            <ul class="treeview-menu">
-	           <li ng-switch-when="true"><a ui-sref="category-maintenance" ng-click="setMenuToActive()" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-wrench"></span>
-                            &#xA0;<span>类目维护</span></a></li>
-               <li ng-switch-when="true"><a ui-sref="news-management" ng-click="setMenuToActive()" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-cloud"></span>
-                            &#xA0;<span>资讯管理</span></a></li>       
+            <ul class="entity">
+                <li ng-switch-when="true"> <a ui-sref="company" ng-click="setMenuToActive()" data-toggle="collapse" data-target=".navbar-collapse.in">
+                        <span class="glyphicon glyphicon-cloud"></span>&#xA0;<span data-translate="global.menu.entities.company">Company</span></a></li>
+                </span>
+
           </ul>
+
         </li>
     </ul>
-    
-    
-    
+
+
+
    <!--  <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
         <li class="treeview" id="dashboard2">

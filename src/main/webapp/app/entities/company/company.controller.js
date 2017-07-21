@@ -5,38 +5,56 @@
         .module('tuxAdminApp')
         .controller('CompanyController', CompanyController);
 
-    CompanyController.$inject = ['Company', 'CompanySearch'];
+    CompanyController.$inject = ['$state', 'Company', 'ParseLinks', 'AlertService', 'paginationConstants', 'pagingParams'];
 
-    function CompanyController(Company, CompanySearch) {
+    function CompanyController($state, Company, ParseLinks, AlertService, paginationConstants, pagingParams) {
 
         var vm = this;
 
-        vm.companies = [];
-        vm.clear = clear;
-        vm.search = search;
-        vm.loadAll = loadAll;
+        vm.loadPage = loadPage;
+        vm.predicate = pagingParams.predicate;
+        vm.reverse = pagingParams.ascending;
+        vm.transition = transition;
+        vm.itemsPerPage = paginationConstants.itemsPerPage;
 
         loadAll();
 
-        function loadAll() {
-            Company.query(function(result) {
-                vm.companies = result;
-                vm.searchQuery = null;
-            });
-        }
-
-        function search() {
-            if (!vm.searchQuery) {
-                return vm.loadAll();
+        function loadAll () {
+            Company.query({
+                page: pagingParams.page - 1,
+                size: vm.itemsPerPage,
+                sort: sort()
+            }, onSuccess, onError);
+            function sort() {
+                var result = [vm.predicate + ',' + (vm.reverse ? 'asc' : 'desc')];
+                if (vm.predicate !== 'id') {
+                    result.push('id');
+                }
+                return result;
             }
-            CompanySearch.query({query: vm.searchQuery}, function(result) {
-                vm.companies = result;
-                vm.currentSearch = vm.searchQuery;
-            });
+            function onSuccess(data, headers) {
+                vm.links = ParseLinks.parse(headers('link'));
+                vm.totalItems = headers('X-Total-Count');
+                vm.queryCount = vm.totalItems;
+                vm.companies = data;
+                vm.page = pagingParams.page;
+            }
+            function onError(error) {
+                AlertService.error(error.data.message);
+            }
         }
 
-        function clear() {
-            vm.searchQuery = null;
-            loadAll();
-        }    }
+        function loadPage(page) {
+            vm.page = page;
+            vm.transition();
+        }
+
+        function transition() {
+            $state.transitionTo($state.$current, {
+                page: vm.page,
+                sort: vm.predicate + ',' + (vm.reverse ? 'asc' : 'desc'),
+                search: vm.currentSearch
+            });
+        }
+    }
 })();

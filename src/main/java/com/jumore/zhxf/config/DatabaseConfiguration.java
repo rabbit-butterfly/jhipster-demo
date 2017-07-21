@@ -34,10 +34,10 @@ import liquibase.integration.spring.SpringLiquibase;
 import com.jumore.zhxf.config.liquibase.AsyncSpringLiquibase;
 
 @Configuration
-@EnableJpaRepositories("com.jumore.zhxf.repository")
+@EnableJpaRepositories("com.*.*.repository")
 @EnableJpaAuditing(auditorAwareRef = "springSecurityAuditorAware")
 @EnableTransactionManagement
-@EnableElasticsearchRepositories("com.jumore.zhxf.repository.search")
+@EnableElasticsearchRepositories("com.*.*.repository.search")
 public class DatabaseConfiguration {
 
 	private final Logger log = LoggerFactory.getLogger(DatabaseConfiguration.class);
@@ -121,7 +121,7 @@ public class DatabaseConfiguration {
 
 		return liquibase;
 	}
-	 
+
 	@Bean
 	public Hibernate4Module hibernate4Module() {
 		return new Hibernate4Module();

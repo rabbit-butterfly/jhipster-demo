@@ -1,9 +1,6 @@
 package com.jumore.zhxf.task.core;
 
-<<<<<<< HEAD
-=======
 
->>>>>>> ebe937f801ac6a950bc94d781cefb950ab74f161
 import com.jumore.zhxf.task.IAttendanceHelpper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,12 +30,6 @@ public class YunWeoCheckWorker implements IWorker {
     public void excute() {
 
     }
-<<<<<<< HEAD
-=======
-
-	/*@Inject
-	private CheckConfigService checkConfigService;
->>>>>>> ebe937f801ac6a950bc94d781cefb950ab74f161
 
 /*	@Inject
 	private CheckConfigService checkConfigService;*/

@@ -6,27 +6,10 @@
             <div class="col-xs-4 no-padding-left">
                 <button class="btn btn-primary" ui-sref="company.new" >
                     <span class="glyphicon glyphicon-plus"></span>
-                    <span class="hidden-xs-down"  data-translate="tuxAdminApp.company.home.createLabel">
+                    <span  data-translate="tuxAdminApp.company.home.createLabel">
                         Create new Company
                     </span>
                 </button>
-            </div>
-            <div class="col-xs-8 no-padding-right">
-                <form name="searchForm" class="form-inline">
-                    <div class="input-group pull-right" >
-                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'tuxAdminApp.company.home.search' | translate }}">
-                        <span  class="input-group-btn width-min" >
-                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
-                                <span class="glyphicon glyphicon-search"></span>
-                            </button>
-                        </span>
-                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
-                            <button class="btn btn-info" ng-click="vm.clear()">
-                                <span class="glyphicon glyphicon-trash"></span>
-                            </button>
-                        </span>
-                    </div>
-                </form>
             </div>
         </div>
     </div>
@@ -34,22 +17,21 @@
     <div class="table-responsive">
         <table class="jh-table table table-striped">
             <thead>
-                <tr>
-                    <th><span data-translate="global.field.id">ID</span></th>
-                    <th><span data-translate="tuxAdminApp.company.name">Name</span></th>
-                    <th><span data-translate="tuxAdminApp.company.category">Category</span></th>
-                    <th><span data-translate="tuxAdminApp.company.legalPerson">Legal Person</span></th>
-                    <th><span data-translate="tuxAdminApp.company.address">Address</span></th>
-                    <th><span data-translate="tuxAdminApp.company.province">Province</span></th>
-                    <th><span data-translate="tuxAdminApp.company.city">City</span></th>
-                    <th><span data-translate="tuxAdminApp.company.area">Area</span></th>
-                    <th><span data-translate="tuxAdminApp.company.mobile">Mobile</span></th>
-                    <th><span data-translate="tuxAdminApp.company.status">Status</span></th>
-                    <th><span data-translate="tuxAdminApp.company.delFlag">Del Flag</span></th>
-                    <th><span data-translate="tuxAdminApp.company.createdTime">Created Time</span></th>
-                    <th><span data-translate="tuxAdminApp.company.createdBy">Created By</span></th>
-                    <th><span data-translate="tuxAdminApp.company.updateTime">Update Time</span></th>
-                    <th><span data-translate="tuxAdminApp.company.remark">Remark</span></th>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="name"><span data-translate="tuxAdminApp.company.name">Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="corporator"><span data-translate="tuxAdminApp.company.corporator">Corporator</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="address"><span data-translate="tuxAdminApp.company.address">Address</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="province"><span data-translate="tuxAdminApp.company.province">Province</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="city"><span data-translate="tuxAdminApp.company.city">City</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="area"><span data-translate="tuxAdminApp.company.area">Area</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="remark"><span data-translate="tuxAdminApp.company.remark">Remark</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="mobile"><span data-translate="tuxAdminApp.company.mobile">Mobile</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="status"><span data-translate="tuxAdminApp.company.status">Status</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="delFlag"><span data-translate="tuxAdminApp.company.delFlag">Del Flag</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="createTime"><span data-translate="tuxAdminApp.company.createTime">Create Time</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="creator"><span data-translate="tuxAdminApp.company.creator">Creator</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="updateTime"><span data-translate="tuxAdminApp.company.updateTime">Update Time</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th></th>
                 </tr>
             </thead>
@@ -57,19 +39,18 @@
                 <tr ng-repeat="company in vm.companies track by company.id">
                     <td><a ui-sref="company-detail({id:company.id})">{{company.id}}</a></td>
                     <td>{{company.name}}</td>
-                    <td>{{company.category}}</td>
-                    <td>{{company.legalPerson}}</td>
+                    <td>{{company.corporator}}</td>
                     <td>{{company.address}}</td>
                     <td>{{company.province}}</td>
                     <td>{{company.city}}</td>
                     <td>{{company.area}}</td>
+                    <td>{{company.remark}}</td>
                     <td>{{company.mobile}}</td>
                     <td>{{company.status}}</td>
                     <td>{{company.delFlag}}</td>
-                    <td>{{company.createdTime | date:'medium'}}</td>
-                    <td>{{company.createdBy}}</td>
+                    <td>{{company.createTime | date:'medium'}}</td>
+                    <td>{{company.creator}}</td>
                     <td>{{company.updateTime | date:'medium'}}</td>
-                    <td>{{company.remark}}</td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"
@@ -96,4 +77,8 @@
             </tbody>
         </table>
     </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+    </div>
+    <uib-pager total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pager>
 </div>

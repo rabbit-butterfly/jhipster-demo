@@ -10,6 +10,8 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "实体",
+                "company": "公司管理",
+                "project": "主项管理",
                 "company": "Company",
                 "project": "Project",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"

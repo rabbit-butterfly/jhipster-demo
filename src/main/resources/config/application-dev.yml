@@ -24,7 +24,7 @@ spring:
             enabled: false # we use Grunt + BrowserSync for livereload
     datasource:
         driver-class-name: com.mysql.jdbc.jdbc2.optional.MysqlDataSource
-        url: jdbc:mysql://127.0.0.1:3306/pcms?useUnicode=true&characterEncoding=utf8
+        url: jdbc:mysql://192.168.23.212:3306/pcms?useUnicode=true&characterEncoding=utf8
         name:
         username: root
         password: root
@@ -73,7 +73,7 @@ liquibase:
     contexts: dev
 
 server:
-    port: 8080
+    port: 8090
 
 # ===================================================================
 # JHipster specific properties

@@ -26,13 +26,6 @@ public class UserDetailsService implements org.springframework.security.core.use
     @Inject
     private UserRepository userRepository;
 
-<<<<<<< HEAD
-   /* @Inject
-    private MemberRepository memberRepository;*/
-=======
-    //@Inject
-   // private MemberRepository memberRepository;
->>>>>>> ebe937f801ac6a950bc94d781cefb950ab74f161
 
 /*    @Transactional
     public UserDetails loadUserByUsername(final String wxNo) {

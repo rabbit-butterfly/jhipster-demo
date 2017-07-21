@@ -11,7 +11,7 @@
         $stateProvider
         .state('company', {
             parent: 'entity',
-            url: '/company',
+            url: '/company?page&sort&search',
             data: {
                 authorities: ['ROLE_USER'],
                 pageTitle: 'tuxAdminApp.company.home.title'
@@ -23,7 +23,27 @@
                     controllerAs: 'vm'
                 }
             },
+            params: {
+                page: {
+                    value: '1',
+                    squash: true
+                },
+                sort: {
+                    value: 'id,asc',
+                    squash: true
+                },
+                search: null
+            },
             resolve: {
+                pagingParams: ['$stateParams', 'PaginationUtil', function ($stateParams, PaginationUtil) {
+                    return {
+                        page: PaginationUtil.parsePage($stateParams.page),
+                        sort: $stateParams.sort,
+                        predicate: PaginationUtil.parsePredicate($stateParams.sort),
+                        ascending: PaginationUtil.parseAscending($stateParams.sort),
+                        search: $stateParams.search
+                    };
+                }],
                 translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
                     $translatePartialLoader.addPart('company');
                     $translatePartialLoader.addPart('global');
@@ -105,19 +125,18 @@
                         entity: function () {
                             return {
                                 name: null,
-                                category: null,
-                                legalPerson: null,
+                                corporator: null,
                                 address: null,
                                 province: null,
                                 city: null,
                                 area: null,
+                                remark: null,
                                 mobile: null,
                                 status: null,
                                 delFlag: null,
-                                createdTime: null,
-                                createdBy: null,
+                                createTime: null,
+                                creator: null,
                                 updateTime: null,
-                                remark: null,
                                 id: null
                             };
                         }

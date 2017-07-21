@@ -4,8 +4,7 @@
             "home": {
                 "title": "Companies",
                 "createLabel": "Créer un nouveau Company",
-                "createOrEditLabel": "Créer ou éditer un Company",
-                "search": "Recherche pour Company"
+                "createOrEditLabel": "Créer ou éditer un Company"
             },
             "created": "Un nouveau Company a été créé avec l'identifiant {{ param }}",
             "updated": "Le Company avec l'identifiant {{ param }} a été mis à jour",
@@ -17,19 +16,18 @@
                 "title": "Company"
             },
             "name": "Name",
-            "category": "Category",
-            "legalPerson": "Legal Person",
+            "corporator": "Corporator",
             "address": "Address",
             "province": "Province",
             "city": "City",
             "area": "Area",
+            "remark": "Remark",
             "mobile": "Mobile",
             "status": "Status",
             "delFlag": "Del Flag",
-            "createdTime": "Created Time",
-            "createdBy": "Created By",
-            "updateTime": "Update Time",
-            "remark": "Remark"
+            "createTime": "Create Time",
+            "creator": "Creator",
+            "updateTime": "Update Time"
         }
     }
 }
