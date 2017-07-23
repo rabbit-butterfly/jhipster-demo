@@ -1,0 +1,330 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myPpIinspectionTatioLabel" data-translate="tuxAdminApp.ppIinspectionTatio.home.createOrEditLabel">Create or edit a Pp Iinspection Tatio</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.ppIinspectionTatio.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.ppIinspectionTatio.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.ppIinspectionTatio.compId" for="field_compId">Comp Id</label>
+            <input type="text" class="form-control" name="compId" id="field_compId"
+                    ng-model="vm.ppIinspectionTatio.compId"
+                    required ng-minlength="0" ng-maxlength="19"/>
+            <div ng-show="editForm.compId.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.compId.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.compId.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.compId.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="19">
+                    This field cannot be longer than 19 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.ppIinspectionTatio.projId" for="field_projId">Proj Id</label>
+            <input type="text" class="form-control" name="projId" id="field_projId"
+                    ng-model="vm.ppIinspectionTatio.projId"
+                    required ng-minlength="0" ng-maxlength="19"/>
+            <div ng-show="editForm.projId.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.projId.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.projId.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.projId.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="19">
+                    This field cannot be longer than 19 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.ppIinspectionTatio.inspectionCode" for="field_inspectionCode">Inspection Code</label>
+            <input type="text" class="form-control" name="inspectionCode" id="field_inspectionCode"
+                    ng-model="vm.ppIinspectionTatio.inspectionCode"
+                    ng-minlength="0" ng-maxlength="50"/>
+            <div ng-show="editForm.inspectionCode.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.inspectionCode.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.inspectionCode.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.ppIinspectionTatio.rtRate" for="field_rtRate">Rt Rate</label>
+            <input type="text" class="form-control" name="rtRate" id="field_rtRate"
+                    ng-model="vm.ppIinspectionTatio.rtRate"
+                    ng-minlength="0" ng-maxlength="19"/>
+            <div ng-show="editForm.rtRate.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.rtRate.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.rtRate.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="19">
+                    This field cannot be longer than 19 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.ppIinspectionTatio.rtRateGd" for="field_rtRateGd">Rt Rate Gd</label>
+            <input type="text" class="form-control" name="rtRateGd" id="field_rtRateGd"
+                    ng-model="vm.ppIinspectionTatio.rtRateGd"
+                    ng-minlength="0" ng-maxlength="19"/>
+            <div ng-show="editForm.rtRateGd.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.rtRateGd.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.rtRateGd.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="19">
+                    This field cannot be longer than 19 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.ppIinspectionTatio.rtStandard" for="field_rtStandard">Rt Standard</label>
+            <input type="text" class="form-control" name="rtStandard" id="field_rtStandard"
+                    ng-model="vm.ppIinspectionTatio.rtStandard"
+                    ng-minlength="0" ng-maxlength="50"/>
+            <div ng-show="editForm.rtStandard.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.rtStandard.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.rtStandard.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.ppIinspectionTatio.rtGrade" for="field_rtGrade">Rt Grade</label>
+            <input type="text" class="form-control" name="rtGrade" id="field_rtGrade"
+                    ng-model="vm.ppIinspectionTatio.rtGrade"
+                    ng-minlength="0" ng-maxlength="50"/>
+            <div ng-show="editForm.rtGrade.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.rtGrade.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.rtGrade.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.ppIinspectionTatio.ptRate" for="field_ptRate">Pt Rate</label>
+            <input type="text" class="form-control" name="ptRate" id="field_ptRate"
+                    ng-model="vm.ppIinspectionTatio.ptRate"
+                    ng-minlength="0" ng-maxlength="19"/>
+            <div ng-show="editForm.ptRate.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.ptRate.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.ptRate.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="19">
+                    This field cannot be longer than 19 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.ppIinspectionTatio.ptStandard" for="field_ptStandard">Pt Standard</label>
+            <input type="text" class="form-control" name="ptStandard" id="field_ptStandard"
+                    ng-model="vm.ppIinspectionTatio.ptStandard"
+                    ng-minlength="0" ng-maxlength="50"/>
+            <div ng-show="editForm.ptStandard.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.ptStandard.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.ptStandard.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.ppIinspectionTatio.ptGrade" for="field_ptGrade">Pt Grade</label>
+            <input type="text" class="form-control" name="ptGrade" id="field_ptGrade"
+                    ng-model="vm.ppIinspectionTatio.ptGrade"
+                    ng-minlength="0" ng-maxlength="50"/>
+            <div ng-show="editForm.ptGrade.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.ptGrade.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.ptGrade.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.ppIinspectionTatio.utRate" for="field_utRate">Ut Rate</label>
+            <input type="text" class="form-control" name="utRate" id="field_utRate"
+                    ng-model="vm.ppIinspectionTatio.utRate"
+                    ng-minlength="0" ng-maxlength="19"/>
+            <div ng-show="editForm.utRate.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.utRate.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.utRate.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="19">
+                    This field cannot be longer than 19 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.ppIinspectionTatio.utStandard" for="field_utStandard">Ut Standard</label>
+            <input type="text" class="form-control" name="utStandard" id="field_utStandard"
+                    ng-model="vm.ppIinspectionTatio.utStandard"
+                    ng-minlength="0" ng-maxlength="50"/>
+            <div ng-show="editForm.utStandard.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.utStandard.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.utStandard.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.ppIinspectionTatio.utGrade" for="field_utGrade">Ut Grade</label>
+            <input type="text" class="form-control" name="utGrade" id="field_utGrade"
+                    ng-model="vm.ppIinspectionTatio.utGrade"
+                    ng-minlength="0" ng-maxlength="50"/>
+            <div ng-show="editForm.utGrade.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.utGrade.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.utGrade.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.ppIinspectionTatio.mtRate" for="field_mtRate">Mt Rate</label>
+            <input type="text" class="form-control" name="mtRate" id="field_mtRate"
+                    ng-model="vm.ppIinspectionTatio.mtRate"
+                    ng-minlength="0" ng-maxlength="19"/>
+            <div ng-show="editForm.mtRate.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.mtRate.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.mtRate.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="19">
+                    This field cannot be longer than 19 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.ppIinspectionTatio.mtStandard" for="field_mtStandard">Mt Standard</label>
+            <input type="text" class="form-control" name="mtStandard" id="field_mtStandard"
+                    ng-model="vm.ppIinspectionTatio.mtStandard"
+                    ng-minlength="0" ng-maxlength="50"/>
+            <div ng-show="editForm.mtStandard.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.mtStandard.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.mtStandard.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.ppIinspectionTatio.mtGrade" for="field_mtGrade">Mt Grade</label>
+            <input type="text" class="form-control" name="mtGrade" id="field_mtGrade"
+                    ng-model="vm.ppIinspectionTatio.mtGrade"
+                    ng-minlength="0" ng-maxlength="50"/>
+            <div ng-show="editForm.mtGrade.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.mtGrade.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.mtGrade.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.ppIinspectionTatio.createTime" for="field_createTime">Create Time</label>
+                <div class="input-group">
+                    <input id="field_createTime" type="text" class="form-control" name="createTime" datetime-picker="{{dateformat}}" ng-model="vm.ppIinspectionTatio.createTime" is-open="vm.datePickerOpenStatus.createTime"
+                    required/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('createTime')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            <div ng-show="editForm.createTime.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.createTime.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.createTime.$error.ZonedDateTimelocal" data-translate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.ppIinspectionTatio.delFlag" for="field_delFlag">Del Flag</label>
+            <input type="number" class="form-control" name="delFlag" id="field_delFlag"
+                    ng-model="vm.ppIinspectionTatio.delFlag"
+                    min="0" max="10"/>
+            <div ng-show="editForm.delFlag.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.delFlag.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.delFlag.$error.max" data-translate="entity.validation.max" translate-value-max="10">
+                    This field cannot be more than 10.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.delFlag.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

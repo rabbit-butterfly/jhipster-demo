@@ -2,20 +2,20 @@
 /**
 *管线-图片
 * @auther:renntrabbit@foxmail.com
-* @date:Tue Jul 18 17:06:29 CST 2017
+* @date:Sun Jul 23 12:39:36 CST 2017
 * table:pp_line_drawing
 */
 entity PpLineDrawing (pp_line_drawing)
 {
-	pipeId String  required  minlength(0) maxlength(19), /** PIPE_ID */
-	pageCode Integer   min(0) max(10), /** PAGE_CODE */
-	versionCode String    minlength(0) maxlength(50), /** VERSION_CODE */
-	alterationCode String    minlength(0) maxlength(50), /** ALTERATION_CODE */
-	name String    minlength(0) maxlength(50), /** NAME */
-	filePath String    minlength(0) maxlength(200), /** FILE_PATH */
-	remark String    minlength(0) maxlength(500), /** REMARK */
-	createTime Instant required , /** CREATE_TIME */
-	delFlag Integer   min(0) max(10) /** DEL_FLAG */
+	pipeId String  required  minlength(0) maxlength(19)  /** PIPE_ID */
+	pageCode Integer   min(0) max(10)  /** PAGE_CODE */
+	versionCode String    minlength(0) maxlength(50)  /** VERSION_CODE */
+	alterationCode String    minlength(0) maxlength(50)  /** ALTERATION_CODE */
+	name String    minlength(0) maxlength(50)  /** NAME */
+	filePath String    minlength(0) maxlength(200)  /** FILE_PATH */
+	remark String    minlength(0) maxlength(500)  /** REMARK */
+	createTime Instant required   /** CREATE_TIME */
+	delFlag Integer   min(0) max(10)  /** DEL_FLAG */
 }
 service  PpLineDrawing with serviceClass
 service  PpLineDrawing with serviceImpl

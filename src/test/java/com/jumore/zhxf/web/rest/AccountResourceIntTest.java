@@ -1,6 +1,5 @@
 package com.jumore.zhxf.web.rest;
 
-import com.jumore.zhxf.Application;
 import com.jumore.zhxf.domain.Authority;
 import com.jumore.zhxf.domain.User;
 import com.jumore.zhxf.repository.AuthorityRepository;
@@ -42,7 +41,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @see UserService
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = Application.class)
+
 @WebAppConfiguration
 @IntegrationTest
 public class AccountResourceIntTest {

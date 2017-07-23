@@ -1,0 +1,26 @@
+{
+    "tuxAdminApp": {
+        "welderSkill" : {
+            "home": {
+                "title": "Welder Skills",
+                "createLabel": "Create a new Welder Skill",
+                "createOrEditLabel": "Create or edit a Welder Skill"
+            },
+            "created": "A new Welder Skill is created with identifier {{ param }}",
+            "updated": "A Welder Skill is updated with identifier {{ param }}",
+            "deleted": "A Welder Skill is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Welder Skill {{ id }}?"
+            },
+            "detail": {
+                "title": "Welder Skill"
+            },
+            "welderId": "Welder Id",
+            "name": "Name",
+            "assessmentDate": "Assessment Date",
+            "effectiveDate": "Effective Date",
+            "createTime": "Create Time",
+            "delFlag": "Del Flag"
+        }
+    }
+}

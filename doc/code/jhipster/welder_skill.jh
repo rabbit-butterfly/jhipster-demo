@@ -2,17 +2,17 @@
 /**
 *焊工技能表
 * @auther:renntrabbit@foxmail.com
-* @date:Tue Jul 18 17:06:29 CST 2017
+* @date:Sun Jul 23 12:39:36 CST 2017
 * table:welder_skill
 */
 entity WelderSkill (welder_skill)
 {
-	welderId String  required  minlength(0) maxlength(19), /** WELDER_ID */
-	name String  required  minlength(0) maxlength(80), /** NAME */
-	assessmentDate Instant  , /** ASSESSMENT_DATE */
-	effectiveDate Instant  , /** EFFECTIVE_DATE */
-	createTime Instant required , /** CREATE_TIME */
-	delFlag Integer   min(0) max(10) /** DEL_FLAG */
+	welderId String  required  minlength(0) maxlength(19)  /** WELDER_ID */
+	name String  required  minlength(0) maxlength(80)  /** NAME */
+	assessmentDate Instant    /** ASSESSMENT_DATE */
+	effectiveDate Instant    /** EFFECTIVE_DATE */
+	createTime Instant required   /** CREATE_TIME */
+	delFlag Integer   min(0) max(10)  /** DEL_FLAG */
 }
 service  WelderSkill with serviceClass
 service  WelderSkill with serviceImpl

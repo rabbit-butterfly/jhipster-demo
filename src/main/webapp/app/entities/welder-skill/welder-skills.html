@@ -1,0 +1,70 @@
+<div>
+    <h2 data-translate="tuxAdminApp.welderSkill.home.title">Welder Skills</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="welder-skill.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="tuxAdminApp.welderSkill.home.createLabel">
+                        Create new Welder Skill
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="welderId"><span data-translate="tuxAdminApp.welderSkill.welderId">Welder Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="name"><span data-translate="tuxAdminApp.welderSkill.name">Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="assessmentDate"><span data-translate="tuxAdminApp.welderSkill.assessmentDate">Assessment Date</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="effectiveDate"><span data-translate="tuxAdminApp.welderSkill.effectiveDate">Effective Date</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="createTime"><span data-translate="tuxAdminApp.welderSkill.createTime">Create Time</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="delFlag"><span data-translate="tuxAdminApp.welderSkill.delFlag">Del Flag</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="welderSkill in vm.welderSkills track by welderSkill.id">
+                    <td><a ui-sref="welder-skill-detail({id:welderSkill.id})">{{welderSkill.id}}</a></td>
+                    <td>{{welderSkill.welderId}}</td>
+                    <td>{{welderSkill.name}}</td>
+                    <td>{{welderSkill.assessmentDate | date:'medium'}}</td>
+                    <td>{{welderSkill.effectiveDate | date:'medium'}}</td>
+                    <td>{{welderSkill.createTime | date:'medium'}}</td>
+                    <td>{{welderSkill.delFlag}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="welder-skill-detail({id:welderSkill.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="welder-skill.edit({id:welderSkill.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="welder-skill.delete({id:welderSkill.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+    </div>
+    <uib-pager total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pager>
+</div>

@@ -1,0 +1,80 @@
+<div>
+    <h2 data-translate="tuxAdminApp.ppGradeMaterail.home.title">Pp Grade Materails</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="pp-grade-materail.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="tuxAdminApp.ppGradeMaterail.home.createLabel">
+                        Create new Pp Grade Materail
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="compId"><span data-translate="tuxAdminApp.ppGradeMaterail.compId">Comp Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="projId"><span data-translate="tuxAdminApp.ppGradeMaterail.projId">Proj Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="material"><span data-translate="tuxAdminApp.ppGradeMaterail.material">Material</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="ppClass"><span data-translate="tuxAdminApp.ppGradeMaterail.ppClass">Pp Class</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="jsizeMin"><span data-translate="tuxAdminApp.ppGradeMaterail.jsizeMin">Jsize Min</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="jsizeMax"><span data-translate="tuxAdminApp.ppGradeMaterail.jsizeMax">Jsize Max</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="wallThickCode"><span data-translate="tuxAdminApp.ppGradeMaterail.wallThickCode">Wall Thick Code</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="materialType"><span data-translate="tuxAdminApp.ppGradeMaterail.materialType">Material Type</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="materialCategory"><span data-translate="tuxAdminApp.ppGradeMaterail.materialCategory">Material Category</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="createTime"><span data-translate="tuxAdminApp.ppGradeMaterail.createTime">Create Time</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="delFlag"><span data-translate="tuxAdminApp.ppGradeMaterail.delFlag">Del Flag</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="ppGradeMaterail in vm.ppGradeMaterails track by ppGradeMaterail.id">
+                    <td><a ui-sref="pp-grade-materail-detail({id:ppGradeMaterail.id})">{{ppGradeMaterail.id}}</a></td>
+                    <td>{{ppGradeMaterail.compId}}</td>
+                    <td>{{ppGradeMaterail.projId}}</td>
+                    <td>{{ppGradeMaterail.material}}</td>
+                    <td>{{ppGradeMaterail.ppClass}}</td>
+                    <td>{{ppGradeMaterail.jsizeMin}}</td>
+                    <td>{{ppGradeMaterail.jsizeMax}}</td>
+                    <td>{{ppGradeMaterail.wallThickCode}}</td>
+                    <td>{{ppGradeMaterail.materialType}}</td>
+                    <td>{{ppGradeMaterail.materialCategory}}</td>
+                    <td>{{ppGradeMaterail.createTime | date:'medium'}}</td>
+                    <td>{{ppGradeMaterail.delFlag}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="pp-grade-materail-detail({id:ppGradeMaterail.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="pp-grade-materail.edit({id:ppGradeMaterail.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="pp-grade-materail.delete({id:ppGradeMaterail.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+    </div>
+    <uib-pager total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pager>
+</div>

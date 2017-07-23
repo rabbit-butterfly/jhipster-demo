@@ -1,0 +1,36 @@
+{
+    "tuxAdminApp": {
+        "ppLineWeldCheck" : {
+            "home": {
+                "title": "Pp Line Weld Checks",
+                "createLabel": "Create a new Pp Line Weld Check",
+                "createOrEditLabel": "Create or edit a Pp Line Weld Check"
+            },
+            "created": "A new Pp Line Weld Check is created with identifier {{ param }}",
+            "updated": "A Pp Line Weld Check is updated with identifier {{ param }}",
+            "deleted": "A Pp Line Weld Check is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Pp Line Weld Check {{ id }}?"
+            },
+            "detail": {
+                "title": "Pp Line Weld Check"
+            },
+            "projId": "Proj Id",
+            "pipeId": "Pipe Id",
+            "jointId": "Joint Id",
+            "rtfilmTotal": "Rtfilm Total",
+            "rtfilmPassTotal": "Rtfilm Pass Total",
+            "reportCode": "Report Code",
+            "checkDate": "Check Date",
+            "checkResult": "Check Result",
+            "reworkCode": "Rework Code",
+            "reworkWelder": "Rework Welder",
+            "reworkDate": "Rework Date",
+            "reworkResult": "Rework Result",
+            "repairReport": "Repair Report",
+            "remark": "Remark",
+            "createTime": "Create Time",
+            "delFlag": "Del Flag"
+        }
+    }
+}

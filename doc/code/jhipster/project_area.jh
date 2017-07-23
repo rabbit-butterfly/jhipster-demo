@@ -2,17 +2,17 @@
 /**
 *分包项目：项目的子表
 * @auther:renntrabbit@foxmail.com
-* @date:Tue Jul 18 17:06:29 CST 2017
+* @date:Sun Jul 23 12:39:36 CST 2017
 * table:project_area
 */
 entity ProjectArea (project_area)
 {
-	compId String  required  minlength(0) maxlength(19), /** COMP_ID */
-	projId String  required  minlength(0) maxlength(19), /** PROJ_ID */
-	name String    minlength(0) maxlength(80), /** NAME */
-	enName String    minlength(0) maxlength(100), /** EN_NAME */
-	unitCode String    minlength(0) maxlength(50), /** UNIT_CODE */
-	subConstractor String    minlength(0) maxlength(80) /** SUB_CONSTRACTOR */
+	compId String  required  minlength(0) maxlength(19)  /** COMP_ID */
+	projId String  required  minlength(0) maxlength(19)  /** PROJ_ID */
+	name String    minlength(0) maxlength(80)  /** NAME */
+	enName String    minlength(0) maxlength(100)  /** EN_NAME */
+	unitCode String    minlength(0) maxlength(50)  /** UNIT_CODE */
+	subConstractor String    minlength(0) maxlength(80)  /** SUB_CONSTRACTOR */
 }
 service  ProjectArea with serviceClass
 service  ProjectArea with serviceImpl

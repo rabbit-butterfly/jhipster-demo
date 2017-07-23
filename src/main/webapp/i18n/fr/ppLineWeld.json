@@ -1,0 +1,51 @@
+{
+    "tuxAdminApp": {
+        "ppLineWeld" : {
+            "home": {
+                "title": "PpLineWelds",
+                "createLabel": "Créer un nouveau Pp Line Weld",
+                "createOrEditLabel": "Créer ou éditer un Pp Line Weld"
+            },
+            "created": "Un nouveau Pp Line Weld a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Pp Line Weld avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Pp Line Weld avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Pp Line Weld {{ id }} ?"
+            },
+            "detail": {
+                "title": "Pp Line Weld"
+            },
+            "pipeId": "Pipe Id",
+            "pageCode": "Page Code",
+            "jiont": "Jiont",
+            "wpsno": "Wpsno",
+            "jlocation": "Jlocation",
+            "jclass": "Jclass",
+            "finishDate": "Finish Date",
+            "jsize": "Jsize",
+            "thickness": "Thickness",
+            "jtype": "Jtype",
+            "weldingProcess": "Welding Process",
+            "fixedRotat": "Fixed Rotat",
+            "rootWelder": "Root Welder",
+            "examitem": "Examitem",
+            "coverWelder": "Cover Welder",
+            "visual": "Visual",
+            "pieceNo1": "Piece No 1",
+            "weldingMatial": "Welding Matial",
+            "pieceNo2": "Piece No 2",
+            "heatNo1": "Heat No 1",
+            "heatNo2": "Heat No 2",
+            "alterCode": "Alter Code",
+            "alterType": "Alter Type",
+            "dailyNo": "Daily No",
+            "hardessRec": "Hardess Rec",
+            "heatRec": "Heat Rec",
+            "rtLot": "Rt Lot",
+            "rtSample": "Rt Sample",
+            "remark": "Remark",
+            "createTime": "Create Time",
+            "delFlag": "Del Flag"
+        }
+    }
+}

@@ -1,0 +1,91 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "compId",
+            "javadoc": "公司ID",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required",
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 0,
+            "fieldValidateRulesMax": 19
+        },
+        {
+            "fieldName": "code",
+            "javadoc": "用户工号",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 0,
+            "fieldValidateRulesMax": 19
+        },
+        {
+            "fieldName": "mobile",
+            "javadoc": "手机号码",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 16
+        },
+        {
+            "fieldName": "status",
+            "javadoc": "0：无效 1：有效",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 0,
+            "fieldValidateRulesMax": 5
+        },
+        {
+            "fieldName": "jobTitle",
+            "javadoc": "岗位@",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 16
+        },
+        {
+            "fieldName": "major",
+            "javadoc": "专业@",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 16
+        },
+        {
+            "fieldName": "jhUserId",
+            "javadoc": "JH_USER_ID",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required",
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 0,
+            "fieldValidateRulesMax": 19
+        }
+    ],
+    "changelogDate": "20170723064506",
+    "javadoc": "公司成员表\n@auther:renntrabbit@foxmail.com\n@date:Sun Jul 23 14:43:53 CST 2017\ntable:user_info",
+    "entityTableName": "user_info",
+    "dto": "mapstruct",
+    "pagination": "pager",
+    "service": "serviceImpl"
+}

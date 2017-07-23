@@ -1,0 +1,22 @@
+{
+    "tuxAdminApp": {
+        "userArea" : {
+            "home": {
+                "title": "User Areas",
+                "createLabel": "Create a new User Area",
+                "createOrEditLabel": "Create or edit a User Area"
+            },
+            "created": "A new User Area is created with identifier {{ param }}",
+            "updated": "A User Area is updated with identifier {{ param }}",
+            "deleted": "A User Area is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete User Area {{ id }}?"
+            },
+            "detail": {
+                "title": "User Area"
+            },
+            "userId": "User Id",
+            "areaId": "Area Id"
+        }
+    }
+}

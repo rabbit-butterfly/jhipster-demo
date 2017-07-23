@@ -1,0 +1,31 @@
+{
+    "tuxAdminApp": {
+        "ppGradeMaterail" : {
+            "home": {
+                "title": "Pp Grade Materails",
+                "createLabel": "Create a new Pp Grade Materail",
+                "createOrEditLabel": "Create or edit a Pp Grade Materail"
+            },
+            "created": "A new Pp Grade Materail is created with identifier {{ param }}",
+            "updated": "A Pp Grade Materail is updated with identifier {{ param }}",
+            "deleted": "A Pp Grade Materail is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Pp Grade Materail {{ id }}?"
+            },
+            "detail": {
+                "title": "Pp Grade Materail"
+            },
+            "compId": "Comp Id",
+            "projId": "Proj Id",
+            "material": "Material",
+            "ppClass": "Pp Class",
+            "jsizeMin": "Jsize Min",
+            "jsizeMax": "Jsize Max",
+            "wallThickCode": "Wall Thick Code",
+            "materialType": "Material Type",
+            "materialCategory": "Material Category",
+            "createTime": "Create Time",
+            "delFlag": "Del Flag"
+        }
+    }
+}

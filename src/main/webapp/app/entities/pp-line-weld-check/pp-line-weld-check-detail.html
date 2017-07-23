@@ -1,0 +1,83 @@
+
+<div>
+    <h2><span data-translate="tuxAdminApp.ppLineWeldCheck.detail.title">Pp Line Weld Check</span> {{vm.ppLineWeldCheck.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="tuxAdminApp.ppLineWeldCheck.projId">Proj Id</span></dt>
+        <dd>
+            <span>{{vm.ppLineWeldCheck.projId}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.ppLineWeldCheck.pipeId">Pipe Id</span></dt>
+        <dd>
+            <span>{{vm.ppLineWeldCheck.pipeId}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.ppLineWeldCheck.jointId">Joint Id</span></dt>
+        <dd>
+            <span>{{vm.ppLineWeldCheck.jointId}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.ppLineWeldCheck.rtfilmTotal">Rtfilm Total</span></dt>
+        <dd>
+            <span>{{vm.ppLineWeldCheck.rtfilmTotal}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.ppLineWeldCheck.rtfilmPassTotal">Rtfilm Pass Total</span></dt>
+        <dd>
+            <span>{{vm.ppLineWeldCheck.rtfilmPassTotal}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.ppLineWeldCheck.reportCode">Report Code</span></dt>
+        <dd>
+            <span>{{vm.ppLineWeldCheck.reportCode}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.ppLineWeldCheck.checkDate">Check Date</span></dt>
+        <dd>
+            <span>{{vm.ppLineWeldCheck.checkDate}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.ppLineWeldCheck.checkResult">Check Result</span></dt>
+        <dd>
+            <span>{{vm.ppLineWeldCheck.checkResult}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.ppLineWeldCheck.reworkCode">Rework Code</span></dt>
+        <dd>
+            <span>{{vm.ppLineWeldCheck.reworkCode}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.ppLineWeldCheck.reworkWelder">Rework Welder</span></dt>
+        <dd>
+            <span>{{vm.ppLineWeldCheck.reworkWelder}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.ppLineWeldCheck.reworkDate">Rework Date</span></dt>
+        <dd>
+            <span>{{vm.ppLineWeldCheck.reworkDate | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.ppLineWeldCheck.reworkResult">Rework Result</span></dt>
+        <dd>
+            <span>{{vm.ppLineWeldCheck.reworkResult}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.ppLineWeldCheck.repairReport">Repair Report</span></dt>
+        <dd>
+            <span>{{vm.ppLineWeldCheck.repairReport}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.ppLineWeldCheck.remark">Remark</span></dt>
+        <dd>
+            <span>{{vm.ppLineWeldCheck.remark}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.ppLineWeldCheck.createTime">Create Time</span></dt>
+        <dd>
+            <span>{{vm.ppLineWeldCheck.createTime | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.ppLineWeldCheck.delFlag">Del Flag</span></dt>
+        <dd>
+            <span>{{vm.ppLineWeldCheck.delFlag}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="pp-line-weld-check-detail.edit({id:vm.ppLineWeldCheck.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

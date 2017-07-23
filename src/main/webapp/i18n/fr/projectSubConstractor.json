@@ -1,0 +1,25 @@
+{
+    "tuxAdminApp": {
+        "projectSubConstractor" : {
+            "home": {
+                "title": "ProjectSubConstractors",
+                "createLabel": "Créer un nouveau Project Sub Constractor",
+                "createOrEditLabel": "Créer ou éditer un Project Sub Constractor"
+            },
+            "created": "Un nouveau Project Sub Constractor a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Project Sub Constractor avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Project Sub Constractor avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Project Sub Constractor {{ id }} ?"
+            },
+            "detail": {
+                "title": "Project Sub Constractor"
+            },
+            "projId": "Proj Id",
+            "name": "Name",
+            "remark": "Remark",
+            "createTime": "Create Time",
+            "delFlag": "Del Flag"
+        }
+    }
+}

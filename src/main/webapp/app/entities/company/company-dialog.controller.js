@@ -1,4 +1,4 @@
-(function() {
+    (function() {
     'use strict';
 
     angular
@@ -25,6 +25,7 @@
         }
 
         function save () {
+            debugger
             vm.isSaving = true;
             if (vm.company.id !== null) {
                 Company.update(vm.company, onSaveSuccess, onSaveError);

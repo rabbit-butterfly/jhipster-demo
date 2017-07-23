@@ -1,0 +1,38 @@
+{
+    "tuxAdminApp": {
+        "ppIinspectionTatio" : {
+            "home": {
+                "title": "PpIinspectionTatios",
+                "createLabel": "Créer un nouveau Pp Iinspection Tatio",
+                "createOrEditLabel": "Créer ou éditer un Pp Iinspection Tatio"
+            },
+            "created": "Un nouveau Pp Iinspection Tatio a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Pp Iinspection Tatio avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Pp Iinspection Tatio avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Pp Iinspection Tatio {{ id }} ?"
+            },
+            "detail": {
+                "title": "Pp Iinspection Tatio"
+            },
+            "compId": "Comp Id",
+            "projId": "Proj Id",
+            "inspectionCode": "Inspection Code",
+            "rtRate": "Rt Rate",
+            "rtRateGd": "Rt Rate Gd",
+            "rtStandard": "Rt Standard",
+            "rtGrade": "Rt Grade",
+            "ptRate": "Pt Rate",
+            "ptStandard": "Pt Standard",
+            "ptGrade": "Pt Grade",
+            "utRate": "Ut Rate",
+            "utStandard": "Ut Standard",
+            "utGrade": "Ut Grade",
+            "mtRate": "Mt Rate",
+            "mtStandard": "Mt Standard",
+            "mtGrade": "Mt Grade",
+            "createTime": "Create Time",
+            "delFlag": "Del Flag"
+        }
+    }
+}

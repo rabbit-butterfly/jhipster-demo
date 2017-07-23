@@ -1,0 +1,28 @@
+{
+    "tuxAdminApp": {
+        "ppThickness" : {
+            "home": {
+                "title": "Pp Thicknesses",
+                "createLabel": "Create a new Pp Thickness",
+                "createOrEditLabel": "Create or edit a Pp Thickness"
+            },
+            "created": "A new Pp Thickness is created with identifier {{ param }}",
+            "updated": "A Pp Thickness is updated with identifier {{ param }}",
+            "deleted": "A Pp Thickness is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Pp Thickness {{ id }}?"
+            },
+            "detail": {
+                "title": "Pp Thickness"
+            },
+            "compId": "Comp Id",
+            "projId": "Proj Id",
+            "jsize": "Jsize",
+            "wallThickCode": "Wall Thick Code",
+            "externalDiameter": "External Diameter",
+            "thickness": "Thickness",
+            "createTime": "Create Time",
+            "delFlag": "Del Flag"
+        }
+    }
+}

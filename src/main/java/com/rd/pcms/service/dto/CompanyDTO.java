@@ -40,21 +40,14 @@ public class CompanyDTO implements Serializable {
     @Size(min = 0, max = 11)
     private String mobile;
 
-    @Min(value = 0)
-    @Max(value = 10)
     private Integer status;
 
-    @Min(value = 0)
-    @Max(value = 10)
     private Integer delFlag;
 
-    @NotNull
     private Instant createTime;
 
-    @Size(min = 0, max = 10)
     private String creator;
 
-    @NotNull
     private Instant updateTime;
 
     public Long getId() {

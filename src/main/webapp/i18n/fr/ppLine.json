@@ -1,0 +1,48 @@
+{
+    "tuxAdminApp": {
+        "ppLine" : {
+            "home": {
+                "title": "PpLines",
+                "createLabel": "Créer un nouveau Pp Line",
+                "createOrEditLabel": "Créer ou éditer un Pp Line"
+            },
+            "created": "Un nouveau Pp Line a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Pp Line avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Pp Line avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Pp Line {{ id }} ?"
+            },
+            "detail": {
+                "title": "Pp Line"
+            },
+            "compId": "Comp Id",
+            "projId": "Proj Id",
+            "areaId": "Area Id",
+            "lineNum": "Line Num",
+            "lineVersion": "Line Version",
+            "size": "Size",
+            "serv": "Serv",
+            "classSpec": "Class Spec",
+            "lineFrom": "Line From",
+            "lineTo": "Line To",
+            "operatePressure": "Operate Pressure",
+            "operateTemperature": "Operate Temperature",
+            "lineLevel": "Line Level",
+            "lineCode": "Line Code",
+            "designPressure": "Design Pressure",
+            "designTemperature": "Design Temperature",
+            "kindLevel": "Kind Level",
+            "inspectionCode": "Inspection Code",
+            "insulationCode": "Insulation Code",
+            "insulationHigh": "Insulation High",
+            "paintCode": "Paint Code",
+            "piDiagram": "Pi Diagram",
+            "testPressure": "Test Pressure",
+            "testMaterial": "Test Material",
+            "jacketedPipe": "Jacketed Pipe",
+            "remark": "Remark",
+            "createTime": "Create Time",
+            "delFlag": "Del Flag"
+        }
+    }
+}

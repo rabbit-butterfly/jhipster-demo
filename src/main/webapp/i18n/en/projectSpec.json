@@ -1,0 +1,27 @@
+{
+    "tuxAdminApp": {
+        "projectSpec" : {
+            "home": {
+                "title": "Project Specs",
+                "createLabel": "Create a new Project Spec",
+                "createOrEditLabel": "Create or edit a Project Spec"
+            },
+            "created": "A new Project Spec is created with identifier {{ param }}",
+            "updated": "A Project Spec is updated with identifier {{ param }}",
+            "deleted": "A Project Spec is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Project Spec {{ id }}?"
+            },
+            "detail": {
+                "title": "Project Spec"
+            },
+            "projId": "Proj Id",
+            "name": "Name",
+            "size": "Size",
+            "unit": "Unit",
+            "remark": "Remark",
+            "createTime": "Create Time",
+            "delFlag": "Del Flag"
+        }
+    }
+}

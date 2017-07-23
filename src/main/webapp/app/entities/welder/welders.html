@@ -1,0 +1,78 @@
+<div>
+    <h2 data-translate="tuxAdminApp.welder.home.title">Welders</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="welder.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="tuxAdminApp.welder.home.createLabel">
+                        Create new Welder
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="compId"><span data-translate="tuxAdminApp.welder.compId">Comp Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="code"><span data-translate="tuxAdminApp.welder.code">Code</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="name"><span data-translate="tuxAdminApp.welder.name">Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="mobille"><span data-translate="tuxAdminApp.welder.mobille">Mobille</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="identityCard"><span data-translate="tuxAdminApp.welder.identityCard">Identity Card</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="workTerm"><span data-translate="tuxAdminApp.welder.workTerm">Work Term</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="unitName"><span data-translate="tuxAdminApp.welder.unitName">Unit Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="createTime"><span data-translate="tuxAdminApp.welder.createTime">Create Time</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="delFlag"><span data-translate="tuxAdminApp.welder.delFlag">Del Flag</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="remark"><span data-translate="tuxAdminApp.welder.remark">Remark</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="welder in vm.welders track by welder.id">
+                    <td><a ui-sref="welder-detail({id:welder.id})">{{welder.id}}</a></td>
+                    <td>{{welder.compId}}</td>
+                    <td>{{welder.code}}</td>
+                    <td>{{welder.name}}</td>
+                    <td>{{welder.mobille}}</td>
+                    <td>{{welder.identityCard}}</td>
+                    <td>{{welder.workTerm}}</td>
+                    <td>{{welder.unitName}}</td>
+                    <td>{{welder.createTime | date:'medium'}}</td>
+                    <td>{{welder.delFlag}}</td>
+                    <td>{{welder.remark}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="welder-detail({id:welder.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="welder.edit({id:welder.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="welder.delete({id:welder.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+    </div>
+    <uib-pager total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pager>
+</div>

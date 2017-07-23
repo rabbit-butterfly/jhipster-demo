@@ -1,0 +1,254 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myPpLineWeldMaterialLabel" data-translate="tuxAdminApp.ppLineWeldMaterial.home.createOrEditLabel">Create or edit a Pp Line Weld Material</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.ppLineWeldMaterial.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.ppLineWeldMaterial.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.ppLineWeldMaterial.pipelineId" for="field_pipelineId">Pipeline Id</label>
+            <input type="text" class="form-control" name="pipelineId" id="field_pipelineId"
+                    ng-model="vm.ppLineWeldMaterial.pipelineId"
+                    required ng-minlength="0" ng-maxlength="19"/>
+            <div ng-show="editForm.pipelineId.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.pipelineId.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.pipelineId.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.pipelineId.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="19">
+                    This field cannot be longer than 19 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.ppLineWeldMaterial.pageCode" for="field_pageCode">Page Code</label>
+            <input type="number" class="form-control" name="pageCode" id="field_pageCode"
+                    ng-model="vm.ppLineWeldMaterial.pageCode"
+                    min="0" max="10"/>
+            <div ng-show="editForm.pageCode.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.pageCode.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.pageCode.$error.max" data-translate="entity.validation.max" translate-value-max="10">
+                    This field cannot be more than 10.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.pageCode.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.ppLineWeldMaterial.sequenceNumber" for="field_sequenceNumber">Sequence Number</label>
+            <input type="number" class="form-control" name="sequenceNumber" id="field_sequenceNumber"
+                    ng-model="vm.ppLineWeldMaterial.sequenceNumber"
+                    min="0" max="10"/>
+            <div ng-show="editForm.sequenceNumber.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.sequenceNumber.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.sequenceNumber.$error.max" data-translate="entity.validation.max" translate-value-max="10">
+                    This field cannot be more than 10.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.sequenceNumber.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.ppLineWeldMaterial.materialCode" for="field_materialCode">Material Code</label>
+            <input type="text" class="form-control" name="materialCode" id="field_materialCode"
+                    ng-model="vm.ppLineWeldMaterial.materialCode"
+                    ng-minlength="0" ng-maxlength="50"/>
+            <div ng-show="editForm.materialCode.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.materialCode.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.materialCode.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.ppLineWeldMaterial.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="vm.ppLineWeldMaterial.name"
+                    ng-minlength="0" ng-maxlength="50"/>
+            <div ng-show="editForm.name.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.name.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.name.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.ppLineWeldMaterial.materialDesc" for="field_materialDesc">Material Desc</label>
+            <input type="text" class="form-control" name="materialDesc" id="field_materialDesc"
+                    ng-model="vm.ppLineWeldMaterial.materialDesc"
+                    ng-minlength="0" ng-maxlength="50"/>
+            <div ng-show="editForm.materialDesc.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.materialDesc.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.materialDesc.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.ppLineWeldMaterial.spec" for="field_spec">Spec</label>
+            <input type="text" class="form-control" name="spec" id="field_spec"
+                    ng-model="vm.ppLineWeldMaterial.spec"
+                    ng-minlength="0" ng-maxlength="50"/>
+            <div ng-show="editForm.spec.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.spec.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.spec.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.ppLineWeldMaterial.unit" for="field_unit">Unit</label>
+            <input type="text" class="form-control" name="unit" id="field_unit"
+                    ng-model="vm.ppLineWeldMaterial.unit"
+                    ng-minlength="0" ng-maxlength="20"/>
+            <div ng-show="editForm.unit.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.unit.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.unit.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="20">
+                    This field cannot be longer than 20 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.ppLineWeldMaterial.material" for="field_material">Material</label>
+            <input type="text" class="form-control" name="material" id="field_material"
+                    ng-model="vm.ppLineWeldMaterial.material"
+                    ng-minlength="0" ng-maxlength="50"/>
+            <div ng-show="editForm.material.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.material.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.material.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.ppLineWeldMaterial.designQty" for="field_designQty">Design Qty</label>
+            <input type="text" class="form-control" name="designQty" id="field_designQty"
+                    ng-model="vm.ppLineWeldMaterial.designQty"
+                    ng-minlength="0" ng-maxlength="50"/>
+            <div ng-show="editForm.designQty.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.designQty.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.designQty.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.ppLineWeldMaterial.remark" for="field_remark">Remark</label>
+            <input type="text" class="form-control" name="remark" id="field_remark"
+                    ng-model="vm.ppLineWeldMaterial.remark"
+                    ng-minlength="0" ng-maxlength="500"/>
+            <div ng-show="editForm.remark.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.remark.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.remark.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="500">
+                    This field cannot be longer than 500 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.ppLineWeldMaterial.createTime" for="field_createTime">Create Time</label>
+                <div class="input-group">
+                    <input id="field_createTime" type="text" class="form-control" name="createTime" datetime-picker="{{dateformat}}" ng-model="vm.ppLineWeldMaterial.createTime" is-open="vm.datePickerOpenStatus.createTime"
+                    required/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('createTime')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            <div ng-show="editForm.createTime.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.createTime.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.createTime.$error.ZonedDateTimelocal" data-translate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.ppLineWeldMaterial.delFlag" for="field_delFlag">Del Flag</label>
+            <input type="number" class="form-control" name="delFlag" id="field_delFlag"
+                    ng-model="vm.ppLineWeldMaterial.delFlag"
+                    min="0" max="10"/>
+            <div ng-show="editForm.delFlag.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.delFlag.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.delFlag.$error.max" data-translate="entity.validation.max" translate-value-max="10">
+                    This field cannot be more than 10.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.delFlag.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

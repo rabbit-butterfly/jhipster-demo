@@ -1,0 +1,33 @@
+{
+    "tuxAdminApp": {
+        "ppLineWeldMaterial" : {
+            "home": {
+                "title": "PpLineWeldMaterials",
+                "createLabel": "Créer un nouveau Pp Line Weld Material",
+                "createOrEditLabel": "Créer ou éditer un Pp Line Weld Material"
+            },
+            "created": "Un nouveau Pp Line Weld Material a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Pp Line Weld Material avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Pp Line Weld Material avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Pp Line Weld Material {{ id }} ?"
+            },
+            "detail": {
+                "title": "Pp Line Weld Material"
+            },
+            "pipelineId": "Pipeline Id",
+            "pageCode": "Page Code",
+            "sequenceNumber": "Sequence Number",
+            "materialCode": "Material Code",
+            "name": "Name",
+            "materialDesc": "Material Desc",
+            "spec": "Spec",
+            "unit": "Unit",
+            "material": "Material",
+            "designQty": "Design Qty",
+            "remark": "Remark",
+            "createTime": "Create Time",
+            "delFlag": "Del Flag"
+        }
+    }
+}

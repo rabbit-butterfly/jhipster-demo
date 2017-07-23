@@ -1,0 +1,59 @@
+
+<div>
+    <h2><span data-translate="tuxAdminApp.projectWelder.detail.title">Project Welder</span> {{vm.projectWelder.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="tuxAdminApp.projectWelder.compId">Comp Id</span></dt>
+        <dd>
+            <span>{{vm.projectWelder.compId}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.projectWelder.code">Code</span></dt>
+        <dd>
+            <span>{{vm.projectWelder.code}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.projectWelder.name">Name</span></dt>
+        <dd>
+            <span>{{vm.projectWelder.name}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.projectWelder.mobille">Mobille</span></dt>
+        <dd>
+            <span>{{vm.projectWelder.mobille}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.projectWelder.identityCard">Identity Card</span></dt>
+        <dd>
+            <span>{{vm.projectWelder.identityCard}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.projectWelder.workTerm">Work Term</span></dt>
+        <dd>
+            <span>{{vm.projectWelder.workTerm}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.projectWelder.unitName">Unit Name</span></dt>
+        <dd>
+            <span>{{vm.projectWelder.unitName}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.projectWelder.createTime">Create Time</span></dt>
+        <dd>
+            <span>{{vm.projectWelder.createTime | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.projectWelder.delFlag">Del Flag</span></dt>
+        <dd>
+            <span>{{vm.projectWelder.delFlag}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.projectWelder.remark">Remark</span></dt>
+        <dd>
+            <span>{{vm.projectWelder.remark}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="project-welder-detail.edit({id:vm.projectWelder.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

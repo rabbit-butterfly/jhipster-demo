@@ -11,7 +11,7 @@
         $stateProvider
         .state('project', {
             parent: 'entity',
-            url: '/project',
+            url: '/project?page&sort&search',
             data: {
                 authorities: ['ROLE_USER'],
                 pageTitle: 'tuxAdminApp.project.home.title'
@@ -23,7 +23,27 @@
                     controllerAs: 'vm'
                 }
             },
+            params: {
+                page: {
+                    value: '1',
+                    squash: true
+                },
+                sort: {
+                    value: 'id,asc',
+                    squash: true
+                },
+                search: null
+            },
             resolve: {
+                pagingParams: ['$stateParams', 'PaginationUtil', function ($stateParams, PaginationUtil) {
+                    return {
+                        page: PaginationUtil.parsePage($stateParams.page),
+                        sort: $stateParams.sort,
+                        predicate: PaginationUtil.parsePredicate($stateParams.sort),
+                        ascending: PaginationUtil.parseAscending($stateParams.sort),
+                        search: $stateParams.search
+                    };
+                }],
                 translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
                     $translatePartialLoader.addPart('project');
                     $translatePartialLoader.addPart('global');
@@ -104,23 +124,18 @@
                     resolve: {
                         entity: function () {
                             return {
-                                projectCompId: null,
-                                projectCompName: null,
-                                projectBame: null,
-                                projectDesc: null,
-                                projectStatus: null,
-                                supervisorCompId: null,
-                                supervisorCompName: null,
-                                contractorCompId: null,
-                                contractorCompName: null,
+                                code: null,
+                                name: null,
+                                enName: null,
+                                supervisor: null,
+                                ownerContractor: null,
+                                totalContractor: null,
                                 startDate: null,
                                 endDate: null,
-                                createdBy: null,
-                                createdTime: null,
-                                modifyBy: null,
-                                modifyTime: null,
+                                status: null,
                                 delFlag: null,
                                 remark: null,
+                                extendAttr: null,
                                 id: null
                             };
                         }

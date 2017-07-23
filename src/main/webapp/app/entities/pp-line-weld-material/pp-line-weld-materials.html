@@ -1,0 +1,84 @@
+<div>
+    <h2 data-translate="tuxAdminApp.ppLineWeldMaterial.home.title">Pp Line Weld Materials</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="pp-line-weld-material.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="tuxAdminApp.ppLineWeldMaterial.home.createLabel">
+                        Create new Pp Line Weld Material
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="pipelineId"><span data-translate="tuxAdminApp.ppLineWeldMaterial.pipelineId">Pipeline Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="pageCode"><span data-translate="tuxAdminApp.ppLineWeldMaterial.pageCode">Page Code</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="sequenceNumber"><span data-translate="tuxAdminApp.ppLineWeldMaterial.sequenceNumber">Sequence Number</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="materialCode"><span data-translate="tuxAdminApp.ppLineWeldMaterial.materialCode">Material Code</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="name"><span data-translate="tuxAdminApp.ppLineWeldMaterial.name">Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="materialDesc"><span data-translate="tuxAdminApp.ppLineWeldMaterial.materialDesc">Material Desc</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="spec"><span data-translate="tuxAdminApp.ppLineWeldMaterial.spec">Spec</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="unit"><span data-translate="tuxAdminApp.ppLineWeldMaterial.unit">Unit</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="material"><span data-translate="tuxAdminApp.ppLineWeldMaterial.material">Material</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="designQty"><span data-translate="tuxAdminApp.ppLineWeldMaterial.designQty">Design Qty</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="remark"><span data-translate="tuxAdminApp.ppLineWeldMaterial.remark">Remark</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="createTime"><span data-translate="tuxAdminApp.ppLineWeldMaterial.createTime">Create Time</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="delFlag"><span data-translate="tuxAdminApp.ppLineWeldMaterial.delFlag">Del Flag</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="ppLineWeldMaterial in vm.ppLineWeldMaterials track by ppLineWeldMaterial.id">
+                    <td><a ui-sref="pp-line-weld-material-detail({id:ppLineWeldMaterial.id})">{{ppLineWeldMaterial.id}}</a></td>
+                    <td>{{ppLineWeldMaterial.pipelineId}}</td>
+                    <td>{{ppLineWeldMaterial.pageCode}}</td>
+                    <td>{{ppLineWeldMaterial.sequenceNumber}}</td>
+                    <td>{{ppLineWeldMaterial.materialCode}}</td>
+                    <td>{{ppLineWeldMaterial.name}}</td>
+                    <td>{{ppLineWeldMaterial.materialDesc}}</td>
+                    <td>{{ppLineWeldMaterial.spec}}</td>
+                    <td>{{ppLineWeldMaterial.unit}}</td>
+                    <td>{{ppLineWeldMaterial.material}}</td>
+                    <td>{{ppLineWeldMaterial.designQty}}</td>
+                    <td>{{ppLineWeldMaterial.remark}}</td>
+                    <td>{{ppLineWeldMaterial.createTime | date:'medium'}}</td>
+                    <td>{{ppLineWeldMaterial.delFlag}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="pp-line-weld-material-detail({id:ppLineWeldMaterial.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="pp-line-weld-material.edit({id:ppLineWeldMaterial.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="pp-line-weld-material.delete({id:ppLineWeldMaterial.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+    </div>
+    <uib-pager total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pager>
+</div>

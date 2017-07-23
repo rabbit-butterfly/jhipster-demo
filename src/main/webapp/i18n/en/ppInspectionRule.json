@@ -1,0 +1,28 @@
+{
+    "tuxAdminApp": {
+        "ppInspectionRule" : {
+            "home": {
+                "title": "Pp Inspection Rules",
+                "createLabel": "Create a new Pp Inspection Rule",
+                "createOrEditLabel": "Create or edit a Pp Inspection Rule"
+            },
+            "created": "A new Pp Inspection Rule is created with identifier {{ param }}",
+            "updated": "A Pp Inspection Rule is updated with identifier {{ param }}",
+            "deleted": "A Pp Inspection Rule is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Pp Inspection Rule {{ id }}?"
+            },
+            "detail": {
+                "title": "Pp Inspection Rule"
+            },
+            "compId": "Comp Id",
+            "projId": "Proj Id",
+            "material": "Material",
+            "ppClass": "Pp Class",
+            "jacketedPipe": "Jacketed Pipe",
+            "inspectionCode": "Inspection Code",
+            "createTime": "Create Time",
+            "delFlag": "Del Flag"
+        }
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "tuxAdminApp": {
+        "ppLineDrawing" : {
+            "home": {
+                "title": "Pp Line Drawings",
+                "createLabel": "Create a new Pp Line Drawing",
+                "createOrEditLabel": "Create or edit a Pp Line Drawing"
+            },
+            "created": "A new Pp Line Drawing is created with identifier {{ param }}",
+            "updated": "A Pp Line Drawing is updated with identifier {{ param }}",
+            "deleted": "A Pp Line Drawing is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Pp Line Drawing {{ id }}?"
+            },
+            "detail": {
+                "title": "Pp Line Drawing"
+            },
+            "pipeId": "Pipe Id",
+            "pageCode": "Page Code",
+            "versionCode": "Version Code",
+            "alterationCode": "Alteration Code",
+            "name": "Name",
+            "filePath": "File Path",
+            "remark": "Remark",
+            "createTime": "Create Time",
+            "delFlag": "Del Flag"
+        }
+    }
+}

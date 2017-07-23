@@ -1,6 +1,6 @@
 package com.jumore.zhxf.web.rest;
 
-import com.jumore.zhxf.Application;
+import com.Application;
 import com.jumore.zhxf.config.audit.AuditEventConverter;
 import com.jumore.zhxf.domain.PersistentAuditEvent;
 import com.jumore.zhxf.repository.PersistenceAuditEventRepository;

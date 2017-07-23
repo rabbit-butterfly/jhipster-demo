@@ -1,0 +1,26 @@
+{
+    "tuxAdminApp": {
+        "projectMaterial" : {
+            "home": {
+                "title": "Project Materials",
+                "createLabel": "Create a new Project Material",
+                "createOrEditLabel": "Create or edit a Project Material"
+            },
+            "created": "A new Project Material is created with identifier {{ param }}",
+            "updated": "A Project Material is updated with identifier {{ param }}",
+            "deleted": "A Project Material is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Project Material {{ id }}?"
+            },
+            "detail": {
+                "title": "Project Material"
+            },
+            "projId": "Proj Id",
+            "name": "Name",
+            "parentId": "Parent Id",
+            "remark": "Remark",
+            "createTime": "Create Time",
+            "delFlag": "Del Flag"
+        }
+    }
+}

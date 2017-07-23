@@ -15,23 +15,18 @@
             "detail": {
                 "title": "Project"
             },
-            "projectCompId": "Project Comp Id",
-            "projectCompName": "Project Comp Name",
-            "projectBame": "Project Bame",
-            "projectDesc": "Project Desc",
-            "projectStatus": "Project Status",
-            "supervisorCompId": "Supervisor Comp Id",
-            "supervisorCompName": "Supervisor Comp Name",
-            "contractorCompId": "Contractor Comp Id",
-            "contractorCompName": "Contractor Comp Name",
+            "code": "Code",
+            "name": "Name",
+            "enName": "En Name",
+            "supervisor": "Supervisor",
+            "ownerContractor": "Owner Contractor",
+            "totalContractor": "Total Contractor",
             "startDate": "Start Date",
             "endDate": "End Date",
-            "createdBy": "Created By",
-            "createdTime": "Created Time",
-            "modifyBy": "Modify By",
-            "modifyTime": "Modify Time",
+            "status": "Status",
             "delFlag": "Del Flag",
-            "remark": "Remark"
+            "remark": "Remark",
+            "extendAttr": "Extend Attr"
         }
     }
 }

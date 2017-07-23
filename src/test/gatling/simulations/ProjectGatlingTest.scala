@@ -67,7 +67,7 @@ class ProjectGatlingTest extends Simulation {
             .exec(http("Create new project")
             .post("/api/projects")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "projectCompId":"SAMPLE_TEXT", "projectCompName":"SAMPLE_TEXT", "projectBame":"SAMPLE_TEXT", "projectDesc":"SAMPLE_TEXT", "projectStatus":"0", "supervisorCompId":null, "supervisorCompName":"SAMPLE_TEXT", "contractorCompId":null, "contractorCompName":"SAMPLE_TEXT", "startDate":"2020-01-01T00:00:00.000Z", "endDate":"2020-01-01T00:00:00.000Z", "createdBy":null, "createdTime":"2020-01-01T00:00:00.000Z", "modifyBy":null, "modifyTime":"2020-01-01T00:00:00.000Z", "delFlag":"SAMPLE_TEXT", "remark":"SAMPLE_TEXT"}""")).asJSON
+            .body(StringBody("""{"id":null, "code":"SAMPLE_TEXT", "name":"SAMPLE_TEXT", "enName":"SAMPLE_TEXT", "supervisor":"SAMPLE_TEXT", "ownerContractor":"SAMPLE_TEXT", "totalContractor":"SAMPLE_TEXT", "startDate":"2020-01-01T00:00:00.000Z", "endDate":"2020-01-01T00:00:00.000Z", "status":"0", "delFlag":"0", "remark":"SAMPLE_TEXT", "extendAttr":"SAMPLE_TEXT"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_project_url"))).exitHereIfFailed
             .pause(10)

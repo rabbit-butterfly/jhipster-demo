@@ -7,5 +7,28 @@
     <include file="classpath:config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170712103800_added_entity_Company.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170712103801_added_entity_Project.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170721105640_added_entity_PpGradeMaterail.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170721105641_added_entity_PpIinspectionTatio.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170721105642_added_entity_PpInspectionRule.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170721105643_added_entity_PpLine.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170721105644_added_entity_PpLineDrawing.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170721105645_added_entity_PpLineWeld.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170721105646_added_entity_PpLineWeldCheck.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170721105647_added_entity_PpLineWeldEntrust.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170721105648_added_entity_PpLineWeldMaterial.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170721105649_added_entity_PpThickness.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170721105651_added_entity_ProjectArea.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170721105652_added_entity_ProjectMaterial.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170721105653_added_entity_ProjectSpec.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170721105654_added_entity_ProjectSubConstractor.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170721105655_added_entity_ProjectUser.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170721105656_added_entity_ProjectWelder.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170721105657_added_entity_UserArea.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170721105658_added_entity_UserInfo.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170721105659_added_entity_UserPower.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170721105700_added_entity_Welder.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170721105701_added_entity_WelderSkill.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170723063653_added_entity_UserInfo.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170723064506_added_entity_UserInfo.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
 </databaseChangeLog>

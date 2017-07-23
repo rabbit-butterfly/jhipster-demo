@@ -17,48 +17,38 @@
     <div class="table-responsive">
         <table class="jh-table table table-striped">
             <thead>
-                <tr>
-                    <th><span data-translate="global.field.id">ID</span></th>
-                    <th><span data-translate="tuxAdminApp.project.projectCompId">Project Comp Id</span></th>
-                    <th><span data-translate="tuxAdminApp.project.projectCompName">Project Comp Name</span></th>
-                    <th><span data-translate="tuxAdminApp.project.projectBame">Project Bame</span></th>
-                    <th><span data-translate="tuxAdminApp.project.projectDesc">Project Desc</span></th>
-                    <th><span data-translate="tuxAdminApp.project.projectStatus">Project Status</span></th>
-                    <th><span data-translate="tuxAdminApp.project.supervisorCompId">Supervisor Comp Id</span></th>
-                    <th><span data-translate="tuxAdminApp.project.supervisorCompName">Supervisor Comp Name</span></th>
-                    <th><span data-translate="tuxAdminApp.project.contractorCompId">Contractor Comp Id</span></th>
-                    <th><span data-translate="tuxAdminApp.project.contractorCompName">Contractor Comp Name</span></th>
-                    <th><span data-translate="tuxAdminApp.project.startDate">Start Date</span></th>
-                    <th><span data-translate="tuxAdminApp.project.endDate">End Date</span></th>
-                    <th><span data-translate="tuxAdminApp.project.createdBy">Created By</span></th>
-                    <th><span data-translate="tuxAdminApp.project.createdTime">Created Time</span></th>
-                    <th><span data-translate="tuxAdminApp.project.modifyBy">Modify By</span></th>
-                    <th><span data-translate="tuxAdminApp.project.modifyTime">Modify Time</span></th>
-                    <th><span data-translate="tuxAdminApp.project.delFlag">Del Flag</span></th>
-                    <th><span data-translate="tuxAdminApp.project.remark">Remark</span></th>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="code"><span data-translate="tuxAdminApp.project.code">Code</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="name"><span data-translate="tuxAdminApp.project.name">Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="enName"><span data-translate="tuxAdminApp.project.enName">En Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="supervisor"><span data-translate="tuxAdminApp.project.supervisor">Supervisor</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="ownerContractor"><span data-translate="tuxAdminApp.project.ownerContractor">Owner Contractor</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="totalContractor"><span data-translate="tuxAdminApp.project.totalContractor">Total Contractor</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="startDate"><span data-translate="tuxAdminApp.project.startDate">Start Date</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="endDate"><span data-translate="tuxAdminApp.project.endDate">End Date</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="status"><span data-translate="tuxAdminApp.project.status">Status</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="delFlag"><span data-translate="tuxAdminApp.project.delFlag">Del Flag</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="remark"><span data-translate="tuxAdminApp.project.remark">Remark</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="extendAttr"><span data-translate="tuxAdminApp.project.extendAttr">Extend Attr</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="project in vm.projects track by project.id">
                     <td><a ui-sref="project-detail({id:project.id})">{{project.id}}</a></td>
-                    <td>{{project.projectCompId}}</td>
-                    <td>{{project.projectCompName}}</td>
-                    <td>{{project.projectBame}}</td>
-                    <td>{{project.projectDesc}}</td>
-                    <td>{{project.projectStatus}}</td>
-                    <td>{{project.supervisorCompId}}</td>
-                    <td>{{project.supervisorCompName}}</td>
-                    <td>{{project.contractorCompId}}</td>
-                    <td>{{project.contractorCompName}}</td>
+                    <td>{{project.code}}</td>
+                    <td>{{project.name}}</td>
+                    <td>{{project.enName}}</td>
+                    <td>{{project.supervisor}}</td>
+                    <td>{{project.ownerContractor}}</td>
+                    <td>{{project.totalContractor}}</td>
                     <td>{{project.startDate | date:'medium'}}</td>
                     <td>{{project.endDate | date:'medium'}}</td>
-                    <td>{{project.createdBy}}</td>
-                    <td>{{project.createdTime | date:'medium'}}</td>
-                    <td>{{project.modifyBy}}</td>
-                    <td>{{project.modifyTime | date:'medium'}}</td>
+                    <td>{{project.status}}</td>
                     <td>{{project.delFlag}}</td>
                     <td>{{project.remark}}</td>
+                    <td>{{project.extendAttr}}</td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"
@@ -85,4 +75,8 @@
             </tbody>
         </table>
     </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+    </div>
+    <uib-pager total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pager>
 </div>
