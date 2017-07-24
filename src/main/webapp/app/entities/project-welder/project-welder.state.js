@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .config(stateConfig);
 
     stateConfig.$inject = ['$stateProvider'];
@@ -14,7 +14,7 @@
             url: '/project-welder?page&sort&search',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'pcmsApp.projectWelder.home.title'
+                pageTitle: 'tuxAdminApp.projectWelder.home.title'
             },
             views: {
                 'content@': {
@@ -56,7 +56,7 @@
             url: '/project-welder/{id}',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'pcmsApp.projectWelder.detail.title'
+                pageTitle: 'tuxAdminApp.projectWelder.detail.title'
             },
             views: {
                 'content@': {

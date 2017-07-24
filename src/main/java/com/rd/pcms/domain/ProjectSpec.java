@@ -14,10 +14,10 @@ import java.util.Objects;
 /**
  * 项目物资规格明细表
  * @auther:renntrabbit@foxmail.com
- * @date:Tue Jul 18 17:06:29 CST 2017
+ * @date:Sun Jul 23 12:39:36 CST 2017
  * table:project_spec
  */
-@ApiModel(description = "项目物资规格明细表 @auther:renntrabbit@foxmail.com @date:Tue Jul 18 17:06:29 CST 2017 table:project_spec")
+@ApiModel(description = "项目物资规格明细表 @auther:renntrabbit@foxmail.com @date:Sun Jul 23 12:39:36 CST 2017 table:project_spec")
 @Entity
 @Table(name = "project_spec")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -29,56 +29,60 @@ public class ProjectSpec implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    /**
+     * PROJ_ID
+     */
     @Size(min = 0, max = 19)
+    @ApiModelProperty(value = "PROJ_ID")
     @Column(name = "proj_id", length = 19)
     private String projId;
 
     /**
-     * PROJ_ID
+     * 规格名称
      */
     @Size(min = 0, max = 80)
-    @ApiModelProperty(value = "PROJ_ID")
+    @ApiModelProperty(value = "规格名称")
     @Column(name = "name", length = 80)
     private String name;
 
     /**
-     * 规格名称
+     * 大小
      */
     @Size(min = 0, max = 10)
-    @ApiModelProperty(value = "规格名称")
+    @ApiModelProperty(value = "大小")
     @Column(name = "jhi_size", length = 10)
     private String size;
 
     /**
-     * 大小
+     * 场地
      */
     @Size(min = 0, max = 50)
-    @ApiModelProperty(value = "大小")
+    @ApiModelProperty(value = "场地")
     @Column(name = "unit", length = 50)
     private String unit;
 
     /**
-     * 场地
+     * REMARK
      */
     @Size(min = 0, max = 500)
-    @ApiModelProperty(value = "场地")
+    @ApiModelProperty(value = "REMARK")
     @Column(name = "remark", length = 500)
     private String remark;
 
     /**
-     * REMARK
+     * CREATE_TIME
      */
     @NotNull
-    @ApiModelProperty(value = "REMARK", required = true)
+    @ApiModelProperty(value = "CREATE_TIME", required = true)
     @Column(name = "create_time", nullable = false)
     private Instant createTime;
 
     /**
-     * CREATE_TIME
+     * DEL_FLAG
      */
     @Min(value = 0)
     @Max(value = 10)
-    @ApiModelProperty(value = "CREATE_TIME")
+    @ApiModelProperty(value = "DEL_FLAG")
     @Column(name = "del_flag")
     private Integer delFlag;
 

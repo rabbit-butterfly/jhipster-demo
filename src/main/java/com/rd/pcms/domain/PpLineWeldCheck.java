@@ -14,10 +14,10 @@ import java.util.Objects;
 /**
  * 焊接记录质量检查记录
  * @auther:renntrabbit@foxmail.com
- * @date:Tue Jul 18 17:06:29 CST 2017
+ * @date:Sun Jul 23 12:39:36 CST 2017
  * table:pp_line_weld_check
  */
-@ApiModel(description = "焊接记录质量检查记录 @auther:renntrabbit@foxmail.com @date:Tue Jul 18 17:06:29 CST 2017 table:pp_line_weld_check")
+@ApiModel(description = "焊接记录质量检查记录 @auther:renntrabbit@foxmail.com @date:Sun Jul 23 12:39:36 CST 2017 table:pp_line_weld_check")
 @Entity
 @Table(name = "pp_line_weld_check")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -29,34 +29,38 @@ public class PpLineWeldCheck implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
-    @Size(min = 0, max = 19)
-    @Column(name = "proj_id", length = 19, nullable = false)
-    private String projId;
-
     /**
      * PROJ_ID
      */
     @NotNull
     @Size(min = 0, max = 19)
     @ApiModelProperty(value = "PROJ_ID", required = true)
-    @Column(name = "pipe_id", length = 19, nullable = false)
-    private String pipeId;
+    @Column(name = "proj_id", length = 19, nullable = false)
+    private String projId;
 
     /**
      * PIPE_ID
      */
+    @NotNull
     @Size(min = 0, max = 19)
-    @ApiModelProperty(value = "PIPE_ID")
-    @Column(name = "joint_id", length = 19)
-    private String jointId;
+    @ApiModelProperty(value = "PIPE_ID", required = true)
+    @Column(name = "pipe_id", length = 19, nullable = false)
+    private String pipeId;
 
     /**
      * JOINT_ID
      */
+    @Size(min = 0, max = 19)
+    @ApiModelProperty(value = "JOINT_ID")
+    @Column(name = "joint_id", length = 19)
+    private String jointId;
+
+    /**
+     * @rt
+     */
     @Min(value = 0)
     @Max(value = 10)
-    @ApiModelProperty(value = "JOINT_ID")
+    @ApiModelProperty(value = "@rt")
     @Column(name = "rtfilm_total")
     private Integer rtfilmTotal;
 
@@ -86,74 +90,74 @@ public class PpLineWeldCheck implements Serializable {
     private String checkDate;
 
     /**
-     * @rt
-     */
-    @Size(min = 0, max = 16)
-    @ApiModelProperty(value = "@rt")
-    @Column(name = "check_result", length = 16)
-    private String checkResult;
-
-    /**
      * CHECK_RESULT
      */
-    @Size(min = 0, max = 50)
+    @Size(min = 0, max = 16)
     @ApiModelProperty(value = "CHECK_RESULT")
-    @Column(name = "rework_code", length = 50)
-    private String reworkCode;
+    @Column(name = "check_result", length = 16)
+    private String checkResult;
 
     /**
      * REWORK_CODE
      */
     @Size(min = 0, max = 50)
     @ApiModelProperty(value = "REWORK_CODE")
-    @Column(name = "rework_welder", length = 50)
-    private String reworkWelder;
+    @Column(name = "rework_code", length = 50)
+    private String reworkCode;
 
     /**
      * REWORK_WELDER
      */
+    @Size(min = 0, max = 50)
     @ApiModelProperty(value = "REWORK_WELDER")
-    @Column(name = "rework_date")
-    private Instant reworkDate;
+    @Column(name = "rework_welder", length = 50)
+    private String reworkWelder;
 
     /**
      * REWORK_DATE
      */
-    @Size(min = 0, max = 50)
     @ApiModelProperty(value = "REWORK_DATE")
-    @Column(name = "rework_result", length = 50)
-    private String reworkResult;
+    @Column(name = "rework_date")
+    private Instant reworkDate;
 
     /**
      * REWORK_RESULT
      */
     @Size(min = 0, max = 50)
     @ApiModelProperty(value = "REWORK_RESULT")
-    @Column(name = "repair_report", length = 50)
-    private String repairReport;
+    @Column(name = "rework_result", length = 50)
+    private String reworkResult;
 
     /**
      * REPAIR_REPORT
      */
-    @Size(min = 0, max = 500)
+    @Size(min = 0, max = 50)
     @ApiModelProperty(value = "REPAIR_REPORT")
-    @Column(name = "remark", length = 500)
-    private String remark;
+    @Column(name = "repair_report", length = 50)
+    private String repairReport;
 
     /**
      * REMARK
      */
-    @NotNull
-    @ApiModelProperty(value = "REMARK", required = true)
-    @Column(name = "create_time", nullable = false)
-    private Instant createTime;
+    @Size(min = 0, max = 500)
+    @ApiModelProperty(value = "REMARK")
+    @Column(name = "remark", length = 500)
+    private String remark;
 
     /**
      * CREATE_TIME
      */
+    @NotNull
+    @ApiModelProperty(value = "CREATE_TIME", required = true)
+    @Column(name = "create_time", nullable = false)
+    private Instant createTime;
+
+    /**
+     * DEL_FLAG
+     */
     @Min(value = 0)
     @Max(value = 10)
-    @ApiModelProperty(value = "CREATE_TIME")
+    @ApiModelProperty(value = "DEL_FLAG")
     @Column(name = "del_flag")
     private Integer delFlag;
 

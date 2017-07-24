@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .controller('PpGradeMaterailDetailController', PpGradeMaterailDetailController);
 
     PpGradeMaterailDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'PpGradeMaterail'];
@@ -13,7 +13,7 @@
         vm.ppGradeMaterail = entity;
         vm.previousState = previousState.name;
 
-        var unsubscribe = $rootScope.$on('pcmsApp:ppGradeMaterailUpdate', function(event, result) {
+        var unsubscribe = $rootScope.$on('tuxAdminApp:ppGradeMaterailUpdate', function(event, result) {
             vm.ppGradeMaterail = result;
         });
         $scope.$on('$destroy', unsubscribe);

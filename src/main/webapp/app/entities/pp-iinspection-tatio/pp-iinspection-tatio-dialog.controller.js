@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .controller('PpIinspectionTatioDialogController', PpIinspectionTatioDialogController);
 
     PpIinspectionTatioDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'PpIinspectionTatio'];
@@ -34,7 +34,7 @@
         }
 
         function onSaveSuccess (result) {
-            $scope.$emit('pcmsApp:ppIinspectionTatioUpdate', result);
+            $scope.$emit('tuxAdminApp:ppIinspectionTatioUpdate', result);
             $uibModalInstance.close(result);
             vm.isSaving = false;
         }

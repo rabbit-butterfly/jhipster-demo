@@ -14,10 +14,10 @@ import java.util.Objects;
 /**
  * 焊工技能表
  * @auther:renntrabbit@foxmail.com
- * @date:Tue Jul 18 17:06:29 CST 2017
+ * @date:Sun Jul 23 12:39:36 CST 2017
  * table:welder_skill
  */
-@ApiModel(description = "焊工技能表 @auther:renntrabbit@foxmail.com @date:Tue Jul 18 17:06:29 CST 2017 table:welder_skill")
+@ApiModel(description = "焊工技能表 @auther:renntrabbit@foxmail.com @date:Sun Jul 23 12:39:36 CST 2017 table:welder_skill")
 @Entity
 @Table(name = "welder_skill")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -29,48 +29,52 @@ public class WelderSkill implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
-    @Size(min = 0, max = 19)
-    @Column(name = "welder_id", length = 19, nullable = false)
-    private String welderId;
-
     /**
      * WELDER_ID
      */
     @NotNull
-    @Size(min = 0, max = 80)
+    @Size(min = 0, max = 19)
     @ApiModelProperty(value = "WELDER_ID", required = true)
-    @Column(name = "name", length = 80, nullable = false)
-    private String name;
+    @Column(name = "welder_id", length = 19, nullable = false)
+    private String welderId;
 
     /**
      * NAME
      */
-    @ApiModelProperty(value = "NAME")
-    @Column(name = "assessment_date")
-    private Instant assessmentDate;
+    @NotNull
+    @Size(min = 0, max = 80)
+    @ApiModelProperty(value = "NAME", required = true)
+    @Column(name = "name", length = 80, nullable = false)
+    private String name;
 
     /**
      * ASSESSMENT_DATE
      */
     @ApiModelProperty(value = "ASSESSMENT_DATE")
-    @Column(name = "effective_date")
-    private Instant effectiveDate;
+    @Column(name = "assessment_date")
+    private Instant assessmentDate;
 
     /**
      * EFFECTIVE_DATE
      */
-    @NotNull
-    @ApiModelProperty(value = "EFFECTIVE_DATE", required = true)
-    @Column(name = "create_time", nullable = false)
-    private Instant createTime;
+    @ApiModelProperty(value = "EFFECTIVE_DATE")
+    @Column(name = "effective_date")
+    private Instant effectiveDate;
 
     /**
      * CREATE_TIME
      */
+    @NotNull
+    @ApiModelProperty(value = "CREATE_TIME", required = true)
+    @Column(name = "create_time", nullable = false)
+    private Instant createTime;
+
+    /**
+     * DEL_FLAG
+     */
     @Min(value = 0)
     @Max(value = 10)
-    @ApiModelProperty(value = "CREATE_TIME")
+    @ApiModelProperty(value = "DEL_FLAG")
     @Column(name = "del_flag")
     private Integer delFlag;
 

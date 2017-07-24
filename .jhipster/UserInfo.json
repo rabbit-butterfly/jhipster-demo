@@ -4,29 +4,30 @@
     "fields": [
         {
             "fieldName": "compId",
-            "fieldType": "String",
+            "javadoc": "公司ID",
+            "fieldType": "Long",
             "fieldValidateRules": [
                 "required",
-                "minlength",
-                "maxlength"
+                "min",
+                "max"
             ],
-            "fieldValidateRulesMinlength": 0,
-            "fieldValidateRulesMaxlength": 19
+            "fieldValidateRulesMin": 0,
+            "fieldValidateRulesMax": 19
         },
         {
             "fieldName": "code",
-            "javadoc": "公司ID",
-            "fieldType": "String",
+            "javadoc": "用户工号",
+            "fieldType": "Long",
             "fieldValidateRules": [
-                "minlength",
-                "maxlength"
+                "min",
+                "max"
             ],
-            "fieldValidateRulesMinlength": 0,
-            "fieldValidateRulesMaxlength": 19
+            "fieldValidateRulesMin": 0,
+            "fieldValidateRulesMax": 19
         },
         {
             "fieldName": "mobile",
-            "javadoc": "用户工号",
+            "javadoc": "手机号码",
             "fieldType": "String",
             "fieldValidateRules": [
                 "minlength",
@@ -37,28 +38,17 @@
         },
         {
             "fieldName": "status",
-            "javadoc": "手机号码",
-            "fieldType": "String",
+            "javadoc": "0：无效 1：有效",
+            "fieldType": "Integer",
             "fieldValidateRules": [
-                "minlength",
-                "maxlength"
+                "min",
+                "max"
             ],
-            "fieldValidateRulesMinlength": 0,
-            "fieldValidateRulesMaxlength": 5
+            "fieldValidateRulesMin": 0,
+            "fieldValidateRulesMax": 5
         },
         {
             "fieldName": "jobTitle",
-            "javadoc": "0：无效 1：有效",
-            "fieldType": "String",
-            "fieldValidateRules": [
-                "minlength",
-                "maxlength"
-            ],
-            "fieldValidateRulesMinlength": 0,
-            "fieldValidateRulesMaxlength": 16
-        },
-        {
-            "fieldName": "major",
             "javadoc": "岗位@",
             "fieldType": "String",
             "fieldValidateRules": [
@@ -69,20 +59,31 @@
             "fieldValidateRulesMaxlength": 16
         },
         {
-            "fieldName": "jhUserId",
+            "fieldName": "major",
             "javadoc": "专业@",
             "fieldType": "String",
             "fieldValidateRules": [
-                "required",
                 "minlength",
                 "maxlength"
             ],
             "fieldValidateRulesMinlength": 0,
-            "fieldValidateRulesMaxlength": 19
+            "fieldValidateRulesMaxlength": 16
+        },
+        {
+            "fieldName": "jhUserId",
+            "javadoc": "JH_USER_ID",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required",
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 0,
+            "fieldValidateRulesMax": 19
         }
     ],
-    "changelogDate": "20170718090755",
-    "javadoc": "公司成员表\n@auther:renntrabbit@foxmail.com\n@date:Tue Jul 18 17:06:29 CST 2017\ntable:user_info",
+    "changelogDate": "20170723064506",
+    "javadoc": "公司成员表\n@auther:renntrabbit@foxmail.com\n@date:Sun Jul 23 14:43:53 CST 2017\ntable:user_info",
     "entityTableName": "user_info",
     "dto": "mapstruct",
     "pagination": "pager",

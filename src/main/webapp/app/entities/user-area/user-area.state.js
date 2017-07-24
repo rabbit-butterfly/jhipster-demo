@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .config(stateConfig);
 
     stateConfig.$inject = ['$stateProvider'];
@@ -14,7 +14,7 @@
             url: '/user-area?page&sort&search',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'pcmsApp.userArea.home.title'
+                pageTitle: 'tuxAdminApp.userArea.home.title'
             },
             views: {
                 'content@': {
@@ -56,7 +56,7 @@
             url: '/user-area/{id}',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'pcmsApp.userArea.detail.title'
+                pageTitle: 'tuxAdminApp.userArea.detail.title'
             },
             views: {
                 'content@': {

@@ -2,14 +2,14 @@
 /**
 *用户菜单权限
 * @auther:renntrabbit@foxmail.com
-* @date:Tue Jul 18 17:06:29 CST 2017
+* @date:Sun Jul 23 12:39:36 CST 2017
 * table:user_power
 */
 entity UserPower (user_power)
 {
-	userId String  required  minlength(0) maxlength(19), /** USER_ID */
-	parentCode String  required  minlength(0) maxlength(3), /** PARENT_CODE */
-	funcCode String  required  minlength(0) maxlength(8) /** FUNC_CODE */
+	userId String  required  minlength(0) maxlength(19)  /** USER_ID */
+	parentCode String  required  minlength(0) maxlength(3)  /** PARENT_CODE */
+	funcCode String  required  minlength(0) maxlength(8)  /** FUNC_CODE */
 }
 service  UserPower with serviceClass
 service  UserPower with serviceImpl

@@ -1,5 +1,5 @@
 {
-    "pcmsApp": {
+    "tuxAdminApp": {
         "ppLine" : {
             "home": {
                 "title": "Pp Lines",
@@ -36,7 +36,7 @@
             "insulationCode": "Insulation Code",
             "insulationHigh": "Insulation High",
             "paintCode": "Paint Code",
-            "pIDiagram": "P I Diagram",
+            "piDiagram": "Pi Diagram",
             "testPressure": "Test Pressure",
             "testMaterial": "Test Material",
             "jacketedPipe": "Jacketed Pipe",

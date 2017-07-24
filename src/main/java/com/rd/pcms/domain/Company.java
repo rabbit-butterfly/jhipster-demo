@@ -1,9 +1,15 @@
 package com.rd.pcms.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
+import org.hibernate.annotations.Type;
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
@@ -14,13 +20,14 @@ import java.util.Objects;
 /**
  * 公司表：存放公司的基本信息
  * @auther:renntrabbit@foxmail.com
- * @date:Tue Jul 18 17:06:29 CST 2017
+ * @date:Sun Jul 23 12:39:35 CST 2017
  * table:company
  */
-@ApiModel(description = "公司表：存放公司的基本信息 @auther:renntrabbit@foxmail.com @date:Tue Jul 18 17:06:29 CST 2017 table:company")
+@ApiModel(description = "公司表：存放公司的基本信息 @auther:renntrabbit@foxmail.com @date:Sun Jul 23 12:39:35 CST 2017 table:company")
 @Entity
 @Table(name = "company")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+@EntityListeners(AuditingEntityListener.class)
 public class Company implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -29,77 +36,72 @@ public class Company implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    /**
+     * 公司名称
+     */
     @NotNull
     @Size(min = 0, max = 50)
+    @ApiModelProperty(value = "公司名称", required = true)
     @Column(name = "name", length = 50, nullable = false)
     private String name;
 
     /**
-     * 公司名称
+     * CORPORATOR
      */
     @Size(min = 0, max = 10)
-    @ApiModelProperty(value = "公司名称")
+    @ApiModelProperty(value = "CORPORATOR")
     @Column(name = "corporator", length = 10)
     private String corporator;
 
     /**
-     * CORPORATOR
+     * ADDRESS
      */
     @NotNull
     @Size(min = 0, max = 100)
-    @ApiModelProperty(value = "CORPORATOR", required = true)
+    @ApiModelProperty(value = "ADDRESS", required = true)
     @Column(name = "address", length = 100, nullable = false)
     private String address;
-
-    /**
-     * ADDRESS
-     */
-    @Size(min = 0, max = 10)
-    @ApiModelProperty(value = "ADDRESS")
-    @Column(name = "province", length = 10)
-    private String province;
 
     /**
      * PROVINCE
      */
     @Size(min = 0, max = 10)
     @ApiModelProperty(value = "PROVINCE")
-    @Column(name = "city", length = 10)
-    private String city;
+    @Column(name = "province", length = 10)
+    private String province;
 
     /**
      * CITY
      */
     @Size(min = 0, max = 10)
     @ApiModelProperty(value = "CITY")
-    @Column(name = "area", length = 10)
-    private String area;
+    @Column(name = "city", length = 10)
+    private String city;
 
     /**
      * AREA
      */
-    @Size(min = 0, max = 500)
+    @Size(min = 0, max = 10)
     @ApiModelProperty(value = "AREA")
-    @Column(name = "remark", length = 500)
-    private String remark;
+    @Column(name = "area", length = 10)
+    private String area;
 
     /**
      * REMARK
      */
-    @NotNull
-    @Size(min = 0, max = 11)
-    @ApiModelProperty(value = "REMARK", required = true)
-    @Column(name = "mobile", length = 11, nullable = false)
-    private String mobile;
+    @Size(min = 0, max = 500)
+    @ApiModelProperty(value = "REMARK")
+    @Column(name = "remark", length = 500)
+    private String remark;
 
     /**
      * MOBILE
      */
-    @Min(value = 0)
-    @Max(value = 10)
-    @ApiModelProperty(value = "MOBILE")
-    @Column(name = "status")
-    private Integer status;
+    @NotNull
+    @Size(min = 0, max = 11)
+    @ApiModelProperty(value = "MOBILE", required = true)
+    @Column(name = "mobile", length = 11, nullable = false)
+    private String mobile;
 
     /**
      * 0：冻结 1：有效
@@ -107,32 +109,45 @@ public class Company implements Serializable {
     @Min(value = 0)
     @Max(value = 10)
     @ApiModelProperty(value = "0：冻结 1：有效")
-    @Column(name = "del_flag")
-    private Integer delFlag;
+    @Column(name = "status")
+    private Integer status;
 
     /**
      * 0：有效 1：逻辑删除
      */
-    @NotNull
-    @ApiModelProperty(value = "0：有效 1：逻辑删除", required = true)
-    @Column(name = "create_time", nullable = false)
-    private Instant createTime;
+    @ApiModelProperty(value = "0：有效 1：逻辑删除")
+    @Column(name = "del_flag")
+    private Integer delFlag;
 
     /**
      * CREATE_TIME
      */
-    @Size(min = 0, max = 10)
-    @ApiModelProperty(value = "CREATE_TIME")
-    @Column(name = "creator", length = 10)
-    private String creator;
+    @ApiModelProperty(value = "created_date")
+    @Column(name = "created_date")
+    //@Type(type = "com.javahonk.model.LocalDateHibernateUserType")
+    //@Temporal(TemporalType.DATE)
+    //@Type(type = "org.jadira.usertype.dateandtime.joda.PersistentLocalDate")
+    @Transient
+    private Instant createTime;
 
     /**
      * CREATOR
      */
+    @ApiModelProperty(value = "created_by")
+    @CreatedBy
     @NotNull
-    @ApiModelProperty(value = "CREATOR", required = true)
-    @Column(name = "update_time", nullable = false)
+    @Column(name = "created_by", nullable = false, length = 50, updatable = false)
+    @JsonIgnore
+    private String creator;
+
+    /**
+     * UPDATE_TIME
+     */
+    @ApiModelProperty(value = "last_modified_date")
+    //@Column(name = "update_time", nullable = false)
+    @Transient
     private Instant updateTime;
+
 
     public Long getId() {
         return id;

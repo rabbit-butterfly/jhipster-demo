@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .controller('PpInspectionRuleController', PpInspectionRuleController);
 
     PpInspectionRuleController.$inject = ['$state', 'PpInspectionRule', 'ParseLinks', 'AlertService', 'paginationConstants', 'pagingParams'];

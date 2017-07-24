@@ -1,12 +1,12 @@
 <div>
-    <h2 data-translate="pcmsApp.ppLineWeldCheck.home.title">Pp Line Weld Checks</h2>
+    <h2 data-translate="tuxAdminApp.ppLineWeldCheck.home.title">Pp Line Weld Checks</h2>
     <jhi-alert></jhi-alert>
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-4 no-padding-left">
                 <button class="btn btn-primary" ui-sref="pp-line-weld-check.new" >
                     <span class="glyphicon glyphicon-plus"></span>
-                    <span  data-translate="pcmsApp.ppLineWeldCheck.home.createLabel">
+                    <span  data-translate="tuxAdminApp.ppLineWeldCheck.home.createLabel">
                         Create new Pp Line Weld Check
                     </span>
                 </button>
@@ -19,22 +19,22 @@
             <thead>
                 <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
                     <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="projId"><span data-translate="pcmsApp.ppLineWeldCheck.projId">Proj Id</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="pipeId"><span data-translate="pcmsApp.ppLineWeldCheck.pipeId">Pipe Id</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="jointId"><span data-translate="pcmsApp.ppLineWeldCheck.jointId">Joint Id</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="rtfilmTotal"><span data-translate="pcmsApp.ppLineWeldCheck.rtfilmTotal">Rtfilm Total</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="rtfilmPassTotal"><span data-translate="pcmsApp.ppLineWeldCheck.rtfilmPassTotal">Rtfilm Pass Total</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="reportCode"><span data-translate="pcmsApp.ppLineWeldCheck.reportCode">Report Code</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="checkDate"><span data-translate="pcmsApp.ppLineWeldCheck.checkDate">Check Date</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="checkResult"><span data-translate="pcmsApp.ppLineWeldCheck.checkResult">Check Result</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="reworkCode"><span data-translate="pcmsApp.ppLineWeldCheck.reworkCode">Rework Code</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="reworkWelder"><span data-translate="pcmsApp.ppLineWeldCheck.reworkWelder">Rework Welder</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="reworkDate"><span data-translate="pcmsApp.ppLineWeldCheck.reworkDate">Rework Date</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="reworkResult"><span data-translate="pcmsApp.ppLineWeldCheck.reworkResult">Rework Result</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="repairReport"><span data-translate="pcmsApp.ppLineWeldCheck.repairReport">Repair Report</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="remark"><span data-translate="pcmsApp.ppLineWeldCheck.remark">Remark</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="createTime"><span data-translate="pcmsApp.ppLineWeldCheck.createTime">Create Time</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="delFlag"><span data-translate="pcmsApp.ppLineWeldCheck.delFlag">Del Flag</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="projId"><span data-translate="tuxAdminApp.ppLineWeldCheck.projId">Proj Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="pipeId"><span data-translate="tuxAdminApp.ppLineWeldCheck.pipeId">Pipe Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="jointId"><span data-translate="tuxAdminApp.ppLineWeldCheck.jointId">Joint Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="rtfilmTotal"><span data-translate="tuxAdminApp.ppLineWeldCheck.rtfilmTotal">Rtfilm Total</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="rtfilmPassTotal"><span data-translate="tuxAdminApp.ppLineWeldCheck.rtfilmPassTotal">Rtfilm Pass Total</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="reportCode"><span data-translate="tuxAdminApp.ppLineWeldCheck.reportCode">Report Code</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="checkDate"><span data-translate="tuxAdminApp.ppLineWeldCheck.checkDate">Check Date</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="checkResult"><span data-translate="tuxAdminApp.ppLineWeldCheck.checkResult">Check Result</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="reworkCode"><span data-translate="tuxAdminApp.ppLineWeldCheck.reworkCode">Rework Code</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="reworkWelder"><span data-translate="tuxAdminApp.ppLineWeldCheck.reworkWelder">Rework Welder</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="reworkDate"><span data-translate="tuxAdminApp.ppLineWeldCheck.reworkDate">Rework Date</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="reworkResult"><span data-translate="tuxAdminApp.ppLineWeldCheck.reworkResult">Rework Result</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="repairReport"><span data-translate="tuxAdminApp.ppLineWeldCheck.repairReport">Repair Report</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="remark"><span data-translate="tuxAdminApp.ppLineWeldCheck.remark">Remark</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="createTime"><span data-translate="tuxAdminApp.ppLineWeldCheck.createTime">Create Time</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="delFlag"><span data-translate="tuxAdminApp.ppLineWeldCheck.delFlag">Del Flag</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th></th>
                 </tr>
             </thead>

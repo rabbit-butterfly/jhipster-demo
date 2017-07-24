@@ -1,6 +1,6 @@
 package com.jumore.zhxf.service;
 
-import com.jumore.zhxf.Application;
+import com.Application;
 import com.jumore.zhxf.domain.PersistentToken;
 import com.jumore.zhxf.domain.User;
 import com.jumore.zhxf.repository.PersistentTokenRepository;

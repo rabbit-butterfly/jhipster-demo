@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .controller('PpInspectionRuleDialogController', PpInspectionRuleDialogController);
 
     PpInspectionRuleDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'PpInspectionRule'];
@@ -34,7 +34,7 @@
         }
 
         function onSaveSuccess (result) {
-            $scope.$emit('pcmsApp:ppInspectionRuleUpdate', result);
+            $scope.$emit('tuxAdminApp:ppInspectionRuleUpdate', result);
             $uibModalInstance.close(result);
             vm.isSaving = false;
         }

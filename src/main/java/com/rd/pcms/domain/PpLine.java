@@ -14,10 +14,10 @@ import java.util.Objects;
 /**
  * 管道特性表
  * @auther:renntrabbit@foxmail.com
- * @date:Tue Jul 18 17:06:29 CST 2017
+ * @date:Sun Jul 23 12:39:36 CST 2017
  * table:pp_line
  */
-@ApiModel(description = "管道特性表 @auther:renntrabbit@foxmail.com @date:Tue Jul 18 17:06:29 CST 2017 table:pp_line")
+@ApiModel(description = "管道特性表 @auther:renntrabbit@foxmail.com @date:Sun Jul 23 12:39:36 CST 2017 table:pp_line")
 @Entity
 @Table(name = "pp_line")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -29,19 +29,14 @@ public class PpLine implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
-    @Size(min = 0, max = 19)
-    @Column(name = "comp_id", length = 19, nullable = false)
-    private String compId;
-
     /**
      * comp_ID
      */
     @NotNull
     @Size(min = 0, max = 19)
     @ApiModelProperty(value = "comp_ID", required = true)
-    @Column(name = "proj_id", length = 19, nullable = false)
-    private String projId;
+    @Column(name = "comp_id", length = 19, nullable = false)
+    private String compId;
 
     /**
      * PROJ_ID
@@ -49,207 +44,216 @@ public class PpLine implements Serializable {
     @NotNull
     @Size(min = 0, max = 19)
     @ApiModelProperty(value = "PROJ_ID", required = true)
-    @Column(name = "area_id", length = 19, nullable = false)
-    private String areaId;
+    @Column(name = "proj_id", length = 19, nullable = false)
+    private String projId;
 
     /**
      * AREA_ID
      */
-    @Size(min = 0, max = 50)
-    @ApiModelProperty(value = "AREA_ID")
-    @Column(name = "line_num", length = 50)
-    private String lineNum;
+    @NotNull
+    @Size(min = 0, max = 19)
+    @ApiModelProperty(value = "AREA_ID", required = true)
+    @Column(name = "area_id", length = 19, nullable = false)
+    private String areaId;
 
     /**
      * LINE_NUM
      */
-    @Size(min = 0, max = 20)
+    @Size(min = 0, max = 50)
     @ApiModelProperty(value = "LINE_NUM")
-    @Column(name = "line_version", length = 20)
-    private String lineVersion;
+    @Column(name = "line_num", length = 50)
+    private String lineNum;
 
     /**
      * LINE_VERSION
      */
-    @Size(min = 0, max = 10)
+    @Size(min = 0, max = 20)
     @ApiModelProperty(value = "LINE_VERSION")
-    @Column(name = "jhi_size", length = 10)
-    private String size;
+    @Column(name = "line_version", length = 20)
+    private String lineVersion;
 
     /**
      * SIZE
      */
-    @Size(min = 0, max = 50)
+    @Size(min = 0, max = 10)
     @ApiModelProperty(value = "SIZE")
-    @Column(name = "serv", length = 50)
-    private String serv;
+    @Column(name = "jhi_size", length = 10)
+    private String size;
 
     /**
      * SERV
      */
     @Size(min = 0, max = 50)
     @ApiModelProperty(value = "SERV")
-    @Column(name = "class_spec", length = 50)
-    private String classSpec;
+    @Column(name = "serv", length = 50)
+    private String serv;
 
     /**
      * @
      */
     @Size(min = 0, max = 50)
     @ApiModelProperty(value = "@")
-    @Column(name = "line_from", length = 50)
-    private String lineFrom;
+    @Column(name = "class_spec", length = 50)
+    private String classSpec;
 
     /**
      * LINE_FROM
      */
     @Size(min = 0, max = 50)
     @ApiModelProperty(value = "LINE_FROM")
-    @Column(name = "line_to", length = 50)
-    private String lineTo;
+    @Column(name = "line_from", length = 50)
+    private String lineFrom;
 
     /**
      * LINE_TO
      */
-    @Size(min = 0, max = 20)
+    @Size(min = 0, max = 50)
     @ApiModelProperty(value = "LINE_TO")
-    @Column(name = "operate_pressure", length = 20)
-    private String operatePressure;
+    @Column(name = "line_to", length = 50)
+    private String lineTo;
 
     /**
      * OPERATE_PRESSURE
      */
-    @Size(min = 0, max = 50)
+    @Size(min = 0, max = 20)
     @ApiModelProperty(value = "OPERATE_PRESSURE")
-    @Column(name = "operate_temperature", length = 50)
-    private String operateTemperature;
+    @Column(name = "operate_pressure", length = 20)
+    private String operatePressure;
 
     /**
      * OPERATE_TEMPERATURE
      */
-    @Size(min = 0, max = 10)
+    @Size(min = 0, max = 50)
     @ApiModelProperty(value = "OPERATE_TEMPERATURE")
-    @Column(name = "line_level", length = 10)
-    private String lineLevel;
+    @Column(name = "operate_temperature", length = 50)
+    private String operateTemperature;
 
     /**
      * LINE_LEVEL
      */
-    @Size(min = 0, max = 50)
+    @Size(min = 0, max = 10)
     @ApiModelProperty(value = "LINE_LEVEL")
-    @Column(name = "line_code", length = 50)
-    private String lineCode;
+    @Column(name = "line_level", length = 10)
+    private String lineLevel;
 
     /**
      * LINE_CODE
      */
     @Size(min = 0, max = 50)
     @ApiModelProperty(value = "LINE_CODE")
-    @Column(name = "design_pressure", length = 50)
-    private String designPressure;
+    @Column(name = "line_code", length = 50)
+    private String lineCode;
 
     /**
      * DESIGN_PRESSURE
      */
     @Size(min = 0, max = 50)
     @ApiModelProperty(value = "DESIGN_PRESSURE")
-    @Column(name = "design_temperature", length = 50)
-    private String designTemperature;
+    @Column(name = "design_pressure", length = 50)
+    private String designPressure;
 
     /**
      * DESIGN_TEMPERATURE
      */
     @Size(min = 0, max = 50)
     @ApiModelProperty(value = "DESIGN_TEMPERATURE")
-    @Column(name = "kind_level", length = 50)
-    private String kindLevel;
+    @Column(name = "design_temperature", length = 50)
+    private String designTemperature;
 
     /**
      * KIND_LEVEL
      */
     @Size(min = 0, max = 50)
     @ApiModelProperty(value = "KIND_LEVEL")
-    @Column(name = "inspection_code", length = 50)
-    private String inspectionCode;
+    @Column(name = "kind_level", length = 50)
+    private String kindLevel;
 
     /**
      * INSPECTION_CODE
      */
     @Size(min = 0, max = 50)
     @ApiModelProperty(value = "INSPECTION_CODE")
-    @Column(name = "insulation_code", length = 50)
-    private String insulationCode;
+    @Column(name = "inspection_code", length = 50)
+    private String inspectionCode;
 
     /**
      * INSULATION_CODE
      */
     @Size(min = 0, max = 50)
     @ApiModelProperty(value = "INSULATION_CODE")
-    @Column(name = "insulation_high", length = 50)
-    private String insulationHigh;
+    @Column(name = "insulation_code", length = 50)
+    private String insulationCode;
 
     /**
      * INSULATION_HIGH
      */
     @Size(min = 0, max = 50)
     @ApiModelProperty(value = "INSULATION_HIGH")
-    @Column(name = "paint_code", length = 50)
-    private String paintCode;
+    @Column(name = "insulation_high", length = 50)
+    private String insulationHigh;
 
     /**
      * PAINT_CODE
      */
     @Size(min = 0, max = 50)
     @ApiModelProperty(value = "PAINT_CODE")
-    @Column(name = "p_i_diagram", length = 50)
-    private String pIDiagram;
+    @Column(name = "paint_code", length = 50)
+    private String paintCode;
 
     /**
-     * P_I_DIAGRAM
+     * PI_DIAGRAM
      */
     @Size(min = 0, max = 50)
-    @ApiModelProperty(value = "P_I_DIAGRAM")
-    @Column(name = "test_pressure", length = 50)
-    private String testPressure;
+    @ApiModelProperty(value = "PI_DIAGRAM")
+    @Column(name = "pi_diagram", length = 50)
+    private String piDiagram;
 
     /**
      * TEST_PRESSURE
      */
     @Size(min = 0, max = 50)
     @ApiModelProperty(value = "TEST_PRESSURE")
-    @Column(name = "test_material", length = 50)
-    private String testMaterial;
+    @Column(name = "test_pressure", length = 50)
+    private String testPressure;
 
     /**
      * TEST_MATERIAL
      */
     @Size(min = 0, max = 50)
     @ApiModelProperty(value = "TEST_MATERIAL")
-    @Column(name = "jacketed_pipe", length = 50)
-    private String jacketedPipe;
+    @Column(name = "test_material", length = 50)
+    private String testMaterial;
 
     /**
      * JACKETED_PIPE
      */
-    @Size(min = 0, max = 500)
+    @Size(min = 0, max = 50)
     @ApiModelProperty(value = "JACKETED_PIPE")
-    @Column(name = "remark", length = 500)
-    private String remark;
+    @Column(name = "jacketed_pipe", length = 50)
+    private String jacketedPipe;
 
     /**
      * REMARK
      */
-    @NotNull
-    @ApiModelProperty(value = "REMARK", required = true)
-    @Column(name = "create_time", nullable = false)
-    private Instant createTime;
+    @Size(min = 0, max = 500)
+    @ApiModelProperty(value = "REMARK")
+    @Column(name = "remark", length = 500)
+    private String remark;
 
     /**
      * CREATE_TIME
      */
+    @NotNull
+    @ApiModelProperty(value = "CREATE_TIME", required = true)
+    @Column(name = "create_time", nullable = false)
+    private Instant createTime;
+
+    /**
+     * DEL_FLAG
+     */
     @Min(value = 0)
     @Max(value = 10)
-    @ApiModelProperty(value = "CREATE_TIME")
+    @ApiModelProperty(value = "DEL_FLAG")
     @Column(name = "del_flag")
     private Integer delFlag;
 
@@ -534,17 +538,17 @@ public class PpLine implements Serializable {
         this.paintCode = paintCode;
     }
 
-    public String getpIDiagram() {
-        return pIDiagram;
+    public String getPiDiagram() {
+        return piDiagram;
     }
 
-    public PpLine pIDiagram(String pIDiagram) {
-        this.pIDiagram = pIDiagram;
+    public PpLine piDiagram(String piDiagram) {
+        this.piDiagram = piDiagram;
         return this;
     }
 
-    public void setpIDiagram(String pIDiagram) {
-        this.pIDiagram = pIDiagram;
+    public void setPiDiagram(String piDiagram) {
+        this.piDiagram = piDiagram;
     }
 
     public String getTestPressure() {
@@ -670,7 +674,7 @@ public class PpLine implements Serializable {
             ", insulationCode='" + getInsulationCode() + "'" +
             ", insulationHigh='" + getInsulationHigh() + "'" +
             ", paintCode='" + getPaintCode() + "'" +
-            ", pIDiagram='" + getpIDiagram() + "'" +
+            ", piDiagram='" + getPiDiagram() + "'" +
             ", testPressure='" + getTestPressure() + "'" +
             ", testMaterial='" + getTestMaterial() + "'" +
             ", jacketedPipe='" + getJacketedPipe() + "'" +

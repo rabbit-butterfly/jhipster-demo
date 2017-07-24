@@ -1,7 +1,7 @@
 (function() {
     'use strict';
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .factory('UserArea', UserArea);
 
     UserArea.$inject = ['$resource'];

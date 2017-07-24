@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .config(stateConfig);
 
     stateConfig.$inject = ['$stateProvider'];
@@ -14,7 +14,7 @@
             url: '/pp-line-drawing?page&sort&search',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'pcmsApp.ppLineDrawing.home.title'
+                pageTitle: 'tuxAdminApp.ppLineDrawing.home.title'
             },
             views: {
                 'content@': {
@@ -56,7 +56,7 @@
             url: '/pp-line-drawing/{id}',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'pcmsApp.ppLineDrawing.detail.title'
+                pageTitle: 'tuxAdminApp.ppLineDrawing.detail.title'
             },
             views: {
                 'content@': {

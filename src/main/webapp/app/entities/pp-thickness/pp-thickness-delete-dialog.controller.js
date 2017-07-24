@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .controller('PpThicknessDeleteController',PpThicknessDeleteController);
 
     PpThicknessDeleteController.$inject = ['$uibModalInstance', 'entity', 'PpThickness'];

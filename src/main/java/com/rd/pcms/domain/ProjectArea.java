@@ -13,10 +13,10 @@ import java.util.Objects;
 /**
  * 分包项目：项目的子表
  * @auther:renntrabbit@foxmail.com
- * @date:Tue Jul 18 17:06:29 CST 2017
+ * @date:Sun Jul 23 12:39:36 CST 2017
  * table:project_area
  */
-@ApiModel(description = "分包项目：项目的子表 @auther:renntrabbit@foxmail.com @date:Tue Jul 18 17:06:29 CST 2017 table:project_area")
+@ApiModel(description = "分包项目：项目的子表 @auther:renntrabbit@foxmail.com @date:Sun Jul 23 12:39:36 CST 2017 table:project_area")
 @Entity
 @Table(name = "project_area")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -28,49 +28,53 @@ public class ProjectArea implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
-    @Size(min = 0, max = 19)
-    @Column(name = "comp_id", length = 19, nullable = false)
-    private String compId;
-
     /**
      * COMP_ID
      */
     @NotNull
     @Size(min = 0, max = 19)
     @ApiModelProperty(value = "COMP_ID", required = true)
-    @Column(name = "proj_id", length = 19, nullable = false)
-    private String projId;
+    @Column(name = "comp_id", length = 19, nullable = false)
+    private String compId;
 
     /**
      * PROJ_ID
      */
-    @Size(min = 0, max = 80)
-    @ApiModelProperty(value = "PROJ_ID")
-    @Column(name = "name", length = 80)
-    private String name;
+    @NotNull
+    @Size(min = 0, max = 19)
+    @ApiModelProperty(value = "PROJ_ID", required = true)
+    @Column(name = "proj_id", length = 19, nullable = false)
+    private String projId;
 
     /**
      * NAME
      */
-    @Size(min = 0, max = 100)
+    @Size(min = 0, max = 80)
     @ApiModelProperty(value = "NAME")
-    @Column(name = "en_name", length = 100)
-    private String enName;
+    @Column(name = "name", length = 80)
+    private String name;
 
     /**
      * EN_NAME
      */
-    @Size(min = 0, max = 50)
+    @Size(min = 0, max = 100)
     @ApiModelProperty(value = "EN_NAME")
-    @Column(name = "unit_code", length = 50)
-    private String unitCode;
+    @Column(name = "en_name", length = 100)
+    private String enName;
 
     /**
      * UNIT_CODE
      */
-    @Size(min = 0, max = 80)
+    @Size(min = 0, max = 50)
     @ApiModelProperty(value = "UNIT_CODE")
+    @Column(name = "unit_code", length = 50)
+    private String unitCode;
+
+    /**
+     * SUB_CONSTRACTOR
+     */
+    @Size(min = 0, max = 80)
+    @ApiModelProperty(value = "SUB_CONSTRACTOR")
     @Column(name = "sub_constractor", length = 80)
     private String subConstractor;
 

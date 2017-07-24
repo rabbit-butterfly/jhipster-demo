@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .controller('UserAreaDeleteController',UserAreaDeleteController);
 
     UserAreaDeleteController.$inject = ['$uibModalInstance', 'entity', 'UserArea'];

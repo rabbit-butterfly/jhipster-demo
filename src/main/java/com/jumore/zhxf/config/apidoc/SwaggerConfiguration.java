@@ -67,7 +67,7 @@ public class SwaggerConfiguration {
             .directModelSubstitute(java.time.ZonedDateTime.class, Date.class)
             .directModelSubstitute(java.time.LocalDateTime.class, Date.class)
             .select()
-            .apis(RequestHandlerSelectors.basePackage("com.jumore.zhxf.front.rest"))
+            .apis(RequestHandlerSelectors.basePackage("com.*.*.web.rest"))
             .paths(regex(DEFAULT_INCLUDE_PATTERN))
             .build();
         watch.stop();

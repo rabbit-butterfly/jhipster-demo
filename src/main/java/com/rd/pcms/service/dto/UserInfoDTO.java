@@ -13,17 +13,20 @@ public class UserInfoDTO implements Serializable {
     private Long id;
 
     @NotNull
-    @Size(min = 0, max = 19)
-    private String compId;
+    @Min(value = 0)
+    @Max(value = 19)
+    private Long compId;
 
-    @Size(min = 0, max = 19)
-    private String code;
+    @Min(value = 0)
+    @Max(value = 19)
+    private Long code;
 
     @Size(min = 0, max = 16)
     private String mobile;
 
-    @Size(min = 0, max = 5)
-    private String status;
+    @Min(value = 0)
+    @Max(value = 5)
+    private Integer status;
 
     @Size(min = 0, max = 16)
     private String jobTitle;
@@ -32,8 +35,9 @@ public class UserInfoDTO implements Serializable {
     private String major;
 
     @NotNull
-    @Size(min = 0, max = 19)
-    private String jhUserId;
+    @Min(value = 0)
+    @Max(value = 19)
+    private Long jhUserId;
 
     public Long getId() {
         return id;
@@ -43,19 +47,19 @@ public class UserInfoDTO implements Serializable {
         this.id = id;
     }
 
-    public String getCompId() {
+    public Long getCompId() {
         return compId;
     }
 
-    public void setCompId(String compId) {
+    public void setCompId(Long compId) {
         this.compId = compId;
     }
 
-    public String getCode() {
+    public Long getCode() {
         return code;
     }
 
-    public void setCode(String code) {
+    public void setCode(Long code) {
         this.code = code;
     }
 
@@ -67,11 +71,11 @@ public class UserInfoDTO implements Serializable {
         this.mobile = mobile;
     }
 
-    public String getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 
@@ -91,11 +95,11 @@ public class UserInfoDTO implements Serializable {
         this.major = major;
     }
 
-    public String getJhUserId() {
+    public Long getJhUserId() {
         return jhUserId;
     }
 
-    public void setJhUserId(String jhUserId) {
+    public void setJhUserId(Long jhUserId) {
         this.jhUserId = jhUserId;
     }
 

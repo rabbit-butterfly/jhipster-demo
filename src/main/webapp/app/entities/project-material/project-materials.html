@@ -1,12 +1,12 @@
 <div>
-    <h2 data-translate="pcmsApp.projectMaterial.home.title">Project Materials</h2>
+    <h2 data-translate="tuxAdminApp.projectMaterial.home.title">Project Materials</h2>
     <jhi-alert></jhi-alert>
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-4 no-padding-left">
                 <button class="btn btn-primary" ui-sref="project-material.new" >
                     <span class="glyphicon glyphicon-plus"></span>
-                    <span  data-translate="pcmsApp.projectMaterial.home.createLabel">
+                    <span  data-translate="tuxAdminApp.projectMaterial.home.createLabel">
                         Create new Project Material
                     </span>
                 </button>
@@ -19,12 +19,12 @@
             <thead>
                 <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
                     <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="projId"><span data-translate="pcmsApp.projectMaterial.projId">Proj Id</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="name"><span data-translate="pcmsApp.projectMaterial.name">Name</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="parentId"><span data-translate="pcmsApp.projectMaterial.parentId">Parent Id</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="remark"><span data-translate="pcmsApp.projectMaterial.remark">Remark</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="createTime"><span data-translate="pcmsApp.projectMaterial.createTime">Create Time</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="delFlag"><span data-translate="pcmsApp.projectMaterial.delFlag">Del Flag</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="projId"><span data-translate="tuxAdminApp.projectMaterial.projId">Proj Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="name"><span data-translate="tuxAdminApp.projectMaterial.name">Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="parentId"><span data-translate="tuxAdminApp.projectMaterial.parentId">Parent Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="remark"><span data-translate="tuxAdminApp.projectMaterial.remark">Remark</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="createTime"><span data-translate="tuxAdminApp.projectMaterial.createTime">Create Time</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="delFlag"><span data-translate="tuxAdminApp.projectMaterial.delFlag">Del Flag</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th></th>
                 </tr>
             </thead>

@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .config(stateConfig);
 
     stateConfig.$inject = ['$stateProvider'];
@@ -14,7 +14,7 @@
             url: '/pp-iinspection-tatio?page&sort&search',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'pcmsApp.ppIinspectionTatio.home.title'
+                pageTitle: 'tuxAdminApp.ppIinspectionTatio.home.title'
             },
             views: {
                 'content@': {
@@ -56,7 +56,7 @@
             url: '/pp-iinspection-tatio/{id}',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'pcmsApp.ppIinspectionTatio.detail.title'
+                pageTitle: 'tuxAdminApp.ppIinspectionTatio.detail.title'
             },
             views: {
                 'content@': {

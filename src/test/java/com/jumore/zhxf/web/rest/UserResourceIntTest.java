@@ -1,6 +1,6 @@
 package com.jumore.zhxf.web.rest;
 
-import com.jumore.zhxf.Application;
+import com.Application;
 import com.jumore.zhxf.repository.UserRepository;
 import com.jumore.zhxf.service.UserService;
 import org.junit.Before;

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>增慧学佛</title>
+<title>pcms</title>
 <meta name="description" content="">
 <meta name="google" value="notranslate">
 <meta content="width=device-width,user-scalable=no" name="viewport">
@@ -55,7 +55,7 @@
 		href="/bower_components/bootstrap/less/mixins/grid-framework.less" rel="stylesheet">
 	<link href="/bower_components/font-awesome/css/font-awesome.css" rel="stylesheet">
 	<link href="/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
-	
+
 	<link href="/bower_components/admin-lte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 </head>
 
@@ -65,14 +65,14 @@
 		<div ng-show="{{ENV === 'dev'}}" class="development" ng-cloak=""></div>
 		<div ui-view="navbar" ng-cloak=""></div>
 		<div ui-view="sidebar" ng-cloak=""></div>
-		
-  
+
+
  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper" ui-view="content" style="min-height: 928px;">
   </div>
   <!-- /.content-wrapper -->
 
-  
+
   <!-- /.content-wrapper -->
 
   <footer class="main-footer">
@@ -92,67 +92,55 @@
   <!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->
   <div class="control-sidebar-bg"></div>
-  
-  
+
+
 </div>
 
 	<!--  <script src="bower_components/Modernizr/modernizr.custom.js"></script> -->
+    <!-- build:js app/vendor.js -->
+    <!-- bower:js -->
 	<script src="bower_components/jquery/dist/jquery.js"></script>
 	<script src="bower_components/angular/angular.js"></script>
 	<script src="bower_components/angular-aria/angular-aria.js"></script>
 	<script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
 	<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-	<script
-		src="bower_components/angular-cache-buster/angular-cache-buster.js"></script>
+	<script	src="bower_components/angular-cache-buster/angular-cache-buster.js"></script>
 	<script src="bower_components/angular-cookies/angular-cookies.js"></script>
-	<script
-		src="bower_components/angular-dynamic-locale/src/tmhDynamicLocale.js"></script>
-	<script
-		src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+	<script	src="bower_components/angular-dynamic-locale/src/tmhDynamicLocale.js"></script>
+	<script	src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
 	<script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
 	<script src="bower_components/angular-resource/angular-resource.js"></script>
 	<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
 	<script src="bower_components/angular-translate/angular-translate.js"></script>
 	<script src="bower_components/messageformat/messageformat.js"></script>
-	<script
-		src="bower_components/angular-translate-interpolation-messageformat/angular-translate-interpolation-messageformat.js"></script>
-	<script
-		src="bower_components/angular-translate-loader-partial/angular-translate-loader-partial.js"></script>
-	<script
-		src="bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
-	<script
-		src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-	<script
-		src="bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
+	<script	src="bower_components/angular-translate-interpolation-messageformat/angular-translate-interpolation-messageformat.js"></script>
+	<script	src="bower_components/angular-translate-loader-partial/angular-translate-loader-partial.js"></script>
+	<script	src="bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
+	<script	src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+	<script	src="bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
 	<script src="bower_components/json3/lib/json3.js"></script>
 	<script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
-	<script
-		src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
+	<script	src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
 	<script src="bower_components/sockjs-client/dist/sockjs.js"></script>
 	<script src="bower_components/stomp-websocket/lib/stomp.min.js"></script>
 
-	<script
-		src="bower_components/adf-structures-base/dist/adf-structures-base.min.js"></script>
+	<script	src="bower_components/adf-structures-base/dist/adf-structures-base.min.js"></script>
 	<script src="bower_components/moment/moment.js"></script>
-	<script
-		src="bower_components/adf-widget-clock/dist/adf-widget-clock.min.js"></script>
+	<script	src="bower_components/adf-widget-clock/dist/adf-widget-clock.min.js"></script>
 	<script src="bower_components/angular-markdown-directive/markdown.js"></script>
-	<script
-		src="bower_components/adf-widget-news/dist/adf-widget-news.min.js"></script>
+	<script	src="bower_components/adf-widget-news/dist/adf-widget-news.min.js"></script>
 	<script src="bower_components/showdown/compressed/Showdown.min.js"></script>
 	<script
 		src="bower_components/adf-widget-markdown/dist/adf-widget-markdown.min.js"></script>
 	<script src="bower_components/Sortable/Sortable.js"></script>
 	<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-	<script
-		src="bower_components/adf-widget-weather/dist/adf-widget-weather.js"></script>
-	<script
-		src="bower_components/angular-dashboard-framework/dist/angular-dashboard-framework.min.js"></script>
+	<script	src="bower_components/adf-widget-weather/dist/adf-widget-weather.js"></script>
+	<script	src="bower_components/angular-dashboard-framework/dist/angular-dashboard-framework.min.js"></script>
 	<script src="bower_components/admin-lte/dist/js/app.js"></script>
-	<!-- endbuild -->
+    <!-- endinject -->
+    <!-- endbuild -->
 
 
-	<!-- build:js({.tmp,src/main/webapp}) scripts/app.js -->
 	<script src="scripts/app/app.js"></script>
 	<script src="scripts/app/app.constants.js"></script>
 	<script src="scripts/components/auth/auth.service.js"></script>
@@ -166,16 +154,15 @@
 	<script src="scripts/components/form/maxbytes.directive.js"></script>
 	<script src="scripts/components/form/minbytes.directive.js"></script>
 	<script src="scripts/components/form/pager.directive.js"></script>
+    <script src="scripts/components/form/pagination.constants.js"></script>
 	<script src="scripts/components/form/pagination.directive.js"></script>
 	<script src="scripts/components/admin/audits.service.js"></script>
 	<script src="scripts/components/admin/logs.service.js"></script>
 	<script src="scripts/components/admin/configuration.service.js"></script>
 	<script src="scripts/components/admin/monitoring.service.js"></script>
 	<script src="scripts/components/interceptor/auth.interceptor.js"></script>
-	<script
-		src="scripts/components/interceptor/errorhandler.interceptor.js"></script>
-	<script
-		src="scripts/components/interceptor/notification.interceptor.js"></script>
+	<script	src="scripts/components/interceptor/errorhandler.interceptor.js"></script>
+	<script	src="scripts/components/interceptor/notification.interceptor.js"></script>
 	<script src="scripts/components/navbar/navbar.directive.js"></script>
 	<script src="scripts/components/navbar/navbar.controller.js"></script>
 	<script src="scripts/components/sidebar/sidebar.controller.js"></script>
@@ -188,6 +175,7 @@
 	<script src="scripts/components/alert/alert.directive.js"></script>
 	<script src="scripts/components/util/parse-links.service.js"></script>
 	<script src="scripts/components/util/dateutil.service.js"></script>
+    <script src="scripts/components/util/pagination-util.service.js"></script>
 	<script src="scripts/app/account/account.js"></script>
 	<script src="scripts/app/account/activate/activate.js"></script>
 	<script src="scripts/app/account/activate/activate.controller.js"></script>
@@ -200,18 +188,15 @@
 	<script src="scripts/app/account/register/register.controller.js"></script>
 	<script src="scripts/app/account/settings/settings.js"></script>
 	<script src="scripts/app/account/settings/settings.controller.js"></script>
-	<script
-		src="scripts/app/account/reset/finish/reset.finish.controller.js"></script>
+	<script	src="scripts/app/account/reset/finish/reset.finish.controller.js"></script>
 	<script src="scripts/app/account/reset/finish/reset.finish.js"></script>
-	<script
-		src="scripts/app/account/reset/request/reset.request.controller.js"></script>
+	<script	src="scripts/app/account/reset/request/reset.request.controller.js"></script>
 	<script src="scripts/app/account/reset/request/reset.request.js"></script>
 	<script src="scripts/app/admin/admin.js"></script>
 	<script src="scripts/app/admin/audits/audits.js"></script>
 	<script src="scripts/app/admin/audits/audits.controller.js"></script>
 	<script src="scripts/app/admin/configuration/configuration.js"></script>
-	<script
-		src="scripts/app/admin/configuration/configuration.controller.js"></script>
+	<script	src="scripts/app/admin/configuration/configuration.controller.js"></script>
 	<script src="scripts/app/admin/docs/docs.js"></script>
 	<script src="scripts/app/admin/health/health.js"></script>
 	<script src="scripts/app/admin/health/health.controller.js"></script>
@@ -221,14 +206,10 @@
 	<script src="scripts/app/admin/metrics/metrics.js"></script>
 	<script src="scripts/app/admin/metrics/metrics.controller.js"></script>
 	<script src="scripts/app/admin/metrics/metrics.modal.controller.js"></script>
-	<script
-		src="scripts/app/admin/user-management/user-management-delete-dialog.controller.js"></script>
-	<script
-		src="scripts/app/admin/user-management/user-management-detail.controller.js"></script>
-	<script
-		src="scripts/app/admin/user-management/user-management-dialog.controller.js"></script>
-	<script
-		src="scripts/app/admin/user-management/user-management.controller.js"></script>
+	<script	src="scripts/app/admin/user-management/user-management-delete-dialog.controller.js"></script>
+	<script	src="scripts/app/admin/user-management/user-management-detail.controller.js"></script>
+	<script	src="scripts/app/admin/user-management/user-management-dialog.controller.js"></script>
+	<script	src="scripts/app/admin/user-management/user-management.controller.js"></script>
 	<script src="scripts/app/admin/user-management/user-management.js"></script>
 	<script src="scripts/app/entities/entity.js"></script>
 	<script src="scripts/app/error/error.js"></script>
@@ -246,59 +227,395 @@
 	<script src="scripts/app/admin/tracker/tracker.js"></script>
 	<script src="scripts/app/admin/tracker/tracker.controller.js"></script>
 	<script src="scripts/components/tracker/tracker.service.js"></script>
-	<!-- endbuild -->
+    <script src="scripts/components/tracker/tracker.service.js"></script>
+    <!-- build:js app/app.js  -->
+    <!-- inject:js -->
 
-	<!--引入event模块js -->
-	<script src="scripts/app/admin/event/event.js"></script>
-	<script src="scripts/app/admin/event/event.controller.js"></script>
-	<script src="scripts/app/admin/event/event-dialog.controller.js"></script>
-	<script src="scripts/app/admin/event/eventRegist-detail.controller.js"></script>
-	<script src="scripts/app/admin/event/eventReportCount-detail.controller.js"></script>
-	<script src="scripts/components/user/event.service.js"></script>
+    <script src="app/entities/welder-skill/welder-skill-dialog.controller.js"></script>
+
+    <script src="app/entities/welder-skill/welder-skill-detail.controller.js"></script>
+
+    <script src="app/entities/welder-skill/welder-skill-delete-dialog.controller.js"></script>
+
+    <script src="app/entities/welder-skill/welder-skill.state.js"></script>
+
+    <script src="app/entities/welder-skill/welder-skill.service.js"></script>
+
+    <script src="app/entities/welder-skill/welder-skill.controller.js"></script>
+
+    <script src="app/entities/welder/welder-dialog.controller.js"></script>
+
+    <script src="app/entities/welder/welder-detail.controller.js"></script>
+
+    <script src="app/entities/welder/welder-delete-dialog.controller.js"></script>
+
+    <script src="app/entities/welder/welder.state.js"></script>
+
+    <script src="app/entities/welder/welder.service.js"></script>
+
+    <script src="app/entities/welder/welder.controller.js"></script>
+
+    <script src="app/entities/user-power/user-power-dialog.controller.js"></script>
+
+    <script src="app/entities/user-power/user-power-detail.controller.js"></script>
+
+    <script src="app/entities/user-power/user-power-delete-dialog.controller.js"></script>
+
+    <script src="app/entities/user-power/user-power.state.js"></script>
+
+    <script src="app/entities/user-power/user-power.service.js"></script>
+
+    <script src="app/entities/user-power/user-power.controller.js"></script>
+
+    <script src="app/entities/user-info/user-info-dialog.controller.js"></script>
+
+    <script src="app/entities/user-info/user-info-detail.controller.js"></script>
+
+    <script src="app/entities/user-info/user-info-delete-dialog.controller.js"></script>
+
+    <script src="app/entities/user-info/user-info.state.js"></script>
+
+    <script src="app/entities/user-info/user-info.service.js"></script>
+
+    <script src="app/entities/user-info/user-info.controller.js"></script>
+
+    <script src="app/entities/user-area/user-area-dialog.controller.js"></script>
+
+    <script src="app/entities/user-area/user-area-detail.controller.js"></script>
+
+    <script src="app/entities/user-area/user-area-delete-dialog.controller.js"></script>
+
+    <script src="app/entities/user-area/user-area.state.js"></script>
+
+    <script src="app/entities/user-area/user-area.service.js"></script>
+
+    <script src="app/entities/user-area/user-area.controller.js"></script>
+
+    <script src="app/entities/report-count/report-count-dialog.controller.js"></script>
+
+    <script src="app/entities/report-count/report-count-detail.controller.js"></script>
+
+    <script src="app/entities/report-count/report-count-delete-dialog.controller.js"></script>
+
+    <script src="app/entities/report-count/report-count.state.js"></script>
+
+    <script src="app/entities/report-count/report-count.service.js"></script>
+
+    <script src="app/entities/report-count/report-count.search.service.js"></script>
+
+    <script src="app/entities/report-count/report-count.controller.js"></script>
+
+    <script src="app/entities/regist/regist-dialog.controller.js"></script>
+
+    <script src="app/entities/regist/regist-detail.controller.js"></script>
+
+    <script src="app/entities/regist/regist-delete-dialog.controller.js"></script>
+
+    <script src="app/entities/regist/regist.state.js"></script>
+
+    <script src="app/entities/regist/regist.service.js"></script>
+
+    <script src="app/entities/regist/regist.search.service.js"></script>
+
+    <script src="app/entities/regist/regist.controller.js"></script>
+
+    <script src="app/entities/project-welder/project-welder-dialog.controller.js"></script>
+
+    <script src="app/entities/project-welder/project-welder-detail.controller.js"></script>
+
+    <script src="app/entities/project-welder/project-welder-delete-dialog.controller.js"></script>
+
+    <script src="app/entities/project-welder/project-welder.state.js"></script>
+
+    <script src="app/entities/project-welder/project-welder.service.js"></script>
+
+    <script src="app/entities/project-welder/project-welder.controller.js"></script>
+
+    <script src="app/entities/project-user/project-user-dialog.controller.js"></script>
+
+    <script src="app/entities/project-user/project-user-detail.controller.js"></script>
+
+    <script src="app/entities/project-user/project-user-delete-dialog.controller.js"></script>
+
+    <script src="app/entities/project-user/project-user.state.js"></script>
+
+    <script src="app/entities/project-user/project-user.service.js"></script>
+
+    <script src="app/entities/project-user/project-user.controller.js"></script>
+
+    <script src="app/entities/project-sub-constractor/project-sub-constractor-dialog.controller.js"></script>
+
+    <script src="app/entities/project-sub-constractor/project-sub-constractor-detail.controller.js"></script>
+
+    <script src="app/entities/project-sub-constractor/project-sub-constractor-delete-dialog.controller.js"></script>
+
+    <script src="app/entities/project-sub-constractor/project-sub-constractor.state.js"></script>
+
+    <script src="app/entities/project-sub-constractor/project-sub-constractor.service.js"></script>
+
+    <script src="app/entities/project-sub-constractor/project-sub-constractor.controller.js"></script>
+
+    <script src="app/entities/project-spec/project-spec-dialog.controller.js"></script>
+
+    <script src="app/entities/project-spec/project-spec-detail.controller.js"></script>
+
+    <script src="app/entities/project-spec/project-spec-delete-dialog.controller.js"></script>
+
+    <script src="app/entities/project-spec/project-spec.state.js"></script>
+
+    <script src="app/entities/project-spec/project-spec.service.js"></script>
+
+    <script src="app/entities/project-spec/project-spec.controller.js"></script>
+
+    <script src="app/entities/project-material/project-material-dialog.controller.js"></script>
+
+    <script src="app/entities/project-material/project-material-detail.controller.js"></script>
+
+    <script src="app/entities/project-material/project-material-delete-dialog.controller.js"></script>
+
+    <script src="app/entities/project-material/project-material.state.js"></script>
+
+    <script src="app/entities/project-material/project-material.service.js"></script>
+
+    <script src="app/entities/project-material/project-material.controller.js"></script>
+
+    <script src="app/entities/project-area/project-area-dialog.controller.js"></script>
+
+    <script src="app/entities/project-area/project-area-detail.controller.js"></script>
+
+    <script src="app/entities/project-area/project-area-delete-dialog.controller.js"></script>
+
+    <script src="app/entities/project-area/project-area.state.js"></script>
+
+    <script src="app/entities/project-area/project-area.service.js"></script>
+
+    <script src="app/entities/project-area/project-area.controller.js"></script>
+
+    <script src="app/entities/project/project-dialog.controller.js"></script>
+
+    <script src="app/entities/project/project-detail.controller.js"></script>
+
+    <script src="app/entities/project/project-delete-dialog.controller.js"></script>
+
+    <script src="app/entities/project/project.state.js"></script>
+
+    <script src="app/entities/project/project.service.js"></script>
+
+    <script src="app/entities/project/project.search.service.js"></script>
+
+    <script src="app/entities/project/project.controller.js"></script>
+
+    <script src="app/entities/pp-thickness/pp-thickness-dialog.controller.js"></script>
+
+    <script src="app/entities/pp-thickness/pp-thickness-detail.controller.js"></script>
+
+    <script src="app/entities/pp-thickness/pp-thickness-delete-dialog.controller.js"></script>
+
+    <script src="app/entities/pp-thickness/pp-thickness.state.js"></script>
+
+    <script src="app/entities/pp-thickness/pp-thickness.service.js"></script>
+
+    <script src="app/entities/pp-thickness/pp-thickness.controller.js"></script>
+
+    <script src="app/entities/pp-line-weld-material/pp-line-weld-material-dialog.controller.js"></script>
+
+    <script src="app/entities/pp-line-weld-material/pp-line-weld-material-detail.controller.js"></script>
+
+    <script src="app/entities/pp-line-weld-material/pp-line-weld-material-delete-dialog.controller.js"></script>
+
+    <script src="app/entities/pp-line-weld-material/pp-line-weld-material.state.js"></script>
+
+    <script src="app/entities/pp-line-weld-material/pp-line-weld-material.service.js"></script>
+
+    <script src="app/entities/pp-line-weld-material/pp-line-weld-material.controller.js"></script>
+
+    <script src="app/entities/pp-line-weld-entrust/pp-line-weld-entrust-dialog.controller.js"></script>
+
+    <script src="app/entities/pp-line-weld-entrust/pp-line-weld-entrust-detail.controller.js"></script>
+
+    <script src="app/entities/pp-line-weld-entrust/pp-line-weld-entrust-delete-dialog.controller.js"></script>
+
+    <script src="app/entities/pp-line-weld-entrust/pp-line-weld-entrust.state.js"></script>
+
+    <script src="app/entities/pp-line-weld-entrust/pp-line-weld-entrust.service.js"></script>
+
+    <script src="app/entities/pp-line-weld-entrust/pp-line-weld-entrust.controller.js"></script>
+
+    <script src="app/entities/pp-line-weld-check/pp-line-weld-check-dialog.controller.js"></script>
+
+    <script src="app/entities/pp-line-weld-check/pp-line-weld-check-detail.controller.js"></script>
+
+    <script src="app/entities/pp-line-weld-check/pp-line-weld-check-delete-dialog.controller.js"></script>
+
+    <script src="app/entities/pp-line-weld-check/pp-line-weld-check.state.js"></script>
+
+    <script src="app/entities/pp-line-weld-check/pp-line-weld-check.service.js"></script>
+
+    <script src="app/entities/pp-line-weld-check/pp-line-weld-check.controller.js"></script>
+
+    <script src="app/entities/pp-line-weld/pp-line-weld-dialog.controller.js"></script>
+
+    <script src="app/entities/pp-line-weld/pp-line-weld-detail.controller.js"></script>
+
+    <script src="app/entities/pp-line-weld/pp-line-weld-delete-dialog.controller.js"></script>
+
+    <script src="app/entities/pp-line-weld/pp-line-weld.state.js"></script>
+
+    <script src="app/entities/pp-line-weld/pp-line-weld.service.js"></script>
+
+    <script src="app/entities/pp-line-weld/pp-line-weld.controller.js"></script>
+
+    <script src="app/entities/pp-line-drawing/pp-line-drawing-dialog.controller.js"></script>
+
+    <script src="app/entities/pp-line-drawing/pp-line-drawing-detail.controller.js"></script>
+
+    <script src="app/entities/pp-line-drawing/pp-line-drawing-delete-dialog.controller.js"></script>
+
+    <script src="app/entities/pp-line-drawing/pp-line-drawing.state.js"></script>
+
+    <script src="app/entities/pp-line-drawing/pp-line-drawing.service.js"></script>
+
+    <script src="app/entities/pp-line-drawing/pp-line-drawing.controller.js"></script>
+
+    <script src="app/entities/pp-line/pp-line-dialog.controller.js"></script>
+
+    <script src="app/entities/pp-line/pp-line-detail.controller.js"></script>
+
+    <script src="app/entities/pp-line/pp-line-delete-dialog.controller.js"></script>
+
+    <script src="app/entities/pp-line/pp-line.state.js"></script>
+
+    <script src="app/entities/pp-line/pp-line.service.js"></script>
+
+    <script src="app/entities/pp-line/pp-line.controller.js"></script>
+
+    <script src="app/entities/pp-inspection-rule/pp-inspection-rule-dialog.controller.js"></script>
+
+    <script src="app/entities/pp-inspection-rule/pp-inspection-rule-detail.controller.js"></script>
+
+    <script src="app/entities/pp-inspection-rule/pp-inspection-rule-delete-dialog.controller.js"></script>
+
+    <script src="app/entities/pp-inspection-rule/pp-inspection-rule.state.js"></script>
+
+    <script src="app/entities/pp-inspection-rule/pp-inspection-rule.service.js"></script>
+
+    <script src="app/entities/pp-inspection-rule/pp-inspection-rule.controller.js"></script>
+
+    <script src="app/entities/pp-iinspection-tatio/pp-iinspection-tatio-dialog.controller.js"></script>
+
+    <script src="app/entities/pp-iinspection-tatio/pp-iinspection-tatio-detail.controller.js"></script>
+
+    <script src="app/entities/pp-iinspection-tatio/pp-iinspection-tatio-delete-dialog.controller.js"></script>
+
+    <script src="app/entities/pp-iinspection-tatio/pp-iinspection-tatio.state.js"></script>
+
+    <script src="app/entities/pp-iinspection-tatio/pp-iinspection-tatio.service.js"></script>
+
+    <script src="app/entities/pp-iinspection-tatio/pp-iinspection-tatio.controller.js"></script>
+
+    <script src="app/entities/pp-grade-materail/pp-grade-materail-dialog.controller.js"></script>
+
+    <script src="app/entities/pp-grade-materail/pp-grade-materail-detail.controller.js"></script>
+
+    <script src="app/entities/pp-grade-materail/pp-grade-materail-delete-dialog.controller.js"></script>
+
+    <script src="app/entities/pp-grade-materail/pp-grade-materail.state.js"></script>
+
+    <script src="app/entities/pp-grade-materail/pp-grade-materail.service.js"></script>
+
+    <script src="app/entities/pp-grade-materail/pp-grade-materail.controller.js"></script>
+
+    <script src="app/entities/news/news-dialog.controller.js"></script>
+
+    <script src="app/entities/news/news-detail.controller.js"></script>
+
+    <script src="app/entities/news/news-delete-dialog.controller.js"></script>
+
+    <script src="app/entities/news/news.state.js"></script>
+
+    <script src="app/entities/news/news.service.js"></script>
+
+    <script src="app/entities/news/news.search.service.js"></script>
+
+    <script src="app/entities/news/news.controller.js"></script>
+
+    <script src="app/entities/member/member-dialog.controller.js"></script>
+
+    <script src="app/entities/member/member-detail.controller.js"></script>
+
+    <script src="app/entities/member/member-delete-dialog.controller.js"></script>
+
+    <script src="app/entities/member/member.state.js"></script>
+
+    <script src="app/entities/member/member.service.js"></script>
+
+    <script src="app/entities/member/member.search.service.js"></script>
+
+    <script src="app/entities/member/member.controller.js"></script>
+
+    <script src="app/entities/feedback/feedback-dialog.controller.js"></script>
+
+    <script src="app/entities/feedback/feedback-detail.controller.js"></script>
+
+    <script src="app/entities/feedback/feedback-delete-dialog.controller.js"></script>
+
+    <script src="app/entities/feedback/feedback.state.js"></script>
+
+    <script src="app/entities/feedback/feedback.service.js"></script>
+
+    <script src="app/entities/feedback/feedback.search.service.js"></script>
+
+    <script src="app/entities/feedback/feedback.controller.js"></script>
+
+    <script src="app/entities/event/event-dialog.controller.js"></script>
+
+    <script src="app/entities/event/event-detail.controller.js"></script>
+
+    <script src="app/entities/event/event-delete-dialog.controller.js"></script>
+
+    <script src="app/entities/event/event.state.js"></script>
+
+    <script src="app/entities/event/event.service.js"></script>
+
+    <script src="app/entities/event/event.search.service.js"></script>
+
+    <script src="app/entities/event/event.controller.js"></script>
+
+    <script src="app/entities/company/company-dialog.controller.js"></script>
+
+    <script src="app/entities/company/company-detail.controller.js"></script>
+
+    <script src="app/entities/company/company-delete-dialog.controller.js"></script>
+
+    <script src="app/entities/company/company.state.js"></script>
+
+    <script src="app/entities/company/company.service.js"></script>
+
+    <script src="app/entities/company/company.search.service.js"></script>
+
+    <script src="app/entities/company/company.controller.js"></script>
+
+    <script src="app/entities/category/category-dialog.controller.js"></script>
+
+    <script src="app/entities/category/category-detail.controller.js"></script>
+
+    <script src="app/entities/category/category-delete-dialog.controller.js"></script>
+
+    <script src="app/entities/category/category.state.js"></script>
+
+    <script src="app/entities/category/category.service.js"></script>
+
+    <script src="app/entities/category/category.search.service.js"></script>
+
+    <script src="app/entities/category/category.controller.js"></script>
+
+    <!-- endinject -->
+    <!-- endbuild -->
 
 	<!-- Bootstrap WYSIHTML5 textarea -->
 	<script src="/bower_components/admin-lte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 	<script src="/bower_components/admin-lte/plugins/ckeditor/ckeditor.js"></script>
-	
-	
-	<!--引入oa-takeVacationDetail模块js -->
-	<script
-		src="scripts/app/admin/oa-takeVacationDetail/takeVacationDetail.js"></script>
-	<script
-		src="scripts/app/admin/oa-takeVacationDetail/takeVacationDetail.controller.js"></script>
-	<script
-		src="scripts/app/admin/oa-takeVacationDetail/takeVacationDetail-detail.controller.js"></script>
-	<script
-		src="scripts/app/admin/oa-takeVacationDetail/takeVacationDetail-dialog.controller.js"></script>
-	<script
-		src="scripts/app/admin/oa-takeVacationDetail/takeVacationDetail-delete-dialog.controller.js"></script>
-	<script
-		src="scripts/app/admin/oa-takeVacationDetail/takeVacationDetail-fail.controller.js"></script>
-	<script src="scripts/components/user/takeVacationDetail.service.js"></script>
 
-    <!--引入oa-check 签到 模块-->
-	<script src="scripts/app/account/check/check.controller.js"></script>
-	<script src="scripts/app/account/check/check.directive.js"></script>
-	<script src="scripts/app/account/check/check.js"></script>
-
-	<!--引入zhxf 回向记录 模块-->
-	<script src="scripts/app/admin/feedback-record/feedback-record.controller.js"></script>
-	<script src="scripts/app/admin/feedback-record/feedback-record.js"></script>
-	<script src="scripts/components/user/feedback.service.js"></script>
-
-	<!--引入zhxf 类目维护模块-->
-	<script src="scripts/app/admin/category-maintenance/category-maintenance.controller.js"></script>
-	<script src="scripts/app/admin/category-maintenance/category-maintenance.js"></script>
-	<script src="scripts/app/admin/category-maintenance/category-maintenance-dialog.controller.js"></script>
-	<script src="scripts/app/admin/category-maintenance/category-maintenance-dialog.controller-two.js"></script>
-	<script src="scripts/app/admin/category-maintenance/category-maintenance-detail.controller.js"></script>
-	<script src="scripts/components/user/category.service.js"></script>	
-
-	<!--引入zhxf 资讯管理模块-->
-	<script src="scripts/app/admin/news-management/news-management.controller.js"></script>
-	<script src="scripts/app/admin/news-management/news-management.js"></script>
-	<script src="scripts/app/admin/news-management/news-management-dialog.controller.js"></script>
-	<script src="scripts/components/user/news.service.js"></script>
 
 	<!-- 日期时间插件 -->
 	<script
@@ -307,16 +624,12 @@
 		src="bower_components/admin-lte/plugins/timepicker/bootstrap-timepicker.min.js"></script>
 	<script
 		src="bower_components/admin-lte/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
-	<script
-		src="bower_components/admin-lte/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" /></script>
-	
+	<script	src="bower_components/admin-lte/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" />
+
 	<!--  upload -->
-	<script
-		src="bower_components/angular/angular.min.js" /></script>
-	<script
-	src="bower_components/ng-file-upload/ng-file-upload.min.js" /></script>
-	<script
-	src="bower_components/ng-file-upload/ng-file-upload-shim.min.js" /></script>
+	<script		src="bower_components/angular/angular.min.js"/>
+	<script	src="bower_components/ng-file-upload/ng-file-upload.min.js" />
+	<script	src="bower_components/ng-file-upload/ng-file-upload-shim.min.js" />
 </body>
 
 </html>

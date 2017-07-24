@@ -9,30 +9,27 @@ import org.springframework.web.client.RestOperations;
 
 public class YunWeoCheckWorker implements IWorker {
 
-    private final Logger log = LoggerFactory.getLogger(IAttendanceHelpper.class);
+	private final Logger log = LoggerFactory.getLogger(IAttendanceHelpper.class);
 
-    // private final static String HOST = "http://www.jumoreoa.com";
+	// private final static String HOST = "http://www.jumoreoa.com";
 
-    private final static String LOGIN = "http://www.jumoreoa.com/oa/login.do?action=check";
+	private final static String LOGIN = "http://www.jumoreoa.com/oa/login.do?action=check";
 
-    private final static String LOGINOUT = "http://www.jumoreoa.com/oa/checkinoutOa.do?action=checkout";
+	private final static String LOGINOUT = "http://www.jumoreoa.com/oa/checkinoutOa.do?action=checkout";
 
-    // private final static String QUERY_LIST =
-    // "http://www.jumoreoa.com/oa/checkinoutOa.do?action=listCheckInOut";
+	// private final static String QUERY_LIST =
+	// "http://www.jumoreoa.com/oa/checkinoutOa.do?action=listCheckInOut";
 
-    private final RestOperations restOperations;
+	private final RestOperations restOperations;
 
-    public YunWeoCheckWorker(RestTemplateBuilder restTemplateBuilder) {
-        this.restOperations = restTemplateBuilder.build();
-    }
+	public YunWeoCheckWorker(RestTemplateBuilder restTemplateBuilder) {
+		this.restOperations = restTemplateBuilder.build();
+	}
 
     @Override
     public void excute() {
 
     }
-
-	/*@Inject
-    private CheckConfigService checkConfigService;
 
 /*	@Inject
 	private CheckConfigService checkConfigService;*/
@@ -146,10 +143,10 @@ public class YunWeoCheckWorker implements IWorker {
 	}
 
 	*//**
-     * 随机获取一个下班时间
-     *
-     * @return
-     *//*
+	 * 随机获取一个下班时间
+	 *
+	 * @return
+	 *//*
 	private String getCheckTime() {
 		// 随机取个下班时间
 		// 前后半小时

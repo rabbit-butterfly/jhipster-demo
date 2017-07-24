@@ -3,9 +3,9 @@ package com.rd.pcms.web.rest;
 import com.codahale.metrics.annotation.Timed;
 import com.jumore.zhxf.web.rest.util.HeaderUtil;
 import com.jumore.zhxf.web.rest.util.PaginationUtil;
+import com.jumore.zhxf.web.rest.util.ResponseUtil;
 import com.rd.pcms.service.UserInfoService;
 import com.rd.pcms.service.dto.UserInfoDTO;
-import io.github.jhipster.web.util.ResponseUtil;
 import io.swagger.annotations.ApiParam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,8 +19,10 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 /**
  * REST controller for managing UserInfo.

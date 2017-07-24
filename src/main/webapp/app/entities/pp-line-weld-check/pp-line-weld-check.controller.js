@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .controller('PpLineWeldCheckController', PpLineWeldCheckController);
 
     PpLineWeldCheckController.$inject = ['$state', 'PpLineWeldCheck', 'ParseLinks', 'AlertService', 'paginationConstants', 'pagingParams'];

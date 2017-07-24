@@ -4,7 +4,7 @@
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
                 ng-click="vm.clear()">&times;</button>
-        <h4 class="modal-title" id="myPpLineDrawingLabel" data-translate="pcmsApp.ppLineDrawing.home.createOrEditLabel">Create or edit a Pp Line Drawing</h4>
+        <h4 class="modal-title" id="myPpLineDrawingLabel" data-translate="tuxAdminApp.ppLineDrawing.home.createOrEditLabel">Create or edit a Pp Line Drawing</h4>
     </div>
     <div class="modal-body">
         <jhi-alert-error></jhi-alert-error>
@@ -14,7 +14,7 @@
                     ng-model="vm.ppLineDrawing.id" readonly />
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="pcmsApp.ppLineDrawing.pipeId" for="field_pipeId">Pipe Id</label>
+            <label class="control-label" data-translate="tuxAdminApp.ppLineDrawing.pipeId" for="field_pipeId">Pipe Id</label>
             <input type="text" class="form-control" name="pipeId" id="field_pipeId"
                     ng-model="vm.ppLineDrawing.pipeId"
                     required ng-minlength="0" ng-maxlength="19"/>
@@ -34,7 +34,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="pcmsApp.ppLineDrawing.pageCode" for="field_pageCode">Page Code</label>
+            <label class="control-label" data-translate="tuxAdminApp.ppLineDrawing.pageCode" for="field_pageCode">Page Code</label>
             <input type="number" class="form-control" name="pageCode" id="field_pageCode"
                     ng-model="vm.ppLineDrawing.pageCode"
                     min="0" max="10"/>
@@ -54,7 +54,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="pcmsApp.ppLineDrawing.versionCode" for="field_versionCode">Version Code</label>
+            <label class="control-label" data-translate="tuxAdminApp.ppLineDrawing.versionCode" for="field_versionCode">Version Code</label>
             <input type="text" class="form-control" name="versionCode" id="field_versionCode"
                     ng-model="vm.ppLineDrawing.versionCode"
                     ng-minlength="0" ng-maxlength="50"/>
@@ -70,7 +70,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="pcmsApp.ppLineDrawing.alterationCode" for="field_alterationCode">Alteration Code</label>
+            <label class="control-label" data-translate="tuxAdminApp.ppLineDrawing.alterationCode" for="field_alterationCode">Alteration Code</label>
             <input type="text" class="form-control" name="alterationCode" id="field_alterationCode"
                     ng-model="vm.ppLineDrawing.alterationCode"
                     ng-minlength="0" ng-maxlength="50"/>
@@ -86,7 +86,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="pcmsApp.ppLineDrawing.name" for="field_name">Name</label>
+            <label class="control-label" data-translate="tuxAdminApp.ppLineDrawing.name" for="field_name">Name</label>
             <input type="text" class="form-control" name="name" id="field_name"
                     ng-model="vm.ppLineDrawing.name"
                     ng-minlength="0" ng-maxlength="50"/>
@@ -102,7 +102,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="pcmsApp.ppLineDrawing.filePath" for="field_filePath">File Path</label>
+            <label class="control-label" data-translate="tuxAdminApp.ppLineDrawing.filePath" for="field_filePath">File Path</label>
             <input type="text" class="form-control" name="filePath" id="field_filePath"
                     ng-model="vm.ppLineDrawing.filePath"
                     ng-minlength="0" ng-maxlength="200"/>
@@ -118,7 +118,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="pcmsApp.ppLineDrawing.remark" for="field_remark">Remark</label>
+            <label class="control-label" data-translate="tuxAdminApp.ppLineDrawing.remark" for="field_remark">Remark</label>
             <input type="text" class="form-control" name="remark" id="field_remark"
                     ng-model="vm.ppLineDrawing.remark"
                     ng-minlength="0" ng-maxlength="500"/>
@@ -134,7 +134,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="pcmsApp.ppLineDrawing.createTime" for="field_createTime">Create Time</label>
+            <label class="control-label" data-translate="tuxAdminApp.ppLineDrawing.createTime" for="field_createTime">Create Time</label>
                 <div class="input-group">
                     <input id="field_createTime" type="text" class="form-control" name="createTime" datetime-picker="{{dateformat}}" ng-model="vm.ppLineDrawing.createTime" is-open="vm.datePickerOpenStatus.createTime"
                     required/>
@@ -154,7 +154,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="pcmsApp.ppLineDrawing.delFlag" for="field_delFlag">Del Flag</label>
+            <label class="control-label" data-translate="tuxAdminApp.ppLineDrawing.delFlag" for="field_delFlag">Del Flag</label>
             <input type="number" class="form-control" name="delFlag" id="field_delFlag"
                     ng-model="vm.ppLineDrawing.delFlag"
                     min="0" max="10"/>

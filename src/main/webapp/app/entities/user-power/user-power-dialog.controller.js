@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .controller('UserPowerDialogController', UserPowerDialogController);
 
     UserPowerDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'UserPower'];
@@ -32,7 +32,7 @@
         }
 
         function onSaveSuccess (result) {
-            $scope.$emit('pcmsApp:userPowerUpdate', result);
+            $scope.$emit('tuxAdminApp:userPowerUpdate', result);
             $uibModalInstance.close(result);
             vm.isSaving = false;
         }

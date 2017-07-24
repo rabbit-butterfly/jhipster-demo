@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .controller('PpThicknessDetailController', PpThicknessDetailController);
 
     PpThicknessDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'PpThickness'];
@@ -13,7 +13,7 @@
         vm.ppThickness = entity;
         vm.previousState = previousState.name;
 
-        var unsubscribe = $rootScope.$on('pcmsApp:ppThicknessUpdate', function(event, result) {
+        var unsubscribe = $rootScope.$on('tuxAdminApp:ppThicknessUpdate', function(event, result) {
             vm.ppThickness = result;
         });
         $scope.$on('$destroy', unsubscribe);

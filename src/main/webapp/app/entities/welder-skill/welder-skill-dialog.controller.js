@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .controller('WelderSkillDialogController', WelderSkillDialogController);
 
     WelderSkillDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'WelderSkill'];
@@ -34,7 +34,7 @@
         }
 
         function onSaveSuccess (result) {
-            $scope.$emit('pcmsApp:welderSkillUpdate', result);
+            $scope.$emit('tuxAdminApp:welderSkillUpdate', result);
             $uibModalInstance.close(result);
             vm.isSaving = false;
         }

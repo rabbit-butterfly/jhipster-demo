@@ -13,10 +13,10 @@ import java.util.Objects;
 /**
  * 用户菜单权限
  * @auther:renntrabbit@foxmail.com
- * @date:Tue Jul 18 17:06:29 CST 2017
+ * @date:Sun Jul 23 12:39:36 CST 2017
  * table:user_power
  */
-@ApiModel(description = "用户菜单权限 @auther:renntrabbit@foxmail.com @date:Tue Jul 18 17:06:29 CST 2017 table:user_power")
+@ApiModel(description = "用户菜单权限 @auther:renntrabbit@foxmail.com @date:Sun Jul 23 12:39:36 CST 2017 table:user_power")
 @Entity
 @Table(name = "user_power")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -28,26 +28,30 @@ public class UserPower implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
-    @Size(min = 0, max = 19)
-    @Column(name = "user_id", length = 19, nullable = false)
-    private String userId;
-
     /**
      * USER_ID
      */
     @NotNull
-    @Size(min = 0, max = 3)
+    @Size(min = 0, max = 19)
     @ApiModelProperty(value = "USER_ID", required = true)
-    @Column(name = "parent_code", length = 3, nullable = false)
-    private String parentCode;
+    @Column(name = "user_id", length = 19, nullable = false)
+    private String userId;
 
     /**
      * PARENT_CODE
      */
     @NotNull
-    @Size(min = 0, max = 8)
+    @Size(min = 0, max = 3)
     @ApiModelProperty(value = "PARENT_CODE", required = true)
+    @Column(name = "parent_code", length = 3, nullable = false)
+    private String parentCode;
+
+    /**
+     * FUNC_CODE
+     */
+    @NotNull
+    @Size(min = 0, max = 8)
+    @ApiModelProperty(value = "FUNC_CODE", required = true)
     @Column(name = "func_code", length = 8, nullable = false)
     private String funcCode;
 

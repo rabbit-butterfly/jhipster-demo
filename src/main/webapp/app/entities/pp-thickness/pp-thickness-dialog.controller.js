@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .controller('PpThicknessDialogController', PpThicknessDialogController);
 
     PpThicknessDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'PpThickness'];
@@ -34,7 +34,7 @@
         }
 
         function onSaveSuccess (result) {
-            $scope.$emit('pcmsApp:ppThicknessUpdate', result);
+            $scope.$emit('tuxAdminApp:ppThicknessUpdate', result);
             $uibModalInstance.close(result);
             vm.isSaving = false;
         }

@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .config(stateConfig);
 
     stateConfig.$inject = ['$stateProvider'];
@@ -14,7 +14,7 @@
             url: '/pp-line?page&sort&search',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'pcmsApp.ppLine.home.title'
+                pageTitle: 'tuxAdminApp.ppLine.home.title'
             },
             views: {
                 'content@': {
@@ -56,7 +56,7 @@
             url: '/pp-line/{id}',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'pcmsApp.ppLine.detail.title'
+                pageTitle: 'tuxAdminApp.ppLine.detail.title'
             },
             views: {
                 'content@': {
@@ -145,7 +145,7 @@
                                 insulationCode: null,
                                 insulationHigh: null,
                                 paintCode: null,
-                                pIDiagram: null,
+                                piDiagram: null,
                                 testPressure: null,
                                 testMaterial: null,
                                 jacketedPipe: null,

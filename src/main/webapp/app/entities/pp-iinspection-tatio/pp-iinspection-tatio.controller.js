@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .controller('PpIinspectionTatioController', PpIinspectionTatioController);
 
     PpIinspectionTatioController.$inject = ['$state', 'PpIinspectionTatio', 'ParseLinks', 'AlertService', 'paginationConstants', 'pagingParams'];

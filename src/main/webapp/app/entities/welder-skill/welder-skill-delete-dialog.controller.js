@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .controller('WelderSkillDeleteController',WelderSkillDeleteController);
 
     WelderSkillDeleteController.$inject = ['$uibModalInstance', 'entity', 'WelderSkill'];

@@ -14,10 +14,10 @@ import java.util.Objects;
 /**
  * 焊工工人表-包括：焊工姓名、手机号码、所在班组等
  * @auther:renntrabbit@foxmail.com
- * @date:Tue Jul 18 17:06:29 CST 2017
+ * @date:Sun Jul 23 12:39:36 CST 2017
  * table:welder
  */
-@ApiModel(description = "焊工工人表-包括：焊工姓名、手机号码、所在班组等 @auther:renntrabbit@foxmail.com @date:Tue Jul 18 17:06:29 CST 2017 table:welder")
+@ApiModel(description = "焊工工人表-包括：焊工姓名、手机号码、所在班组等 @auther:renntrabbit@foxmail.com @date:Sun Jul 23 12:39:36 CST 2017 table:welder")
 @Entity
 @Table(name = "welder")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -29,82 +29,86 @@ public class Welder implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    /**
+     * COMP_ID
+     */
     @NotNull
     @Size(min = 0, max = 19)
+    @ApiModelProperty(value = "COMP_ID", required = true)
     @Column(name = "comp_id", length = 19, nullable = false)
     private String compId;
 
     /**
-     * COMP_ID
+     * CODE
      */
     @Size(min = 0, max = 20)
-    @ApiModelProperty(value = "COMP_ID")
+    @ApiModelProperty(value = "CODE")
     @Column(name = "code", length = 20)
     private String code;
 
     /**
-     * CODE
+     * NAME
      */
     @NotNull
     @Size(min = 0, max = 10)
-    @ApiModelProperty(value = "CODE", required = true)
+    @ApiModelProperty(value = "NAME", required = true)
     @Column(name = "name", length = 10, nullable = false)
     private String name;
 
     /**
-     * NAME
+     * MOBILLE
      */
     @Size(min = 0, max = 16)
-    @ApiModelProperty(value = "NAME")
+    @ApiModelProperty(value = "MOBILLE")
     @Column(name = "mobille", length = 16)
     private String mobille;
 
     /**
-     * MOBILLE
+     * IDENTITY_CARD
      */
     @Size(min = 0, max = 20)
-    @ApiModelProperty(value = "MOBILLE")
+    @ApiModelProperty(value = "IDENTITY_CARD")
     @Column(name = "identity_card", length = 20)
     private String identityCard;
 
     /**
-     * IDENTITY_CARD
+     * WORK_TERM
      */
     @Size(min = 0, max = 10)
-    @ApiModelProperty(value = "IDENTITY_CARD")
+    @ApiModelProperty(value = "WORK_TERM")
     @Column(name = "work_term", length = 10)
     private String workTerm;
 
     /**
-     * WORK_TERM
+     * UNIT_NAME
      */
     @Size(min = 0, max = 50)
-    @ApiModelProperty(value = "WORK_TERM")
+    @ApiModelProperty(value = "UNIT_NAME")
     @Column(name = "unit_name", length = 50)
     private String unitName;
 
     /**
-     * UNIT_NAME
+     * CREATE_TIME
      */
     @NotNull
-    @ApiModelProperty(value = "UNIT_NAME", required = true)
+    @ApiModelProperty(value = "CREATE_TIME", required = true)
     @Column(name = "create_time", nullable = false)
     private Instant createTime;
 
     /**
-     * CREATE_TIME
+     * DEL_FLAG
      */
     @Min(value = 0)
     @Max(value = 10)
-    @ApiModelProperty(value = "CREATE_TIME")
+    @ApiModelProperty(value = "DEL_FLAG")
     @Column(name = "del_flag")
     private Integer delFlag;
 
     /**
-     * DEL_FLAG
+     * REMARK
      */
     @Size(min = 0, max = 500)
-    @ApiModelProperty(value = "DEL_FLAG")
+    @ApiModelProperty(value = "REMARK")
     @Column(name = "remark", length = 500)
     private String remark;
 

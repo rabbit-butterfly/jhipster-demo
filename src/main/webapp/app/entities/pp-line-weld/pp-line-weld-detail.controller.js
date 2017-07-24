@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .controller('PpLineWeldDetailController', PpLineWeldDetailController);
 
     PpLineWeldDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'PpLineWeld'];
@@ -13,7 +13,7 @@
         vm.ppLineWeld = entity;
         vm.previousState = previousState.name;
 
-        var unsubscribe = $rootScope.$on('pcmsApp:ppLineWeldUpdate', function(event, result) {
+        var unsubscribe = $rootScope.$on('tuxAdminApp:ppLineWeldUpdate', function(event, result) {
             vm.ppLineWeld = result;
         });
         $scope.$on('$destroy', unsubscribe);

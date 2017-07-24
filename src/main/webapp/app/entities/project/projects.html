@@ -1,12 +1,12 @@
 <div>
-    <h2 data-translate="pcmsApp.project.home.title">Projects</h2>
+    <h2 data-translate="tuxAdminApp.project.home.title">Projects</h2>
     <jhi-alert></jhi-alert>
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-4 no-padding-left">
                 <button class="btn btn-primary" ui-sref="project.new" >
                     <span class="glyphicon glyphicon-plus"></span>
-                    <span  data-translate="pcmsApp.project.home.createLabel">
+                    <span  data-translate="tuxAdminApp.project.home.createLabel">
                         Create new Project
                     </span>
                 </button>
@@ -19,18 +19,18 @@
             <thead>
                 <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
                     <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="code"><span data-translate="pcmsApp.project.code">Code</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="name"><span data-translate="pcmsApp.project.name">Name</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="enName"><span data-translate="pcmsApp.project.enName">En Name</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="supervisor"><span data-translate="pcmsApp.project.supervisor">Supervisor</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="oContractor"><span data-translate="pcmsApp.project.oContractor">O Contractor</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="hContractor"><span data-translate="pcmsApp.project.hContractor">H Contractor</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="startDate"><span data-translate="pcmsApp.project.startDate">Start Date</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="endDate"><span data-translate="pcmsApp.project.endDate">End Date</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="status"><span data-translate="pcmsApp.project.status">Status</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="delFlag"><span data-translate="pcmsApp.project.delFlag">Del Flag</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="remark"><span data-translate="pcmsApp.project.remark">Remark</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="extendAttr"><span data-translate="pcmsApp.project.extendAttr">Extend Attr</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="code"><span data-translate="tuxAdminApp.project.code">Code</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="name"><span data-translate="tuxAdminApp.project.name">Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="enName"><span data-translate="tuxAdminApp.project.enName">En Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="supervisor"><span data-translate="tuxAdminApp.project.supervisor">Supervisor</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="ownerContractor"><span data-translate="tuxAdminApp.project.ownerContractor">Owner Contractor</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="totalContractor"><span data-translate="tuxAdminApp.project.totalContractor">Total Contractor</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="startDate"><span data-translate="tuxAdminApp.project.startDate">Start Date</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="endDate"><span data-translate="tuxAdminApp.project.endDate">End Date</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="status"><span data-translate="tuxAdminApp.project.status">Status</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="delFlag"><span data-translate="tuxAdminApp.project.delFlag">Del Flag</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="remark"><span data-translate="tuxAdminApp.project.remark">Remark</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="extendAttr"><span data-translate="tuxAdminApp.project.extendAttr">Extend Attr</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th></th>
                 </tr>
             </thead>
@@ -41,8 +41,8 @@
                     <td>{{project.name}}</td>
                     <td>{{project.enName}}</td>
                     <td>{{project.supervisor}}</td>
-                    <td>{{project.oContractor}}</td>
-                    <td>{{project.hContractor}}</td>
+                    <td>{{project.ownerContractor}}</td>
+                    <td>{{project.totalContractor}}</td>
                     <td>{{project.startDate | date:'medium'}}</td>
                     <td>{{project.endDate | date:'medium'}}</td>
                     <td>{{project.status}}</td>

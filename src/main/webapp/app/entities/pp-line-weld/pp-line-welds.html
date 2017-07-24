@@ -1,12 +1,12 @@
 <div>
-    <h2 data-translate="pcmsApp.ppLineWeld.home.title">Pp Line Welds</h2>
+    <h2 data-translate="tuxAdminApp.ppLineWeld.home.title">Pp Line Welds</h2>
     <jhi-alert></jhi-alert>
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-4 no-padding-left">
                 <button class="btn btn-primary" ui-sref="pp-line-weld.new" >
                     <span class="glyphicon glyphicon-plus"></span>
-                    <span  data-translate="pcmsApp.ppLineWeld.home.createLabel">
+                    <span  data-translate="tuxAdminApp.ppLineWeld.home.createLabel">
                         Create new Pp Line Weld
                     </span>
                 </button>
@@ -19,37 +19,37 @@
             <thead>
                 <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
                     <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="pipeId"><span data-translate="pcmsApp.ppLineWeld.pipeId">Pipe Id</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="pageCode"><span data-translate="pcmsApp.ppLineWeld.pageCode">Page Code</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="jiont"><span data-translate="pcmsApp.ppLineWeld.jiont">Jiont</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="wpsno"><span data-translate="pcmsApp.ppLineWeld.wpsno">Wpsno</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="jlocation"><span data-translate="pcmsApp.ppLineWeld.jlocation">Jlocation</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="jclass"><span data-translate="pcmsApp.ppLineWeld.jclass">Jclass</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="finishDate"><span data-translate="pcmsApp.ppLineWeld.finishDate">Finish Date</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="jsize"><span data-translate="pcmsApp.ppLineWeld.jsize">Jsize</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="thickness"><span data-translate="pcmsApp.ppLineWeld.thickness">Thickness</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="jtype"><span data-translate="pcmsApp.ppLineWeld.jtype">Jtype</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="weldingProcess"><span data-translate="pcmsApp.ppLineWeld.weldingProcess">Welding Process</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="fixedRotat"><span data-translate="pcmsApp.ppLineWeld.fixedRotat">Fixed Rotat</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="rootWelder"><span data-translate="pcmsApp.ppLineWeld.rootWelder">Root Welder</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="examitem"><span data-translate="pcmsApp.ppLineWeld.examitem">Examitem</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="coverWelder"><span data-translate="pcmsApp.ppLineWeld.coverWelder">Cover Welder</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="visual"><span data-translate="pcmsApp.ppLineWeld.visual">Visual</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="pieceNo1"><span data-translate="pcmsApp.ppLineWeld.pieceNo1">Piece No 1</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="weldingMatial"><span data-translate="pcmsApp.ppLineWeld.weldingMatial">Welding Matial</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="pieceNo2"><span data-translate="pcmsApp.ppLineWeld.pieceNo2">Piece No 2</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="heatNo1"><span data-translate="pcmsApp.ppLineWeld.heatNo1">Heat No 1</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="heatNo2"><span data-translate="pcmsApp.ppLineWeld.heatNo2">Heat No 2</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="alterCode"><span data-translate="pcmsApp.ppLineWeld.alterCode">Alter Code</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="alterType"><span data-translate="pcmsApp.ppLineWeld.alterType">Alter Type</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="dailyNo"><span data-translate="pcmsApp.ppLineWeld.dailyNo">Daily No</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="hardessRec"><span data-translate="pcmsApp.ppLineWeld.hardessRec">Hardess Rec</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="heatRec"><span data-translate="pcmsApp.ppLineWeld.heatRec">Heat Rec</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="rtLot"><span data-translate="pcmsApp.ppLineWeld.rtLot">Rt Lot</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="rtSample"><span data-translate="pcmsApp.ppLineWeld.rtSample">Rt Sample</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="remark"><span data-translate="pcmsApp.ppLineWeld.remark">Remark</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="createTime"><span data-translate="pcmsApp.ppLineWeld.createTime">Create Time</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="delFlag"><span data-translate="pcmsApp.ppLineWeld.delFlag">Del Flag</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="pipeId"><span data-translate="tuxAdminApp.ppLineWeld.pipeId">Pipe Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="pageCode"><span data-translate="tuxAdminApp.ppLineWeld.pageCode">Page Code</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="jiont"><span data-translate="tuxAdminApp.ppLineWeld.jiont">Jiont</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="wpsno"><span data-translate="tuxAdminApp.ppLineWeld.wpsno">Wpsno</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="jlocation"><span data-translate="tuxAdminApp.ppLineWeld.jlocation">Jlocation</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="jclass"><span data-translate="tuxAdminApp.ppLineWeld.jclass">Jclass</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="finishDate"><span data-translate="tuxAdminApp.ppLineWeld.finishDate">Finish Date</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="jsize"><span data-translate="tuxAdminApp.ppLineWeld.jsize">Jsize</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="thickness"><span data-translate="tuxAdminApp.ppLineWeld.thickness">Thickness</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="jtype"><span data-translate="tuxAdminApp.ppLineWeld.jtype">Jtype</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="weldingProcess"><span data-translate="tuxAdminApp.ppLineWeld.weldingProcess">Welding Process</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="fixedRotat"><span data-translate="tuxAdminApp.ppLineWeld.fixedRotat">Fixed Rotat</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="rootWelder"><span data-translate="tuxAdminApp.ppLineWeld.rootWelder">Root Welder</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="examitem"><span data-translate="tuxAdminApp.ppLineWeld.examitem">Examitem</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="coverWelder"><span data-translate="tuxAdminApp.ppLineWeld.coverWelder">Cover Welder</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="visual"><span data-translate="tuxAdminApp.ppLineWeld.visual">Visual</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="pieceNo1"><span data-translate="tuxAdminApp.ppLineWeld.pieceNo1">Piece No 1</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="weldingMatial"><span data-translate="tuxAdminApp.ppLineWeld.weldingMatial">Welding Matial</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="pieceNo2"><span data-translate="tuxAdminApp.ppLineWeld.pieceNo2">Piece No 2</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="heatNo1"><span data-translate="tuxAdminApp.ppLineWeld.heatNo1">Heat No 1</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="heatNo2"><span data-translate="tuxAdminApp.ppLineWeld.heatNo2">Heat No 2</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="alterCode"><span data-translate="tuxAdminApp.ppLineWeld.alterCode">Alter Code</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="alterType"><span data-translate="tuxAdminApp.ppLineWeld.alterType">Alter Type</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="dailyNo"><span data-translate="tuxAdminApp.ppLineWeld.dailyNo">Daily No</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="hardessRec"><span data-translate="tuxAdminApp.ppLineWeld.hardessRec">Hardess Rec</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="heatRec"><span data-translate="tuxAdminApp.ppLineWeld.heatRec">Heat Rec</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="rtLot"><span data-translate="tuxAdminApp.ppLineWeld.rtLot">Rt Lot</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="rtSample"><span data-translate="tuxAdminApp.ppLineWeld.rtSample">Rt Sample</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="remark"><span data-translate="tuxAdminApp.ppLineWeld.remark">Remark</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="createTime"><span data-translate="tuxAdminApp.ppLineWeld.createTime">Create Time</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="delFlag"><span data-translate="tuxAdminApp.ppLineWeld.delFlag">Del Flag</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th></th>
                 </tr>
             </thead>

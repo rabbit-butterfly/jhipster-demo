@@ -14,10 +14,10 @@ import java.util.Objects;
 /**
  * 管道壁厚设置表
  * @auther:renntrabbit@foxmail.com
- * @date:Tue Jul 18 17:06:29 CST 2017
+ * @date:Sun Jul 23 12:39:36 CST 2017
  * table:pp_thickness
  */
-@ApiModel(description = "管道壁厚设置表 @auther:renntrabbit@foxmail.com @date:Tue Jul 18 17:06:29 CST 2017 table:pp_thickness")
+@ApiModel(description = "管道壁厚设置表 @auther:renntrabbit@foxmail.com @date:Sun Jul 23 12:39:36 CST 2017 table:pp_thickness")
 @Entity
 @Table(name = "pp_thickness")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -29,66 +29,70 @@ public class PpThickness implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
-    @Size(min = 0, max = 19)
-    @Column(name = "comp_id", length = 19, nullable = false)
-    private String compId;
-
     /**
      * COMP_ID
      */
     @NotNull
     @Size(min = 0, max = 19)
     @ApiModelProperty(value = "COMP_ID", required = true)
-    @Column(name = "proj_id", length = 19, nullable = false)
-    private String projId;
+    @Column(name = "comp_id", length = 19, nullable = false)
+    private String compId;
 
     /**
      * PROJ_ID
      */
-    @Size(min = 0, max = 5)
-    @ApiModelProperty(value = "PROJ_ID")
-    @Column(name = "jsize", length = 5)
-    private String jsize;
+    @NotNull
+    @Size(min = 0, max = 19)
+    @ApiModelProperty(value = "PROJ_ID", required = true)
+    @Column(name = "proj_id", length = 19, nullable = false)
+    private String projId;
 
     /**
      * JSIZE
      */
-    @Size(min = 0, max = 50)
+    @Size(min = 0, max = 5)
     @ApiModelProperty(value = "JSIZE")
-    @Column(name = "wall_thick_code", length = 50)
-    private String wallThickCode;
+    @Column(name = "jsize", length = 5)
+    private String jsize;
 
     /**
      * WALL_THICK_CODE
      */
-    @Size(min = 0, max = 19)
+    @Size(min = 0, max = 50)
     @ApiModelProperty(value = "WALL_THICK_CODE")
-    @Column(name = "external_diameter", length = 19)
-    private String externalDiameter;
+    @Column(name = "wall_thick_code", length = 50)
+    private String wallThickCode;
 
     /**
      * EXTERNAL_DIAMETER
      */
     @Size(min = 0, max = 19)
     @ApiModelProperty(value = "EXTERNAL_DIAMETER")
-    @Column(name = "thickness", length = 19)
-    private String thickness;
+    @Column(name = "external_diameter", length = 19)
+    private String externalDiameter;
 
     /**
      * THICKNESS
      */
-    @NotNull
-    @ApiModelProperty(value = "THICKNESS", required = true)
-    @Column(name = "create_time", nullable = false)
-    private Instant createTime;
+    @Size(min = 0, max = 19)
+    @ApiModelProperty(value = "THICKNESS")
+    @Column(name = "thickness", length = 19)
+    private String thickness;
 
     /**
      * CREATE_TIME
      */
+    @NotNull
+    @ApiModelProperty(value = "CREATE_TIME", required = true)
+    @Column(name = "create_time", nullable = false)
+    private Instant createTime;
+
+    /**
+     * DEL_FLAG
+     */
     @Min(value = 0)
     @Max(value = 10)
-    @ApiModelProperty(value = "CREATE_TIME")
+    @ApiModelProperty(value = "DEL_FLAG")
     @Column(name = "del_flag")
     private Integer delFlag;
 

@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .controller('WelderDetailController', WelderDetailController);
 
     WelderDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Welder'];
@@ -13,7 +13,7 @@
         vm.welder = entity;
         vm.previousState = previousState.name;
 
-        var unsubscribe = $rootScope.$on('pcmsApp:welderUpdate', function(event, result) {
+        var unsubscribe = $rootScope.$on('tuxAdminApp:welderUpdate', function(event, result) {
             vm.welder = result;
         });
         $scope.$on('$destroy', unsubscribe);

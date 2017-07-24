@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .config(stateConfig);
 
     stateConfig.$inject = ['$stateProvider'];
@@ -14,7 +14,7 @@
             url: '/pp-grade-materail?page&sort&search',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'pcmsApp.ppGradeMaterail.home.title'
+                pageTitle: 'tuxAdminApp.ppGradeMaterail.home.title'
             },
             views: {
                 'content@': {
@@ -56,7 +56,7 @@
             url: '/pp-grade-materail/{id}',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'pcmsApp.ppGradeMaterail.detail.title'
+                pageTitle: 'tuxAdminApp.ppGradeMaterail.detail.title'
             },
             views: {
                 'content@': {

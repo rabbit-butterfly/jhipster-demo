@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .controller('UserPowerController', UserPowerController);
 
     UserPowerController.$inject = ['$state', 'UserPower', 'ParseLinks', 'AlertService', 'paginationConstants', 'pagingParams'];

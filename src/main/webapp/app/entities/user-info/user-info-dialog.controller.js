@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .controller('UserInfoDialogController', UserInfoDialogController);
 
     UserInfoDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'UserInfo'];
@@ -32,7 +32,7 @@
         }
 
         function onSaveSuccess (result) {
-            $scope.$emit('pcmsApp:userInfoUpdate', result);
+            $scope.$emit('tuxAdminApp:userInfoUpdate', result);
             $uibModalInstance.close(result);
             vm.isSaving = false;
         }

@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .controller('PpGradeMaterailDialogController', PpGradeMaterailDialogController);
 
     PpGradeMaterailDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'PpGradeMaterail'];
@@ -34,7 +34,7 @@
         }
 
         function onSaveSuccess (result) {
-            $scope.$emit('pcmsApp:ppGradeMaterailUpdate', result);
+            $scope.$emit('tuxAdminApp:ppGradeMaterailUpdate', result);
             $uibModalInstance.close(result);
             vm.isSaving = false;
         }

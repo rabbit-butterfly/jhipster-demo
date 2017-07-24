@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .controller('PpLineDialogController', PpLineDialogController);
 
     PpLineDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'PpLine'];
@@ -34,7 +34,7 @@
         }
 
         function onSaveSuccess (result) {
-            $scope.$emit('pcmsApp:ppLineUpdate', result);
+            $scope.$emit('tuxAdminApp:ppLineUpdate', result);
             $uibModalInstance.close(result);
             vm.isSaving = false;
         }

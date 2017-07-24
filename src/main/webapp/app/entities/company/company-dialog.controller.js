@@ -1,8 +1,8 @@
-(function() {
+    (function() {
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .controller('CompanyDialogController', CompanyDialogController);
 
     CompanyDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Company'];
@@ -25,6 +25,7 @@
         }
 
         function save () {
+            debugger
             vm.isSaving = true;
             if (vm.company.id !== null) {
                 Company.update(vm.company, onSaveSuccess, onSaveError);
@@ -34,7 +35,7 @@
         }
 
         function onSaveSuccess (result) {
-            $scope.$emit('pcmsApp:companyUpdate', result);
+            $scope.$emit('tuxAdminApp:companyUpdate', result);
             $uibModalInstance.close(result);
             vm.isSaving = false;
         }

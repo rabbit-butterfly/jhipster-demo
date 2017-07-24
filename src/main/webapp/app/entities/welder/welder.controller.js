@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .controller('WelderController', WelderController);
 
     WelderController.$inject = ['$state', 'Welder', 'ParseLinks', 'AlertService', 'paginationConstants', 'pagingParams'];

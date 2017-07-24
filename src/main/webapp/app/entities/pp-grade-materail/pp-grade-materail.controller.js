@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .controller('PpGradeMaterailController', PpGradeMaterailController);
 
     PpGradeMaterailController.$inject = ['$state', 'PpGradeMaterail', 'ParseLinks', 'AlertService', 'paginationConstants', 'pagingParams'];

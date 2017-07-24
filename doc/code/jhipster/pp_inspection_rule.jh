@@ -2,19 +2,19 @@
 /**
 *抽检规则设置表
 * @auther:renntrabbit@foxmail.com
-* @date:Tue Jul 18 17:06:29 CST 2017
+* @date:Sun Jul 23 12:39:36 CST 2017
 * table:pp_inspection_rule
 */
 entity PpInspectionRule (pp_inspection_rule)
 {
-	compId String  required  minlength(0) maxlength(19), /** COMP_ID */
-	projId String  required  minlength(0) maxlength(19), /** PROJ_ID */
-	material String    minlength(0) maxlength(50), /** MATERIAL */
-	ppClass String    minlength(0) maxlength(50), /** PP_CLASS */
-	jacketedPipe String    minlength(0) maxlength(50), /** JACKETED_PIPE */
-	inspectionCode String    minlength(0) maxlength(50), /** @ 来源抽检比例表 中的代号 */
-	createTime Instant required , /** CREATE_TIME */
-	delFlag Integer   min(0) max(10) /** DEL_FLAG */
+	compId String  required  minlength(0) maxlength(19)  /** COMP_ID */
+	projId String  required  minlength(0) maxlength(19)  /** PROJ_ID */
+	material String    minlength(0) maxlength(50)  /** MATERIAL */
+	ppClass String    minlength(0) maxlength(50)  /** PP_CLASS */
+	jacketedPipe String    minlength(0) maxlength(50)  /** JACKETED_PIPE */
+	inspectionCode String    minlength(0) maxlength(50)  /** @ 来源抽检比例表 中的代号 */
+	createTime Instant required   /** CREATE_TIME */
+	delFlag Integer   min(0) max(10)  /** DEL_FLAG */
 }
 service  PpInspectionRule with serviceClass
 service  PpInspectionRule with serviceImpl

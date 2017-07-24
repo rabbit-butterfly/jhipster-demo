@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .controller('PpLineDrawingController', PpLineDrawingController);
 
     PpLineDrawingController.$inject = ['$state', 'PpLineDrawing', 'ParseLinks', 'AlertService', 'paginationConstants', 'pagingParams'];

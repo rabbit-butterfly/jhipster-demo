@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .controller('PpLineWeldEntrustController', PpLineWeldEntrustController);
 
     PpLineWeldEntrustController.$inject = ['$state', 'PpLineWeldEntrust', 'ParseLinks', 'AlertService', 'paginationConstants', 'pagingParams'];

@@ -2,19 +2,19 @@
 /**
 *管道壁厚设置表
 * @auther:renntrabbit@foxmail.com
-* @date:Tue Jul 18 17:06:29 CST 2017
+* @date:Sun Jul 23 12:39:36 CST 2017
 * table:pp_thickness
 */
 entity PpThickness (pp_thickness)
 {
-	compId String  required  minlength(0) maxlength(19), /** COMP_ID */
-	projId String  required  minlength(0) maxlength(19), /** PROJ_ID */
-	jsize String    minlength(0) maxlength(5), /** JSIZE */
-	wallThickCode String    minlength(0) maxlength(50), /** WALL_THICK_CODE */
-	externalDiameter String    minlength(0) maxlength(19), /** EXTERNAL_DIAMETER */
-	thickness String    minlength(0) maxlength(19), /** THICKNESS */
-	createTime Instant required , /** CREATE_TIME */
-	delFlag Integer   min(0) max(10) /** DEL_FLAG */
+	compId String  required  minlength(0) maxlength(19)  /** COMP_ID */
+	projId String  required  minlength(0) maxlength(19)  /** PROJ_ID */
+	jsize String    minlength(0) maxlength(5)  /** JSIZE */
+	wallThickCode String    minlength(0) maxlength(50)  /** WALL_THICK_CODE */
+	externalDiameter String    minlength(0) maxlength(19)  /** EXTERNAL_DIAMETER */
+	thickness String    minlength(0) maxlength(19)  /** THICKNESS */
+	createTime Instant required   /** CREATE_TIME */
+	delFlag Integer   min(0) max(10)  /** DEL_FLAG */
 }
 service  PpThickness with serviceClass
 service  PpThickness with serviceImpl

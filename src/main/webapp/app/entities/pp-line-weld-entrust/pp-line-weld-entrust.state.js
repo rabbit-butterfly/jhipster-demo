@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .config(stateConfig);
 
     stateConfig.$inject = ['$stateProvider'];
@@ -14,7 +14,7 @@
             url: '/pp-line-weld-entrust?page&sort&search',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'pcmsApp.ppLineWeldEntrust.home.title'
+                pageTitle: 'tuxAdminApp.ppLineWeldEntrust.home.title'
             },
             views: {
                 'content@': {
@@ -56,7 +56,7 @@
             url: '/pp-line-weld-entrust/{id}',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'pcmsApp.ppLineWeldEntrust.detail.title'
+                pageTitle: 'tuxAdminApp.ppLineWeldEntrust.detail.title'
             },
             views: {
                 'content@': {

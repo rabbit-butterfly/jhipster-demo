@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .controller('UserAreaDetailController', UserAreaDetailController);
 
     UserAreaDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'UserArea'];
@@ -13,7 +13,7 @@
         vm.userArea = entity;
         vm.previousState = previousState.name;
 
-        var unsubscribe = $rootScope.$on('pcmsApp:userAreaUpdate', function(event, result) {
+        var unsubscribe = $rootScope.$on('tuxAdminApp:userAreaUpdate', function(event, result) {
             vm.userArea = result;
         });
         $scope.$on('$destroy', unsubscribe);

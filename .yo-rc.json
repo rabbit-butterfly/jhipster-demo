@@ -1,8 +1,10 @@
 {
   "generator-jhipster": {
-    "baseName": "pcms",
+
+    "baseName": "tuxAdminApp",
     "packageName": "com.rd.pcms",
     "packageFolder": "com/rd/pcms",
+
     "authenticationType": "session",
     "hibernateCache": "hazelcast",
     "clusteredHttpSession": "hazelcast",

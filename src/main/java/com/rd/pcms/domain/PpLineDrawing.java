@@ -14,10 +14,10 @@ import java.util.Objects;
 /**
  * 管线-图片
  * @auther:renntrabbit@foxmail.com
- * @date:Tue Jul 18 17:06:29 CST 2017
+ * @date:Sun Jul 23 12:39:36 CST 2017
  * table:pp_line_drawing
  */
-@ApiModel(description = "管线-图片 @auther:renntrabbit@foxmail.com @date:Tue Jul 18 17:06:29 CST 2017 table:pp_line_drawing")
+@ApiModel(description = "管线-图片 @auther:renntrabbit@foxmail.com @date:Sun Jul 23 12:39:36 CST 2017 table:pp_line_drawing")
 @Entity
 @Table(name = "pp_line_drawing")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -29,74 +29,78 @@ public class PpLineDrawing implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    /**
+     * PIPE_ID
+     */
     @NotNull
     @Size(min = 0, max = 19)
+    @ApiModelProperty(value = "PIPE_ID", required = true)
     @Column(name = "pipe_id", length = 19, nullable = false)
     private String pipeId;
 
     /**
-     * PIPE_ID
+     * PAGE_CODE
      */
     @Min(value = 0)
     @Max(value = 10)
-    @ApiModelProperty(value = "PIPE_ID")
+    @ApiModelProperty(value = "PAGE_CODE")
     @Column(name = "page_code")
     private Integer pageCode;
-
-    /**
-     * PAGE_CODE
-     */
-    @Size(min = 0, max = 50)
-    @ApiModelProperty(value = "PAGE_CODE")
-    @Column(name = "version_code", length = 50)
-    private String versionCode;
 
     /**
      * VERSION_CODE
      */
     @Size(min = 0, max = 50)
     @ApiModelProperty(value = "VERSION_CODE")
-    @Column(name = "alteration_code", length = 50)
-    private String alterationCode;
+    @Column(name = "version_code", length = 50)
+    private String versionCode;
 
     /**
      * ALTERATION_CODE
      */
     @Size(min = 0, max = 50)
     @ApiModelProperty(value = "ALTERATION_CODE")
-    @Column(name = "name", length = 50)
-    private String name;
+    @Column(name = "alteration_code", length = 50)
+    private String alterationCode;
 
     /**
      * NAME
      */
-    @Size(min = 0, max = 200)
+    @Size(min = 0, max = 50)
     @ApiModelProperty(value = "NAME")
-    @Column(name = "file_path", length = 200)
-    private String filePath;
+    @Column(name = "name", length = 50)
+    private String name;
 
     /**
      * FILE_PATH
      */
-    @Size(min = 0, max = 500)
+    @Size(min = 0, max = 200)
     @ApiModelProperty(value = "FILE_PATH")
-    @Column(name = "remark", length = 500)
-    private String remark;
+    @Column(name = "file_path", length = 200)
+    private String filePath;
 
     /**
      * REMARK
      */
-    @NotNull
-    @ApiModelProperty(value = "REMARK", required = true)
-    @Column(name = "create_time", nullable = false)
-    private Instant createTime;
+    @Size(min = 0, max = 500)
+    @ApiModelProperty(value = "REMARK")
+    @Column(name = "remark", length = 500)
+    private String remark;
 
     /**
      * CREATE_TIME
      */
+    @NotNull
+    @ApiModelProperty(value = "CREATE_TIME", required = true)
+    @Column(name = "create_time", nullable = false)
+    private Instant createTime;
+
+    /**
+     * DEL_FLAG
+     */
     @Min(value = 0)
     @Max(value = 10)
-    @ApiModelProperty(value = "CREATE_TIME")
+    @ApiModelProperty(value = "DEL_FLAG")
     @Column(name = "del_flag")
     private Integer delFlag;
 

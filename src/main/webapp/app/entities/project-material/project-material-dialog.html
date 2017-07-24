@@ -4,7 +4,7 @@
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
                 ng-click="vm.clear()">&times;</button>
-        <h4 class="modal-title" id="myProjectMaterialLabel" data-translate="pcmsApp.projectMaterial.home.createOrEditLabel">Create or edit a Project Material</h4>
+        <h4 class="modal-title" id="myProjectMaterialLabel" data-translate="tuxAdminApp.projectMaterial.home.createOrEditLabel">Create or edit a Project Material</h4>
     </div>
     <div class="modal-body">
         <jhi-alert-error></jhi-alert-error>
@@ -14,7 +14,7 @@
                     ng-model="vm.projectMaterial.id" readonly />
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="pcmsApp.projectMaterial.projId" for="field_projId">Proj Id</label>
+            <label class="control-label" data-translate="tuxAdminApp.projectMaterial.projId" for="field_projId">Proj Id</label>
             <input type="text" class="form-control" name="projId" id="field_projId"
                     ng-model="vm.projectMaterial.projId"
                     ng-minlength="0" ng-maxlength="19"/>
@@ -30,7 +30,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="pcmsApp.projectMaterial.name" for="field_name">Name</label>
+            <label class="control-label" data-translate="tuxAdminApp.projectMaterial.name" for="field_name">Name</label>
             <input type="text" class="form-control" name="name" id="field_name"
                     ng-model="vm.projectMaterial.name"
                     ng-minlength="0" ng-maxlength="80"/>
@@ -46,7 +46,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="pcmsApp.projectMaterial.parentId" for="field_parentId">Parent Id</label>
+            <label class="control-label" data-translate="tuxAdminApp.projectMaterial.parentId" for="field_parentId">Parent Id</label>
             <input type="text" class="form-control" name="parentId" id="field_parentId"
                     ng-model="vm.projectMaterial.parentId"
                     ng-minlength="0" ng-maxlength="19"/>
@@ -62,7 +62,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="pcmsApp.projectMaterial.remark" for="field_remark">Remark</label>
+            <label class="control-label" data-translate="tuxAdminApp.projectMaterial.remark" for="field_remark">Remark</label>
             <input type="text" class="form-control" name="remark" id="field_remark"
                     ng-model="vm.projectMaterial.remark"
                     ng-minlength="0" ng-maxlength="500"/>
@@ -78,7 +78,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="pcmsApp.projectMaterial.createTime" for="field_createTime">Create Time</label>
+            <label class="control-label" data-translate="tuxAdminApp.projectMaterial.createTime" for="field_createTime">Create Time</label>
                 <div class="input-group">
                     <input id="field_createTime" type="text" class="form-control" name="createTime" datetime-picker="{{dateformat}}" ng-model="vm.projectMaterial.createTime" is-open="vm.datePickerOpenStatus.createTime"
                     required/>
@@ -98,7 +98,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="pcmsApp.projectMaterial.delFlag" for="field_delFlag">Del Flag</label>
+            <label class="control-label" data-translate="tuxAdminApp.projectMaterial.delFlag" for="field_delFlag">Del Flag</label>
             <input type="number" class="form-control" name="delFlag" id="field_delFlag"
                     ng-model="vm.projectMaterial.delFlag"
                     min="0" max="10"/>

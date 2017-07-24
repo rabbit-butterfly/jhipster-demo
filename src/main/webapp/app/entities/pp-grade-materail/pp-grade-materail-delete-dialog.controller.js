@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .controller('PpGradeMaterailDeleteController',PpGradeMaterailDeleteController);
 
     PpGradeMaterailDeleteController.$inject = ['$uibModalInstance', 'entity', 'PpGradeMaterail'];

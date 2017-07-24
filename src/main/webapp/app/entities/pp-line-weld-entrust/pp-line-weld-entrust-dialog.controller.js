@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .controller('PpLineWeldEntrustDialogController', PpLineWeldEntrustDialogController);
 
     PpLineWeldEntrustDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'PpLineWeldEntrust'];
@@ -34,7 +34,7 @@
         }
 
         function onSaveSuccess (result) {
-            $scope.$emit('pcmsApp:ppLineWeldEntrustUpdate', result);
+            $scope.$emit('tuxAdminApp:ppLineWeldEntrustUpdate', result);
             $uibModalInstance.close(result);
             vm.isSaving = false;
         }

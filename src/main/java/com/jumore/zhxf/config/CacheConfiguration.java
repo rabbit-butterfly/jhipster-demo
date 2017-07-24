@@ -63,9 +63,9 @@ public class CacheConfiguration {
             config.getNetworkConfig().getJoin().getMulticastConfig().setEnabled(false);
             config.getNetworkConfig().getJoin().getTcpIpConfig().setEnabled(false);
         }
-        
+
         config.getMapConfigs().put("default", initializeDefaultMapConfig());
-        config.getMapConfigs().put("com.jumore.zhxf.domain.*", initializeDomainMapConfig(jHipsterProperties));
+        config.getMapConfigs().put("com.*..*.domain.*", initializeDomainMapConfig(jHipsterProperties));
         config.getMapConfigs().put("clustered-http-sessions", initializeClusteredSession(jHipsterProperties));
 
         hazelcastInstance = HazelcastInstanceFactory.newHazelcastInstance(config);

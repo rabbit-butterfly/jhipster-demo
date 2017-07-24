@@ -51,7 +51,7 @@
             </ul>
         </li>
     </ul>
-    
+
     <ul class="sidebar-menu" ng-switch="isAuthenticated()">
         <li class="treeview" id="account">
             <a href="#" ng-click="setActive('account')">
@@ -66,7 +66,7 @@
                -->
                <li ui-sref-active="active" ng-switch-when="true"><a ui-sref="sessions" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-cloud"></span>
                    &#xA0;<span translate="global.menu.account.sessions">Sessions</span></a></li>
-               <!-- 
+               <!--
                 <li ui-sref-active="active" ng-switch-when="true"><a href="" ng-click="logout()" id="logout" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-log-out"></span>
                    &#xA0;<span translate="global.menu.account.logout">Sign out</span></a></li>
                 -->
@@ -77,8 +77,8 @@
           </ul>
         </li>
     </ul>
-    
-    <ul class="sidebar-menu">
+
+   <!-- <ul class="sidebar-menu">
         <li class="treeview" id="dashboard">
        		<a ng-click="setActive('dashboard')">
                	<i class="fa fa-dashboard"></i> <span>共修管理</span> <i class="fa fa-angle-left pull-right"></i>
@@ -87,8 +87,8 @@
                 <li ><a ui-sref="event" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span>共修活动</span></a></li>
             </ul>
         </li>
-    </ul>
-    <ul class="sidebar-menu">
+    </ul>-->
+    <!--<ul class="sidebar-menu">
         <li class="treeview" id="dashboard2">
        		<a ng-click="setActive('dashboard2')">
                	<i class="fa fa-dashboard"></i> <span>回向管理</span> <i class="fa fa-angle-left pull-right"></i>
@@ -96,26 +96,341 @@
             <ul class="treeview-menu">
                 <li ><a ui-sref="feedback-record" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span>回向记录</span></a></li>
             </ul>
+
+            <ul class="treeview-menu">
+                <li ><a ui-sref="feedback-record" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span>回向记录</span></a></li>
+            </ul>
+
+        <li ui-sref-active="active"><a ui-sref="tracker" data-toggle="collapse" ng-click="setMenuToActive()" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-eye-open"></span>
+            &nbsp;<span translate="global.menu.admin.tracker">User tracker</span></a></li>
         </li>
 
-    </ul>
-    
+    </ul>-->
+
+        <ul class="sidebar-menu">
+            <li class="treeview" id="system">
+                <a ng-click="setActive('system')">
+                    <i class="fa fa-dashboard"></i> <span>系统管理</span> <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li ><a ui-sref="event" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span>功能菜单维护</span></a></li>
+                </ul>
+                <ul class="treeview-menu">
+                    <li ><a ui-sref="event" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span>角色设置</span></a></li>
+                </ul>
+                <ul class="treeview-menu">
+                    <li ><a ui-sref="event" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span>数据权限设置</span></a></li>
+                </ul>
+
+                <ul class="treeview-menu">
+                    <li ><a ui-sref="company" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span data-translate="global.menu.entities.company">单位设置</span></a></li>
+                </ul>
+                <ul class="treeview-menu">
+                    <li ><a ui-sref="user-info" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span data-translate="global.menu.entities.userInfo">User Info</span></a></li>
+                </ul>
+                <ul class="treeview-menu">
+                    <li ><a ui-sref="project" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span data-translate="global.menu.entities.project">项目设置</span></a></li>
+                </ul>
+                <ul class="treeview-menu">
+                    <li ><a ui-sref="project-area" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span data-translate="global.menu.entities.projectArea">Project Area</span></a></li>
+                </ul>
+
+            </li>
+        </ul>
+
+        <ul class="sidebar-menu">
+            <li class="treeview" id="employee">
+                <a ng-click="setActive('employee')">
+                    <i class="fa fa-dashboard"></i> <span>人员管理</span> <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li ><a ui-sref="project-welder" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span data-translate="global.menu.entities.projectWelder">Project Welder</span></a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul class="sidebar-menu">
+            <li class="treeview" id="testaa">
+                <a  ng-click="setActive('testaa')">
+                    <i class="fa fa-share"></i> <span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i>
+                </a>
+
+                <ul class="treeview-menu">
+                    <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
+
+                    <li class="treeview menu-open">
+                        <a href="#"><i class="fa fa-circle-o"></i> Level One<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span> </a>
+                        <ul class="treeview-menu" style="display: block;">
+                            <li>
+                                <a href="#"><i class="fa fa-circle-o"></i> Level Two</a>
+                            </li>
+                            <li class="treeview menu-open">
+
+                                <a href="#"><i class="fa fa-circle-o"></i> Level Two
+                                    <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                                </a>
+                                <ul class="treeview-menu" style="display: block;">
+                                    <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
+                                    <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul class="sidebar-menu">
+            <li class="treeview" id="pipe">
+                <a ng-click="setActive('pipe')">
+                    <i class="fa fa-dashboard"></i> <span>焊道管理</span> <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li ><a ui-sref="event" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span>焊撞工艺规程</span></a></li>
+                </ul>
+                <ul class="treeview-menu">
+                    <li ><a ui-sref="event" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span>焊接施工记录</span></a></li>
+                </ul>
+                <ul class="treeview-menu">
+                    <li ><a ui-sref="event" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span>无损检测委托</span></a></li>
+                </ul>
+                <ul class="treeview-menu">
+                    <li ><a ui-sref="event" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span>检查结果</span></a></li>
+                </ul>
+                <ul class="treeview-menu">
+                    <li ><a ui-sref="event" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span>试压包管理</span></a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul class="sidebar-menu">
+            <li class="treeview" id="base">
+                <a ng-click="setActive('base')">
+                    <i class="fa fa-dashboard"></i> <span>基础数据管理</span> <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li ><a ui-sref="event" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span>抽检比例</span></a></li>
+                </ul>
+                <ul class="treeview-menu">
+                    <li ><a ui-sref="event" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span>抽检规则</span></a></li>
+                </ul>
+                <ul class="treeview-menu">
+                    <li ><a ui-sref="event" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span>等级材质对照</span></a></li>
+                </ul>
+                <ul class="treeview-menu">
+                    <li ><a ui-sref="event" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span>管线壁厚设计</span></a></li>
+                </ul>
+                <ul class="treeview-menu">
+                    <li ><a ui-sref="event" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span>初始化管线设置</span></a></li>
+                </ul>
+                <ul class="treeview-menu">
+                    <li ><a ui-sref="event" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span>等级材质对照</span></a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul class="sidebar-menu">
+            <li class="treeview" id="ss">
+                <a ng-click="setActive('ss')">
+                    <i class="fa fa-dashboard"></i> <span>材料管理</span> <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li ><a ui-sref="event" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span>材料基础库管理</span></a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul class="sidebar-menu">
+            <li class="treeview" id="report">
+                <a ng-click="setActive('report')">
+                    <i class="fa fa-dashboard"></i> <span>查询统计</span> <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li ><a ui-sref="event" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span>工程进度统计</span></a></li>
+                </ul>
+                <ul class="treeview-menu">
+                    <li ><a ui-sref="event" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span>射线检测确认</span></a></li>
+                </ul>
+                <ul class="treeview-menu">
+                    <li ><a ui-sref="event" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span>焊接情况</span></a></li>
+                </ul>
+                <ul class="treeview-menu">
+                    <li ><a ui-sref="event" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span>焊工一次合格率</span></a></li>
+                </ul>
+                <ul class="treeview-menu">
+                    <li ><a ui-sref="event" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span>焊接日报表</span></a></li>
+                </ul>
+                <ul class="treeview-menu">
+                    <li ><a ui-sref="event" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span>综合查询</span></a></li>
+                </ul>
+            </li>
+        </ul>
+
+
+
+
+
+
     <ul class="sidebar-menu" ng-switch="isAuthenticated()">
         <li class="treeview" id="newsManagement">
             <a  ng-click="setActive('newsManagement')">
-                <i class="fa fa-dashboard"></i> <span>资讯管理</span> <i class="fa fa-angle-left pull-right"></i>
+                <i class="fa-dashboard"></i> <span>业务菜单未分类</span> <i class="fa fa-angle-left pull-right"></i>
             </a>
-            <ul class="treeview-menu">
-	           <li ng-switch-when="true"><a ui-sref="category-maintenance" ng-click="setMenuToActive()" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-wrench"></span>
-                            &#xA0;<span>类目维护</span></a></li>
-               <li ng-switch-when="true"><a ui-sref="news-management" ng-click="setMenuToActive()" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-cloud"></span>
-                            &#xA0;<span>资讯管理</span></a></li>       
-          </ul>
+            <ul class="entity">
+                <li ng-switch-when="true"> <a ui-sref="company" ng-click="setMenuToActive()" data-toggle="collapse" data-target=".navbar-collapse.in">
+                        <span class="glyphicon glyphicon-cloud"></span>&#xA0;<span data-translate="global.menu.entities.company">Company</span></a>
+                </li>
+
+                <li ui-sref-active="active">
+                    <a ui-sref="company" ng-click="vm.collapseNavbar()">
+                        <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
+                        <span data-translate="global.menu.entities.company">Company</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="project" ng-click="vm.collapseNavbar()">
+                        <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
+                        <span data-translate="global.menu.entities.project">Project</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="pp-grade-materail" ng-click="vm.collapseNavbar()">
+                        <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
+                        <span data-translate="global.menu.entities.ppGradeMaterail">Pp Grade Materail</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="pp-iinspection-tatio" ng-click="vm.collapseNavbar()">
+                        <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
+                        <span data-translate="global.menu.entities.ppIinspectionTatio">Pp Iinspection Tatio</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="pp-inspection-rule" ng-click="vm.collapseNavbar()">
+                        <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
+                        <span data-translate="global.menu.entities.ppInspectionRule">Pp Inspection Rule</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="pp-line" ng-click="vm.collapseNavbar()">
+                        <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
+                        <span data-translate="global.menu.entities.ppLine">Pp Line</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="pp-line-drawing" ng-click="vm.collapseNavbar()">
+                        <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
+                        <span data-translate="global.menu.entities.ppLineDrawing">Pp Line Drawing</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="pp-line-weld" ng-click="vm.collapseNavbar()">
+                        <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
+                        <span data-translate="global.menu.entities.ppLineWeld">Pp Line Weld</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="pp-line-weld-check" ng-click="vm.collapseNavbar()">
+                        <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
+                        <span data-translate="global.menu.entities.ppLineWeldCheck">Pp Line Weld Check</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="pp-line-weld-entrust" ng-click="vm.collapseNavbar()">
+                        <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
+                        <span data-translate="global.menu.entities.ppLineWeldEntrust">Pp Line Weld Entrust</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="pp-line-weld-material" ng-click="vm.collapseNavbar()">
+                        <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
+                        <span data-translate="global.menu.entities.ppLineWeldMaterial">Pp Line Weld Material</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="pp-thickness" ng-click="vm.collapseNavbar()">
+                        <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
+                        <span data-translate="global.menu.entities.ppThickness">Pp Thickness</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="project-area" ng-click="vm.collapseNavbar()">
+                        <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
+                        <span data-translate="global.menu.entities.projectArea">Project Area</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="project-material" ng-click="vm.collapseNavbar()">
+                        <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
+                        <span data-translate="global.menu.entities.projectMaterial">Project Material</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="project-spec" ng-click="vm.collapseNavbar()">
+                        <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
+                        <span data-translate="global.menu.entities.projectSpec">Project Spec</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="project-sub-constractor" ng-click="vm.collapseNavbar()">
+                        <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
+                        <span data-translate="global.menu.entities.projectSubConstractor">Project Sub Constractor</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="project-user" ng-click="vm.collapseNavbar()">
+                        <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
+                        <span data-translate="global.menu.entities.projectUser">Project User</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="project-welder" ng-click="vm.collapseNavbar()">
+                        <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
+                        <span data-translate="global.menu.entities.projectWelder">Project Welder</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="user-area" ng-click="vm.collapseNavbar()">
+                        <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
+                        <span data-translate="global.menu.entities.userArea">User Area</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="user-info" ng-click="vm.collapseNavbar()">
+                        <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
+                        <span data-translate="global.menu.entities.userInfo">User Info</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="user-power" ng-click="vm.collapseNavbar()">
+                        <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
+                        <span data-translate="global.menu.entities.userPower">User Power</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="welder" ng-click="vm.collapseNavbar()">
+                        <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
+                        <span data-translate="global.menu.entities.welder">Welder</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="welder-skill" ng-click="vm.collapseNavbar()">
+                        <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
+                        <span data-translate="global.menu.entities.welderSkill">Welder Skill</span>
+                    </a>
+                </li>
+            </ul>
         </li>
+
+
+
     </ul>
-    
-    
-    
+
+
+
    <!--  <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
         <li class="treeview" id="dashboard2">

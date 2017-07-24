@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .controller('ProjectSubConstractorController', ProjectSubConstractorController);
 
     ProjectSubConstractorController.$inject = ['$state', 'ProjectSubConstractor', 'ParseLinks', 'AlertService', 'paginationConstants', 'pagingParams'];

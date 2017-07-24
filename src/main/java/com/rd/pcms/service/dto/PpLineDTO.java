@@ -1,12 +1,9 @@
 package com.rd.pcms.service.dto;
 
 
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-import java.io.Serializable;
 import java.time.Instant;
+import javax.validation.constraints.*;
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
@@ -83,7 +80,7 @@ public class PpLineDTO implements Serializable {
     private String paintCode;
 
     @Size(min = 0, max = 50)
-    private String pIDiagram;
+    private String piDiagram;
 
     @Size(min = 0, max = 50)
     private String testPressure;
@@ -280,12 +277,12 @@ public class PpLineDTO implements Serializable {
         this.paintCode = paintCode;
     }
 
-    public String getpIDiagram() {
-        return pIDiagram;
+    public String getPiDiagram() {
+        return piDiagram;
     }
 
-    public void setpIDiagram(String pIDiagram) {
-        this.pIDiagram = pIDiagram;
+    public void setPiDiagram(String piDiagram) {
+        this.piDiagram = piDiagram;
     }
 
     public String getTestPressure() {
@@ -382,7 +379,7 @@ public class PpLineDTO implements Serializable {
             ", insulationCode='" + getInsulationCode() + "'" +
             ", insulationHigh='" + getInsulationHigh() + "'" +
             ", paintCode='" + getPaintCode() + "'" +
-            ", pIDiagram='" + getpIDiagram() + "'" +
+            ", piDiagram='" + getPiDiagram() + "'" +
             ", testPressure='" + getTestPressure() + "'" +
             ", testMaterial='" + getTestMaterial() + "'" +
             ", jacketedPipe='" + getJacketedPipe() + "'" +

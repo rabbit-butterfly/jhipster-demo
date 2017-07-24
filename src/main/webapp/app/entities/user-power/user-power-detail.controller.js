@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .controller('UserPowerDetailController', UserPowerDetailController);
 
     UserPowerDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'UserPower'];
@@ -13,7 +13,7 @@
         vm.userPower = entity;
         vm.previousState = previousState.name;
 
-        var unsubscribe = $rootScope.$on('pcmsApp:userPowerUpdate', function(event, result) {
+        var unsubscribe = $rootScope.$on('tuxAdminApp:userPowerUpdate', function(event, result) {
             vm.userPower = result;
         });
         $scope.$on('$destroy', unsubscribe);

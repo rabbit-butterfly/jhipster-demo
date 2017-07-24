@@ -14,10 +14,10 @@ import java.util.Objects;
 /**
  * 项目分包商基本信息表
  * @auther:renntrabbit@foxmail.com
- * @date:Tue Jul 18 17:06:29 CST 2017
+ * @date:Sun Jul 23 12:39:36 CST 2017
  * table:project_sub_constractor
  */
-@ApiModel(description = "项目分包商基本信息表 @auther:renntrabbit@foxmail.com @date:Tue Jul 18 17:06:29 CST 2017 table:project_sub_constractor")
+@ApiModel(description = "项目分包商基本信息表 @auther:renntrabbit@foxmail.com @date:Sun Jul 23 12:39:36 CST 2017 table:project_sub_constractor")
 @Entity
 @Table(name = "project_sub_constractor")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -29,42 +29,46 @@ public class ProjectSubConstractor implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
-    @Size(min = 0, max = 19)
-    @Column(name = "proj_id", length = 19, nullable = false)
-    private String projId;
-
     /**
      * PROJ_ID
      */
     @NotNull
-    @Size(min = 0, max = 80)
+    @Size(min = 0, max = 19)
     @ApiModelProperty(value = "PROJ_ID", required = true)
-    @Column(name = "name", length = 80, nullable = false)
-    private String name;
+    @Column(name = "proj_id", length = 19, nullable = false)
+    private String projId;
 
     /**
      * NAME
      */
-    @Size(min = 0, max = 500)
-    @ApiModelProperty(value = "NAME")
-    @Column(name = "remark", length = 500)
-    private String remark;
+    @NotNull
+    @Size(min = 0, max = 80)
+    @ApiModelProperty(value = "NAME", required = true)
+    @Column(name = "name", length = 80, nullable = false)
+    private String name;
 
     /**
      * REMARK
      */
-    @NotNull
-    @ApiModelProperty(value = "REMARK", required = true)
-    @Column(name = "create_time", nullable = false)
-    private Instant createTime;
+    @Size(min = 0, max = 500)
+    @ApiModelProperty(value = "REMARK")
+    @Column(name = "remark", length = 500)
+    private String remark;
 
     /**
      * CREATE_TIME
      */
+    @NotNull
+    @ApiModelProperty(value = "CREATE_TIME", required = true)
+    @Column(name = "create_time", nullable = false)
+    private Instant createTime;
+
+    /**
+     * DEL_FLAG
+     */
     @Min(value = 0)
     @Max(value = 10)
-    @ApiModelProperty(value = "CREATE_TIME")
+    @ApiModelProperty(value = "DEL_FLAG")
     @Column(name = "del_flag")
     private Integer delFlag;
 

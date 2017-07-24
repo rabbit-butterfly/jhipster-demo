@@ -13,10 +13,10 @@ import java.util.Objects;
 /**
  * 公司成员表
  * @auther:renntrabbit@foxmail.com
- * @date:Tue Jul 18 17:06:29 CST 2017
+ * @date:Sun Jul 23 14:43:53 CST 2017
  * table:user_info
  */
-@ApiModel(description = "公司成员表 @auther:renntrabbit@foxmail.com @date:Tue Jul 18 17:06:29 CST 2017 table:user_info")
+@ApiModel(description = "公司成员表 @auther:renntrabbit@foxmail.com @date:Sun Jul 23 14:43:53 CST 2017 table:user_info")
 @Entity
 @Table(name = "user_info")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -28,59 +28,67 @@ public class UserInfo implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
-    @Size(min = 0, max = 19)
-    @Column(name = "comp_id", length = 19, nullable = false)
-    private String compId;
-
     /**
      * 公司ID
      */
-    @Size(min = 0, max = 19)
-    @ApiModelProperty(value = "公司ID")
-    @Column(name = "code", length = 19)
-    private String code;
+    @NotNull
+    @Min(value = 0)
+    @Max(value = 19)
+    @ApiModelProperty(value = "公司ID", required = true)
+    @Column(name = "comp_id", nullable = false)
+    private Long compId;
 
     /**
      * 用户工号
      */
-    @Size(min = 0, max = 16)
+    @Min(value = 0)
+    @Max(value = 19)
     @ApiModelProperty(value = "用户工号")
-    @Column(name = "mobile", length = 16)
-    private String mobile;
+    @Column(name = "code")
+    private Long code;
 
     /**
      * 手机号码
      */
-    @Size(min = 0, max = 5)
+    @Size(min = 0, max = 16)
     @ApiModelProperty(value = "手机号码")
-    @Column(name = "status", length = 5)
-    private String status;
+    @Column(name = "mobile", length = 16)
+    private String mobile;
 
     /**
      * 0：无效 1：有效
      */
-    @Size(min = 0, max = 16)
+    @Min(value = 0)
+    @Max(value = 5)
     @ApiModelProperty(value = "0：无效 1：有效")
-    @Column(name = "job_title", length = 16)
-    private String jobTitle;
+    @Column(name = "status")
+    private Integer status;
 
     /**
      * 岗位@
      */
     @Size(min = 0, max = 16)
     @ApiModelProperty(value = "岗位@")
-    @Column(name = "major", length = 16)
-    private String major;
+    @Column(name = "job_title", length = 16)
+    private String jobTitle;
 
     /**
      * 专业@
      */
+    @Size(min = 0, max = 16)
+    @ApiModelProperty(value = "专业@")
+    @Column(name = "major", length = 16)
+    private String major;
+
+    /**
+     * JH_USER_ID
+     */
     @NotNull
-    @Size(min = 0, max = 19)
-    @ApiModelProperty(value = "专业@", required = true)
-    @Column(name = "jh_user_id", length = 19, nullable = false)
-    private String jhUserId;
+    @Min(value = 0)
+    @Max(value = 19)
+    @ApiModelProperty(value = "JH_USER_ID", required = true)
+    @Column(name = "jh_user_id", nullable = false)
+    private Long jhUserId;
 
     public Long getId() {
         return id;
@@ -90,29 +98,29 @@ public class UserInfo implements Serializable {
         this.id = id;
     }
 
-    public String getCompId() {
+    public Long getCompId() {
         return compId;
     }
 
-    public UserInfo compId(String compId) {
+    public UserInfo compId(Long compId) {
         this.compId = compId;
         return this;
     }
 
-    public void setCompId(String compId) {
+    public void setCompId(Long compId) {
         this.compId = compId;
     }
 
-    public String getCode() {
+    public Long getCode() {
         return code;
     }
 
-    public UserInfo code(String code) {
+    public UserInfo code(Long code) {
         this.code = code;
         return this;
     }
 
-    public void setCode(String code) {
+    public void setCode(Long code) {
         this.code = code;
     }
 
@@ -129,16 +137,16 @@ public class UserInfo implements Serializable {
         this.mobile = mobile;
     }
 
-    public String getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public UserInfo status(String status) {
+    public UserInfo status(Integer status) {
         this.status = status;
         return this;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 
@@ -168,16 +176,16 @@ public class UserInfo implements Serializable {
         this.major = major;
     }
 
-    public String getJhUserId() {
+    public Long getJhUserId() {
         return jhUserId;
     }
 
-    public UserInfo jhUserId(String jhUserId) {
+    public UserInfo jhUserId(Long jhUserId) {
         this.jhUserId = jhUserId;
         return this;
     }
 
-    public void setJhUserId(String jhUserId) {
+    public void setJhUserId(Long jhUserId) {
         this.jhUserId = jhUserId;
     }
 

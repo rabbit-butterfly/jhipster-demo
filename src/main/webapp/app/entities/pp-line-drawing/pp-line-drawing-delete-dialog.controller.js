@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .controller('PpLineDrawingDeleteController',PpLineDrawingDeleteController);
 
     PpLineDrawingDeleteController.$inject = ['$uibModalInstance', 'entity', 'PpLineDrawing'];

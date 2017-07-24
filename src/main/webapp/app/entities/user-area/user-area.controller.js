@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .controller('UserAreaController', UserAreaController);
 
     UserAreaController.$inject = ['$state', 'UserArea', 'ParseLinks', 'AlertService', 'paginationConstants', 'pagingParams'];

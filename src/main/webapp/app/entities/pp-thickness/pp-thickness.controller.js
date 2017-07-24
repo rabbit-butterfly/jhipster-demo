@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .controller('PpThicknessController', PpThicknessController);
 
     PpThicknessController.$inject = ['$state', 'PpThickness', 'ParseLinks', 'AlertService', 'paginationConstants', 'pagingParams'];

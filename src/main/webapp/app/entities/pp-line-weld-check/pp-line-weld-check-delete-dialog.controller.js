@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .controller('PpLineWeldCheckDeleteController',PpLineWeldCheckDeleteController);
 
     PpLineWeldCheckDeleteController.$inject = ['$uibModalInstance', 'entity', 'PpLineWeldCheck'];

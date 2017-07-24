@@ -4,7 +4,7 @@
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
                 ng-click="vm.clear()">&times;</button>
-        <h4 class="modal-title" id="myProjectLabel" data-translate="pcmsApp.project.home.createOrEditLabel">Create or edit a Project</h4>
+        <h4 class="modal-title" id="myProjectLabel" data-translate="tuxAdminApp.project.home.createOrEditLabel">Create or edit a Project</h4>
     </div>
     <div class="modal-body">
         <jhi-alert-error></jhi-alert-error>
@@ -14,7 +14,7 @@
                     ng-model="vm.project.id" readonly />
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="pcmsApp.project.code" for="field_code">Code</label>
+            <label class="control-label" data-translate="tuxAdminApp.project.code" for="field_code">Code</label>
             <input type="text" class="form-control" name="code" id="field_code"
                     ng-model="vm.project.code"
                     required ng-minlength="0" ng-maxlength="20"/>
@@ -34,7 +34,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="pcmsApp.project.name" for="field_name">Name</label>
+            <label class="control-label" data-translate="tuxAdminApp.project.name" for="field_name">Name</label>
             <input type="text" class="form-control" name="name" id="field_name"
                     ng-model="vm.project.name"
                     ng-minlength="0" ng-maxlength="80"/>
@@ -50,23 +50,23 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="pcmsApp.project.enName" for="field_enName">En Name</label>
+            <label class="control-label" data-translate="tuxAdminApp.project.enName" for="field_enName">En Name</label>
             <input type="text" class="form-control" name="enName" id="field_enName"
                     ng-model="vm.project.enName"
-                    ng-minlength="0" ng-maxlength="30"/>
+                    ng-minlength="0" ng-maxlength="32"/>
             <div ng-show="editForm.enName.$invalid">
                 <p class="help-block"
                     ng-show="editForm.enName.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
                     This field is required to be at least 0 characters.
                 </p>
                 <p class="help-block"
-                    ng-show="editForm.enName.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="30">
-                    This field cannot be longer than 30 characters.
+                    ng-show="editForm.enName.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="32">
+                    This field cannot be longer than 32 characters.
                 </p>
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="pcmsApp.project.supervisor" for="field_supervisor">Supervisor</label>
+            <label class="control-label" data-translate="tuxAdminApp.project.supervisor" for="field_supervisor">Supervisor</label>
             <input type="text" class="form-control" name="supervisor" id="field_supervisor"
                     ng-model="vm.project.supervisor"
                     ng-minlength="0" ng-maxlength="100"/>
@@ -82,39 +82,39 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="pcmsApp.project.oContractor" for="field_oContractor">O Contractor</label>
-            <input type="text" class="form-control" name="oContractor" id="field_oContractor"
-                    ng-model="vm.project.oContractor"
+            <label class="control-label" data-translate="tuxAdminApp.project.ownerContractor" for="field_ownerContractor">Owner Contractor</label>
+            <input type="text" class="form-control" name="ownerContractor" id="field_ownerContractor"
+                    ng-model="vm.project.ownerContractor"
                     ng-minlength="0" ng-maxlength="100"/>
-            <div ng-show="editForm.oContractor.$invalid">
+            <div ng-show="editForm.ownerContractor.$invalid">
                 <p class="help-block"
-                    ng-show="editForm.oContractor.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    ng-show="editForm.ownerContractor.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
                     This field is required to be at least 0 characters.
                 </p>
                 <p class="help-block"
-                    ng-show="editForm.oContractor.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="100">
+                    ng-show="editForm.ownerContractor.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="100">
                     This field cannot be longer than 100 characters.
                 </p>
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="pcmsApp.project.hContractor" for="field_hContractor">H Contractor</label>
-            <input type="text" class="form-control" name="hContractor" id="field_hContractor"
-                    ng-model="vm.project.hContractor"
+            <label class="control-label" data-translate="tuxAdminApp.project.totalContractor" for="field_totalContractor">Total Contractor</label>
+            <input type="text" class="form-control" name="totalContractor" id="field_totalContractor"
+                    ng-model="vm.project.totalContractor"
                     ng-minlength="0" ng-maxlength="100"/>
-            <div ng-show="editForm.hContractor.$invalid">
+            <div ng-show="editForm.totalContractor.$invalid">
                 <p class="help-block"
-                    ng-show="editForm.hContractor.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    ng-show="editForm.totalContractor.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
                     This field is required to be at least 0 characters.
                 </p>
                 <p class="help-block"
-                    ng-show="editForm.hContractor.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="100">
+                    ng-show="editForm.totalContractor.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="100">
                     This field cannot be longer than 100 characters.
                 </p>
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="pcmsApp.project.startDate" for="field_startDate">Start Date</label>
+            <label class="control-label" data-translate="tuxAdminApp.project.startDate" for="field_startDate">Start Date</label>
                 <div class="input-group">
                     <input id="field_startDate" type="text" class="form-control" name="startDate" datetime-picker="{{dateformat}}" ng-model="vm.project.startDate" is-open="vm.datePickerOpenStatus.startDate"
                     />
@@ -124,7 +124,7 @@
                 </div>
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="pcmsApp.project.endDate" for="field_endDate">End Date</label>
+            <label class="control-label" data-translate="tuxAdminApp.project.endDate" for="field_endDate">End Date</label>
                 <div class="input-group">
                     <input id="field_endDate" type="text" class="form-control" name="endDate" datetime-picker="{{dateformat}}" ng-model="vm.project.endDate" is-open="vm.datePickerOpenStatus.endDate"
                     />
@@ -134,7 +134,7 @@
                 </div>
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="pcmsApp.project.status" for="field_status">Status</label>
+            <label class="control-label" data-translate="tuxAdminApp.project.status" for="field_status">Status</label>
             <input type="number" class="form-control" name="status" id="field_status"
                     ng-model="vm.project.status"
                     min="0" max="10"/>
@@ -154,7 +154,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="pcmsApp.project.delFlag" for="field_delFlag">Del Flag</label>
+            <label class="control-label" data-translate="tuxAdminApp.project.delFlag" for="field_delFlag">Del Flag</label>
             <input type="number" class="form-control" name="delFlag" id="field_delFlag"
                     ng-model="vm.project.delFlag"
                     min="0" max="10"/>
@@ -174,7 +174,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="pcmsApp.project.remark" for="field_remark">Remark</label>
+            <label class="control-label" data-translate="tuxAdminApp.project.remark" for="field_remark">Remark</label>
             <input type="text" class="form-control" name="remark" id="field_remark"
                     ng-model="vm.project.remark"
                     ng-minlength="0" ng-maxlength="500"/>
@@ -190,7 +190,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="pcmsApp.project.extendAttr" for="field_extendAttr">Extend Attr</label>
+            <label class="control-label" data-translate="tuxAdminApp.project.extendAttr" for="field_extendAttr">Extend Attr</label>
             <input type="text" class="form-control" name="extendAttr" id="field_extendAttr"
                     ng-model="vm.project.extendAttr"
                     ng-minlength="0" ng-maxlength="50"/>

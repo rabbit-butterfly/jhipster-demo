@@ -14,10 +14,10 @@ import java.util.Objects;
 /**
  * 管线-焊接材料记录表
  * @auther:renntrabbit@foxmail.com
- * @date:Tue Jul 18 17:06:29 CST 2017
+ * @date:Sun Jul 23 12:39:36 CST 2017
  * table:pp_line_weld_material
  */
-@ApiModel(description = "管线-焊接材料记录表 @auther:renntrabbit@foxmail.com @date:Tue Jul 18 17:06:29 CST 2017 table:pp_line_weld_material")
+@ApiModel(description = "管线-焊接材料记录表 @auther:renntrabbit@foxmail.com @date:Sun Jul 23 12:39:36 CST 2017 table:pp_line_weld_material")
 @Entity
 @Table(name = "pp_line_weld_material")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -29,19 +29,14 @@ public class PpLineWeldMaterial implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
-    @Size(min = 0, max = 19)
-    @Column(name = "pipeline_id", length = 19, nullable = false)
-    private String pipelineId;
-
     /**
      * PIPELINE_ID
      */
-    @Min(value = 0)
-    @Max(value = 10)
-    @ApiModelProperty(value = "PIPELINE_ID")
-    @Column(name = "page_code")
-    private Integer pageCode;
+    @NotNull
+    @Size(min = 0, max = 19)
+    @ApiModelProperty(value = "PIPELINE_ID", required = true)
+    @Column(name = "pipeline_id", length = 19, nullable = false)
+    private String pipelineId;
 
     /**
      * PAGE_CODE
@@ -49,87 +44,96 @@ public class PpLineWeldMaterial implements Serializable {
     @Min(value = 0)
     @Max(value = 10)
     @ApiModelProperty(value = "PAGE_CODE")
-    @Column(name = "sequence_number")
-    private Integer sequenceNumber;
+    @Column(name = "page_code")
+    private Integer pageCode;
 
     /**
      * SEQUENCE_NUMBER
      */
-    @Size(min = 0, max = 50)
+    @Min(value = 0)
+    @Max(value = 10)
     @ApiModelProperty(value = "SEQUENCE_NUMBER")
-    @Column(name = "material_code", length = 50)
-    private String materialCode;
+    @Column(name = "sequence_number")
+    private Integer sequenceNumber;
 
     /**
      * MATERIAL_CODE
      */
     @Size(min = 0, max = 50)
     @ApiModelProperty(value = "MATERIAL_CODE")
-    @Column(name = "name", length = 50)
-    private String name;
+    @Column(name = "material_code", length = 50)
+    private String materialCode;
 
     /**
      * NAME
      */
     @Size(min = 0, max = 50)
     @ApiModelProperty(value = "NAME")
-    @Column(name = "material_desc", length = 50)
-    private String materialDesc;
+    @Column(name = "name", length = 50)
+    private String name;
 
     /**
      * MATERIAL_DESC
      */
     @Size(min = 0, max = 50)
     @ApiModelProperty(value = "MATERIAL_DESC")
-    @Column(name = "spec", length = 50)
-    private String spec;
+    @Column(name = "material_desc", length = 50)
+    private String materialDesc;
 
     /**
      * SPEC
      */
-    @Size(min = 0, max = 20)
+    @Size(min = 0, max = 50)
     @ApiModelProperty(value = "SPEC")
-    @Column(name = "unit", length = 20)
-    private String unit;
+    @Column(name = "spec", length = 50)
+    private String spec;
 
     /**
      * UNIT
      */
-    @Size(min = 0, max = 50)
+    @Size(min = 0, max = 20)
     @ApiModelProperty(value = "UNIT")
-    @Column(name = "material", length = 50)
-    private String material;
+    @Column(name = "unit", length = 20)
+    private String unit;
 
     /**
      * MATERIAL
      */
     @Size(min = 0, max = 50)
     @ApiModelProperty(value = "MATERIAL")
-    @Column(name = "design_qty", length = 50)
-    private String designQty;
+    @Column(name = "material", length = 50)
+    private String material;
 
     /**
      * DESIGN_QTY
      */
-    @Size(min = 0, max = 500)
+    @Size(min = 0, max = 50)
     @ApiModelProperty(value = "DESIGN_QTY")
-    @Column(name = "remark", length = 500)
-    private String remark;
+    @Column(name = "design_qty", length = 50)
+    private String designQty;
 
     /**
      * REMARK
      */
-    @NotNull
-    @ApiModelProperty(value = "REMARK", required = true)
-    @Column(name = "create_time", nullable = false)
-    private Instant createTime;
+    @Size(min = 0, max = 500)
+    @ApiModelProperty(value = "REMARK")
+    @Column(name = "remark", length = 500)
+    private String remark;
 
     /**
      * CREATE_TIME
      */
+    @NotNull
+    @ApiModelProperty(value = "CREATE_TIME", required = true)
+    @Column(name = "create_time", nullable = false)
+    private Instant createTime;
+
+    /**
+     * DEL_FLAG
+     */
     @Min(value = 0)
     @Max(value = 10)
-    @ApiModelProperty(value = "CREATE_TIME")
+    @ApiModelProperty(value = "DEL_FLAG")
     @Column(name = "del_flag")
     private Integer delFlag;
 

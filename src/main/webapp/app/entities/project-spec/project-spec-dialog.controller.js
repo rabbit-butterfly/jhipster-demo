@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .controller('ProjectSpecDialogController', ProjectSpecDialogController);
 
     ProjectSpecDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'ProjectSpec'];
@@ -34,7 +34,7 @@
         }
 
         function onSaveSuccess (result) {
-            $scope.$emit('pcmsApp:projectSpecUpdate', result);
+            $scope.$emit('tuxAdminApp:projectSpecUpdate', result);
             $uibModalInstance.close(result);
             vm.isSaving = false;
         }

@@ -14,10 +14,10 @@ import java.util.Objects;
 /**
  * 存放项目的基本信息:开始时间，结束时间，是否停工等
  * @auther:renntrabbit@foxmail.com
- * @date:Tue Jul 18 17:06:29 CST 2017
+ * @date:Sun Jul 23 12:39:36 CST 2017
  * table:project
  */
-@ApiModel(description = "存放项目的基本信息:开始时间，结束时间，是否停工等 @auther:renntrabbit@foxmail.com @date:Tue Jul 18 17:06:29 CST 2017 table:project")
+@ApiModel(description = "存放项目的基本信息:开始时间，结束时间，是否停工等 @auther:renntrabbit@foxmail.com @date:Sun Jul 23 12:39:36 CST 2017 table:project")
 @Entity
 @Table(name = "project")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -29,73 +29,70 @@ public class Project implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    /**
+     * CODE
+     */
     @NotNull
     @Size(min = 0, max = 20)
+    @ApiModelProperty(value = "CODE", required = true)
     @Column(name = "code", length = 20, nullable = false)
     private String code;
 
     /**
-     * CODE
+     * NAME
      */
     @Size(min = 0, max = 80)
-    @ApiModelProperty(value = "CODE")
+    @ApiModelProperty(value = "NAME")
     @Column(name = "name", length = 80)
     private String name;
 
     /**
-     * NAME
-     */
-    @Size(min = 0, max = 30)
-    @ApiModelProperty(value = "NAME")
-    @Column(name = "en_name", length = 30)
-    private String enName;
-
-    /**
      * EN_NAME
      */
-    @Size(min = 0, max = 100)
+    @Size(min = 0, max = 32)
     @ApiModelProperty(value = "EN_NAME")
-    @Column(name = "supervisor", length = 100)
-    private String supervisor;
+    @Column(name = "en_name", length = 32)
+    private String enName;
 
     /**
      * SUPERVISOR
      */
     @Size(min = 0, max = 100)
     @ApiModelProperty(value = "SUPERVISOR")
-    @Column(name = "o_contractor", length = 100)
-    private String oContractor;
+    @Column(name = "supervisor", length = 100)
+    private String supervisor;
 
     /**
-     * O_CONTRACTOR
+     * OWNER_CONTRACTOR
      */
     @Size(min = 0, max = 100)
-    @ApiModelProperty(value = "O_CONTRACTOR")
-    @Column(name = "h_contractor", length = 100)
-    private String hContractor;
+    @ApiModelProperty(value = "OWNER_CONTRACTOR")
+    @Column(name = "owner_contractor", length = 100)
+    private String ownerContractor;
 
     /**
-     * H_CONTRACTOR
+     * TOTAL_CONTRACTOR
      */
-    @ApiModelProperty(value = "H_CONTRACTOR")
-    @Column(name = "start_date")
-    private Instant startDate;
+    @Size(min = 0, max = 100)
+    @ApiModelProperty(value = "TOTAL_CONTRACTOR")
+    @Column(name = "total_contractor", length = 100)
+    private String totalContractor;
 
     /**
      * START_DATE
      */
     @ApiModelProperty(value = "START_DATE")
-    @Column(name = "end_date")
-    private Instant endDate;
+    @Column(name = "start_date")
+    @Transient
+    private Instant startDate;
 
     /**
      * END_DATE
      */
-    @Min(value = 0)
-    @Max(value = 10)
     @ApiModelProperty(value = "END_DATE")
-    @Column(name = "status")
-    private Integer status;
+    //@Column(name = "end_date")
+    @Transient
+    private Instant endDate;
 
     /**
      * 0：待审核 1：审核通过 2：审核失败 3：终结
@@ -103,22 +100,31 @@ public class Project implements Serializable {
     @Min(value = 0)
     @Max(value = 10)
     @ApiModelProperty(value = "0：待审核 1：审核通过 2：审核失败 3：终结")
-    @Column(name = "del_flag")
-    private Integer delFlag;
+    @Column(name = "status")
+    private Integer status;
 
     /**
      * DEL_FLAG
      */
-    @Size(min = 0, max = 500)
+    @Min(value = 0)
+    @Max(value = 10)
     @ApiModelProperty(value = "DEL_FLAG")
-    @Column(name = "remark", length = 500)
-    private String remark;
+    @Column(name = "del_flag")
+    private Integer delFlag;
 
     /**
      * REMARK
      */
-    @Size(min = 0, max = 50)
+    @Size(min = 0, max = 500)
     @ApiModelProperty(value = "REMARK")
+    @Column(name = "remark", length = 500)
+    private String remark;
+
+    /**
+     * 扩展字段
+     */
+    @Size(min = 0, max = 50)
+    @ApiModelProperty(value = "扩展字段")
     @Column(name = "extend_attr", length = 50)
     private String extendAttr;
 
@@ -182,30 +188,30 @@ public class Project implements Serializable {
         this.supervisor = supervisor;
     }
 
-    public String getoContractor() {
-        return oContractor;
+    public String getOwnerContractor() {
+        return ownerContractor;
     }
 
-    public Project oContractor(String oContractor) {
-        this.oContractor = oContractor;
+    public Project ownerContractor(String ownerContractor) {
+        this.ownerContractor = ownerContractor;
         return this;
     }
 
-    public void setoContractor(String oContractor) {
-        this.oContractor = oContractor;
+    public void setOwnerContractor(String ownerContractor) {
+        this.ownerContractor = ownerContractor;
     }
 
-    public String gethContractor() {
-        return hContractor;
+    public String getTotalContractor() {
+        return totalContractor;
     }
 
-    public Project hContractor(String hContractor) {
-        this.hContractor = hContractor;
+    public Project totalContractor(String totalContractor) {
+        this.totalContractor = totalContractor;
         return this;
     }
 
-    public void sethContractor(String hContractor) {
-        this.hContractor = hContractor;
+    public void setTotalContractor(String totalContractor) {
+        this.totalContractor = totalContractor;
     }
 
     public Instant getStartDate() {
@@ -314,8 +320,8 @@ public class Project implements Serializable {
             ", name='" + getName() + "'" +
             ", enName='" + getEnName() + "'" +
             ", supervisor='" + getSupervisor() + "'" +
-            ", oContractor='" + getoContractor() + "'" +
-            ", hContractor='" + gethContractor() + "'" +
+            ", ownerContractor='" + getOwnerContractor() + "'" +
+            ", totalContractor='" + getTotalContractor() + "'" +
             ", startDate='" + getStartDate() + "'" +
             ", endDate='" + getEndDate() + "'" +
             ", status='" + getStatus() + "'" +

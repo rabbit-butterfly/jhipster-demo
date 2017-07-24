@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .controller('PpLineWeldMaterialDeleteController',PpLineWeldMaterialDeleteController);
 
     PpLineWeldMaterialDeleteController.$inject = ['$uibModalInstance', 'entity', 'PpLineWeldMaterial'];

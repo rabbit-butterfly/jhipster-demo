@@ -1,7 +1,7 @@
 (function() {
     'use strict';
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .factory('PpThickness', PpThickness);
 
     PpThickness.$inject = ['$resource', 'DateUtils'];

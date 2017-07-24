@@ -7,8 +7,16 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
+import javax.imageio.spi.ServiceRegistry;
 import javax.inject.Inject;
 
+import com.jumore.zhxf.security.AuthoritiesConstants;
+import com.jumore.zhxf.web.rest.dto.UserDTO;
+import com.rd.pcms.domain.Company;
+import com.rd.pcms.domain.UserInfo;
+import com.rd.pcms.repository.UserInfoRepository;
+import com.rd.pcms.service.UserInfoService;
+import com.rd.pcms.service.dto.UserInfoDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -49,11 +57,15 @@ public class UserService {
 
     @Inject
     private AuthorityRepository authorityRepository;
-    
+
+    @Inject
+    private UserInfoRepository userInfoRepository;
+
+
     public Optional<User> activateRegistration(String key) {
         log.debug("Activating user for activation key {}", key);
-        
-        
+
+
         userRepository.findOneByActivationKey(key)
             .map(user -> {
                 // activate given user for the registration key.
@@ -237,4 +249,44 @@ public class UserService {
             userSearchRepository.delete(user);
         }
     }
+
+    /**
+     * 创建项目管理员
+     */
+    public void createCompanyUser(Company company){
+        User newUser = new User();
+        Authority authority = authorityRepository.findOne("ROLE_USER");
+        Set<Authority> authorities = new HashSet<>();
+        newUser.setLogin(company.getMobile());
+        newUser.setPassword(passwordEncoder.encode(company.getMobile()));
+
+        newUser.setFirstName(company.getMobile());
+        newUser.setLangKey("zh");
+        newUser.setActivated(true);
+        newUser.setActivationKey(RandomUtil.generateActivationKey());
+        authorities.add(authority);
+        newUser.setAuthorities(authorities);
+        userRepository.save(newUser);
+
+        /**
+         * 创建用户关系表
+         */
+        UserInfo userInfo = new UserInfo();
+        userInfo.setCode(1L);
+        userInfo.setCompId(company.getId());
+        userInfo.setJhUserId(newUser.getId());
+        userInfo.setMajor("major");
+        userInfo.setJobTitle("kpbtotle");
+        userInfo.setStatus(0);
+        userInfoRepository.save(userInfo);
+        log.debug("Created Information for User: {}", newUser);
+    }
+
+    /**
+     * 创建项目管理员
+     */
+    public void createProjectUser(){
+
+    }
+
 }

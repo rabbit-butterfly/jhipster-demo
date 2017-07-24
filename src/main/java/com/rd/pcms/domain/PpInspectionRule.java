@@ -14,10 +14,10 @@ import java.util.Objects;
 /**
  * 抽检规则设置表
  * @auther:renntrabbit@foxmail.com
- * @date:Tue Jul 18 17:06:29 CST 2017
+ * @date:Sun Jul 23 12:39:36 CST 2017
  * table:pp_inspection_rule
  */
-@ApiModel(description = "抽检规则设置表 @auther:renntrabbit@foxmail.com @date:Tue Jul 18 17:06:29 CST 2017 table:pp_inspection_rule")
+@ApiModel(description = "抽检规则设置表 @auther:renntrabbit@foxmail.com @date:Sun Jul 23 12:39:36 CST 2017 table:pp_inspection_rule")
 @Entity
 @Table(name = "pp_inspection_rule")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -29,66 +29,70 @@ public class PpInspectionRule implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
-    @Size(min = 0, max = 19)
-    @Column(name = "comp_id", length = 19, nullable = false)
-    private String compId;
-
     /**
      * COMP_ID
      */
     @NotNull
     @Size(min = 0, max = 19)
     @ApiModelProperty(value = "COMP_ID", required = true)
-    @Column(name = "proj_id", length = 19, nullable = false)
-    private String projId;
+    @Column(name = "comp_id", length = 19, nullable = false)
+    private String compId;
 
     /**
      * PROJ_ID
      */
-    @Size(min = 0, max = 50)
-    @ApiModelProperty(value = "PROJ_ID")
-    @Column(name = "material", length = 50)
-    private String material;
+    @NotNull
+    @Size(min = 0, max = 19)
+    @ApiModelProperty(value = "PROJ_ID", required = true)
+    @Column(name = "proj_id", length = 19, nullable = false)
+    private String projId;
 
     /**
      * MATERIAL
      */
     @Size(min = 0, max = 50)
     @ApiModelProperty(value = "MATERIAL")
-    @Column(name = "pp_class", length = 50)
-    private String ppClass;
+    @Column(name = "material", length = 50)
+    private String material;
 
     /**
      * PP_CLASS
      */
     @Size(min = 0, max = 50)
     @ApiModelProperty(value = "PP_CLASS")
-    @Column(name = "jacketed_pipe", length = 50)
-    private String jacketedPipe;
+    @Column(name = "pp_class", length = 50)
+    private String ppClass;
 
     /**
      * JACKETED_PIPE
      */
     @Size(min = 0, max = 50)
     @ApiModelProperty(value = "JACKETED_PIPE")
-    @Column(name = "inspection_code", length = 50)
-    private String inspectionCode;
+    @Column(name = "jacketed_pipe", length = 50)
+    private String jacketedPipe;
 
     /**
      * @ 来源抽检比例表 中的代号
      */
-    @NotNull
-    @ApiModelProperty(value = "@ 来源抽检比例表 中的代号", required = true)
-    @Column(name = "create_time", nullable = false)
-    private Instant createTime;
+    @Size(min = 0, max = 50)
+    @ApiModelProperty(value = "@ 来源抽检比例表 中的代号")
+    @Column(name = "inspection_code", length = 50)
+    private String inspectionCode;
 
     /**
      * CREATE_TIME
      */
+    @NotNull
+    @ApiModelProperty(value = "CREATE_TIME", required = true)
+    @Column(name = "create_time", nullable = false)
+    private Instant createTime;
+
+    /**
+     * DEL_FLAG
+     */
     @Min(value = 0)
     @Max(value = 10)
-    @ApiModelProperty(value = "CREATE_TIME")
+    @ApiModelProperty(value = "DEL_FLAG")
     @Column(name = "del_flag")
     private Integer delFlag;
 

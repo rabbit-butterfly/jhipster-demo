@@ -14,10 +14,10 @@ import java.util.Objects;
 /**
  * 管线-焊接委托记录表
  * @auther:renntrabbit@foxmail.com
- * @date:Tue Jul 18 17:06:29 CST 2017
+ * @date:Sun Jul 23 12:39:36 CST 2017
  * table:pp_line_weld_entrust
  */
-@ApiModel(description = "管线-焊接委托记录表 @auther:renntrabbit@foxmail.com @date:Tue Jul 18 17:06:29 CST 2017 table:pp_line_weld_entrust")
+@ApiModel(description = "管线-焊接委托记录表 @auther:renntrabbit@foxmail.com @date:Sun Jul 23 12:39:36 CST 2017 table:pp_line_weld_entrust")
 @Entity
 @Table(name = "pp_line_weld_entrust")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -29,52 +29,47 @@ public class PpLineWeldEntrust implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
-    @Size(min = 0, max = 19)
-    @Column(name = "proj_id", length = 19, nullable = false)
-    private String projId;
-
     /**
      * PROJ_ID
      */
     @NotNull
     @Size(min = 0, max = 19)
     @ApiModelProperty(value = "PROJ_ID", required = true)
-    @Column(name = "pipeline_id", length = 19, nullable = false)
-    private String pipelineId;
+    @Column(name = "proj_id", length = 19, nullable = false)
+    private String projId;
 
     /**
      * PIPELINE_ID
      */
+    @NotNull
     @Size(min = 0, max = 19)
-    @ApiModelProperty(value = "PIPELINE_ID")
-    @Column(name = "weld_id", length = 19)
-    private String weldId;
+    @ApiModelProperty(value = "PIPELINE_ID", required = true)
+    @Column(name = "pipeline_id", length = 19, nullable = false)
+    private String pipelineId;
 
     /**
      * WELD_ID
      */
-    @Size(min = 0, max = 20)
+    @Size(min = 0, max = 19)
     @ApiModelProperty(value = "WELD_ID")
-    @Column(name = "flow_num", length = 20)
-    private String flowNum;
+    @Column(name = "weld_id", length = 19)
+    private String weldId;
 
     /**
      * FLOW_NUM
      */
-    @Size(min = 0, max = 50)
+    @Size(min = 0, max = 20)
     @ApiModelProperty(value = "FLOW_NUM")
-    @Column(name = "code", length = 50)
-    private String code;
+    @Column(name = "flow_num", length = 20)
+    private String flowNum;
 
     /**
      * @分项号-委托类型-流水号
      */
-    @Min(value = 0)
-    @Max(value = 10)
+    @Size(min = 0, max = 50)
     @ApiModelProperty(value = "@分项号-委托类型-流水号")
-    @Column(name = "expand_count")
-    private Integer expandCount;
+    @Column(name = "code", length = 50)
+    private String code;
 
     /**
      * EXPAND_COUNT
@@ -82,46 +77,55 @@ public class PpLineWeldEntrust implements Serializable {
     @Min(value = 0)
     @Max(value = 10)
     @ApiModelProperty(value = "EXPAND_COUNT")
-    @Column(name = "repare_count")
-    private Integer repareCount;
+    @Column(name = "expand_count")
+    private Integer expandCount;
 
     /**
      * REPARE_COUNT
      */
-    @Size(min = 0, max = 10)
+    @Min(value = 0)
+    @Max(value = 10)
     @ApiModelProperty(value = "REPARE_COUNT")
-    @Column(name = "entrust_type", length = 10)
-    private String entrustType;
+    @Column(name = "repare_count")
+    private Integer repareCount;
 
     /**
      * @RT PT UT MT PMI
      */
+    @Size(min = 0, max = 10)
     @ApiModelProperty(value = "@RT PT UT MT PMI")
-    @Column(name = "entrust_date")
-    private Instant entrustDate;
+    @Column(name = "entrust_type", length = 10)
+    private String entrustType;
 
     /**
      * ENTRUST_DATE
      */
-    @Size(min = 0, max = 500)
     @ApiModelProperty(value = "ENTRUST_DATE")
-    @Column(name = "remark", length = 500)
-    private String remark;
+    @Column(name = "entrust_date")
+    private Instant entrustDate;
 
     /**
      * REMARK
      */
-    @NotNull
-    @ApiModelProperty(value = "REMARK", required = true)
-    @Column(name = "create_time", nullable = false)
-    private Instant createTime;
+    @Size(min = 0, max = 500)
+    @ApiModelProperty(value = "REMARK")
+    @Column(name = "remark", length = 500)
+    private String remark;
 
     /**
      * CREATE_TIME
      */
+    @NotNull
+    @ApiModelProperty(value = "CREATE_TIME", required = true)
+    @Column(name = "create_time", nullable = false)
+    private Instant createTime;
+
+    /**
+     * DEL_FLAG
+     */
     @Min(value = 0)
     @Max(value = 10)
-    @ApiModelProperty(value = "CREATE_TIME")
+    @ApiModelProperty(value = "DEL_FLAG")
     @Column(name = "del_flag")
     private Integer delFlag;
 

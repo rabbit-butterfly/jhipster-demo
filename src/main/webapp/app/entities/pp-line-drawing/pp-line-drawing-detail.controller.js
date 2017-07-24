@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .controller('PpLineDrawingDetailController', PpLineDrawingDetailController);
 
     PpLineDrawingDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'PpLineDrawing'];
@@ -13,7 +13,7 @@
         vm.ppLineDrawing = entity;
         vm.previousState = previousState.name;
 
-        var unsubscribe = $rootScope.$on('pcmsApp:ppLineDrawingUpdate', function(event, result) {
+        var unsubscribe = $rootScope.$on('tuxAdminApp:ppLineDrawingUpdate', function(event, result) {
             vm.ppLineDrawing = result;
         });
         $scope.$on('$destroy', unsubscribe);

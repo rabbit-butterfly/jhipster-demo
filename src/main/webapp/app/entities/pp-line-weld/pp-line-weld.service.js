@@ -1,7 +1,7 @@
 (function() {
     'use strict';
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .factory('PpLineWeld', PpLineWeld);
 
     PpLineWeld.$inject = ['$resource', 'DateUtils'];

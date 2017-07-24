@@ -1,5 +1,5 @@
 {
-    "pcmsApp": {
+    "tuxAdminApp": {
         "project" : {
             "home": {
                 "title": "Projects",
@@ -19,8 +19,8 @@
             "name": "Name",
             "enName": "En Name",
             "supervisor": "Supervisor",
-            "oContractor": "O Contractor",
-            "hContractor": "H Contractor",
+            "ownerContractor": "Owner Contractor",
+            "totalContractor": "Total Contractor",
             "startDate": "Start Date",
             "endDate": "End Date",
             "status": "Status",

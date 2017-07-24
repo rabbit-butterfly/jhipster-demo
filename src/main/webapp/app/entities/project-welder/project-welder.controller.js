@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .controller('ProjectWelderController', ProjectWelderController);
 
     ProjectWelderController.$inject = ['$state', 'ProjectWelder', 'ParseLinks', 'AlertService', 'paginationConstants', 'pagingParams'];

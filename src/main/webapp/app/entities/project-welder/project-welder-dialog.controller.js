@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .controller('ProjectWelderDialogController', ProjectWelderDialogController);
 
     ProjectWelderDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'ProjectWelder'];
@@ -34,7 +34,7 @@
         }
 
         function onSaveSuccess (result) {
-            $scope.$emit('pcmsApp:projectWelderUpdate', result);
+            $scope.$emit('tuxAdminApp:projectWelderUpdate', result);
             $uibModalInstance.close(result);
             vm.isSaving = false;
         }

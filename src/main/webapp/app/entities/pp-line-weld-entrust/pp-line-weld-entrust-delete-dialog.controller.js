@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .controller('PpLineWeldEntrustDeleteController',PpLineWeldEntrustDeleteController);
 
     PpLineWeldEntrustDeleteController.$inject = ['$uibModalInstance', 'entity', 'PpLineWeldEntrust'];

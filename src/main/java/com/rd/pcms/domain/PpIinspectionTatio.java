@@ -14,10 +14,10 @@ import java.util.Objects;
 /**
  * 抽检比例设置表
  * @auther:renntrabbit@foxmail.com
- * @date:Tue Jul 18 17:06:29 CST 2017
+ * @date:Sun Jul 23 12:39:36 CST 2017
  * table:pp_inspection_ratio
  */
-@ApiModel(description = "抽检比例设置表 @auther:renntrabbit@foxmail.com @date:Tue Jul 18 17:06:29 CST 2017 table:pp_inspection_ratio")
+@ApiModel(description = "抽检比例设置表 @auther:renntrabbit@foxmail.com @date:Sun Jul 23 12:39:36 CST 2017 table:pp_inspection_ratio")
 @Entity
 @Table(name = "pp_inspection_ratio")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -29,146 +29,150 @@ public class PpIinspectionTatio implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
-    @Size(min = 0, max = 19)
-    @Column(name = "comp_id", length = 19, nullable = false)
-    private String compId;
-
     /**
      * COMP_ID
      */
     @NotNull
     @Size(min = 0, max = 19)
     @ApiModelProperty(value = "COMP_ID", required = true)
-    @Column(name = "proj_id", length = 19, nullable = false)
-    private String projId;
+    @Column(name = "comp_id", length = 19, nullable = false)
+    private String compId;
 
     /**
      * PROJ_ID
      */
-    @Size(min = 0, max = 50)
-    @ApiModelProperty(value = "PROJ_ID")
-    @Column(name = "inspection_code", length = 50)
-    private String inspectionCode;
+    @NotNull
+    @Size(min = 0, max = 19)
+    @ApiModelProperty(value = "PROJ_ID", required = true)
+    @Column(name = "proj_id", length = 19, nullable = false)
+    private String projId;
 
     /**
      * I III IV
      */
-    @Size(min = 0, max = 19)
+    @Size(min = 0, max = 50)
     @ApiModelProperty(value = "I III IV")
-    @Column(name = "rt_rate", length = 19)
-    private String rtRate;
+    @Column(name = "inspection_code", length = 50)
+    private String inspectionCode;
 
     /**
      * RT_RATE
      */
     @Size(min = 0, max = 19)
     @ApiModelProperty(value = "RT_RATE")
-    @Column(name = "rt_rate_gd", length = 19)
-    private String rtRateGd;
+    @Column(name = "rt_rate", length = 19)
+    private String rtRate;
 
     /**
      * RT_RATE_GD
      */
-    @Size(min = 0, max = 50)
+    @Size(min = 0, max = 19)
     @ApiModelProperty(value = "RT_RATE_GD")
-    @Column(name = "rt_standard", length = 50)
-    private String rtStandard;
+    @Column(name = "rt_rate_gd", length = 19)
+    private String rtRateGd;
 
     /**
      * RT_STANDARD
      */
     @Size(min = 0, max = 50)
     @ApiModelProperty(value = "RT_STANDARD")
-    @Column(name = "rt_grade", length = 50)
-    private String rtGrade;
+    @Column(name = "rt_standard", length = 50)
+    private String rtStandard;
 
     /**
      * @ I III IV
      */
-    @Size(min = 0, max = 19)
+    @Size(min = 0, max = 50)
     @ApiModelProperty(value = "@ I III IV")
-    @Column(name = "pt_rate", length = 19)
-    private String ptRate;
+    @Column(name = "rt_grade", length = 50)
+    private String rtGrade;
 
     /**
      * PT_RATE
      */
-    @Size(min = 0, max = 50)
+    @Size(min = 0, max = 19)
     @ApiModelProperty(value = "PT_RATE")
-    @Column(name = "pt_standard", length = 50)
-    private String ptStandard;
+    @Column(name = "pt_rate", length = 19)
+    private String ptRate;
 
     /**
      * PT_STANDARD
      */
     @Size(min = 0, max = 50)
     @ApiModelProperty(value = "PT_STANDARD")
-    @Column(name = "pt_grade", length = 50)
-    private String ptGrade;
+    @Column(name = "pt_standard", length = 50)
+    private String ptStandard;
 
     /**
      * PT_GRADE
      */
-    @Size(min = 0, max = 19)
+    @Size(min = 0, max = 50)
     @ApiModelProperty(value = "PT_GRADE")
-    @Column(name = "ut_rate", length = 19)
-    private String utRate;
+    @Column(name = "pt_grade", length = 50)
+    private String ptGrade;
 
     /**
      * UT_RATE
      */
-    @Size(min = 0, max = 50)
+    @Size(min = 0, max = 19)
     @ApiModelProperty(value = "UT_RATE")
-    @Column(name = "ut_standard", length = 50)
-    private String utStandard;
+    @Column(name = "ut_rate", length = 19)
+    private String utRate;
 
     /**
      * UT_STANDARD
      */
     @Size(min = 0, max = 50)
     @ApiModelProperty(value = "UT_STANDARD")
-    @Column(name = "ut_grade", length = 50)
-    private String utGrade;
+    @Column(name = "ut_standard", length = 50)
+    private String utStandard;
 
     /**
      * UT_GRADE
      */
-    @Size(min = 0, max = 19)
+    @Size(min = 0, max = 50)
     @ApiModelProperty(value = "UT_GRADE")
-    @Column(name = "mt_rate", length = 19)
-    private String mtRate;
+    @Column(name = "ut_grade", length = 50)
+    private String utGrade;
 
     /**
      * MT_RATE
      */
-    @Size(min = 0, max = 50)
+    @Size(min = 0, max = 19)
     @ApiModelProperty(value = "MT_RATE")
-    @Column(name = "mt_standard", length = 50)
-    private String mtStandard;
+    @Column(name = "mt_rate", length = 19)
+    private String mtRate;
 
     /**
      * MT_STANDARD
      */
     @Size(min = 0, max = 50)
     @ApiModelProperty(value = "MT_STANDARD")
-    @Column(name = "mt_grade", length = 50)
-    private String mtGrade;
+    @Column(name = "mt_standard", length = 50)
+    private String mtStandard;
 
     /**
      * MT_GRADE
      */
-    @NotNull
-    @ApiModelProperty(value = "MT_GRADE", required = true)
-    @Column(name = "create_time", nullable = false)
-    private Instant createTime;
+    @Size(min = 0, max = 50)
+    @ApiModelProperty(value = "MT_GRADE")
+    @Column(name = "mt_grade", length = 50)
+    private String mtGrade;
 
     /**
      * CREATE_TIME
      */
+    @NotNull
+    @ApiModelProperty(value = "CREATE_TIME", required = true)
+    @Column(name = "create_time", nullable = false)
+    private Instant createTime;
+
+    /**
+     * DEL_FLAG
+     */
     @Min(value = 0)
     @Max(value = 10)
-    @ApiModelProperty(value = "CREATE_TIME")
+    @ApiModelProperty(value = "DEL_FLAG")
     @Column(name = "del_flag")
     private Integer delFlag;
 

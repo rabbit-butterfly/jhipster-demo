@@ -13,10 +13,10 @@ import java.util.Objects;
 /**
  * 用户选中了项目中的哪几个分项
  * @auther:renntrabbit@foxmail.com
- * @date:Tue Jul 18 17:06:29 CST 2017
+ * @date:Sun Jul 23 12:39:36 CST 2017
  * table:user_area
  */
-@ApiModel(description = "用户选中了项目中的哪几个分项 @auther:renntrabbit@foxmail.com @date:Tue Jul 18 17:06:29 CST 2017 table:user_area")
+@ApiModel(description = "用户选中了项目中的哪几个分项 @auther:renntrabbit@foxmail.com @date:Sun Jul 23 12:39:36 CST 2017 table:user_area")
 @Entity
 @Table(name = "user_area")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -28,17 +28,21 @@ public class UserArea implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
-    @Size(min = 0, max = 19)
-    @Column(name = "user_id", length = 19, nullable = false)
-    private String userId;
-
     /**
      * USER_ID
      */
     @NotNull
     @Size(min = 0, max = 19)
     @ApiModelProperty(value = "USER_ID", required = true)
+    @Column(name = "user_id", length = 19, nullable = false)
+    private String userId;
+
+    /**
+     * AREA_ID
+     */
+    @NotNull
+    @Size(min = 0, max = 19)
+    @ApiModelProperty(value = "AREA_ID", required = true)
     @Column(name = "area_id", length = 19, nullable = false)
     private String areaId;
 

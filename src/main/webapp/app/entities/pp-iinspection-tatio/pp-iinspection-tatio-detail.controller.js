@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .controller('PpIinspectionTatioDetailController', PpIinspectionTatioDetailController);
 
     PpIinspectionTatioDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'PpIinspectionTatio'];
@@ -13,7 +13,7 @@
         vm.ppIinspectionTatio = entity;
         vm.previousState = previousState.name;
 
-        var unsubscribe = $rootScope.$on('pcmsApp:ppIinspectionTatioUpdate', function(event, result) {
+        var unsubscribe = $rootScope.$on('tuxAdminApp:ppIinspectionTatioUpdate', function(event, result) {
             vm.ppIinspectionTatio = result;
         });
         $scope.$on('$destroy', unsubscribe);

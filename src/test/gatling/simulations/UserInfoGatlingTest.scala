@@ -67,7 +67,7 @@ class UserInfoGatlingTest extends Simulation {
             .exec(http("Create new userInfo")
             .post("/api/user-infos")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "compId":"SAMPLE_TEXT", "code":"SAMPLE_TEXT", "mobile":"SAMPLE_TEXT", "status":"SAMPLE_TEXT", "jobTitle":"SAMPLE_TEXT", "major":"SAMPLE_TEXT", "jhUserId":"SAMPLE_TEXT"}""")).asJSON
+            .body(StringBody("""{"id":null, "compId":null, "code":null, "mobile":"SAMPLE_TEXT", "status":"0", "jobTitle":"SAMPLE_TEXT", "major":"SAMPLE_TEXT", "jhUserId":null}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_userInfo_url"))).exitHereIfFailed
             .pause(10)

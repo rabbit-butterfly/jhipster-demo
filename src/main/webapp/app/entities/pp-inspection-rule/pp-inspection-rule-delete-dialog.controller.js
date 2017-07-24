@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .controller('PpInspectionRuleDeleteController',PpInspectionRuleDeleteController);
 
     PpInspectionRuleDeleteController.$inject = ['$uibModalInstance', 'entity', 'PpInspectionRule'];

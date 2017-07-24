@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .controller('ProjectDetailController', ProjectDetailController);
 
     ProjectDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Project'];
@@ -13,7 +13,7 @@
         vm.project = entity;
         vm.previousState = previousState.name;
 
-        var unsubscribe = $rootScope.$on('pcmsApp:projectUpdate', function(event, result) {
+        var unsubscribe = $rootScope.$on('tuxAdminApp:projectUpdate', function(event, result) {
             vm.project = result;
         });
         $scope.$on('$destroy', unsubscribe);

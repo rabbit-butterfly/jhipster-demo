@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pcmsApp')
+        .module('tuxAdminApp')
         .controller('PpLineWeldEntrustDetailController', PpLineWeldEntrustDetailController);
 
     PpLineWeldEntrustDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'PpLineWeldEntrust'];
@@ -13,7 +13,7 @@
         vm.ppLineWeldEntrust = entity;
         vm.previousState = previousState.name;
 
-        var unsubscribe = $rootScope.$on('pcmsApp:ppLineWeldEntrustUpdate', function(event, result) {
+        var unsubscribe = $rootScope.$on('tuxAdminApp:ppLineWeldEntrustUpdate', function(event, result) {
             vm.ppLineWeldEntrust = result;
         });
         $scope.$on('$destroy', unsubscribe);

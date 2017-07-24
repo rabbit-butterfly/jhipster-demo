@@ -14,10 +14,10 @@ import java.util.Objects;
 /**
  * 焊接记录表
  * @auther:renntrabbit@foxmail.com
- * @date:Tue Jul 18 17:06:29 CST 2017
+ * @date:Sun Jul 23 12:39:36 CST 2017
  * table:pp_line_weld
  */
-@ApiModel(description = "焊接记录表 @auther:renntrabbit@foxmail.com @date:Tue Jul 18 17:06:29 CST 2017 table:pp_line_weld")
+@ApiModel(description = "焊接记录表 @auther:renntrabbit@foxmail.com @date:Sun Jul 23 12:39:36 CST 2017 table:pp_line_weld")
 @Entity
 @Table(name = "pp_line_weld")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -29,79 +29,83 @@ public class PpLineWeld implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    /**
+     * PIPE_ID
+     */
     @NotNull
     @Size(min = 0, max = 19)
+    @ApiModelProperty(value = "PIPE_ID", required = true)
     @Column(name = "pipe_id", length = 19, nullable = false)
     private String pipeId;
 
     /**
-     * PIPE_ID
+     * PAGE_CODE
      */
     @Size(min = 0, max = 20)
-    @ApiModelProperty(value = "PIPE_ID")
+    @ApiModelProperty(value = "PAGE_CODE")
     @Column(name = "page_code", length = 20)
     private String pageCode;
 
     /**
-     * PAGE_CODE
+     * JIONT
      */
     @Size(min = 0, max = 50)
-    @ApiModelProperty(value = "PAGE_CODE")
+    @ApiModelProperty(value = "JIONT")
     @Column(name = "jiont", length = 50)
     private String jiont;
 
     /**
-     * JIONT
-     */
-    @Size(min = 0, max = 32)
-    @ApiModelProperty(value = "JIONT")
-    @Column(name = "wpsno", length = 32)
-    private String wpsno;
-
-    /**
      * WPSNO
      */
-    @Size(min = 0, max = 50)
+    @Size(min = 0, max = 32)
     @ApiModelProperty(value = "WPSNO")
-    @Column(name = "jlocation", length = 50)
-    private String jlocation;
+    @Column(name = "wpsno", length = 32)
+    private String wpsno;
 
     /**
      * JLOCATION
      */
     @Size(min = 0, max = 50)
     @ApiModelProperty(value = "JLOCATION")
-    @Column(name = "jclass", length = 50)
-    private String jclass;
+    @Column(name = "jlocation", length = 50)
+    private String jlocation;
 
     /**
      * JCLASS
      */
+    @Size(min = 0, max = 50)
     @ApiModelProperty(value = "JCLASS")
-    @Column(name = "finish_date")
-    private Instant finishDate;
+    @Column(name = "jclass", length = 50)
+    private String jclass;
 
     /**
      * FINISH_DATE
      */
-    @Size(min = 0, max = 5)
     @ApiModelProperty(value = "FINISH_DATE")
-    @Column(name = "jsize", length = 5)
-    private String jsize;
+    @Column(name = "finish_date")
+    private Instant finishDate;
 
     /**
      * JSIZE
      */
-    @Size(min = 0, max = 50)
+    @Size(min = 0, max = 5)
     @ApiModelProperty(value = "JSIZE")
-    @Column(name = "thickness", length = 50)
-    private String thickness;
+    @Column(name = "jsize", length = 5)
+    private String jsize;
 
     /**
      * 管道壁厚设置表@
      */
-    @Size(min = 0, max = 20)
+    @Size(min = 0, max = 50)
     @ApiModelProperty(value = "管道壁厚设置表@")
+    @Column(name = "thickness", length = 50)
+    private String thickness;
+
+    /**
+     * 数据字典@
+     */
+    @Size(min = 0, max = 20)
+    @ApiModelProperty(value = "数据字典@")
     @Column(name = "jtype", length = 20)
     private String jtype;
 
@@ -122,155 +126,155 @@ public class PpLineWeld implements Serializable {
     private String fixedRotat;
 
     /**
-     * 数据字典@
+     * 焊工代号@
      */
     @Size(min = 0, max = 50)
-    @ApiModelProperty(value = "数据字典@")
+    @ApiModelProperty(value = "焊工代号@")
     @Column(name = "root_welder", length = 50)
     private String rootWelder;
 
     /**
-     * 焊工代号@
+     * EXAMITEM
      */
     @Size(min = 0, max = 32)
-    @ApiModelProperty(value = "焊工代号@")
+    @ApiModelProperty(value = "EXAMITEM")
     @Column(name = "examitem", length = 32)
     private String examitem;
 
     /**
-     * EXAMITEM
+     * 焊工代号@
      */
     @Size(min = 0, max = 50)
-    @ApiModelProperty(value = "EXAMITEM")
+    @ApiModelProperty(value = "焊工代号@")
     @Column(name = "cover_welder", length = 50)
     private String coverWelder;
 
     /**
-     * 焊工代号@
-     */
-    @Size(min = 0, max = 19)
-    @ApiModelProperty(value = "焊工代号@")
-    @Column(name = "visual", length = 19)
-    private String visual;
-
-    /**
      * 数据字典@
      */
-    @Size(min = 0, max = 50)
+    @Size(min = 0, max = 19)
     @ApiModelProperty(value = "数据字典@")
-    @Column(name = "piece_no_1", length = 50)
-    private String pieceNo1;
+    @Column(name = "visual", length = 19)
+    private String visual;
 
     /**
      * PIECE_NO1
      */
     @Size(min = 0, max = 50)
     @ApiModelProperty(value = "PIECE_NO1")
-    @Column(name = "welding_matial", length = 50)
-    private String weldingMatial;
+    @Column(name = "piece_no_1", length = 50)
+    private String pieceNo1;
 
     /**
      * WELDING_MATIAL
      */
     @Size(min = 0, max = 50)
     @ApiModelProperty(value = "WELDING_MATIAL")
-    @Column(name = "piece_no_2", length = 50)
-    private String pieceNo2;
+    @Column(name = "welding_matial", length = 50)
+    private String weldingMatial;
 
     /**
      * PIECE_NO2
      */
-    @Size(min = 0, max = 64)
+    @Size(min = 0, max = 50)
     @ApiModelProperty(value = "PIECE_NO2")
-    @Column(name = "heat_no_1", length = 64)
-    private String heatNo1;
+    @Column(name = "piece_no_2", length = 50)
+    private String pieceNo2;
 
     /**
      * HEAT_NO1
      */
     @Size(min = 0, max = 64)
     @ApiModelProperty(value = "HEAT_NO1")
-    @Column(name = "heat_no_2", length = 64)
-    private String heatNo2;
+    @Column(name = "heat_no_1", length = 64)
+    private String heatNo1;
 
     /**
      * HEAT_NO2
      */
     @Size(min = 0, max = 64)
     @ApiModelProperty(value = "HEAT_NO2")
-    @Column(name = "alter_code", length = 64)
-    private String alterCode;
+    @Column(name = "heat_no_2", length = 64)
+    private String heatNo2;
 
     /**
      * ALTER_CODE
      */
     @Size(min = 0, max = 64)
     @ApiModelProperty(value = "ALTER_CODE")
-    @Column(name = "alter_type", length = 64)
-    private String alterType;
+    @Column(name = "alter_code", length = 64)
+    private String alterCode;
 
     /**
      * 数据字典@
      */
-    @Size(min = 0, max = 20)
+    @Size(min = 0, max = 64)
     @ApiModelProperty(value = "数据字典@")
-    @Column(name = "daily_no", length = 20)
-    private String dailyNo;
+    @Column(name = "alter_type", length = 64)
+    private String alterType;
 
     /**
      * DAILY_NO
      */
-    @Size(min = 0, max = 50)
+    @Size(min = 0, max = 20)
     @ApiModelProperty(value = "DAILY_NO")
-    @Column(name = "hardess_rec", length = 50)
-    private String hardessRec;
+    @Column(name = "daily_no", length = 20)
+    private String dailyNo;
 
     /**
      * HARDESS_REC
      */
-    @Size(min = 0, max = 64)
+    @Size(min = 0, max = 50)
     @ApiModelProperty(value = "HARDESS_REC")
-    @Column(name = "heat_rec", length = 64)
-    private String heatRec;
+    @Column(name = "hardess_rec", length = 50)
+    private String hardessRec;
 
     /**
      * HEAT_REC
      */
-    @Size(min = 0, max = 50)
+    @Size(min = 0, max = 64)
     @ApiModelProperty(value = "HEAT_REC")
-    @Column(name = "rt_lot", length = 50)
-    private String rtLot;
+    @Column(name = "heat_rec", length = 64)
+    private String heatRec;
 
     /**
      * RT_LOT
      */
     @Size(min = 0, max = 50)
     @ApiModelProperty(value = "RT_LOT")
-    @Column(name = "rt_sample", length = 50)
-    private String rtSample;
+    @Column(name = "rt_lot", length = 50)
+    private String rtLot;
 
     /**
      * RT_SAMPLE
      */
-    @Size(min = 0, max = 500)
+    @Size(min = 0, max = 50)
     @ApiModelProperty(value = "RT_SAMPLE")
-    @Column(name = "remark", length = 500)
-    private String remark;
+    @Column(name = "rt_sample", length = 50)
+    private String rtSample;
 
     /**
      * REMARK
      */
-    @NotNull
-    @ApiModelProperty(value = "REMARK", required = true)
-    @Column(name = "create_time", nullable = false)
-    private Instant createTime;
+    @Size(min = 0, max = 500)
+    @ApiModelProperty(value = "REMARK")
+    @Column(name = "remark", length = 500)
+    private String remark;
 
     /**
      * CREATE_TIME
      */
+    @NotNull
+    @ApiModelProperty(value = "CREATE_TIME", required = true)
+    @Column(name = "create_time", nullable = false)
+    private Instant createTime;
+
+    /**
+     * DEL_FLAG
+     */
     @Min(value = 0)
     @Max(value = 10)
-    @ApiModelProperty(value = "CREATE_TIME")
+    @ApiModelProperty(value = "DEL_FLAG")
     @Column(name = "del_flag")
     private Integer delFlag;
 

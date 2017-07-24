@@ -1,12 +1,9 @@
 package com.rd.pcms.service.dto;
 
 
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-import java.io.Serializable;
 import java.time.Instant;
+import javax.validation.constraints.*;
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
@@ -23,17 +20,17 @@ public class ProjectDTO implements Serializable {
     @Size(min = 0, max = 80)
     private String name;
 
-    @Size(min = 0, max = 30)
+    @Size(min = 0, max = 32)
     private String enName;
 
     @Size(min = 0, max = 100)
     private String supervisor;
 
     @Size(min = 0, max = 100)
-    private String oContractor;
+    private String ownerContractor;
 
     @Size(min = 0, max = 100)
-    private String hContractor;
+    private String totalContractor;
 
     private Instant startDate;
 
@@ -93,20 +90,20 @@ public class ProjectDTO implements Serializable {
         this.supervisor = supervisor;
     }
 
-    public String getoContractor() {
-        return oContractor;
+    public String getOwnerContractor() {
+        return ownerContractor;
     }
 
-    public void setoContractor(String oContractor) {
-        this.oContractor = oContractor;
+    public void setOwnerContractor(String ownerContractor) {
+        this.ownerContractor = ownerContractor;
     }
 
-    public String gethContractor() {
-        return hContractor;
+    public String getTotalContractor() {
+        return totalContractor;
     }
 
-    public void sethContractor(String hContractor) {
-        this.hContractor = hContractor;
+    public void setTotalContractor(String totalContractor) {
+        this.totalContractor = totalContractor;
     }
 
     public Instant getStartDate() {
@@ -186,8 +183,8 @@ public class ProjectDTO implements Serializable {
             ", name='" + getName() + "'" +
             ", enName='" + getEnName() + "'" +
             ", supervisor='" + getSupervisor() + "'" +
-            ", oContractor='" + getoContractor() + "'" +
-            ", hContractor='" + gethContractor() + "'" +
+            ", ownerContractor='" + getOwnerContractor() + "'" +
+            ", totalContractor='" + getTotalContractor() + "'" +
             ", startDate='" + getStartDate() + "'" +
             ", endDate='" + getEndDate() + "'" +
             ", status='" + getStatus() + "'" +
