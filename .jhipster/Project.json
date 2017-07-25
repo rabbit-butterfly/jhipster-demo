@@ -3,7 +3,32 @@
     "relationships": [],
     "fields": [
         {
+            "fieldName": "projCompId",
+            "javadoc": "项目公司ID",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required",
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 0,
+            "fieldValidateRulesMax": 19
+        },
+        {
+            "fieldName": "projCompName",
+            "javadoc": "项目公司名称",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 128
+        },
+        {
             "fieldName": "code",
+            "javadoc": "CODE",
             "fieldType": "String",
             "fieldValidateRules": [
                 "required",
@@ -15,7 +40,7 @@
         },
         {
             "fieldName": "name",
-            "javadoc": "CODE",
+            "javadoc": "NAME",
             "fieldType": "String",
             "fieldValidateRules": [
                 "minlength",
@@ -26,17 +51,6 @@
         },
         {
             "fieldName": "enName",
-            "javadoc": "NAME",
-            "fieldType": "String",
-            "fieldValidateRules": [
-                "minlength",
-                "maxlength"
-            ],
-            "fieldValidateRulesMinlength": 0,
-            "fieldValidateRulesMaxlength": 30
-        },
-        {
-            "fieldName": "supervisor",
             "javadoc": "EN_NAME",
             "fieldType": "String",
             "fieldValidateRules": [
@@ -44,10 +58,10 @@
                 "maxlength"
             ],
             "fieldValidateRulesMinlength": 0,
-            "fieldValidateRulesMaxlength": 100
+            "fieldValidateRulesMaxlength": 32
         },
         {
-            "fieldName": "oContractor",
+            "fieldName": "supervisor",
             "javadoc": "SUPERVISOR",
             "fieldType": "String",
             "fieldValidateRules": [
@@ -58,8 +72,19 @@
             "fieldValidateRulesMaxlength": 100
         },
         {
-            "fieldName": "hContractor",
-            "javadoc": "O_CONTRACTOR",
+            "fieldName": "ownerContractor",
+            "javadoc": "OWNER_CONTRACTOR",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 100
+        },
+        {
+            "fieldName": "totalContractor",
+            "javadoc": "TOTAL_CONTRACTOR",
             "fieldType": "String",
             "fieldValidateRules": [
                 "minlength",
@@ -70,27 +95,16 @@
         },
         {
             "fieldName": "startDate",
-            "javadoc": "H_CONTRACTOR",
-            "fieldType": "Instant"
-        },
-        {
-            "fieldName": "endDate",
             "javadoc": "START_DATE",
             "fieldType": "Instant"
         },
         {
-            "fieldName": "status",
+            "fieldName": "endDate",
             "javadoc": "END_DATE",
-            "fieldType": "Integer",
-            "fieldValidateRules": [
-                "min",
-                "max"
-            ],
-            "fieldValidateRulesMin": 0,
-            "fieldValidateRulesMax": 10
+            "fieldType": "Instant"
         },
         {
-            "fieldName": "delFlag",
+            "fieldName": "status",
             "javadoc": "0：待审核 1：审核通过 2：审核失败 3：终结",
             "fieldType": "Integer",
             "fieldValidateRules": [
@@ -101,8 +115,19 @@
             "fieldValidateRulesMax": 10
         },
         {
-            "fieldName": "remark",
+            "fieldName": "delFlag",
             "javadoc": "DEL_FLAG",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 0,
+            "fieldValidateRulesMax": 10
+        },
+        {
+            "fieldName": "remark",
+            "javadoc": "REMARK",
             "fieldType": "String",
             "fieldValidateRules": [
                 "minlength",
@@ -113,7 +138,7 @@
         },
         {
             "fieldName": "extendAttr",
-            "javadoc": "REMARK",
+            "javadoc": "扩展字段",
             "fieldType": "String",
             "fieldValidateRules": [
                 "minlength",
@@ -123,8 +148,8 @@
             "fieldValidateRulesMaxlength": 50
         }
     ],
-    "changelogDate": "20170712103801",
-    "javadoc": "存放项目的基本信息:开始时间，结束时间，是否停工等\n@auther:renntrabbit@foxmail.com\n@date:Tue Jul 18 17:06:29 CST 2017\ntable:project",
+    "changelogDate": "20170725122135",
+    "javadoc": "存放项目的基本信息:开始时间，结束时间，是否停工等\n@auther:renntrabbit@foxmail.com\n@date:Tue Jul 25 20:17:28 CST 2017\ntable:project",
     "entityTableName": "project",
     "dto": "mapstruct",
     "pagination": "pager",

@@ -14,10 +14,10 @@ import java.util.Objects;
 /**
  * 等级材质对照表
  * @auther:renntrabbit@foxmail.com
- * @date:Sun Jul 23 12:39:36 CST 2017
+ * @date:Tue Jul 18 17:06:29 CST 2017
  * table:pp_grade_materail
  */
-@ApiModel(description = "等级材质对照表 @auther:renntrabbit@foxmail.com @date:Sun Jul 23 12:39:36 CST 2017 table:pp_grade_materail")
+@ApiModel(description = "等级材质对照表 @auther:renntrabbit@foxmail.com @date:Tue Jul 18 17:06:29 CST 2017 table:pp_grade_materail")
 @Entity
 @Table(name = "pp_grade_materail")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -29,94 +29,90 @@ public class PpGradeMaterail implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotNull
+    @Size(min = 0, max = 19)
+    @Column(name = "comp_id", length = 19, nullable = false)
+    private String compId;
+
     /**
      * COMP_ID
      */
     @NotNull
     @Size(min = 0, max = 19)
     @ApiModelProperty(value = "COMP_ID", required = true)
-    @Column(name = "comp_id", length = 19, nullable = false)
-    private String compId;
+    @Column(name = "proj_id", length = 19, nullable = false)
+    private String projId;
 
     /**
      * PROJ_ID
      */
-    @NotNull
-    @Size(min = 0, max = 19)
-    @ApiModelProperty(value = "PROJ_ID", required = true)
-    @Column(name = "proj_id", length = 19, nullable = false)
-    private String projId;
+    @Size(min = 0, max = 50)
+    @ApiModelProperty(value = "PROJ_ID")
+    @Column(name = "material", length = 50)
+    private String material;
 
     /**
      * MATERIAL
      */
     @Size(min = 0, max = 50)
     @ApiModelProperty(value = "MATERIAL")
-    @Column(name = "material", length = 50)
-    private String material;
+    @Column(name = "pp_class", length = 50)
+    private String ppClass;
 
     /**
      * PP_CLASS
      */
     @Size(min = 0, max = 50)
     @ApiModelProperty(value = "PP_CLASS")
-    @Column(name = "pp_class", length = 50)
-    private String ppClass;
+    @Column(name = "jsize_min", length = 50)
+    private String jsizeMin;
 
     /**
      * JSIZE_MIN
      */
     @Size(min = 0, max = 50)
     @ApiModelProperty(value = "JSIZE_MIN")
-    @Column(name = "jsize_min", length = 50)
-    private String jsizeMin;
+    @Column(name = "jsize_max", length = 50)
+    private String jsizeMax;
 
     /**
      * @ 来源抽检比例表 中的代号
      */
-    @Size(min = 0, max = 50)
+    @Size(min = 0, max = 64)
     @ApiModelProperty(value = "@ 来源抽检比例表 中的代号")
-    @Column(name = "jsize_max", length = 50)
-    private String jsizeMax;
+    @Column(name = "wall_thick_code", length = 64)
+    private String wallThickCode;
 
     /**
      * WALL_THICK_CODE
      */
     @Size(min = 0, max = 64)
     @ApiModelProperty(value = "WALL_THICK_CODE")
-    @Column(name = "wall_thick_code", length = 64)
-    private String wallThickCode;
-
-    /**
-     * @ CS SS PE
-     */
-    @Size(min = 0, max = 64)
-    @ApiModelProperty(value = "@ CS SS PE")
     @Column(name = "material_type", length = 64)
     private String materialType;
 
     /**
-     * @ 常量
+     * @ CS SS PE
      */
     @Size(min = 0, max = 50)
-    @ApiModelProperty(value = "@ 常量")
+    @ApiModelProperty(value = "@ CS SS PE")
     @Column(name = "material_category", length = 50)
     private String materialCategory;
 
     /**
-     * CREATE_TIME
+     * @ 常量
      */
     @NotNull
-    @ApiModelProperty(value = "CREATE_TIME", required = true)
+    @ApiModelProperty(value = "@ 常量", required = true)
     @Column(name = "create_time", nullable = false)
     private Instant createTime;
 
     /**
-     * DEL_FLAG
+     * CREATE_TIME
      */
     @Min(value = 0)
     @Max(value = 10)
-    @ApiModelProperty(value = "DEL_FLAG")
+    @ApiModelProperty(value = "CREATE_TIME")
     @Column(name = "del_flag")
     private Integer delFlag;
 

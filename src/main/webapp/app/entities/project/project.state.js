@@ -124,6 +124,8 @@
                     resolve: {
                         entity: function () {
                             return {
+                                projCompId: null,
+                                projCompName: null,
                                 code: null,
                                 name: null,
                                 enName: null,

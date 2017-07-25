@@ -19,6 +19,8 @@
             <thead>
                 <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
                     <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="projCompId"><span data-translate="tuxAdminApp.project.projCompId">Proj Comp Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="projCompName"><span data-translate="tuxAdminApp.project.projCompName">Proj Comp Name</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="code"><span data-translate="tuxAdminApp.project.code">Code</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="name"><span data-translate="tuxAdminApp.project.name">Name</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="enName"><span data-translate="tuxAdminApp.project.enName">En Name</span> <span class="glyphicon glyphicon-sort"></span></th>
@@ -37,6 +39,8 @@
             <tbody>
                 <tr ng-repeat="project in vm.projects track by project.id">
                     <td><a ui-sref="project-detail({id:project.id})">{{project.id}}</a></td>
+                    <td>{{project.projCompId}}</td>
+                    <td>{{project.projCompName}}</td>
                     <td>{{project.code}}</td>
                     <td>{{project.name}}</td>
                     <td>{{project.enName}}</td>

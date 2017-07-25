@@ -14,10 +14,10 @@ import java.util.Objects;
 /**
  * 存放项目的基本信息:开始时间，结束时间，是否停工等
  * @auther:renntrabbit@foxmail.com
- * @date:Sun Jul 23 12:39:36 CST 2017
+ * @date:Tue Jul 25 20:17:28 CST 2017
  * table:project
  */
-@ApiModel(description = "存放项目的基本信息:开始时间，结束时间，是否停工等 @auther:renntrabbit@foxmail.com @date:Sun Jul 23 12:39:36 CST 2017 table:project")
+@ApiModel(description = "存放项目的基本信息:开始时间，结束时间，是否停工等 @auther:renntrabbit@foxmail.com @date:Tue Jul 25 20:17:28 CST 2017 table:project")
 @Entity
 @Table(name = "project")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -28,6 +28,25 @@ public class Project implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    /**
+     * 项目公司ID
+     */
+    @NotNull
+    @Min(value = 0)
+    @Max(value = 19)
+    @ApiModelProperty(value = "项目公司ID", required = true)
+    @Column(name = "proj_comp_id", nullable = false)
+    private Long projCompId;
+
+    /**
+     * 项目公司名称
+     */
+    @NotNull
+    @Size(min = 0, max = 128)
+    @ApiModelProperty(value = "项目公司名称", required = true)
+    @Column(name = "proj_comp_name", length = 128, nullable = false)
+    private String projCompName;
 
     /**
      * CODE
@@ -83,15 +102,13 @@ public class Project implements Serializable {
      */
     @ApiModelProperty(value = "START_DATE")
     @Column(name = "start_date")
-    @Transient
     private Instant startDate;
 
     /**
      * END_DATE
      */
     @ApiModelProperty(value = "END_DATE")
-    //@Column(name = "end_date")
-    @Transient
+    @Column(name = "end_date")
     private Instant endDate;
 
     /**
@@ -134,6 +151,32 @@ public class Project implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Long getProjCompId() {
+        return projCompId;
+    }
+
+    public Project projCompId(Long projCompId) {
+        this.projCompId = projCompId;
+        return this;
+    }
+
+    public void setProjCompId(Long projCompId) {
+        this.projCompId = projCompId;
+    }
+
+    public String getProjCompName() {
+        return projCompName;
+    }
+
+    public Project projCompName(String projCompName) {
+        this.projCompName = projCompName;
+        return this;
+    }
+
+    public void setProjCompName(String projCompName) {
+        this.projCompName = projCompName;
     }
 
     public String getCode() {
@@ -316,6 +359,8 @@ public class Project implements Serializable {
     public String toString() {
         return "Project{" +
             "id=" + getId() +
+            ", projCompId='" + getProjCompId() + "'" +
+            ", projCompName='" + getProjCompName() + "'" +
             ", code='" + getCode() + "'" +
             ", name='" + getName() + "'" +
             ", enName='" + getEnName() + "'" +

@@ -14,6 +14,15 @@ public class ProjectDTO implements Serializable {
     private Long id;
 
     @NotNull
+    @Min(value = 0)
+    @Max(value = 19)
+    private Long projCompId;
+
+    @NotNull
+    @Size(min = 0, max = 128)
+    private String projCompName;
+
+    @NotNull
     @Size(min = 0, max = 20)
     private String code;
 
@@ -56,6 +65,22 @@ public class ProjectDTO implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Long getProjCompId() {
+        return projCompId;
+    }
+
+    public void setProjCompId(Long projCompId) {
+        this.projCompId = projCompId;
+    }
+
+    public String getProjCompName() {
+        return projCompName;
+    }
+
+    public void setProjCompName(String projCompName) {
+        this.projCompName = projCompName;
     }
 
     public String getCode() {
@@ -179,6 +204,8 @@ public class ProjectDTO implements Serializable {
     public String toString() {
         return "ProjectDTO{" +
             "id=" + getId() +
+            ", projCompId='" + getProjCompId() + "'" +
+            ", projCompName='" + getProjCompName() + "'" +
             ", code='" + getCode() + "'" +
             ", name='" + getName() + "'" +
             ", enName='" + getEnName() + "'" +

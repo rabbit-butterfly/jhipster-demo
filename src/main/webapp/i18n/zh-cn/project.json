@@ -15,6 +15,8 @@
             "detail": {
                 "title": "Project"
             },
+            "projCompId": "Proj Comp Id",
+            "projCompName": "Proj Comp Name",
             "code": "Code",
             "name": "Name",
             "enName": "En Name",
