@@ -5,14 +5,16 @@
         .module('tuxAdminApp')
         .controller('UserInfoDialogController', UserInfoDialogController);
 
-    UserInfoDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'UserInfo'];
+    UserInfoDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', '$q', 'entity', 'UserInfo', 'User', 'Company'];
 
-    function UserInfoDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, UserInfo) {
+    function UserInfoDialogController ($timeout, $scope, $stateParams, $uibModalInstance, $q, entity, UserInfo, User, Company) {
         var vm = this;
 
         vm.userInfo = entity;
         vm.clear = clear;
         vm.save = save;
+        vm.users = User.query();
+        vm.companies = Company.query();
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();

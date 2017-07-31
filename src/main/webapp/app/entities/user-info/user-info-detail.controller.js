@@ -5,9 +5,9 @@
         .module('tuxAdminApp')
         .controller('UserInfoDetailController', UserInfoDetailController);
 
-    UserInfoDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'UserInfo'];
+    UserInfoDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'UserInfo', 'User', 'Company'];
 
-    function UserInfoDetailController($scope, $rootScope, $stateParams, previousState, entity, UserInfo) {
+    function UserInfoDetailController($scope, $rootScope, $stateParams, previousState, entity, UserInfo, User, Company) {
         var vm = this;
 
         vm.userInfo = entity;

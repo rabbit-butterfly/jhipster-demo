@@ -1,0 +1,24 @@
+
+/**
+*数据权限设置
+* @auther:renntrabbit@foxmail.com
+* @date:Thu Jul 27 10:58:26 CST 2017
+* table:jhi_biz_auth
+*/
+entity BizAuth (jhi_biz_auth)
+{
+	bizName String  required  minlength(0) maxlength(16)  /** 业务类别 */
+	roleCode String  required  minlength(0) maxlength(16)  /** 角色编码 */
+	minAuthCode Long    required  min(0) max(19)  /** 最小限码 */
+	maxAuthCode Long      min(0) max(19)  /** 最大权限权 */
+	authCode String    minlength(0) maxlength(1024)  /** 特殊权限码 */
+	authCategory Integer required  min(0) max(5)  /** 权限类别@0:范围1:特殊权限包含1:特殊权限排除 */
+	createdBy String    minlength(0) maxlength(16)  /** 创建人 */
+	createdDate Instant required   /** 创建时间 */
+	lastModifiedBy String    minlength(0) maxlength(16)  /** 修改人 */
+	lastModifiedDate Instant    /** 修改时间 */
+}
+service  BizAuth with serviceClass
+service  BizAuth with serviceImpl
+paginate BizAuth with pager
+dto      BizAuth with mapstruct

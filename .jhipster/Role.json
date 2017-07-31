@@ -1,0 +1,117 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "bizAuth",
+            "otherEntityName": "bizAuth",
+            "otherEntityField": "code",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "role"
+        },
+        {
+            "relationshipName": "role",
+            "otherEntityName": "role",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipValidateRules": "required",
+            "relationshipName": "children",
+            "otherEntityName": "role",
+            "otherEntityRelationshipName": "role"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "javadoc": "权限名称",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 32
+        },
+        {
+            "fieldName": "code",
+            "javadoc": "编码",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 16
+        },
+        {
+            "fieldName": "level",
+            "javadoc": "级别",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required",
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 0,
+            "fieldValidateRulesMax": 5
+        },
+        {
+            "fieldName": "parentId",
+            "javadoc": "父节点",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required",
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 0,
+            "fieldValidateRulesMax": 19
+        },
+        {
+            "fieldName": "createdBy",
+            "javadoc": "创建人",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 16
+        },
+        {
+            "fieldName": "createdDate",
+            "javadoc": "创建时间",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "lastModifiedBy",
+            "javadoc": "修改人",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 16
+        },
+        {
+            "fieldName": "lastModifiedDate",
+            "javadoc": "修改时间",
+            "fieldType": "Instant"
+        }
+    ],
+    "changelogDate": "20170727064733",
+    "javadoc": "角色\n@auther:renntrabbit@foxmail.com\n@date:Thu Jul 27 10:58:26 CST 2017\ntable:jhi_role",
+    "entityTableName": "jhi_role",
+    "dto": "mapstruct",
+    "pagination": "pager",
+    "service": "serviceImpl"
+}

@@ -1,13 +1,15 @@
 package com.rd.pcms.web.rest;
 
-import com.rd.pcms.TuxAdminApp;
+import com.Application;
+import com.jumore.zhxf.web.rest.TestUtil;
 
+import com.jumore.zhxf.web.rest.errors.ExceptionTranslator;
 import com.rd.pcms.domain.Project;
+import com.rd.pcms.domain.Company;
 import com.rd.pcms.repository.ProjectRepository;
 import com.rd.pcms.service.ProjectService;
 import com.rd.pcms.service.dto.ProjectDTO;
 import com.rd.pcms.service.mapper.ProjectMapper;
-import com.rd.pcms.web.rest.errors.ExceptionTranslator;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -39,14 +41,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @see ProjectResource
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = TuxAdminApp.class)
+@SpringBootTest(classes = Application.class)
 public class ProjectResourceIntTest {
 
-    private static final Long DEFAULT_PROJ_COMP_ID = 0L;
-    private static final Long UPDATED_PROJ_COMP_ID = 1L;
+    private static final Long DEFAULT_COMP_ID = 0L;
+    private static final Long UPDATED_COMP_ID = 1L;
 
-    private static final String DEFAULT_PROJ_COMP_NAME = "AAAAAAAAAA";
-    private static final String UPDATED_PROJ_COMP_NAME = "BBBBBBBBBB";
+    private static final String DEFAULT_COMP_NAME = "AAAAAAAAAA";
+    private static final String UPDATED_COMP_NAME = "BBBBBBBBBB";
 
     private static final String DEFAULT_CODE = "AAAAAAAAAA";
     private static final String UPDATED_CODE = "BBBBBBBBBB";
@@ -127,8 +129,8 @@ public class ProjectResourceIntTest {
      */
     public static Project createEntity(EntityManager em) {
         Project project = new Project()
-            .projCompId(DEFAULT_PROJ_COMP_ID)
-            .projCompName(DEFAULT_PROJ_COMP_NAME)
+            .compId(DEFAULT_COMP_ID)
+            .compName(DEFAULT_COMP_NAME)
             .code(DEFAULT_CODE)
             .name(DEFAULT_NAME)
             .enName(DEFAULT_EN_NAME)
@@ -141,6 +143,11 @@ public class ProjectResourceIntTest {
             .delFlag(DEFAULT_DEL_FLAG)
             .remark(DEFAULT_REMARK)
             .extendAttr(DEFAULT_EXTEND_ATTR);
+        // Add required entity
+        Company company = null;//CompanyResourceIntTest.createEntity(em);
+        em.persist(company);
+        em.flush();
+        project.setCompany(company);
         return project;
     }
 
@@ -165,8 +172,8 @@ public class ProjectResourceIntTest {
         List<Project> projectList = projectRepository.findAll();
         assertThat(projectList).hasSize(databaseSizeBeforeCreate + 1);
         Project testProject = projectList.get(projectList.size() - 1);
-        assertThat(testProject.getProjCompId()).isEqualTo(DEFAULT_PROJ_COMP_ID);
-        assertThat(testProject.getProjCompName()).isEqualTo(DEFAULT_PROJ_COMP_NAME);
+        assertThat(testProject.getCompId()).isEqualTo(DEFAULT_COMP_ID);
+        assertThat(testProject.getCompName()).isEqualTo(DEFAULT_COMP_NAME);
         assertThat(testProject.getCode()).isEqualTo(DEFAULT_CODE);
         assertThat(testProject.getName()).isEqualTo(DEFAULT_NAME);
         assertThat(testProject.getEnName()).isEqualTo(DEFAULT_EN_NAME);
@@ -203,10 +210,10 @@ public class ProjectResourceIntTest {
 
     @Test
     @Transactional
-    public void checkProjCompIdIsRequired() throws Exception {
+    public void checkCompIdIsRequired() throws Exception {
         int databaseSizeBeforeTest = projectRepository.findAll().size();
         // set the field null
-        project.setProjCompId(null);
+        project.setCompId(null);
 
         // Create the Project, which fails.
         ProjectDTO projectDTO = projectMapper.toDto(project);
@@ -222,10 +229,10 @@ public class ProjectResourceIntTest {
 
     @Test
     @Transactional
-    public void checkProjCompNameIsRequired() throws Exception {
+    public void checkCompNameIsRequired() throws Exception {
         int databaseSizeBeforeTest = projectRepository.findAll().size();
         // set the field null
-        project.setProjCompName(null);
+        project.setCompName(null);
 
         // Create the Project, which fails.
         ProjectDTO projectDTO = projectMapper.toDto(project);
@@ -269,8 +276,8 @@ public class ProjectResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(project.getId().intValue())))
-            .andExpect(jsonPath("$.[*].projCompId").value(hasItem(DEFAULT_PROJ_COMP_ID.intValue())))
-            .andExpect(jsonPath("$.[*].projCompName").value(hasItem(DEFAULT_PROJ_COMP_NAME.toString())))
+            .andExpect(jsonPath("$.[*].compId").value(hasItem(DEFAULT_COMP_ID.intValue())))
+            .andExpect(jsonPath("$.[*].compName").value(hasItem(DEFAULT_COMP_NAME.toString())))
             .andExpect(jsonPath("$.[*].code").value(hasItem(DEFAULT_CODE.toString())))
             .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME.toString())))
             .andExpect(jsonPath("$.[*].enName").value(hasItem(DEFAULT_EN_NAME.toString())))
@@ -296,8 +303,8 @@ public class ProjectResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(project.getId().intValue()))
-            .andExpect(jsonPath("$.projCompId").value(DEFAULT_PROJ_COMP_ID.intValue()))
-            .andExpect(jsonPath("$.projCompName").value(DEFAULT_PROJ_COMP_NAME.toString()))
+            .andExpect(jsonPath("$.compId").value(DEFAULT_COMP_ID.intValue()))
+            .andExpect(jsonPath("$.compName").value(DEFAULT_COMP_NAME.toString()))
             .andExpect(jsonPath("$.code").value(DEFAULT_CODE.toString()))
             .andExpect(jsonPath("$.name").value(DEFAULT_NAME.toString()))
             .andExpect(jsonPath("$.enName").value(DEFAULT_EN_NAME.toString()))
@@ -330,8 +337,8 @@ public class ProjectResourceIntTest {
         // Update the project
         Project updatedProject = projectRepository.findOne(project.getId());
         updatedProject
-            .projCompId(UPDATED_PROJ_COMP_ID)
-            .projCompName(UPDATED_PROJ_COMP_NAME)
+            .compId(UPDATED_COMP_ID)
+            .compName(UPDATED_COMP_NAME)
             .code(UPDATED_CODE)
             .name(UPDATED_NAME)
             .enName(UPDATED_EN_NAME)
@@ -355,8 +362,8 @@ public class ProjectResourceIntTest {
         List<Project> projectList = projectRepository.findAll();
         assertThat(projectList).hasSize(databaseSizeBeforeUpdate);
         Project testProject = projectList.get(projectList.size() - 1);
-        assertThat(testProject.getProjCompId()).isEqualTo(UPDATED_PROJ_COMP_ID);
-        assertThat(testProject.getProjCompName()).isEqualTo(UPDATED_PROJ_COMP_NAME);
+        assertThat(testProject.getCompId()).isEqualTo(UPDATED_COMP_ID);
+        assertThat(testProject.getCompName()).isEqualTo(UPDATED_COMP_NAME);
         assertThat(testProject.getCode()).isEqualTo(UPDATED_CODE);
         assertThat(testProject.getName()).isEqualTo(UPDATED_NAME);
         assertThat(testProject.getEnName()).isEqualTo(UPDATED_EN_NAME);

@@ -1,9 +1,15 @@
 package com.rd.pcms.service.dto;
 
 
+import com.rd.pcms.domain.Company;
+
 import java.time.Instant;
+import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
 import javax.validation.constraints.*;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Objects;
 
 /**
@@ -13,14 +19,12 @@ public class ProjectDTO implements Serializable {
 
     private Long id;
 
-    @NotNull
     @Min(value = 0)
     @Max(value = 19)
-    private Long projCompId;
+    private Long compId;
 
-    @NotNull
     @Size(min = 0, max = 128)
-    private String projCompName;
+    private String compName;
 
     @NotNull
     @Size(min = 0, max = 20)
@@ -45,6 +49,7 @@ public class ProjectDTO implements Serializable {
 
     private Instant endDate;
 
+
     @Min(value = 0)
     @Max(value = 10)
     private Integer status;
@@ -59,6 +64,9 @@ public class ProjectDTO implements Serializable {
     @Size(min = 0, max = 50)
     private String extendAttr;
 
+    private Company company;
+
+
     public Long getId() {
         return id;
     }
@@ -67,20 +75,20 @@ public class ProjectDTO implements Serializable {
         this.id = id;
     }
 
-    public Long getProjCompId() {
-        return projCompId;
+    public Long getCompId() {
+        return compId;
     }
 
-    public void setProjCompId(Long projCompId) {
-        this.projCompId = projCompId;
+    public void setCompId(Long compId) {
+        this.compId = compId;
     }
 
-    public String getProjCompName() {
-        return projCompName;
+    public String getCompName() {
+        return compName;
     }
 
-    public void setProjCompName(String projCompName) {
-        this.projCompName = projCompName;
+    public void setCompName(String compName) {
+        this.compName = compName;
     }
 
     public String getCode() {
@@ -195,6 +203,14 @@ public class ProjectDTO implements Serializable {
         return Objects.equals(getId(), projectDTO.getId());
     }
 
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
+    }
+
     @Override
     public int hashCode() {
         return Objects.hashCode(getId());
@@ -204,8 +220,8 @@ public class ProjectDTO implements Serializable {
     public String toString() {
         return "ProjectDTO{" +
             "id=" + getId() +
-            ", projCompId='" + getProjCompId() + "'" +
-            ", projCompName='" + getProjCompName() + "'" +
+            ", compId='" + getCompId() + "'" +
+            ", compName='" + getCompName() + "'" +
             ", code='" + getCode() + "'" +
             ", name='" + getName() + "'" +
             ", enName='" + getEnName() + "'" +

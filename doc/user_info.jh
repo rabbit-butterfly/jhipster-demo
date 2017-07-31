@@ -2,7 +2,7 @@
 /**
 *公司成员表
 * @auther:renntrabbit@foxmail.com
-* @date:Sun Jul 23 14:43:53 CST 2017
+* @date:Sun Jul 23 14:33:07 CST 2017
 * table:user_info
 */
 entity UserInfo (user_info)
@@ -10,7 +10,7 @@ entity UserInfo (user_info)
 	compId Long    required  min(0) max(19)  /** 公司ID */
 	code Long      min(0) max(19)  /** 用户工号 */
 	mobile String    minlength(0) maxlength(16)  /** 手机号码 */
-	status Integer   min(0) max(5)  /** 0：无效 1：有效 */
+	status String    minlength(0) maxlength(5)  /** 0：无效 1：有效 */
 	jobTitle String    minlength(0) maxlength(16)  /** 岗位@ */
 	major String    minlength(0) maxlength(16)  /** 专业@ */
 	jhUserId Long    required  min(0) max(19)  /** JH_USER_ID */
@@ -19,3 +19,14 @@ service  UserInfo with serviceClass
 service  UserInfo with serviceImpl
 paginate UserInfo with pager
 dto      UserInfo with mapstruct
+
+
+
+relationship ManyToOne {
+	UserInfo{company(compId) required} to Company
+}
+
+relationship OneToOne {
+	UserInfo{user(jhUserId) required} to User
+}
+

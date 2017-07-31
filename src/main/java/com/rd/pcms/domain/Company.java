@@ -1,15 +1,9 @@
 package com.rd.pcms.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
-import org.hibernate.annotations.Type;
-import org.springframework.data.annotation.CreatedBy;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
@@ -27,7 +21,6 @@ import java.util.Objects;
 @Entity
 @Table(name = "company")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-@EntityListeners(AuditingEntityListener.class)
 public class Company implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -115,6 +108,8 @@ public class Company implements Serializable {
     /**
      * 0：有效 1：逻辑删除
      */
+    @Min(value = 0)
+    @Max(value = 10)
     @ApiModelProperty(value = "0：有效 1：逻辑删除")
     @Column(name = "del_flag")
     private Integer delFlag;
@@ -122,32 +117,26 @@ public class Company implements Serializable {
     /**
      * CREATE_TIME
      */
-    @ApiModelProperty(value = "created_date")
-    @Column(name = "created_date")
-    //@Type(type = "com.javahonk.model.LocalDateHibernateUserType")
-    //@Temporal(TemporalType.DATE)
-    //@Type(type = "org.jadira.usertype.dateandtime.joda.PersistentLocalDate")
+    @ApiModelProperty(value = "CREATE_TIME", required = true)
+    @Column(name = "create_time", nullable = false)
     @Transient
     private Instant createTime;
 
     /**
      * CREATOR
      */
-    @ApiModelProperty(value = "created_by")
-    @CreatedBy
-    @NotNull
-    @Column(name = "created_by", nullable = false, length = 50, updatable = false)
-    @JsonIgnore
+    @Size(min = 0, max = 10)
+    @ApiModelProperty(value = "CREATOR")
+    @Column(name = "creator", length = 10)
     private String creator;
 
     /**
      * UPDATE_TIME
      */
-    @ApiModelProperty(value = "last_modified_date")
-    //@Column(name = "update_time", nullable = false)
+    @ApiModelProperty(value = "UPDATE_TIME", required = true)
+    @Column(name = "update_time", nullable = false)
     @Transient
     private Instant updateTime;
-
 
     public Long getId() {
         return id;

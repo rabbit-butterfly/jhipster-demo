@@ -277,7 +277,7 @@ public class UserService {
         userInfo.setJhUserId(newUser.getId());
         userInfo.setMajor("major");
         userInfo.setJobTitle("kpbtotle");
-        userInfo.setStatus(0);
+        userInfo.setStatus("0");
         userInfoRepository.save(userInfo);
         log.debug("Created Information for User: {}", newUser);
     }

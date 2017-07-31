@@ -4,13 +4,13 @@
     <hr>
     <jhi-alert-error></jhi-alert-error>
     <dl class="dl-horizontal jh-entity-details">
-        <dt><span data-translate="tuxAdminApp.project.projCompId">Proj Comp Id</span></dt>
+        <dt><span data-translate="tuxAdminApp.project.compId">Comp Id</span></dt>
         <dd>
-            <span>{{vm.project.projCompId}}</span>
+            <span>{{vm.project.compId}}</span>
         </dd>
-        <dt><span data-translate="tuxAdminApp.project.projCompName">Proj Comp Name</span></dt>
+        <dt><span data-translate="tuxAdminApp.project.compName">Comp Name</span></dt>
         <dd>
-            <span>{{vm.project.projCompName}}</span>
+            <span>{{vm.project.compName}}</span>
         </dd>
         <dt><span data-translate="tuxAdminApp.project.code">Code</span></dt>
         <dd>
@@ -59,6 +59,10 @@
         <dt><span data-translate="tuxAdminApp.project.extendAttr">Extend Attr</span></dt>
         <dd>
             <span>{{vm.project.extendAttr}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.project.company">Company</span></dt>
+        <dd>
+            <a ui-sref="company-detail({id:vm.project.companyId})">{{vm.project.companyComp_Id}}</a>
         </dd>
     </dl>
 

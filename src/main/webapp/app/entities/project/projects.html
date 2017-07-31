@@ -19,8 +19,8 @@
             <thead>
                 <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
                     <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="projCompId"><span data-translate="tuxAdminApp.project.projCompId">Proj Comp Id</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="projCompName"><span data-translate="tuxAdminApp.project.projCompName">Proj Comp Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="compId"><span data-translate="tuxAdminApp.project.compId">Comp Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="compName"><span data-translate="tuxAdminApp.project.compName">Comp Name</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="code"><span data-translate="tuxAdminApp.project.code">Code</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="name"><span data-translate="tuxAdminApp.project.name">Name</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="enName"><span data-translate="tuxAdminApp.project.enName">En Name</span> <span class="glyphicon glyphicon-sort"></span></th>
@@ -33,14 +33,15 @@
                     <th jh-sort-by="delFlag"><span data-translate="tuxAdminApp.project.delFlag">Del Flag</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="remark"><span data-translate="tuxAdminApp.project.remark">Remark</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="extendAttr"><span data-translate="tuxAdminApp.project.extendAttr">Extend Attr</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="companyComp_Id"><span data-translate="tuxAdminApp.project.company">Company</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="project in vm.projects track by project.id">
                     <td><a ui-sref="project-detail({id:project.id})">{{project.id}}</a></td>
-                    <td>{{project.projCompId}}</td>
-                    <td>{{project.projCompName}}</td>
+                    <td>{{project.compId}}</td>
+                    <td>{{project.compName}}</td>
                     <td>{{project.code}}</td>
                     <td>{{project.name}}</td>
                     <td>{{project.enName}}</td>
@@ -53,6 +54,9 @@
                     <td>{{project.delFlag}}</td>
                     <td>{{project.remark}}</td>
                     <td>{{project.extendAttr}}</td>
+                    <td>
+                        <a ui-sref="company-detail({id:project.companyId})">{{project.companyComp_Id}}</a>
+                    </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

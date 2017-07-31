@@ -1,0 +1,173 @@
+.CSST_Tree{
+	padding:5px;
+	overflow:auto;
+	clear:both;
+}
+
+.CSST_Tree .childrenBox{
+	padding:0px;
+	margin:0px;
+}
+
+.CSST_Tree .Node{
+	height:16px;
+	clear:both;
+}
+
+.CSST_Tree .Node .title{
+	font-size:12px;
+	height:16px;
+	line-height:16px;
+	white-space:nowrap;
+	float:left;
+	cursor:pointer;
+	/*color:#ddd;*/
+}
+
+.CSST_Tree .Node .plus_center{
+	background-image:url('images/plus_center.gif');
+	background-repeat:repeat;
+	height:16px;
+	width:16px;
+	float:left;
+}
+
+.CSST_Tree .Node .plus_bottom{
+	background-image:url('images/plus_bottom.gif');
+	background-repeat:repeat;
+	height:16px;
+	width:16px;
+	float:left;
+} 
+
+.CSST_Tree .Node .plus_root{
+	background-image:url('images/plus_root.gif');
+	background-repeat:repeat;
+	height:16px;
+	width:16px;
+	float:left;
+}
+
+.CSST_Tree .Node .plus_top{
+	background-image:url('images/plus_top.gif');
+	background-repeat:repeat;
+	height:16px;
+	width:16px;
+	float:left;
+}
+
+.CSST_Tree .Node .minus_noLine{
+	background-image:url('images/minus_noLine.gif');
+	height:16px;
+	width:16px;
+	float:left;
+}
+
+.CSST_Tree .Node .minus_center{
+	background-image:url('images/minus_center.gif');
+	background-repeat:repeat;
+	height:16px;
+	width:16px;
+	float:left;
+}
+
+.CSST_Tree .Node .minus_bottom{
+	background-image:url('images/minus_bottom.gif');
+	background-repeat:repeat;
+	height:16px;
+	width:16px;
+	float:left;
+}  
+
+.CSST_Tree .Node .minus_root{
+	background-image:url('images/minus_root.gif');
+	background-repeat:repeat;
+	height:16px;
+	width:16px;
+	float:left;
+}
+
+.CSST_Tree .Node .minus_top{
+	background-image:url('images/minus_top.gif');
+	background-repeat:repeat;
+	height:16px;
+	width:16px;
+	float:left;
+}
+
+
+.CSST_Tree .Node .open{
+	background-image:url('images/policeStation_open.gif');
+	height:16px;
+	width:16px;
+	float:left;
+	background-repeat:no-repeat;
+	margin-right:3px;
+}
+
+.CSST_Tree .Node .page{
+	background-image:url('images/group.gif');
+	background-repeat:no-repeat;
+	height:16px;
+	width:16px;
+	float:left;
+	margin-right:3px;
+}
+
+.CSST_Tree .Node .close{
+	background-image:url('images/policeStation_close.gif');
+	background-repeat:no-repeat;
+	height:16px;
+	width:16px;
+	float:left;
+	margin-right:3px;
+}
+
+.CSST_Tree .Node .blank{
+	height:16px;
+	width:16px;
+	float:left;
+}
+
+.CSST_Tree .Node .line_top{
+	background-image:url('images/line_top.gif');
+	background-repeat:repeat;
+	height:16px;
+	width:16px;
+	float:left;
+}
+.CSST_Tree .Node .line_conn{
+	background-image:url('images/line_conn.gif');
+	background-repeat:repeat;
+	height:16px;
+	width:16px;
+	float:left;
+}
+.CSST_Tree .Node .line_center{
+	background-image:url('images/line_center.gif');
+	background-repeat:repeat;
+	height:16px;
+	width:16px;
+	float:left;
+}
+
+.CSST_Tree .Node .line_bottom{
+	background-image:url('images/line_bottom.gif');
+	background-repeat:repeat;
+	height:16px;
+	width:16px;
+	float:left;
+}
+
+.CSST_Tree .Node .focus{
+	font-size:12px;
+	height:16px;
+	white-space:nowrap;
+	background:#2B7EBE;
+	color:#fff;
+	float:left;
+	cursor:pointer;
+	line-height:16px;
+}
+
+

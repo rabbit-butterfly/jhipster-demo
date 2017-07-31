@@ -1,6 +1,5 @@
 package com.rd.pcms.service.impl;
 
-import com.jumore.zhxf.service.UserService;
 import com.rd.pcms.service.CompanyService;
 import com.rd.pcms.domain.Company;
 import com.rd.pcms.repository.CompanyRepository;
@@ -13,7 +12,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -26,15 +24,10 @@ import java.util.stream.Collectors;
 public class CompanyServiceImpl implements CompanyService{
 
     private final Logger log = LoggerFactory.getLogger(CompanyServiceImpl.class);
-
+    
     private final CompanyRepository companyRepository;
 
     private final CompanyMapper companyMapper;
-
-    @Resource
-    private  UserService userService;
-
-
 
     public CompanyServiceImpl(CompanyRepository companyRepository, CompanyMapper companyMapper) {
         this.companyRepository = companyRepository;
@@ -51,21 +44,14 @@ public class CompanyServiceImpl implements CompanyService{
     public CompanyDTO save(CompanyDTO companyDTO) {
         log.debug("Request to save Company : {}", companyDTO);
         Company company = companyMapper.toEntity(companyDTO);
-
         company = companyRepository.save(company);
         CompanyDTO result = companyMapper.toDto(company);
-
-        /**
-         * 创建项目的同时，需要同时创建项目管理员
-         */
-        userService.createCompanyUser(company);
-
         return result;
     }
 
     /**
      *  Get all the companies.
-     *
+     *  
      *  @param pageable the pagination information
      *  @return the list of entities
      */

@@ -32,6 +32,14 @@
         <dd>
             <span>{{vm.userInfo.jhUserId}}</span>
         </dd>
+        <dt><span data-translate="tuxAdminApp.userInfo.user">User</span></dt>
+        <dd>
+            {{vm.userInfo.userJhUserId}}
+        </dd>
+        <dt><span data-translate="tuxAdminApp.userInfo.company">Company</span></dt>
+        <dd>
+            <a ui-sref="company-detail({id:vm.userInfo.companyId})">{{vm.userInfo.companyCompId}}</a>
+        </dd>
     </dl>
 
     <button type="submit"

@@ -30,6 +30,9 @@
                 "userPower": "User Power",
                 "welder": "Welder",
                 "welderSkill": "Welder Skill",
+                "biz": "Biz",
+                "bizAuth": "Biz Auth",
+                "role": "Role",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

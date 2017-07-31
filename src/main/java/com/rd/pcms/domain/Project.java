@@ -14,10 +14,10 @@ import java.util.Objects;
 /**
  * 存放项目的基本信息:开始时间，结束时间，是否停工等
  * @auther:renntrabbit@foxmail.com
- * @date:Tue Jul 25 20:17:28 CST 2017
+ * @date:Wed Jul 26 12:54:46 CST 2017
  * table:project
  */
-@ApiModel(description = "存放项目的基本信息:开始时间，结束时间，是否停工等 @auther:renntrabbit@foxmail.com @date:Tue Jul 25 20:17:28 CST 2017 table:project")
+@ApiModel(description = "存放项目的基本信息:开始时间，结束时间，是否停工等 @auther:renntrabbit@foxmail.com @date:Wed Jul 26 12:54:46 CST 2017 table:project")
 @Entity
 @Table(name = "project")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -36,8 +36,8 @@ public class Project implements Serializable {
     @Min(value = 0)
     @Max(value = 19)
     @ApiModelProperty(value = "项目公司ID", required = true)
-    @Column(name = "proj_comp_id", nullable = false)
-    private Long projCompId;
+    @Column(name = "comp_id", nullable = false)
+    private Long compId;
 
     /**
      * 项目公司名称
@@ -45,8 +45,8 @@ public class Project implements Serializable {
     @NotNull
     @Size(min = 0, max = 128)
     @ApiModelProperty(value = "项目公司名称", required = true)
-    @Column(name = "proj_comp_name", length = 128, nullable = false)
-    private String projCompName;
+    @Column(name = "comp_name", length = 128, nullable = false)
+    private String compName;
 
     /**
      * CODE
@@ -102,6 +102,7 @@ public class Project implements Serializable {
      */
     @ApiModelProperty(value = "START_DATE")
     @Column(name = "start_date")
+    @Transient
     private Instant startDate;
 
     /**
@@ -109,6 +110,7 @@ public class Project implements Serializable {
      */
     @ApiModelProperty(value = "END_DATE")
     @Column(name = "end_date")
+    @Transient
     private Instant endDate;
 
     /**
@@ -145,6 +147,10 @@ public class Project implements Serializable {
     @Column(name = "extend_attr", length = 50)
     private String extendAttr;
 
+    @ManyToOne(optional = false)
+    @Transient
+    private Company company;
+
     public Long getId() {
         return id;
     }
@@ -153,30 +159,30 @@ public class Project implements Serializable {
         this.id = id;
     }
 
-    public Long getProjCompId() {
-        return projCompId;
+    public Long getCompId() {
+        return compId;
     }
 
-    public Project projCompId(Long projCompId) {
-        this.projCompId = projCompId;
+    public Project compId(Long compId) {
+        this.compId = compId;
         return this;
     }
 
-    public void setProjCompId(Long projCompId) {
-        this.projCompId = projCompId;
+    public void setCompId(Long compId) {
+        this.compId = compId;
     }
 
-    public String getProjCompName() {
-        return projCompName;
+    public String getCompName() {
+        return compName;
     }
 
-    public Project projCompName(String projCompName) {
-        this.projCompName = projCompName;
+    public Project compName(String compName) {
+        this.compName = compName;
         return this;
     }
 
-    public void setProjCompName(String projCompName) {
-        this.projCompName = projCompName;
+    public void setCompName(String compName) {
+        this.compName = compName;
     }
 
     public String getCode() {
@@ -335,6 +341,19 @@ public class Project implements Serializable {
         this.extendAttr = extendAttr;
     }
 
+    public Company getCompany() {
+        return company;
+    }
+
+    public Project company(Company company) {
+        this.company = company;
+        return this;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -359,8 +378,8 @@ public class Project implements Serializable {
     public String toString() {
         return "Project{" +
             "id=" + getId() +
-            ", projCompId='" + getProjCompId() + "'" +
-            ", projCompName='" + getProjCompName() + "'" +
+            ", compId='" + getCompId() + "'" +
+            ", compName='" + getCompName() + "'" +
             ", code='" + getCode() + "'" +
             ", name='" + getName() + "'" +
             ", enName='" + getEnName() + "'" +

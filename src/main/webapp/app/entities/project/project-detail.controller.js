@@ -5,9 +5,9 @@
         .module('tuxAdminApp')
         .controller('ProjectDetailController', ProjectDetailController);
 
-    ProjectDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Project'];
+    ProjectDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Project', 'Company'];
 
-    function ProjectDetailController($scope, $rootScope, $stateParams, previousState, entity, Project) {
+    function ProjectDetailController($scope, $rootScope, $stateParams, previousState, entity, Project, Company) {
         var vm = this;
 
         vm.project = entity;

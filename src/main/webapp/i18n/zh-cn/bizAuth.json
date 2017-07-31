@@ -1,0 +1,32 @@
+{
+    "tuxAdminApp": {
+        "bizAuth" : {
+            "home": {
+                "title": "Biz Auths",
+                "createLabel": "Create a new Biz Auth",
+                "createOrEditLabel": "Create or edit a Biz Auth"
+            },
+            "created": "A new Biz Auth is created with identifier {{ param }}",
+            "updated": "A Biz Auth is updated with identifier {{ param }}",
+            "deleted": "A Biz Auth is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Biz Auth {{ id }}?"
+            },
+            "detail": {
+                "title": "Biz Auth"
+            },
+            "bizName": "Biz Name",
+            "roleCode": "Role Code",
+            "minAuthCode": "Min Auth Code",
+            "maxAuthCode": "Max Auth Code",
+            "authCode": "Auth Code",
+            "authCategory": "Auth Category",
+            "createdBy": "Created By",
+            "createdDate": "Created Date",
+            "lastModifiedBy": "Last Modified By",
+            "lastModifiedDate": "Last Modified Date",
+            "biz": "Biz",
+            "role": "Role"
+        }
+    }
+}

@@ -26,6 +26,8 @@
                     <th jh-sort-by="jobTitle"><span data-translate="tuxAdminApp.userInfo.jobTitle">Job Title</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="major"><span data-translate="tuxAdminApp.userInfo.major">Major</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="jhUserId"><span data-translate="tuxAdminApp.userInfo.jhUserId">Jh User Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="userJhUserId"><span data-translate="tuxAdminApp.userInfo.user">User</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="companyCompId"><span data-translate="tuxAdminApp.userInfo.company">Company</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th></th>
                 </tr>
             </thead>
@@ -39,6 +41,12 @@
                     <td>{{userInfo.jobTitle}}</td>
                     <td>{{userInfo.major}}</td>
                     <td>{{userInfo.jhUserId}}</td>
+                    <td>
+                        {{userInfo.userJhUserId}}
+                    </td>
+                    <td>
+                        <a ui-sref="company-detail({id:userInfo.companyId})">{{userInfo.companyCompId}}</a>
+                    </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

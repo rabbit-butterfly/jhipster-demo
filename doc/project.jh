@@ -2,11 +2,12 @@
 /**
 *存放项目的基本信息:开始时间，结束时间，是否停工等
 * @auther:renntrabbit@foxmail.com
-* @date:Tue Jul 25 20:17:28 CST 2017
+* @date:Wed Jul 26 10:55:10 CST 2017
 * table:project
 */
 entity Project (project)
 {
+	comId Long      min(0) max(19)  /** 主键 */
 	projCompId Long    required  min(0) max(19)  /** 项目公司ID */
 	projCompName String  required  minlength(0) maxlength(128)  /** 项目公司名称 */
 	code String  required  minlength(0) maxlength(20)  /** CODE */
@@ -26,3 +27,38 @@ service  Project with serviceClass
 service  Project with serviceImpl
 paginate Project with pager
 dto      Project with mapstruct
+
+relationship ManyToOne {
+	Project{company(projCompId) required} to Company
+}
+
+
+
+
+
+/**
+*公司表：存放公司的基本信息
+* @auther:renntrabbit@foxmail.com
+* @date:Sun Jul 23 12:39:35 CST 2017
+* table:company
+*/
+entity Company (company)
+{
+	name String  required  minlength(0) maxlength(50)  /** 公司名称 */
+	corporator String    minlength(0) maxlength(10)  /** CORPORATOR */
+	address String  required  minlength(0) maxlength(100)  /** ADDRESS */
+	province String    minlength(0) maxlength(10)  /** PROVINCE */
+	city String    minlength(0) maxlength(10)  /** CITY */
+	area String    minlength(0) maxlength(10)  /** AREA */
+	remark String    minlength(0) maxlength(500)  /** REMARK */
+	mobile String  required  minlength(0) maxlength(11)  /** MOBILE */
+	status Integer   min(0) max(10)  /** 0：冻结 1：有效 */
+	delFlag Integer   min(0) max(10)  /** 0：有效 1：逻辑删除 */
+	createTime Instant required   /** CREATE_TIME */
+	creator String    minlength(0) maxlength(10)  /** CREATOR */
+	updateTime Instant required   /** UPDATE_TIME */
+}
+service  Company with serviceClass
+service  Company with serviceImpl
+paginate Company with pager
+dto      Company with mapstruct

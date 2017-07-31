@@ -1,0 +1,223 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myBizAuthLabel" data-translate="tuxAdminApp.bizAuth.home.createOrEditLabel">Create or edit a Biz Auth</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.bizAuth.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.bizAuth.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.bizAuth.bizName" for="field_bizName">Biz Name</label>
+            <input type="text" class="form-control" name="bizName" id="field_bizName"
+                    ng-model="vm.bizAuth.bizName"
+                    required ng-minlength="0" ng-maxlength="16"/>
+            <div ng-show="editForm.bizName.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.bizName.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.bizName.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.bizName.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="16">
+                    This field cannot be longer than 16 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.bizAuth.roleCode" for="field_roleCode">Role Code</label>
+            <input type="text" class="form-control" name="roleCode" id="field_roleCode"
+                    ng-model="vm.bizAuth.roleCode"
+                    required ng-minlength="0" ng-maxlength="16"/>
+            <div ng-show="editForm.roleCode.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.roleCode.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.roleCode.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.roleCode.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="16">
+                    This field cannot be longer than 16 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.bizAuth.minAuthCode" for="field_minAuthCode">Min Auth Code</label>
+            <input type="number" class="form-control" name="minAuthCode" id="field_minAuthCode"
+                    ng-model="vm.bizAuth.minAuthCode"
+                    required min="0" max="19"/>
+            <div ng-show="editForm.minAuthCode.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.minAuthCode.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.minAuthCode.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.minAuthCode.$error.max" data-translate="entity.validation.max" translate-value-max="19">
+                    This field cannot be more than 19.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.minAuthCode.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.bizAuth.maxAuthCode" for="field_maxAuthCode">Max Auth Code</label>
+            <input type="number" class="form-control" name="maxAuthCode" id="field_maxAuthCode"
+                    ng-model="vm.bizAuth.maxAuthCode"
+                    min="0" max="19"/>
+            <div ng-show="editForm.maxAuthCode.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.maxAuthCode.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.maxAuthCode.$error.max" data-translate="entity.validation.max" translate-value-max="19">
+                    This field cannot be more than 19.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.maxAuthCode.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.bizAuth.authCode" for="field_authCode">Auth Code</label>
+            <input type="text" class="form-control" name="authCode" id="field_authCode"
+                    ng-model="vm.bizAuth.authCode"
+                    ng-minlength="0" ng-maxlength="1024"/>
+            <div ng-show="editForm.authCode.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.authCode.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.authCode.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="1024">
+                    This field cannot be longer than 1024 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.bizAuth.authCategory" for="field_authCategory">Auth Category</label>
+            <input type="number" class="form-control" name="authCategory" id="field_authCategory"
+                    ng-model="vm.bizAuth.authCategory"
+                    required min="0" max="5"/>
+            <div ng-show="editForm.authCategory.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.authCategory.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.authCategory.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.authCategory.$error.max" data-translate="entity.validation.max" translate-value-max="5">
+                    This field cannot be more than 5.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.authCategory.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.bizAuth.createdBy" for="field_createdBy">Created By</label>
+            <input type="text" class="form-control" name="createdBy" id="field_createdBy"
+                    ng-model="vm.bizAuth.createdBy"
+                    ng-minlength="0" ng-maxlength="16"/>
+            <div ng-show="editForm.createdBy.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.createdBy.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.createdBy.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="16">
+                    This field cannot be longer than 16 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.bizAuth.createdDate" for="field_createdDate">Created Date</label>
+                <div class="input-group">
+                    <input id="field_createdDate" type="text" class="form-control" name="createdDate" datetime-picker="{{dateformat}}" ng-model="vm.bizAuth.createdDate" is-open="vm.datePickerOpenStatus.createdDate"
+                    required/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('createdDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            <div ng-show="editForm.createdDate.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.createdDate.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.createdDate.$error.ZonedDateTimelocal" data-translate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.bizAuth.lastModifiedBy" for="field_lastModifiedBy">Last Modified By</label>
+            <input type="text" class="form-control" name="lastModifiedBy" id="field_lastModifiedBy"
+                    ng-model="vm.bizAuth.lastModifiedBy"
+                    ng-minlength="0" ng-maxlength="16"/>
+            <div ng-show="editForm.lastModifiedBy.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.lastModifiedBy.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.lastModifiedBy.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="16">
+                    This field cannot be longer than 16 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tuxAdminApp.bizAuth.lastModifiedDate" for="field_lastModifiedDate">Last Modified Date</label>
+                <div class="input-group">
+                    <input id="field_lastModifiedDate" type="text" class="form-control" name="lastModifiedDate" datetime-picker="{{dateformat}}" ng-model="vm.bizAuth.lastModifiedDate" is-open="vm.datePickerOpenStatus.lastModifiedDate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('lastModifiedDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+
+        <div class="form-group">
+            <label data-translate="tuxAdminApp.bizAuth.biz" for="field_biz">Biz</label>
+            <select class="form-control" id="field_biz" name="biz" ng-model="vm.bizAuth.bizId" ng-options="biz.id as biz.bizName for biz in vm.bizs | orderBy:'id'" required>
+            </select>
+        </div>
+        <div ng-show="editForm.biz.$invalid">
+            <p class="help-block"
+                ng-show="editForm.biz.$error.required" data-translate="entity.validation.required">
+                This field is required.
+            </p>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

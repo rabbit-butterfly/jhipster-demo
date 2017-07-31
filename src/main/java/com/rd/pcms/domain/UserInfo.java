@@ -1,5 +1,6 @@
 package com.rd.pcms.domain;
 
+import com.jumore.zhxf.domain.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.hibernate.annotations.Cache;
@@ -13,10 +14,10 @@ import java.util.Objects;
 /**
  * 公司成员表
  * @auther:renntrabbit@foxmail.com
- * @date:Sun Jul 23 14:43:53 CST 2017
+ * @date:Sun Jul 23 14:33:07 CST 2017
  * table:user_info
  */
-@ApiModel(description = "公司成员表 @auther:renntrabbit@foxmail.com @date:Sun Jul 23 14:43:53 CST 2017 table:user_info")
+@ApiModel(description = "公司成员表 @auther:renntrabbit@foxmail.com @date:Sun Jul 23 14:33:07 CST 2017 table:user_info")
 @Entity
 @Table(name = "user_info")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -58,11 +59,10 @@ public class UserInfo implements Serializable {
     /**
      * 0：无效 1：有效
      */
-    @Min(value = 0)
-    @Max(value = 5)
+    @Size(min = 0, max = 5)
     @ApiModelProperty(value = "0：无效 1：有效")
-    @Column(name = "status")
-    private Integer status;
+    @Column(name = "status", length = 5)
+    private String status;
 
     /**
      * 岗位@
@@ -89,6 +89,13 @@ public class UserInfo implements Serializable {
     @ApiModelProperty(value = "JH_USER_ID", required = true)
     @Column(name = "jh_user_id", nullable = false)
     private Long jhUserId;
+
+    @OneToOne(optional = false)
+    @JoinColumn(unique = true)
+    private User user;
+
+    @ManyToOne(optional = false)
+    private Company company;
 
     public Long getId() {
         return id;
@@ -137,16 +144,16 @@ public class UserInfo implements Serializable {
         this.mobile = mobile;
     }
 
-    public Integer getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public UserInfo status(Integer status) {
+    public UserInfo status(String status) {
         this.status = status;
         return this;
     }
 
-    public void setStatus(Integer status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
@@ -187,6 +194,32 @@ public class UserInfo implements Serializable {
 
     public void setJhUserId(Long jhUserId) {
         this.jhUserId = jhUserId;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public UserInfo user(User user) {
+        this.user = user;
+        return this;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Company getCompany() {
+        return company;
+    }
+
+    public UserInfo company(Company company) {
+        this.company = company;
+        return this;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
     }
 
     @Override

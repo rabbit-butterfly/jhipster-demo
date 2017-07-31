@@ -21,7 +21,9 @@
             "status": "Status",
             "jobTitle": "Job Title",
             "major": "Major",
-            "jhUserId": "Jh User Id"
+            "jhUserId": "Jh User Id",
+            "user": "User",
+            "company": "Company"
         }
     }
 }

@@ -1,8 +1,14 @@
 package com.rd.pcms.service.dto;
 
 
+import com.jumore.zhxf.domain.User;
+import com.rd.pcms.domain.Company;
+
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.*;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Objects;
 
 /**
@@ -24,9 +30,8 @@ public class UserInfoDTO implements Serializable {
     @Size(min = 0, max = 16)
     private String mobile;
 
-    @Min(value = 0)
-    @Max(value = 5)
-    private Integer status;
+    @Size(min = 0, max = 5)
+    private String status;
 
     @Size(min = 0, max = 16)
     private String jobTitle;
@@ -38,6 +43,10 @@ public class UserInfoDTO implements Serializable {
     @Min(value = 0)
     @Max(value = 19)
     private Long jhUserId;
+
+    private User user;
+
+    private Company company;
 
     public Long getId() {
         return id;
@@ -71,11 +80,11 @@ public class UserInfoDTO implements Serializable {
         this.mobile = mobile;
     }
 
-    public Integer getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(Integer status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
@@ -103,6 +112,7 @@ public class UserInfoDTO implements Serializable {
         this.jhUserId = jhUserId;
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -117,6 +127,22 @@ public class UserInfoDTO implements Serializable {
             return false;
         }
         return Objects.equals(getId(), userInfoDTO.getId());
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
     }
 
     @Override

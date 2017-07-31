@@ -1,0 +1,134 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "biz",
+            "otherEntityName": "biz",
+            "otherEntityField": "bizName",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "bizAuth"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "role",
+            "otherEntityName": "role",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "bizAuth"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "bizName",
+            "javadoc": "业务类别",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 16
+        },
+        {
+            "fieldName": "roleCode",
+            "javadoc": "角色编码",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 16
+        },
+        {
+            "fieldName": "minAuthCode",
+            "javadoc": "最小限码",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required",
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 0,
+            "fieldValidateRulesMax": 19
+        },
+        {
+            "fieldName": "maxAuthCode",
+            "javadoc": "最大权限权",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 0,
+            "fieldValidateRulesMax": 19
+        },
+        {
+            "fieldName": "authCode",
+            "javadoc": "特殊权限码",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 1024
+        },
+        {
+            "fieldName": "authCategory",
+            "javadoc": "权限类别@0:范围1:特殊权限包含1:特殊权限排除",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required",
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 0,
+            "fieldValidateRulesMax": 5
+        },
+        {
+            "fieldName": "createdBy",
+            "javadoc": "创建人",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 16
+        },
+        {
+            "fieldName": "createdDate",
+            "javadoc": "创建时间",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "lastModifiedBy",
+            "javadoc": "修改人",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": 16
+        },
+        {
+            "fieldName": "lastModifiedDate",
+            "javadoc": "修改时间",
+            "fieldType": "Instant"
+        }
+    ],
+    "changelogDate": "20170727064732",
+    "javadoc": "数据权限设置\n@auther:renntrabbit@foxmail.com\n@date:Thu Jul 27 10:58:26 CST 2017\ntable:jhi_biz_auth",
+    "entityTableName": "jhi_biz_auth",
+    "dto": "mapstruct",
+    "pagination": "pager",
+    "service": "serviceImpl"
+}

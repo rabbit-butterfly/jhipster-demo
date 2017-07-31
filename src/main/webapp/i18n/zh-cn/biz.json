@@ -1,0 +1,21 @@
+{
+    "tuxAdminApp": {
+        "biz" : {
+            "home": {
+                "title": "Bizs",
+                "createLabel": "Create a new Biz",
+                "createOrEditLabel": "Create or edit a Biz"
+            },
+            "created": "A new Biz is created with identifier {{ param }}",
+            "updated": "A Biz is updated with identifier {{ param }}",
+            "deleted": "A Biz is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Biz {{ id }}?"
+            },
+            "detail": {
+                "title": "Biz"
+            },
+            "bizName": "Biz Name"
+        }
+    }
+}

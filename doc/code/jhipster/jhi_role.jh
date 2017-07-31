@@ -1,0 +1,22 @@
+
+/**
+*角色
+* @auther:renntrabbit@foxmail.com
+* @date:Thu Jul 27 10:58:26 CST 2017
+* table:jhi_role
+*/
+entity Role (jhi_role)
+{
+	name String  required  minlength(0) maxlength(32)  /** 权限名称 */
+	code String  required  minlength(0) maxlength(16)  /** 编码 */
+	level Integer required  min(0) max(5)  /** 级别 */
+	parentId Long    required  min(0) max(19)  /** 父节点 */
+	createdBy String    minlength(0) maxlength(16)  /** 创建人 */
+	createdDate Instant required   /** 创建时间 */
+	lastModifiedBy String    minlength(0) maxlength(16)  /** 修改人 */
+	lastModifiedDate Instant    /** 修改时间 */
+}
+service  Role with serviceClass
+service  Role with serviceImpl
+paginate Role with pager
+dto      Role with mapstruct

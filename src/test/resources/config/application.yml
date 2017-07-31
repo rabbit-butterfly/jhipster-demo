@@ -1,7 +1,7 @@
 # ===================================================================
-# Spring Boot configuration.
+# Spring Boot configuration for the "dev" profile.
 #
-# This configuration is used for unit/integration tests.
+# This configuration overrides the application.yml file.
 # ===================================================================
 
 # ===================================================================
@@ -11,26 +11,40 @@
 # ===================================================================
 
 spring:
+    jackson:
+        serialization:
+            WRITE_DATES_AS_TIMESTAMPS: false
+    http:
+        multipart:
+            max-file-size: 528KB
+            max-request-size: 528KB
+    profiles:
+        active: dev
+    devtools:
+        restart:
+            enabled: true
+        livereload:
+            enabled: false # we use Grunt + BrowserSync for livereload
     datasource:
-        #driver-class-name: com.mysql.jdbc.jdbc2.optional.MysqlDataSource
-        #driver-class-name: com.mysql.jdbc.jdbc2.optional.MysqlConnectionPoolDataSource
-        url: jdbc:mysql://192.168.23.223:3306/zhxf?useUnicode=true&characterEncoding=utf8&useSSL=false
+        driver-class-name: com.mysql.jdbc.jdbc2.optional.MysqlDataSource
+        url: jdbc:mysql://192.168.23.212:3306/pcmstest?useUnicode=true&characterEncoding=utf8
         name:
-        username: base
+        username: root
         password: root
     jpa:
-        database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+        database-platform: org.hibernate.dialect.MySQLInnoDBDialect
         database: MYSQL
-        open-in-view: false
         show_sql: true
-        hibernate:
-            ddl-auto: none
-            naming-strategy: org.springframework.boot.orm.jpa.hibernate.SpringNamingStrategy
         properties:
-            hibernate.cache.use_second_level_cache: false
-            hibernate.cache.use_query_cache: false
-            hibernate.generate_statistics: true
-            hibernate.hbm2ddl.auto: validate
+            hibernate.cache.use_second_level_cache: true
+            hibernate.cache.use_query_cache: true
+            hibernate.generate_statistics: false
+            hibernate.cache.use_minimal_puts: true
+            hibernate.cache.region.factory_class: com.jumore.zhxf.config.hazelcast.HazelcastCacheRegionFactory
+            hibernate.cache.hazelcast.use_lite_member: true
+            javax.persistence.sharedCache.mode: ALL
+            hibernate.hbm2ddl.auto: update
+
     data:
         elasticsearch:
             cluster-name:
@@ -41,46 +55,72 @@ spring:
                   data: target/elasticsearch/data
     mail:
         host: localhost
-    mvc:
-        favicon:
-            enabled: false
+    messages:
+        cache-seconds: 1
     thymeleaf:
-        mode: XHTML
+        cache: false
     redis:
         host: redisdev.jm.com
-        port: 6339    
+        port: 6339
+        cluster:
+          nodes:
+            #- 192.168.0.1:6379
+            #- 192.168.0.2:6379
+            - 192.168.1.51:7001
+            - 192.168.1.51:7002
+            - 192.168.1.51:7003
+            - 192.168.1.52:7004
+            - 192.168.1.52:7005
+            - 192.168.1.52:7006
 
 liquibase:
-    contexts: test
-
-security:
-    basic:
-        enabled: false
+    contexts: dev
 
 server:
-    port: 10344
-    address: localhost
+    port: 9090
 
 # ===================================================================
 # JHipster specific properties
 # ===================================================================
 
 jhipster:
-    async:
-        corePoolSize: 2
-        maxPoolSize: 50
-        queueCapacity: 10000
-    security:
-        rememberme:
-            # security key (this key should be unique for your application, and kept secret)
-            key: e76a2e5365e9ea616e84ffed412c6e8ec99e68d8
+    cache: # Hibernate 2nd level cache, used by CacheConfiguration
+        timeToLiveSeconds: 3600
+        hazelcast:
+            backupCount: 1
+    mail: # specific JHipster mail property, for standard properties see MailProperties
+        #from: tuxAdmin@localhost
+        from: admin@jumore.com
+        host: mail.maisulang.com
+        username: admin@jumore.com
+        password: "jumore.en#201508"
+
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
         jmx.enabled: true
-    swagger:
-        title: tuxAdmin API
-        description: tuxAdmin API documentation
-        version: 0.0.1
-        termsOfServiceUrl:
-        contact:
-        license:
-        licenseUrl:
+        spark:
+            enabled: false
+            host: localhost
+            port: 9999
+        graphite:
+            enabled: false
+            host: localhost
+            port: 2003
+            prefix: tuxAdmin
+
+# ===================================================================
+# system specific properties
+# ===================================================================
+system:
+    upload: # Hibernate 2nd level cache, used by CacheConfiguration
+        maxsize: 5  #m
+        root: e:\zhxf
+
+
+
+
+
+
+
+
+
+

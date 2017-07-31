@@ -2,26 +2,28 @@
     "tuxAdminApp": {
         "userInfo" : {
             "home": {
-                "title": "User Infos",
-                "createLabel": "Create a new User Info",
-                "createOrEditLabel": "Create or edit a User Info"
+                "title": "操作员管理",
+                "createLabel": "添加一个操作员",
+                "createOrEditLabel": "创建或修改操作员"
             },
-            "created": "A new User Info is created with identifier {{ param }}",
-            "updated": "A User Info is updated with identifier {{ param }}",
-            "deleted": "A User Info is deleted with identifier {{ param }}",
+            "created": "创建操作员 {{ param }}",
+            "updated": "修改操作员 {{ param }}",
+            "deleted": "删除操作员 {{ param }}",
             "delete": {
-                "question": "Are you sure you want to delete User Info {{ id }}?"
+                "question": "你确定要删除这个操作员吗 {{ id }}?"
             },
             "detail": {
-                "title": "User Info"
+                "title": "操作员"
             },
-            "compId": "Comp Id",
-            "code": "Code",
-            "mobile": "Mobile",
-            "status": "Status",
-            "jobTitle": "Job Title",
-            "major": "Major",
-            "jhUserId": "Jh User Id"
+            "compId": "公司ID",
+            "code": "操作员编码",
+            "mobile": "手机号码",
+            "status": "状态",
+            "jobTitle": "工作",
+            "major": "专业",
+            "jhUserId": "管理员ID",
+            "user": "管理员信息",
+            "company": "公司信息"
         }
     }
 }

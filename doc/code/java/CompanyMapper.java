@@ -1,10 +1,10 @@
 /**
- * 公司表：存放公司的基本信息
+ * 角色
  * CompanyMapper.java
  * Copyright(C) 2015-2015 xxxxxx公司
  * All rights reserved.
  * -----------------------------------------------
- * 2017-07-23 Created
+ * 2017-07-27 Created
  */
 package java;
 

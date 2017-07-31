@@ -24,7 +24,7 @@ import java.util.stream.Collectors;
 public class ProjectServiceImpl implements ProjectService{
 
     private final Logger log = LoggerFactory.getLogger(ProjectServiceImpl.class);
-    
+
     private final ProjectRepository projectRepository;
 
     private final ProjectMapper projectMapper;
@@ -44,6 +44,8 @@ public class ProjectServiceImpl implements ProjectService{
     public ProjectDTO save(ProjectDTO projectDTO) {
         log.debug("Request to save Project : {}", projectDTO);
         Project project = projectMapper.toEntity(projectDTO);
+        project.setCompName(projectDTO.getCompany().getName());
+        project.setCompId(projectDTO.getCompany().getId());
         project = projectRepository.save(project);
         ProjectDTO result = projectMapper.toDto(project);
         return result;
@@ -51,7 +53,7 @@ public class ProjectServiceImpl implements ProjectService{
 
     /**
      *  Get all the projects.
-     *  
+     *
      *  @param pageable the pagination information
      *  @return the list of entities
      */

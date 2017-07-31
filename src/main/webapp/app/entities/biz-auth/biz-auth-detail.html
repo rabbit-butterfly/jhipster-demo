@@ -1,0 +1,63 @@
+
+<div>
+    <h2><span data-translate="tuxAdminApp.bizAuth.detail.title">Biz Auth</span> {{vm.bizAuth.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="tuxAdminApp.bizAuth.bizName">Biz Name</span></dt>
+        <dd>
+            <span>{{vm.bizAuth.bizName}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.bizAuth.roleCode">Role Code</span></dt>
+        <dd>
+            <span>{{vm.bizAuth.roleCode}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.bizAuth.minAuthCode">Min Auth Code</span></dt>
+        <dd>
+            <span>{{vm.bizAuth.minAuthCode}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.bizAuth.maxAuthCode">Max Auth Code</span></dt>
+        <dd>
+            <span>{{vm.bizAuth.maxAuthCode}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.bizAuth.authCode">Auth Code</span></dt>
+        <dd>
+            <span>{{vm.bizAuth.authCode}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.bizAuth.authCategory">Auth Category</span></dt>
+        <dd>
+            <span>{{vm.bizAuth.authCategory}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.bizAuth.createdBy">Created By</span></dt>
+        <dd>
+            <span>{{vm.bizAuth.createdBy}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.bizAuth.createdDate">Created Date</span></dt>
+        <dd>
+            <span>{{vm.bizAuth.createdDate | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.bizAuth.lastModifiedBy">Last Modified By</span></dt>
+        <dd>
+            <span>{{vm.bizAuth.lastModifiedBy}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.bizAuth.lastModifiedDate">Last Modified Date</span></dt>
+        <dd>
+            <span>{{vm.bizAuth.lastModifiedDate | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="tuxAdminApp.bizAuth.biz">Biz</span></dt>
+        <dd>
+            <a ui-sref="biz-detail({id:vm.bizAuth.bizId})">{{vm.bizAuth.bizBizName}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="biz-auth-detail.edit({id:vm.bizAuth.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -15,8 +15,8 @@
             "detail": {
                 "title": "Project"
             },
-            "projCompId": "Proj Comp Id",
-            "projCompName": "Proj Comp Name",
+            "compId": "Comp Id",
+            "compName": "Comp Name",
             "code": "Code",
             "name": "Name",
             "enName": "En Name",
@@ -28,7 +28,8 @@
             "status": "Status",
             "delFlag": "Del Flag",
             "remark": "Remark",
-            "extendAttr": "Extend Attr"
+            "extendAttr": "Extend Attr",
+            "company": "Company"
         }
     }
 }
