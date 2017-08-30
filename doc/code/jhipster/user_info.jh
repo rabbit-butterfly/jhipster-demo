@@ -2,7 +2,7 @@
 /**
 *公司成员表
 * @auther:renntrabbit@foxmail.com
-* @date:Tue Jul 25 20:17:28 CST 2017
+* @date:Sun Jul 23 14:43:53 CST 2017
 * table:user_info
 */
 entity UserInfo (user_info)

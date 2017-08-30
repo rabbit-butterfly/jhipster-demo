@@ -24,7 +24,7 @@ import java.util.stream.Collectors;
 public class CompanyServiceImpl implements CompanyService{
 
     private final Logger log = LoggerFactory.getLogger(CompanyServiceImpl.class);
-    
+
     private final CompanyRepository companyRepository;
 
     private final CompanyMapper companyMapper;
@@ -51,7 +51,7 @@ public class CompanyServiceImpl implements CompanyService{
 
     /**
      *  Get all the companies.
-     *  
+     *
      *  @param pageable the pagination information
      *  @return the list of entities
      */

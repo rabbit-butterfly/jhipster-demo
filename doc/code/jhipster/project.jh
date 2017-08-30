@@ -2,13 +2,11 @@
 /**
 *存放项目的基本信息:开始时间，结束时间，是否停工等
 * @auther:renntrabbit@foxmail.com
-* @date:Tue Jul 25 20:17:28 CST 2017
+* @date:Sun Jul 23 12:39:36 CST 2017
 * table:project
 */
 entity Project (project)
 {
-	projCompId Long    required  min(0) max(19)  /** 项目公司ID */
-	projCompName String  required  minlength(0) maxlength(128)  /** 项目公司名称 */
 	code String  required  minlength(0) maxlength(20)  /** CODE */
 	name String    minlength(0) maxlength(80)  /** NAME */
 	enName String    minlength(0) maxlength(32)  /** EN_NAME */

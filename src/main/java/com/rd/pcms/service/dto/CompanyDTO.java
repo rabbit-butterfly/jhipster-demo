@@ -44,13 +44,10 @@ public class CompanyDTO implements Serializable {
     @Max(value = 10)
     private Integer status;
 
-    @Min(value = 0)
-    @Max(value = 10)
     private Integer delFlag;
 
     private Instant createTime;
 
-    @Size(min = 0, max = 10)
     private String creator;
 
     private Instant updateTime;
