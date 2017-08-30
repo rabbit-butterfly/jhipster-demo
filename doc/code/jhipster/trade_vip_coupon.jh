@@ -1,0 +1,29 @@
+
+/**
+*支付码批次表
+* @auther:renntrabbit@foxmail.com
+* @date:Mon Aug 28 11:46:45 CST 2017
+* table:trade_vip_coupon
+*/
+entity VipCoupon (trade_vip_coupon)
+{
+	couponName String    minlength(0) maxlength(50)  /** 优惠码名称 */
+	couponCount Integer   min(0) max(10)  /** 优惠码数量 */
+	expiryDateFrom Instant    /** 有效期起 */
+	expiryDateTo Instant    /** 有效期止 */
+	applyUserLevel Integer required  min(0) max(5)  /** 优惠码适用于等级 0:通用 2:黄金会员 3:铂金会员 */
+	couponType Integer   min(0) max(5)  /** 优化类型0折扣，1金额 */
+	discount String    minlength(0) maxlength(5)  /** 折扣，保留两位小数 */
+	discountAmount String    minlength(0) maxlength(7)  /** 折扣金额 */
+	status Integer   min(0) max(5)  /** 状态，0进行中，1已结束 */
+	deleteFlag Integer   min(0) max(5)  /** 是否删除 */
+	createId Long      min(0) max(19)  /** 创建人 */
+	createTime Instant    /** 创建时间 */
+	updateId Long      min(0) max(19)  /** 修改人 */
+	updateTime Instant    /** 修改时间 */
+	seq Integer   min(0) max(5)  /** 批次号 */
+}
+service  VipCoupon with serviceClass
+service  VipCoupon with serviceImpl
+paginate VipCoupon with pager
+dto      VipCoupon with mapstruct

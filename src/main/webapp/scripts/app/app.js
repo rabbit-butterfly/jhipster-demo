@@ -2,6 +2,7 @@
 
 angular.module('tuxAdminApp', ['LocalStorageModule', 'tmh.dynamicLocale', 'pascalprecht.translate',
                'ui.bootstrap', // for modal dialogs
+    /*'ui.tree',*/
     'ngResource', 'ui.router', 'ngCookies', 'ngAria', 'ngCacheBuster', 'ngFileUpload', 'infinite-scroll',
     'angular-loading-bar', 'adf','adf.structures.base', 'adf.widget.clock','adf.widget.markdown', 'adf.widget.news', 'adf.widget.weather'])
 
@@ -19,7 +20,7 @@ angular.module('tuxAdminApp', ['LocalStorageModule', 'tmh.dynamicLocale', 'pasca
                 $window.document.title = title;
             });
         };
-        
+
         $rootScope.ENV = ENV;
         $rootScope.VERSION = VERSION;
         $rootScope.$on('$stateChangeStart', function (event, toState, toStateParams) {
@@ -29,12 +30,12 @@ angular.module('tuxAdminApp', ['LocalStorageModule', 'tmh.dynamicLocale', 'pasca
             if (Principal.isIdentityResolved()) {
                 Auth.authorize();
             }
-            
+
             // Update the language
             Language.getCurrent().then(function (language) {
                 $translate.use(language);
             });
-            
+
         });
 
         $rootScope.$on('$stateChangeSuccess',  function(event, toState, toParams, fromState, fromParams) {
@@ -55,11 +56,11 @@ angular.module('tuxAdminApp', ['LocalStorageModule', 'tmh.dynamicLocale', 'pasca
             }
             updateTitle(titleKey);
         });
-        
+
         // if the current translation changes, update the window title
         $rootScope.$on('$translateChangeSuccess', function() { updateTitle(); });
 
-        
+
         $rootScope.back = function() {
             // If previous state is 'activate' or do not exist go to 'home'
             if ($rootScope.previousStateName === 'activate' || $state.get($rootScope.previousStateName) === null) {
@@ -108,7 +109,7 @@ angular.module('tuxAdminApp', ['LocalStorageModule', 'tmh.dynamicLocale', 'pasca
         $httpProvider.interceptors.push('errorHandlerInterceptor');
         $httpProvider.interceptors.push('authExpiredInterceptor');
         $httpProvider.interceptors.push('notificationInterceptor');
-        
+
         // Initialize angular-translate
         $translateProvider.useLoader('$translatePartialLoader', {
             urlTemplate: 'i18n/{lang}/{part}.json'
@@ -122,7 +123,7 @@ angular.module('tuxAdminApp', ['LocalStorageModule', 'tmh.dynamicLocale', 'pasca
         tmhDynamicLocaleProvider.localeLocationPattern('bower_components/angular-i18n/angular-locale_{{locale}}.js');
         tmhDynamicLocaleProvider.useCookieStorage();
         tmhDynamicLocaleProvider.storageKey('NG_TRANSLATE_LANG_KEY');
-        
+
     })
     // jhipster-needle-angularjs-add-config JHipster will add new application configuration
     .config(['$urlMatcherFactoryProvider', function($urlMatcherFactory) {

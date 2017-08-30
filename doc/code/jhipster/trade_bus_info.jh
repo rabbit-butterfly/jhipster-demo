@@ -1,0 +1,29 @@
+
+/**
+*商讯表
+* @auther:renntrabbit@foxmail.com
+* @date:Mon Aug 28 11:46:45 CST 2017
+* table:trade_bus_info
+*/
+entity BusInfo (trade_bus_info)
+{
+	foreignId Long      min(0) max(19)  /** 聚贸资讯的ID */
+	indexImg String    minlength(0) maxlength(256)  /** 封面图片，最多三张，用分割 */
+	articleTitle String    minlength(0) maxlength(255)  /** 文章标题 */
+	introduce String    minlength(0) maxlength(1500)  /** 简介 */
+	articleLabel String    minlength(0) maxlength(256)  /** 关键字，多个关键词，用好分割开 */
+	effectiveTime Instant    /** 到期时间 */
+	industryName String    minlength(0) maxlength(256)  /** 商讯类型 */
+	languageCode String    minlength(0) maxlength(30)  /** 语言编码 */
+	deleteFlag Integer   min(0) max(5)  /** 是否删除，0正常，1已删除 */
+	createId Long      min(0) max(19)  /** 创建人 */
+	createTime Instant    /** 创建时间 */
+	updateId Long      min(0) max(19)  /** 修改人 */
+	updateTime Instant    /** 修改时间 */
+	isPush Integer   min(0) max(5)  /** 推送状态，0未推送，1已推送 */
+	pushTime Instant    /** 推送时间，每次推送更新 */
+}
+service  BusInfo with serviceClass
+service  BusInfo with serviceImpl
+paginate BusInfo with pager
+dto      BusInfo with mapstruct

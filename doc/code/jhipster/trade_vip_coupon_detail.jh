@@ -1,0 +1,24 @@
+
+/**
+*优惠码明细表
+* @auther:renntrabbit@foxmail.com
+* @date:Mon Aug 28 11:46:45 CST 2017
+* table:trade_vip_coupon_detail
+*/
+entity VipCouponDetail (trade_vip_coupon_detail)
+{
+	couponName String    minlength(0) maxlength(50)  /** 优惠码批次名称，读取trade_vip_coupon.coupon_name */
+	couponCode String  required  minlength(0) maxlength(30)  /** 优惠码 */
+	couponId Long      min(0) max(19)  /** 优惠码批次ID，关联trade_vip_coupon.id */
+	companyId Long      min(0) max(19)  /** 公司ID，关联trade_company.comp_id */
+	isUsed Integer required  min(0) max(5)  /** 是否已使用，0否，1是 */
+	useTime Instant    /** 使用时间 */
+	createId Long      min(0) max(19)  /** 创建人 */
+	createTime Instant    /** 创建时间 */
+	updateId Long      min(0) max(19)  /** 修改人 */
+	updateTime Instant    /** 修改时间 */
+}
+service  VipCouponDetail with serviceClass
+service  VipCouponDetail with serviceImpl
+paginate VipCouponDetail with pager
+dto      VipCouponDetail with mapstruct

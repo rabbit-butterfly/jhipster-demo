@@ -1,0 +1,20 @@
+
+/**
+*聚诚通会员等级表
+* @auther:renntrabbit@foxmail.com
+* @date:Mon Aug 28 11:46:45 CST 2017
+* table:trade_user_level
+*/
+entity UserLevel (trade_user_level)
+{
+	userLevelCode Integer   min(0) max(5)  /** 会员等级代码 */
+	userLevelName String    minlength(0) maxlength(20)  /** 会员等级名称 */
+	receiveNicheCount Integer   min(0) max(5)  /** 每日接收采购、商讯数量 */
+	receiveGoodsCount Integer   min(0) max(5)  /** 每日商品接收数量 */
+	pushGoodsCount Integer   min(0) max(5)  /** 每周商品推送商品次数 */
+	price String    minlength(0) maxlength(10)  /** 价格 */
+}
+service  UserLevel with serviceClass
+service  UserLevel with serviceImpl
+paginate UserLevel with pager
+dto      UserLevel with mapstruct

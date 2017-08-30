@@ -1,0 +1,36 @@
+
+/**
+*商机推送表
+* @auther:renntrabbit@foxmail.com
+* @date:Mon Aug 28 11:46:45 CST 2017
+* table:trade_niche_push
+*/
+entity NichePush (trade_niche_push)
+{
+	pushTime Instant    /** 推送时间 */
+	pushStatus Integer   min(0) max(5)  /** 推送状态，0未撤回，1已撤回 */
+	withdrawTime Instant    /** 撤回时间 */
+	withdrawUserId Long      min(0) max(19)  /** 撤回人员ID，关联trade_operation_user.id */
+	nicheType Integer required  min(0) max(5)  /** 商机类型，0代理采购，1采购，2商讯，3商品 */
+	nicheTitle String    minlength(0) maxlength(300)  /** 商机标题 */
+	nicheId Long      min(0) max(19)  /** 商机ID，type=0关联代理采购表trade_agent_purchase.id，type=1关联采购表type=2关联商讯trade_bus_info.id，type=3关联采购表trade_demand_main.demand_id */
+	pushType Integer required  min(0) max(5)  /** 推送类型，0按条件，1按账号 */
+	areaCode String    minlength(0) maxlength(500)  /** 推送至行政区划代码，多个之间英文逗号分隔 */
+	areaName String    minlength(0) maxlength(800)  /** 推送至地区名称，多个之间英文逗号分隔 */
+	userMobileNo String    minlength(0) maxlength(11)  /** 推送至手机号码 */
+	userFullname String    minlength(0) maxlength(200)  /** 推送至用户名称 */
+	pushConmapyCount Integer   min(0) max(10)  /** 推送企业数量 */
+	createId Long      min(0) max(19)  /** 创建人ID */
+	createTime Instant    /** 创建时间 */
+	updateId Long      min(0) max(19)  /** 修改人ID */
+	updateTime Instant    /** 修改时间 */
+	seq Long      min(0) max(19)  /** 批量插入顺序码 */
+	industryId String    minlength(0) maxlength(300)  /** 推送至行业id 对应trade_industry.industry_id */
+	areaType Integer   min(0) max(5)  /** 地域类型，0地区，1省 */
+	deleteFlag Integer   min(0) max(5)  /** 是否删除，0正常，1已删除 */
+	industryName String    minlength(0) maxlength(300)  /** 推送至行业名称，多个之间中文逗号分隔 */
+}
+service  NichePush with serviceClass
+service  NichePush with serviceImpl
+paginate NichePush with pager
+dto      NichePush with mapstruct

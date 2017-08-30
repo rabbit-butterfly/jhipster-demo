@@ -107,46 +107,40 @@
 
     </ul>-->
 
-        <ul class="sidebar-menu">
+        <ul class="sidebar-menu"　data-widget="tree">
             <li class="treeview" id="system">
                 <a ng-click="setActive('system')">
                     <i class="fa fa-dashboard"></i> <span>系统管理</span> <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
                     <li ><a ui-sref="event" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span>功能菜单维护</span></a></li>
-                </ul>
-                <ul class="treeview-menu">
                     <li ><a ui-sref="event" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span>角色设置</span></a></li>
-                </ul>
-                <ul class="treeview-menu">
                     <li ><a ui-sref="event" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span>数据权限设置</span></a></li>
-                </ul>
-
-                <ul class="treeview-menu">
                     <li ><a ui-sref="company" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span data-translate="global.menu.entities.company">单位设置</span></a></li>
-                </ul>
-                <ul class="treeview-menu">
                     <li ><a ui-sref="user-info" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span data-translate="global.menu.entities.userInfo">User Info</span></a></li>
-                </ul>
-                <ul class="treeview-menu">
                     <li ><a ui-sref="project" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span data-translate="global.menu.entities.project">项目设置</span></a></li>
-                </ul>
-                <ul class="treeview-menu">
                     <li ><a ui-sref="project-area" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span data-translate="global.menu.entities.projectArea">Project Area</span></a></li>
-                </ul>
-
-                <ul class="treeview-menu">
                     <li ><a ui-sref="biz" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span data-translate="global.menu.entities.biz">Biz</span></a></li>
-                </ul>
-
-                <ul class="treeview-menu">
                     <li ><a ui-sref="biz-auth" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span data-translate="global.menu.entities.bizAuth">Biz Auth</span></a></li>
-                </ul>
-
-                <ul class="treeview-menu">
                     <li ><a ui-sref="role" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span data-translate="global.menu.entities.role">Role</span></a></li>
+                    <li class="treeview" id="aaa">
+                        <a ng-click="setActive('system')">
+                            <i class="fa fa-dashboard"></i> <span>bb</span> <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li ><a ui-sref="event" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span>功能菜单维护</span></a></li>
+                            <li ><a ui-sref="event" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span>角色设置</span></a></li>
+                            <li ><a ui-sref="event" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span>数据权限设置</span></a></li>
+                            <li ><a ui-sref="company" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span data-translate="global.menu.entities.company">单位设置</span></a></li>
+                            <li ><a ui-sref="user-info" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span data-translate="global.menu.entities.userInfo">User Info</span></a></li>
+                            <li ><a ui-sref="project" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span data-translate="global.menu.entities.project">项目设置</span></a></li>
+                            <li ><a ui-sref="project-area" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span data-translate="global.menu.entities.projectArea">Project Area</span></a></li>
+                            <li ><a ui-sref="biz" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span data-translate="global.menu.entities.biz">Biz</span></a></li>
+                            <li ><a ui-sref="biz-auth" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span data-translate="global.menu.entities.bizAuth">Biz Auth</span></a></li>
+                            <li ><a ui-sref="role" ng-click="setMenuToActive()"><i class="fa fa-circle-o"></i><span data-translate="global.menu.entities.role">Role</span></a></li>
+                        </ul>
+                    </li>
                 </ul>
-
             </li>
         </ul>
 

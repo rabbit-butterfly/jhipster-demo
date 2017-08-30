@@ -1,0 +1,37 @@
+
+/**
+*商机推送表
+* @auther:renntrabbit@foxmail.com
+* @date:Mon Aug 28 11:46:45 CST 2017
+* table:trade_niche_push_detail
+*/
+entity NichePushDetail (trade_niche_push_detail)
+{
+	pushId Long    required  min(0) max(19)  /** 推送ID，关联trade_niche_push.id */
+	linkMan String    minlength(0) maxlength(50)  /** 报价联系人 */
+	linkPhone String    minlength(0) maxlength(50)  /** 联系电话 */
+	pushCompanyId Long      min(0) max(19)  /** 推送至公司ID */
+	pushCompanyName String    minlength(0) maxlength(200)  /** 推送至公司名称 */
+	offerTime Instant    /** 报价/回复时间 */
+	offerNote String    minlength(0) maxlength(400)  /** 报价内容，留言 */
+	offerStatus Integer required  min(0) max(5)  /** 报价状态，0未提交，1已提交 */
+	handlePersonId Long      min(0) max(19)  /** 处理人ID，关联trade_operation_user.user_id */
+	handlePersonName String    minlength(0) maxlength(50)  /** 处理人姓名 */
+	handleOpinions String    minlength(0) maxlength(200)  /** 处理意见 */
+	handleTime Instant    /** 处理时间 */
+	isHandle Integer required  min(0) max(5)  /** 是否已处理，0否，1是 */
+	createId Long      min(0) max(19)  /** 创建人ID */
+	createTime Instant required   /** 创建时间 */
+	updateId Long      min(0) max(19)  /** 修改人ID */
+	updateTime Instant required   /** 修改时间 */
+	nicheType Integer required  min(0) max(5)  /** 商机类型，0代理采购，1采购，2商讯，3商品 */
+	nicheTitle String    minlength(0) maxlength(300)  /** 商机标题 */
+	nicheId Long      min(0) max(19)  /** 商机ID，type=0关联代理采购表trade_agent_purchase.id，type=1关联采购表type=2关联商讯trade_bus_info.id，type=3关联采购表trade_demand_main.demand_id */
+	pushType Integer required  min(0) max(5)  /** 推送类型，0按条件，1按账号 */
+	pushTime Instant    /** 推送时间 */
+	pushStatus Integer   min(0) max(5)  /** 推送状态，0未撤回，1已撤回 */
+}
+service  NichePushDetail with serviceClass
+service  NichePushDetail with serviceImpl
+paginate NichePushDetail with pager
+dto      NichePushDetail with mapstruct

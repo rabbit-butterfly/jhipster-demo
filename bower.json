@@ -35,7 +35,8 @@
     "adf-widget-markdown": "0.1.0",
     "adf-widget-news": "0.1.2",
     "adf-widget-weather": "0.1.4",
-    "admin-lte": "2.3.2",
+    "admin-lte": "2.4.0-alpha",
+    "bootstrap-treeview":"v1.2.0",
     "font-awesome": "4.5.0"
   },
   "devDependencies": {

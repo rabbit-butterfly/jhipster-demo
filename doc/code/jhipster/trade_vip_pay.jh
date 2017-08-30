@@ -1,0 +1,32 @@
+
+/**
+*会员支付表
+* @auther:renntrabbit@foxmail.com
+* @date:Mon Aug 28 11:41:28 CST 2017
+* table:trade_vip_pay
+*/
+entity VipPay (trade_vip_pay)
+{
+	payOrderNo String  required  minlength(0) maxlength(30)  /** 会员支付订单号 */
+	companyId Long    required  min(0) max(19)  /** 公司ID，关联trade_company.comp_id */
+	companyName String  required  minlength(0) maxlength(255)  /** 公司名称 */
+	amount String  required  minlength(0) maxlength(7)  /** 支付金额 */
+	originalAmount String    minlength(0) maxlength(7)  /** 原金额 */
+	preferentialAmount String    minlength(0) maxlength(7)  /** 优化金额 */
+	couponCode String    minlength(0) maxlength(30)  /** 优惠码 */
+	payType Integer required  min(0) max(5)  /** 支付类型 0:线上支付 1:线下支付 2:后台新增 */
+	payTime Instant    /** 支付时间 */
+	payUserId Long      min(0) max(19)  /** 支付人员ID，关联trade_user_center.user_id */
+	payUserFullname String    minlength(0) maxlength(200)  /** 支付人员姓名 */
+	remark String    minlength(0) maxlength(255)  /** 支付备注 */
+	payStatus Integer   min(0) max(5)  /** 支付状态，0支付中，1支付成功，2支付已关闭 */
+	isCurrent Integer   min(0) max(5)  /** 是否最新支付记录，0否，1是 */
+	createId Long      min(0) max(19)  /** 创建人 */
+	createTime Instant    /** 创建时间 */
+	updateId Long      min(0) max(19)  /** 修改人 */
+	updateTime Instant    /** 修改时间 */
+}
+service  VipPay with serviceClass
+service  VipPay with serviceImpl
+paginate VipPay with pager
+dto      VipPay with mapstruct

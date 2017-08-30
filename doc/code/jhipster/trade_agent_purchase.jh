@@ -1,0 +1,29 @@
+
+/**
+*代理采购
+* @auther:renntrabbit@foxmail.com
+* @date:Mon Aug 28 11:46:45 CST 2017
+* table:trade_agent_purchase
+*/
+entity AgentPurchase (trade_agent_purchase)
+{
+	title String  required  minlength(0) maxlength(200)  /** 采购标题 */
+	purchaseCount String  required  minlength(0) maxlength(50)  /** 采购数量 */
+	remark String  required  minlength(0) maxlength(300)  /** 采购描述 */
+	companyName String  required  minlength(0) maxlength(255)  /** 企业名称 */
+	contacts String    minlength(0) maxlength(50)  /** 联系人 */
+	contactNumber String    minlength(0) maxlength(30)  /** 联系电话 */
+	offerPeriod Instant    /** 报价截止日期 */
+	industryId Long      min(0) max(19)  /** 行业id 对应trade_industry.industry_id */
+	isPush Integer   min(0) max(5)  /** 推送状态，0未推送，1已推送 */
+	languageCode String    minlength(0) maxlength(30)  /** 语言编码 */
+	deleteFlag Integer   min(0) max(5)  /** 是否删除 */
+	createId Long      min(0) max(19)  /** 创建人 */
+	createTime Instant    /** 创建时间 */
+	updateId Long      min(0) max(19)  /** 修改人 */
+	updateTime Instant    /** 修改时间 */
+}
+service  AgentPurchase with serviceClass
+service  AgentPurchase with serviceImpl
+paginate AgentPurchase with pager
+dto      AgentPurchase with mapstruct

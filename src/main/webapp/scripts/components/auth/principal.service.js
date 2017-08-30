@@ -2,6 +2,7 @@
 
 angular.module('tuxAdminApp')
     .factory('Principal', function Principal($q, Account, Tracker) {
+        debugger
         var _identity,
             _authenticated = false;
 
