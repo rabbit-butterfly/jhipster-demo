@@ -1,0 +1,16 @@
+{
+  "name": "jhipster-demo",
+  "description": "jhipster-demo",
+  "scripts": {
+  },
+  "env": {
+  },
+  "formation": {
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+
+  ]
+}
