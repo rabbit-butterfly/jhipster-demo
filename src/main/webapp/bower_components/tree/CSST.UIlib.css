@@ -33,15 +33,15 @@
 }
 
 .CSST_Tree .Node .plus_bottom{
-	background-image:url('images/plus_bottom.gif');
+	background-image:url('/assets/tree/images/plus_bottom.gif');
 	background-repeat:repeat;
 	height:16px;
 	width:16px;
 	float:left;
-} 
+}
 
 .CSST_Tree .Node .plus_root{
-	background-image:url('images/plus_root.gif');
+	background-image:url('/assets/tree/images/plus_root.gif');
 	background-repeat:repeat;
 	height:16px;
 	width:16px;
@@ -49,7 +49,7 @@
 }
 
 .CSST_Tree .Node .plus_top{
-	background-image:url('images/plus_top.gif');
+	background-image:url('/assets/tree/images/plus_top.gif');
 	background-repeat:repeat;
 	height:16px;
 	width:16px;
@@ -57,14 +57,14 @@
 }
 
 .CSST_Tree .Node .minus_noLine{
-	background-image:url('images/minus_noLine.gif');
+	background-image:url('/assets/tree/images/minus_noLine.gif');
 	height:16px;
 	width:16px;
 	float:left;
 }
 
 .CSST_Tree .Node .minus_center{
-	background-image:url('images/minus_center.gif');
+	background-image:url('/assets/tree/images/minus_center.gif');
 	background-repeat:repeat;
 	height:16px;
 	width:16px;
@@ -72,15 +72,15 @@
 }
 
 .CSST_Tree .Node .minus_bottom{
-	background-image:url('images/minus_bottom.gif');
+	background-image:url('/assets/tree/images/minus_bottom.gif');
 	background-repeat:repeat;
 	height:16px;
 	width:16px;
 	float:left;
-}  
+}
 
 .CSST_Tree .Node .minus_root{
-	background-image:url('images/minus_root.gif');
+	background-image:url('/assets/tree/images/minus_root.gif');
 	background-repeat:repeat;
 	height:16px;
 	width:16px;
@@ -88,7 +88,7 @@
 }
 
 .CSST_Tree .Node .minus_top{
-	background-image:url('images/minus_top.gif');
+	background-image:url('/assets/tree/images/minus_top.gif');
 	background-repeat:repeat;
 	height:16px;
 	width:16px;
@@ -97,7 +97,7 @@
 
 
 .CSST_Tree .Node .open{
-	background-image:url('images/policeStation_open.gif');
+	background-image:url('/assets/tree/images/policeStation_open.gif');
 	height:16px;
 	width:16px;
 	float:left;
@@ -106,7 +106,7 @@
 }
 
 .CSST_Tree .Node .page{
-	background-image:url('images/group.gif');
+	background-image:url('/assets/tree/images/group.gif');
 	background-repeat:no-repeat;
 	height:16px;
 	width:16px;
@@ -115,12 +115,21 @@
 }
 
 .CSST_Tree .Node .close{
-	background-image:url('images/policeStation_close.gif');
-	background-repeat:no-repeat;
-	height:16px;
-	width:16px;
-	float:left;
-	margin-right:3px;
+     background-image:url('/assets/tree/images/policeStation_close.gif');
+     background-repeat:no-repeat;
+     height:16px;
+     width:16px;
+     float:left;
+     margin-right:3px;
+ }
+
+.CSST_close{
+    background-image:url('/assets/tree/images/policeStation_close.gif');
+    background-repeat:no-repeat;
+    height:16px;
+    width:16px;
+    float:left;
+    margin-right:3px;
 }
 
 .CSST_Tree .Node .blank{
@@ -130,21 +139,21 @@
 }
 
 .CSST_Tree .Node .line_top{
-	background-image:url('images/line_top.gif');
+	background-image:url('/assets/tree/images/line_top.gif');
 	background-repeat:repeat;
 	height:16px;
 	width:16px;
 	float:left;
 }
 .CSST_Tree .Node .line_conn{
-	background-image:url('images/line_conn.gif');
+	background-image:url('/assets/tree/images/line_conn.gif');
 	background-repeat:repeat;
 	height:16px;
 	width:16px;
 	float:left;
 }
 .CSST_Tree .Node .line_center{
-	background-image:url('images/line_center.gif');
+	background-image:url('/assets/tree/images/line_center.gif');
 	background-repeat:repeat;
 	height:16px;
 	width:16px;
@@ -152,7 +161,7 @@
 }
 
 .CSST_Tree .Node .line_bottom{
-	background-image:url('images/line_bottom.gif');
+	background-image:url('/assets/tree/images/line_bottom.gif');
 	background-repeat:repeat;
 	height:16px;
 	width:16px;
