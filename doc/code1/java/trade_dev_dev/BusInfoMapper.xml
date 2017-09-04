@@ -113,7 +113,7 @@
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from trade_dev_dev..trade_bus_info
+    from trade_dev_dev.trade_bus_info
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
